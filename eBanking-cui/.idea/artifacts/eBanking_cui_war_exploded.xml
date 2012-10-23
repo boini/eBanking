@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="eBanking-cui:war exploded">
+    <output-path>$PROJECT_DIR$/target/eBanking-cui</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="eBanking-cui/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="eBanking-cui" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
