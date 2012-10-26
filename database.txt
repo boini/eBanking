@@ -1,0 +1,159 @@
+create table role (
+  role_id number primary key,
+  role_name varchar2(100) not null
+);
+
+create table country (
+  country_id number primary key,
+  country_name varchar2(100) not null
+);
+
+create table city (
+  city_id number primary key,
+  city_name varchar2(100) not null,
+  country_id number not null,
+  constraint fk_country
+	foreign key (country_id)
+	references country(country_id)
+);
+
+create table address (
+  address_id number primary key,
+  city_id number not null,
+  region varchar2(30),
+  house_number varchar2(5),
+  flat_number varchar2(5),
+  constraint fk_city
+    foreign key (city_id)
+    references city(city_id)
+);
+
+create table client (
+  client_id number primary key,
+  firstname varchar2(100) not null,
+  middlename varchar2(100) not null,  
+  lastname varchar2(100) not null,
+  date_of_birth date not null,
+  address_id number not null,
+  phone_number varchar2(20),
+  mobile_number varchar2(20),
+  personal_number varchar2(20) not null,
+  secret_word varchar2(30) not null,
+  email varchar2(50) not null,
+  constraint fk_address
+    foreign key (address_id)
+    references address(address_id)
+);
+
+create table account (
+  account_id number primary key,
+  login varchar2(30) not null,
+  password varchar2(30) not null,
+  client_id number not null,
+  role_id number not null,
+  constraint fk_client
+    foreign key (client_id)
+    references client(client_id),
+  constraint fk_role
+    foreign key (role_id)
+    references role(role_id)
+);
+
+create table card_type (
+  card_type_id number primary key,
+  card_type_name varchar2(100) not null,
+  description varchar2(100)
+);
+
+create table currency (
+  currency_id number primary key,
+  currency_code varchar2(3) not null,
+  description varchar2(100)
+);
+
+create table card_account (
+  card_account_id number primary key,
+  client_id number not null,
+  balance number(20,2) default (0.00),
+  currency_id number not null,
+  constraint fk_card_account_client
+    foreign key (client_id)
+    references client(client_id),
+  constraint fk_card_account_currency
+    foreign key (currency_id)
+    references currency(currency_id)
+);
+
+create table card (
+  card_id number primary key,
+  card_account_id number not null,
+  card_type_id number not null,
+  expiration_date date not null,
+  card_number varchar(16) not null,
+  cvv varchar(3) not null,
+  credit_limit number(20,2) default (0.00),
+  constraint fk_card_card_account
+    foreign key (card_account_id)
+    references card_account(card_account_id),
+  constraint fk_card_card_type
+    foreign key (card_type_id)
+    references card_type(card_type_id)
+);
+
+create table operation_type (
+  operation_type_id number primary key,
+  operation_type varchar2(100) not null,
+  description varchar2(200)
+);
+
+create table operation_status (
+  operation_status_id number primary key,
+  operation_status varchar2(100) not null,
+  description varchar2(200)
+);
+
+create table operation (
+  operation_id number primary key,
+  operation_status_id number not null,
+  operation_type_id number not null,
+  operation_key varchar2(100) not null,
+  processing_date date not null,
+  transaction_date date not null,
+  card_id number not null,
+  address_id number not null,
+  transaction_amount number(20,2) default (0.00),
+  contractor_account_id number not null,
+  constraint fk_operation_operation_status
+    foreign key (operation_status_id)
+    references operation_status(operation_status_id),
+  constraint fk_operation_operation_type
+    foreign key (operation_type_id)
+    references operation_type(operation_type_id),
+  constraint fk_operation_card
+    foreign key (card_id)
+    references card(card_id),
+  constraint fk_operation_address
+    foreign key (address_id)
+    references address(address_id),
+  constraint fk_operation_card_account
+    foreign key (contractor_account_id)
+    references card_account(card_account_id)
+);
+
+create table app_log (
+  log_id number primary key,
+  log_date date not null,
+  log_action varchar2(100) not null,
+  log_message varchar2(500) not null
+);
+
+create table account_log (
+  log_id number primary key,
+  log_date date not null,
+  log_action varchar2(100) not null,
+  log_message varchar2(500) not null,
+  account_id number not null,
+  constraint fk_account_log_account
+    foreign key (account_id)
+    references account(account_id)
+);
