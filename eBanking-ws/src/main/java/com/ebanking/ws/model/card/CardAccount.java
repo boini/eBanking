@@ -2,19 +2,21 @@ package com.ebanking.ws.model.card;
 
 import com.ebanking.ws.model.finance.Amount;
 
+import javax.persistence.*;
 import java.util.Set;
 
-/**
- * Created with IntelliJ IDEA.
- * User: antonkholodok
- * Date: 10/25/12
- * Time: 2:15 PM
- * To change this template use File | Settings | File Templates.
- */
+@Entity
+@Table(name = "CARD_ACCOUNT")
 public class CardAccount {
+
+    @Id
+    @GeneratedValue
+    @Column(name = "CARD_ACCOUNT_ID")
     private long cardAccountId;
+/*
     private Set cards;
-    private Amount balance;
+
+    private Amount balance;*/
 
     public long getCardAccountId() {
         return cardAccountId;
@@ -23,7 +25,7 @@ public class CardAccount {
     public void setCardAccountId(long cardAccountId) {
         this.cardAccountId = cardAccountId;
     }
-
+/*
     public Amount getBalance() {
         return balance;
     }
@@ -38,5 +40,5 @@ public class CardAccount {
 
     public void setCards(Set cards) {
         this.cards = cards;
-    }
+    }*/
 }

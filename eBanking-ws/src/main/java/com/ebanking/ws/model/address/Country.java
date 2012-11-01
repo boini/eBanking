@@ -1,14 +1,20 @@
 package com.ebanking.ws.model.address;
 
-/**
- * Created with IntelliJ IDEA.
- * User: antonkholodok
- * Date: 10/25/12
- * Time: 2:10 PM
- * To change this template use File | Settings | File Templates.
- */
+import org.springframework.transaction.annotation.Transactional;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "COUNTRY")
 public class Country {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "COUNTRY_SEQ_GEN")
+    @SequenceGenerator(name = "COUNTRY_SEQ_GEN", sequenceName = "COUNTRY_SEQ", allocationSize = 1)
+    @Column(name = "COUNTRY_ID")
     private long countryId;
+
+    @Column(name = "COUNTRY_NAME", nullable = false)
     private String countryName;
 
     public long getCountryId() {
@@ -25,5 +31,25 @@ public class Country {
 
     public void setCountryName(String countryName) {
         this.countryName = countryName;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Country country = (Country) o;
+
+        if (countryId != country.countryId) return false;
+        if (!countryName.equals(country.countryName)) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = (int) (countryId ^ (countryId >>> 32));
+        result = 31 * result + countryName.hashCode();
+        return result;
     }
 }

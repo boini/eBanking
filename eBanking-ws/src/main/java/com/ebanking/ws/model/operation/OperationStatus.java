@@ -1,15 +1,20 @@
 package com.ebanking.ws.model.operation;
 
-/**
- * Created with IntelliJ IDEA.
- * User: antonkholodok
- * Date: 10/25/12
- * Time: 2:55 PM
- * To change this template use File | Settings | File Templates.
- */
+import javax.persistence.*;
+
+@Entity
+@Table(name = "OPERATION_STATUS")
 public class OperationStatus {
+
+    @Id
+    @GeneratedValue
+    @Column(name = "OPERATION_STATUS_ID")
     private long operationStatusId;
+
+    @Column(name = "OPERATION_STATUS")
     private String operationStatus;
+
+    @Column(name = "DESCRIPTION")
     private String description;
 
     public long getOperationStatusId() {

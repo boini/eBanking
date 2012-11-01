@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:bean="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+	                       http://www.springframework.org/schema/context/spring-context-2.5.xsd
+	                       http://www.springframework.org/schema/tx
+	                       http://www.springframework.org/schema/tx/spring-tx-2.0.xsd">
+
+    <context:annotation-config />
+
+    <bean id="testDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+        <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
+        <property name="username" value="anton" />
+        <property name="password" value="anton" />
+    </bean>
+
+    <bean id="testSessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="testDataSource"/>
+        <property name="packagesToScan">
+            <list>
+                <value>com.ebanking.ws.model</value>
+            </list>
+        </property>
+        <property name="hibernateProperties">
+            <value>
+                hibernate.format_sql=true
+                hibernate.show_sql=true
+                hibernate.dialect=org.hibernate.dialect.Oracle10gDialect
+            </value>
+        </property>
+    </bean>
+
+    <bean id="testTransactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="testSessionFactory"/>
+    </bean>
+
+    <tx:annotation-driven transaction-manager="testTransactionManager" />
+
+    <bean id="countryDAO" class="com.ebanking.ws.dao.impl.address.CountryDAOImpl"></bean>
+    <bean id="cityDAO" class="com.ebanking.ws.dao.impl.address.CityDAOImpl"></bean>
+    <bean id="addressDAO" class="com.ebanking.ws.dao.impl.address.AddressDAOImpl"></bean>
+    <bean id="clientDAO" class="com.ebanking.ws.dao.impl.account.ClientDAOImpl"></bean>
+    <bean id="accountDAO" class="com.ebanking.ws.dao.impl.account.AccountDAOImpl"></bean>
+
+</beans>

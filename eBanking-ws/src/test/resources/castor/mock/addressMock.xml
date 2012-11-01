@@ -1,0 +1,11 @@
+<address>
+    <city>
+        <cityName>Moscow</cityName>
+        <country>
+            <countryName>Russia</countryName>
+        </country>
+    </city>
+    <region>Minsk</region>
+    <flatNumber>10</flatNumber>
+    <houseNumber>10</houseNumber>
+</address>

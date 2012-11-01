@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<!DOCTYPE mapping PUBLIC "-//EXOLAB/Castor Mapping DTD Version 1.0//EN"
+        "http://castor.org/mapping.dtd">
+
+<mapping>
+
+    <class name="com.ebanking.ws.model.address.Country">
+        <map-to xml="country"/>
+
+        <field name="countryId" type="long">
+            <bind-xml name="countryId" node="element"/>
+        </field>
+        <field name="countryName" type="java.lang.String">
+            <bind-xml name="countryName" node="element"/>
+        </field>
+    </class>
+
+    <class name="com.ebanking.ws.model.address.City">
+        <map-to xml="city"/>
+
+        <field name="cityId" type="long">
+            <bind-xml name="countryId" node="element"/>
+        </field>
+        <field name="cityName" type="java.lang.String">
+            <bind-xml name="cityName" node="element"/>
+        </field>
+        <field name="country" type="com.ebanking.ws.model.address.Country">
+            <bind-xml name="country" node="element"/>
+        </field>
+    </class>
+
+    <class name="com.ebanking.ws.model.address.Address">
+        <map-to xml="address"/>
+
+        <field name="addressId" type="long">
+            <bind-xml name="addressId" node="element"/>
+        </field>
+        <field name="city" type="com.ebanking.ws.model.address.City">
+            <bind-xml name="city" node="element"/>
+        </field>
+        <field name="region" type="java.lang.String">
+            <bind-xml name="region" node="element"/>
+        </field>
+        <field name="houseNumber" type="java.lang.String">
+            <bind-xml name="houseNumber" node="element"/>
+        </field>
+        <field name="flatNumber" type="java.lang.String">
+            <bind-xml name="flatNumber" node="element"/>
+        </field>
+    </class>
+
+    <class name="com.ebanking.ws.model.account.Role">
+        <map-to xml="role"/>
+
+        <field name="roleId" type="long">
+            <bind-xml name="roleId" node="element"/>
+        </field>
+        <field name="roleName" type="java.lang.String">
+            <bind-xml name="roleName" node="element"/>
+        </field>
+    </class>
+
+    <class name="com.ebanking.ws.model.account.Client">
+        <map-to xml="client"/>
+
+        <field name="clientId" type="long">
+            <bind-xml name="clientId" node="element"/>
+        </field>
+        <field name="firstname" type="java.lang.String">
+            <bind-xml name="firstname" node="element"/>
+        </field>
+        <field name="lastname" type="java.lang.String">
+            <bind-xml name="lastname" node="element"/>
+        </field>
+        <field name="middlename" type="java.lang.String">
+            <bind-xml name="middlename" node="element"/>
+        </field>
+        <field name="phoneNumber" type="java.lang.String">
+            <bind-xml name="phoneNumber" node="element"/>
+        </field>
+        <field name="mobileNumber" type="java.lang.String">
+            <bind-xml name="mobileNumber" node="element"/>
+        </field>
+        <field name="email" type="java.lang.String">
+            <bind-xml name="email" node="element"/>
+        </field>
+        <field name="secretWord" type="java.lang.String">
+            <bind-xml name="secretWord" node="element"/>
+        </field>
+        <field name="personalCode" type="java.lang.String">
+            <bind-xml name="personalCode" node="element"/>
+        </field>
+        <field name="address" type="com.ebanking.ws.model.address.Address">
+            <bind-xml name="address" node="element"/>
+        </field>
+    </class>
+
+    <class name="com.ebanking.ws.model.account.Account">
+        <map-to xml="account"/>
+
+        <field name="accountId" type="long">
+            <bind-xml name="accountId" node="element"/>
+        </field>
+        <field name="login" type="java.lang.String">
+            <bind-xml name="login" node="element"/>
+        </field>
+        <field name="password" type="java.lang.String">
+            <bind-xml name="password" node="element"/>
+        </field>
+        <field name="client" type="com.ebanking.ws.model.account.Client">
+            <bind-xml name="client" node="element"/>
+        </field>
+        <field name="role" type="com.ebanking.ws.model.account.Role">
+            <bind-xml name="role" node="element"/>
+        </field>
+    </class>
+
+</mapping>

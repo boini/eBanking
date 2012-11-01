@@ -1,36 +1,52 @@
 package com.ebanking.ws.model.account;
 
 import com.ebanking.ws.model.address.Address;
+import org.hibernate.annotations.*;
+import org.hibernate.annotations.CascadeType;
 
+import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
-/**
- * Created with IntelliJ IDEA.
- * User: antonkholodok
- * Date: 10/25/12
- * Time: 2:08 PM
- * To change this template use File | Settings | File Templates.
- */
+@Entity
+@Table(name = "CLIENT")
 public class Client {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CLIENT_SEQ_GEN")
+    @SequenceGenerator(name = "CLIENT_SEQ_GEN", sequenceName = "CLIENT_SEQ", allocationSize = 1)
+    @Column(name = "CLIENT_ID")
     private long clientId;
 
+    @Column(name = "FIRSTNAME", nullable = false)
     private String firstname;
+    @Column(name = "MIDDLENAME", nullable = false)
     private String middlename;
+    @Column(name = "LASTNAME", nullable = false)
     private String lastname;
+    @Column(name = "DATE_OF_BIRTH", nullable = false)
     private Date dateOfBirth;
+    @Column(name = "PHONE_NUMBER")
     private String phoneNumber;
+    @Column(name = "MOBILE_NUMBER")
     private String mobileNumber;
+    @Column(name = "PERSONAL_NUMBER", nullable = false)
     private String personalCode;
+    @Column(name = "SECRET_WORD", nullable = false)
     private String secretWord;
+    @Column(name = "EMAIL", nullable = false)
     private String email;
+
+    @ManyToOne
+    @Cascade(CascadeType.ALL)
+    @JoinColumn(name = "ADDRESS_ID")
     private Address address;
 
-    private Account account;
-    private Set cardAccounts;
-    private List operations;
+    /*private Set cardAccounts;
+    private List operations;*/
 
     public long getClientId() {
         return clientId;
@@ -120,7 +136,7 @@ public class Client {
         this.address = address;
     }
 
-    public Account getAccount() {
+    /*public Account getAccount() {
         return account;
     }
 
@@ -142,5 +158,44 @@ public class Client {
 
     public void setOperations(List operations) {
         this.operations = operations;
+    }*/
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Client client = (Client) o;
+
+        if (clientId != client.clientId) return false;
+        if (!address.equals(client.address)) return false;
+        if (dateOfBirth != null ? !dateOfBirth.equals(client.dateOfBirth) : client.dateOfBirth != null) return false;
+        if (!email.equals(client.email)) return false;
+        if (!firstname.equals(client.firstname)) return false;
+        if (!lastname.equals(client.lastname)) return false;
+        if (!middlename.equals(client.middlename)) return false;
+        if (mobileNumber != null ? !mobileNumber.equals(client.mobileNumber) : client.mobileNumber != null)
+            return false;
+        if (!personalCode.equals(client.personalCode)) return false;
+        if (phoneNumber != null ? !phoneNumber.equals(client.phoneNumber) : client.phoneNumber != null) return false;
+        if (!secretWord.equals(client.secretWord)) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = (int) (clientId ^ (clientId >>> 32));
+        result = 31 * result + firstname.hashCode();
+        result = 31 * result + middlename.hashCode();
+        result = 31 * result + lastname.hashCode();
+        result = 31 * result + (dateOfBirth != null ? dateOfBirth.hashCode() : 0);
+        result = 31 * result + (phoneNumber != null ? phoneNumber.hashCode() : 0);
+        result = 31 * result + (mobileNumber != null ? mobileNumber.hashCode() : 0);
+        result = 31 * result + personalCode.hashCode();
+        result = 31 * result + secretWord.hashCode();
+        result = 31 * result + email.hashCode();
+        result = 31 * result + address.hashCode();
+        return result;
     }
 }

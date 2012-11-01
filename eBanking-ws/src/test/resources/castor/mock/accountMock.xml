@@ -1,0 +1,31 @@
+<account>
+    <login>anton</login>
+    <password>anton</password>
+    <client>
+        <firstname>Anton</firstname>
+        <lastname>Kholodok</lastname>
+        <middlename>Alexandrovich</middlename>
+        <secretWord>secret</secretWord>
+        <personalCode>1234566788</personalCode>
+        <email>toshaskywalker@gmail.com</email>
+        <mobileNumber>123456677</mobileNumber>
+        <phoneNumber>123456677</phoneNumber>
+        <address>
+            <city>
+                <cityName>Moscow</cityName>
+                <country>
+                    <countryName>Russia</countryName>
+                </country>
+            </city>
+            <region>Minsk</region>
+            <flatNumber>10</flatNumber>
+            <houseNumber>10</houseNumber>
+        </address>
+    </client>
+    <role>
+        <roleId>1</roleId>
+        <roleName>ROLE_ADMIN</roleName>
+    </role>
+</account>
+
+

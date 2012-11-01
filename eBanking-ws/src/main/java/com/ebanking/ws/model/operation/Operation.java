@@ -5,25 +5,47 @@ import com.ebanking.ws.model.card.Card;
 import com.ebanking.ws.model.card.CardAccount;
 import com.ebanking.ws.model.finance.Amount;
 
+import javax.persistence.*;
 import java.util.Date;
 
-/**
- * Created with IntelliJ IDEA.
- * User: antonkholodok
- * Date: 10/25/12
- * Time: 2:53 PM
- * To change this template use File | Settings | File Templates.
- */
+@Entity
+@Table(name = "OPERATION")
 public class Operation {
+
+    @Id
+    @GeneratedValue
+    @Column(name = "OPERATION_ID")
     private long operationId;
+
+    @ManyToOne
+    @JoinColumn(name = "OPERATION_STATUS_ID")
     private OperationStatus operationStatus;
+
+    @ManyToOne
+    @JoinColumn(name = "OPERATION_TYPE_ID")
     private OperationType operationType;
+
+    @Column(name = "OPERATION_KEY")
     private String operationKey;
+
+    @Column(name = "TRANSACTION_DATE")
     private Date transactionDate;
+
+    @Column(name = "PROCESSING_DATE")
     private Date processingDate;
+
+    @ManyToOne
+    @JoinColumn(name = "ADDRESS_ID")
     private Address address;
-    private Amount transactionAmount;
+/*
+    private Amount transactionAmount;*/
+
+    @ManyToOne
+    @JoinColumn(name = "CARD_ID")
     private Card card;
+
+    @ManyToOne
+    @JoinColumn(name = "CONTRACTOR_ACCOUNT_ID")
     private CardAccount contractorAccount;
 
     public long getOperationId() {
@@ -81,14 +103,14 @@ public class Operation {
     public void setAddress(Address address) {
         this.address = address;
     }
-
+/*
     public Amount getTransactionAmount() {
         return transactionAmount;
     }
 
     public void setTransactionAmount(Amount transactionAmount) {
         this.transactionAmount = transactionAmount;
-    }
+    }*/
 
     public Card getCard() {
         return card;

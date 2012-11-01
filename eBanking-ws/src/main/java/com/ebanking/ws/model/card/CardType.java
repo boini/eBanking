@@ -1,15 +1,17 @@
 package com.ebanking.ws.model.card;
 
-/**
- * Created with IntelliJ IDEA.
- * User: antonkholodok
- * Date: 10/25/12
- * Time: 2:14 PM
- * To change this template use File | Settings | File Templates.
- */
+import javax.persistence.*;
+
+@Entity
+@Table(name = "CARD_TYPE")
 public class CardType {
+    @Id
+    @GeneratedValue
+    @Column(name = "CARD_TYPE_ID")
     private long cardTypeId;
+    @Column(name = "CARD_TYPE_NAME")
     private String cardTypeName;
+    @Column(name = "DESCRIPTION")
     private String description;
 
     public long getCardTypeId() {

@@ -1,25 +1,36 @@
 package com.ebanking.ws.model.card;
 
 import com.ebanking.ws.model.finance.Amount;
+import org.hibernate.annotations.Type;
 
+import javax.persistence.*;
 import java.util.Date;
 
-/**
- * Created with IntelliJ IDEA.
- * User: antonkholodok
- * Date: 10/25/12
- * Time: 2:17 PM
- * To change this template use File | Settings | File Templates.
- */
+@Entity
+@Table(name = "CARD")
 public class Card {
 
+    @Id
+    @GeneratedValue
+    @Column(name = "CARD_ID")
     private long cardId;
 
+    @ManyToOne
+    @JoinColumn(name = "CARD_TYPE_ID")
     private CardType cardType;
+
+    @Column(name = "EXPIRATION_DATE")
     private Date expirationDate;
+
+    @Column(name = "CARD_NUMBER")
     private String cardNumber;
+
+    @Column(name = "CVV")
     private String cvv;
-    private Amount creditLimit;
+/*
+    @Type(type = "com.ebanking.ws.model.finance.AmountType")
+    @Column(name = "CREDIT_LIMIT")
+    private Amount creditLimit;*/
 
     public long getCardId() {
         return cardId;
@@ -61,11 +72,11 @@ public class Card {
         this.cvv = cvv;
     }
 
-    public Amount getCreditLimit() {
+    /*public Amount getCreditLimit() {
         return creditLimit;
     }
 
     public void setCreditLimit(Amount creditLimit) {
         this.creditLimit = creditLimit;
-    }
+    }*/
 }
