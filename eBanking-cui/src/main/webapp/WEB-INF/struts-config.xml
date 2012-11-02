@@ -5,8 +5,9 @@
         "http://struts.apache.org/dtds/struts-config_1_3.dtd">
 
 <struts-config>
-    <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
-    <plug-in className="org.apache.struts.tiles.TilesPlugin">
-        <set-property value="/WEB-INF/tiles-defs.xml" property="definitions-config"/>
-    </plug-in>
+    <action-mappings>
+        <action path="/login" type="com.ebanking.cui.presentation.action.LoginForward">
+            <forward name="success" path="jsp/login.jsp" />
+        </action>
+    </action-mappings>
 </struts-config>
