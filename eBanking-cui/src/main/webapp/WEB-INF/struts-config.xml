@@ -7,7 +7,16 @@
 <struts-config>
     <action-mappings>
         <action path="/login" type="com.ebanking.cui.presentation.action.LoginForward">
-            <forward name="success" path="jsp/login.jsp" />
+            <forward name="success" path="/jsp/login.jsp"/>
+        </action>
+        <action path="/landing" type="com.ebanking.cui.presentation.action.LoginForward">
+            <forward name="success" path="landing.tiles"/>
         </action>
     </action-mappings>
+
+    <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
+    <plug-in className="org.apache.struts.tiles.TilesPlugin">
+        <set-property value="/WEB-INF/tiles-defs.xml" property="definitions-config"/>
+    </plug-in>
+
 </struts-config>

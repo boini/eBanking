@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <div class="container">
+    <div class="container login-container">
 
         <form class="form-signin" action="<c:url value='j_spring_security_check'/>" method="POST">
             <h3 class="form-signin-heading">Please sign in</h3>

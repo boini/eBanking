@@ -7,9 +7,9 @@
 	http://www.springframework.org/schema/security
 	http://www.springframework.org/schema/security/spring-security-3.1.xsd">
 
-    <http auto-config="true" use-expressions="true">
-        <form-login login-page="/login" default-target-url="/login" authentication-failure-url="/login?error=true"/>
-        <logout logout-success-url="/login" />
+    <http auto-config="true">
+        <form-login login-page="/login.do" default-target-url="/landing.do" authentication-failure-url="/login.do?error=true"/>
+        <logout logout-success-url="/login.do"/>
     </http>
 
     <authentication-manager>
@@ -19,4 +19,5 @@
             </user-service>
         </authentication-provider>
     </authentication-manager>
+
 </beans:beans>
