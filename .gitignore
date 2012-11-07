@@ -1,5 +1,10 @@
-/testProject/target/*
-/testProject/classes/*
-/testProject/.idea/*
-/testProject/*.iml
-/testProject/*.ipr
+/eBanking-cui/target/*
+/eBanking-cui/classes/*
+/eBanking-cui/.idea/*
+/eBanking-cui/*.iml
+/eBanking-cui/*.ipr
+/eBanking-ws/target/*
+/eBanking-ws/classes/*
+/eBanking-ws/.idea/*
+/eBanking-ws/*.iml
+/eBanking-ws/*.ipr
