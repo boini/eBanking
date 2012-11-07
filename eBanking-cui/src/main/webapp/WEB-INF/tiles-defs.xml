@@ -18,9 +18,9 @@
         </putList>
     </definition>
     
-    <definition name="landing.tiles" extends="baseLayout">
+    <definition name="main.tiles" extends="baseLayout">
         <put name="title" value="eBanking"/>
-        <put name="body" value="/jsp/landing.jsp"/>
+        <put name="body" value="/jsp/main.jsp"/>
         <putList name="styles">
             <add value="/css/normalize.css"/>
             <add value="/css/bootstrap.css"/>

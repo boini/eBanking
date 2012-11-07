@@ -1,12 +1,14 @@
 <%@ taglib prefix="tiles" uri="http://struts.apache.org/tags-tiles"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>
-        <tiles:insert name="title"/>
-    </title>
+
+    <tiles:useAttribute name="title"/>
+    <title><bean:message key="${title}" /></title>
+
     <tiles:useAttribute id="styles" name="styles" classname="java.util.List" />
     <c:forEach items="${styles}" var="style">
         <link rel="stylesheet" href="${style}" />

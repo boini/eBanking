@@ -10,7 +10,7 @@
             <forward name="success" path="/jsp/login.jsp"/>
         </action>
         <action path="/landing" type="com.ebanking.cui.presentation.action.LoginForward">
-            <forward name="success" path="landing.tiles"/>
+            <forward name="success" path="main.tiles"/>
         </action>
     </action-mappings>
 
