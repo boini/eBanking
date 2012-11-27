@@ -1,71 +1,47 @@
 /**
- * Role.java
+ * LoginClientRQ.java
  *
  * This file was auto-generated from WSDL
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package com.ebanking.cui.model.account;
+package com.ebanking.cui.service.request;
 
-public class Role  implements java.io.Serializable {
-    private long roleId;
+public class LoginClientRQ  implements java.io.Serializable {
+    private java.lang.String login;
 
-    private java.lang.String roleName;
-
-    public Role() {
+    public LoginClientRQ() {
     }
 
-    public Role(
-           long roleId,
-           java.lang.String roleName) {
-           this.roleId = roleId;
-           this.roleName = roleName;
+    public LoginClientRQ(
+           java.lang.String login) {
+           this.login = login;
     }
 
 
     /**
-     * Gets the roleId value for this Role.
+     * Gets the login value for this LoginClientRQ.
      * 
-     * @return roleId
+     * @return login
      */
-    public long getRoleId() {
-        return roleId;
+    public java.lang.String getLogin() {
+        return login;
     }
 
 
     /**
-     * Sets the roleId value for this Role.
+     * Sets the login value for this LoginClientRQ.
      * 
-     * @param roleId
+     * @param login
      */
-    public void setRoleId(long roleId) {
-        this.roleId = roleId;
-    }
-
-
-    /**
-     * Gets the roleName value for this Role.
-     * 
-     * @return roleName
-     */
-    public java.lang.String getRoleName() {
-        return roleName;
-    }
-
-
-    /**
-     * Sets the roleName value for this Role.
-     * 
-     * @param roleName
-     */
-    public void setRoleName(java.lang.String roleName) {
-        this.roleName = roleName;
+    public void setLogin(java.lang.String login) {
+        this.login = login;
     }
 
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
-        if (!(obj instanceof Role)) return false;
-        Role other = (Role) obj;
+        if (!(obj instanceof LoginClientRQ)) return false;
+        LoginClientRQ other = (LoginClientRQ) obj;
         if (obj == null) return false;
         if (this == obj) return true;
         if (__equalsCalc != null) {
@@ -74,10 +50,9 @@ public class Role  implements java.io.Serializable {
         __equalsCalc = obj;
         boolean _equals;
         _equals = true && 
-            this.roleId == other.getRoleId() &&
-            ((this.roleName==null && other.getRoleName()==null) || 
-             (this.roleName!=null &&
-              this.roleName.equals(other.getRoleName())));
+            ((this.login==null && other.getLogin()==null) || 
+             (this.login!=null &&
+              this.login.equals(other.getLogin())));
         __equalsCalc = null;
         return _equals;
     }
@@ -89,9 +64,8 @@ public class Role  implements java.io.Serializable {
         }
         __hashCodeCalc = true;
         int _hashCode = 1;
-        _hashCode += new Long(getRoleId()).hashCode();
-        if (getRoleName() != null) {
-            _hashCode += getRoleName().hashCode();
+        if (getLogin() != null) {
+            _hashCode += getLogin().hashCode();
         }
         __hashCodeCalc = false;
         return _hashCode;
@@ -99,19 +73,13 @@ public class Role  implements java.io.Serializable {
 
     // Type metadata
     private static org.apache.axis.description.TypeDesc typeDesc =
-        new org.apache.axis.description.TypeDesc(Role.class, true);
+        new org.apache.axis.description.TypeDesc(LoginClientRQ.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://account.model.ws.ebanking.com", "Role"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://request.service.ws.ebanking.com", "LoginClientRQ"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("roleId");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://account.model.ws.ebanking.com", "roleId"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
-        elemField.setNillable(false);
-        typeDesc.addFieldDesc(elemField);
-        elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("roleName");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://account.model.ws.ebanking.com", "roleName"));
+        elemField.setFieldName("login");
+        elemField.setXmlName(new javax.xml.namespace.QName("http://request.service.ws.ebanking.com", "login"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);

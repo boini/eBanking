@@ -1,71 +1,71 @@
 /**
- * Country.java
+ * LoginClientRS.java
  *
  * This file was auto-generated from WSDL
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package com.ebanking.cui.model.address;
+package com.ebanking.cui.service.response;
 
-public class Country  implements java.io.Serializable {
-    private long countryId;
+public class LoginClientRS  implements java.io.Serializable {
+    private com.ebanking.cui.model.account.Account account;
 
-    private java.lang.String countryName;
+    private java.lang.String login;
 
-    public Country() {
+    public LoginClientRS() {
     }
 
-    public Country(
-           long countryId,
-           java.lang.String countryName) {
-           this.countryId = countryId;
-           this.countryName = countryName;
-    }
-
-
-    /**
-     * Gets the countryId value for this Country.
-     * 
-     * @return countryId
-     */
-    public long getCountryId() {
-        return countryId;
+    public LoginClientRS(
+            com.ebanking.cui.model.account.Account account,
+           java.lang.String login) {
+           this.account = account;
+           this.login = login;
     }
 
 
     /**
-     * Sets the countryId value for this Country.
+     * Gets the account value for this LoginClientRS.
      * 
-     * @param countryId
+     * @return account
      */
-    public void setCountryId(long countryId) {
-        this.countryId = countryId;
+    public com.ebanking.cui.model.account.Account getAccount() {
+        return account;
     }
 
 
     /**
-     * Gets the countryName value for this Country.
+     * Sets the account value for this LoginClientRS.
      * 
-     * @return countryName
+     * @param account
      */
-    public java.lang.String getCountryName() {
-        return countryName;
+    public void setAccount(com.ebanking.cui.model.account.Account account) {
+        this.account = account;
     }
 
 
     /**
-     * Sets the countryName value for this Country.
+     * Gets the login value for this LoginClientRS.
      * 
-     * @param countryName
+     * @return login
      */
-    public void setCountryName(java.lang.String countryName) {
-        this.countryName = countryName;
+    public java.lang.String getLogin() {
+        return login;
+    }
+
+
+    /**
+     * Sets the login value for this LoginClientRS.
+     * 
+     * @param login
+     */
+    public void setLogin(java.lang.String login) {
+        this.login = login;
     }
 
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
-        if (!(obj instanceof Country)) return false;
-        Country other = (Country) obj;
+        if (!(obj instanceof LoginClientRS)) return false;
+        LoginClientRS other = (LoginClientRS) obj;
         if (obj == null) return false;
         if (this == obj) return true;
         if (__equalsCalc != null) {
@@ -74,10 +74,12 @@ public class Country  implements java.io.Serializable {
         __equalsCalc = obj;
         boolean _equals;
         _equals = true && 
-            this.countryId == other.getCountryId() &&
-            ((this.countryName==null && other.getCountryName()==null) || 
-             (this.countryName!=null &&
-              this.countryName.equals(other.getCountryName())));
+            ((this.account==null && other.getAccount()==null) || 
+             (this.account!=null &&
+              this.account.equals(other.getAccount()))) &&
+            ((this.login==null && other.getLogin()==null) || 
+             (this.login!=null &&
+              this.login.equals(other.getLogin())));
         __equalsCalc = null;
         return _equals;
     }
@@ -89,9 +91,11 @@ public class Country  implements java.io.Serializable {
         }
         __hashCodeCalc = true;
         int _hashCode = 1;
-        _hashCode += new Long(getCountryId()).hashCode();
-        if (getCountryName() != null) {
-            _hashCode += getCountryName().hashCode();
+        if (getAccount() != null) {
+            _hashCode += getAccount().hashCode();
+        }
+        if (getLogin() != null) {
+            _hashCode += getLogin().hashCode();
         }
         __hashCodeCalc = false;
         return _hashCode;
@@ -99,19 +103,19 @@ public class Country  implements java.io.Serializable {
 
     // Type metadata
     private static org.apache.axis.description.TypeDesc typeDesc =
-        new org.apache.axis.description.TypeDesc(Country.class, true);
+        new org.apache.axis.description.TypeDesc(LoginClientRS.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://address.model.ws.ebanking.com", "Country"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://response.service.ws.ebanking.com", "LoginClientRS"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("countryId");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://address.model.ws.ebanking.com", "countryId"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
-        elemField.setNillable(false);
+        elemField.setFieldName("account");
+        elemField.setXmlName(new javax.xml.namespace.QName("http://response.service.ws.ebanking.com", "account"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://account.model.ws.ebanking.com", "Account"));
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("countryName");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://address.model.ws.ebanking.com", "countryName"));
+        elemField.setFieldName("login");
+        elemField.setXmlName(new javax.xml.namespace.QName("http://response.service.ws.ebanking.com", "login"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
