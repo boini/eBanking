@@ -47,4 +47,6 @@ public interface AccountDAO {
      * @return Role instance
      */
     Role getRoleById(Long id);
+
+    Account getByLogin(String login);
 }

@@ -74,4 +74,12 @@ public class AccountDAOImpl extends CommonDAOImpl implements AccountDAO {
     public Role getRoleById(Long id) {
         return (Role) currentSession().get(Role.class, id);
     }
+
+    @Override
+    public Account getByLogin(String login) {
+        return (Account) currentSession().createQuery("from Account as account where account.login = ?")
+                .setString(0, login)
+                .list().get(0);
+
+    }
 }
