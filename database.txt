@@ -28,12 +28,12 @@ create table address (
     references city(city_id)
 );
 
-create table client (
+create table  (
   client_id number primary key,
   firstname varchar2(100) not null,
   middlename varchar2(100) not null,  
   lastname varchar2(100) not null,
-  date_of_birth date not null,
+  date_of_birth timestamp(0) not null,
   address_id number not null,
   phone_number varchar2(20),
   mobile_number varchar2(20),
@@ -58,6 +58,9 @@ create table account (
     foreign key (role_id)
     references role(role_id)
 );
+
+alter table account
+add constraint unique_login unique (login);
 
 create table card_type (
   card_type_id number primary key,
@@ -157,3 +160,38 @@ create table account_log (
     foreign key (account_id)
     references account(account_id)
 );
+
+create sequence country_seq
+minvalue 1
+maxvalue 9999999999999999
+start with 1
+increment by 1
+cache 20;
+
+create sequence city_seq
+minvalue 1
+maxvalue 9999999999999999
+start with 1
+increment by 1
+cache 20;
+
+create sequence address_seq
+minvalue 1
+maxvalue 9999999999999999
+start with 1
+increment by 1
+cache 20;
+
+create sequence client_seq
+minvalue 1
+maxvalue 9999999999999999
+start with 1
+increment by 1
+cache 20;
+
+create sequence account_seq
+minvalue 1
+maxvalue 9999999999999999
+start with 1
+increment by 1
+cache 20;

@@ -1,4 +1,0 @@
-eBanking
-========
-
-KOFI project
