@@ -22,7 +22,7 @@ public class UserLoginServiceServiceLocator extends org.apache.axis.client.Servi
     }
 
     // Use to get a proxy class for UserLoginService
-    private java.lang.String UserLoginService_address = "http://localhost:8080/services/com/ebanking/ws/service/security/UserLoginService";
+    private java.lang.String UserLoginService_address = "http://localhost:8082/services/com/ebanking/ws/service/security/UserLoginService";
 
     public java.lang.String getUserLoginServiceAddress() {
         return UserLoginService_address;

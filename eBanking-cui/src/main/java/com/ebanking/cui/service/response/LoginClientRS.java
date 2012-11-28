@@ -7,8 +7,10 @@
 
 package com.ebanking.cui.service.response;
 
+import com.ebanking.cui.model.account.Account;
+
 public class LoginClientRS  implements java.io.Serializable {
-    private com.ebanking.cui.model.account.Account account;
+    private Account account;
 
     private java.lang.String login;
 
@@ -16,7 +18,7 @@ public class LoginClientRS  implements java.io.Serializable {
     }
 
     public LoginClientRS(
-            com.ebanking.cui.model.account.Account account,
+           Account account,
            java.lang.String login) {
            this.account = account;
            this.login = login;
@@ -28,7 +30,7 @@ public class LoginClientRS  implements java.io.Serializable {
      * 
      * @return account
      */
-    public com.ebanking.cui.model.account.Account getAccount() {
+    public Account getAccount() {
         return account;
     }
 
@@ -38,7 +40,7 @@ public class LoginClientRS  implements java.io.Serializable {
      * 
      * @param account
      */
-    public void setAccount(com.ebanking.cui.model.account.Account account) {
+    public void setAccount(Account account) {
         this.account = account;
     }
 

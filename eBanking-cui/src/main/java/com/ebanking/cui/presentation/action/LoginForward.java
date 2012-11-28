@@ -12,6 +12,8 @@ public class LoginForward extends Action {
 
     public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
                                  HttpServletResponse response) throws Exception {
+        System.setProperty("http.proxyHost", "");
+        System.setProperty("http.proxyPort", "");
         return mapping.findForward("success");
     }
 }

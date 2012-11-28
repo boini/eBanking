@@ -7,6 +7,12 @@
 
 package com.ebanking.cui.service.client.impl.security.login;
 
+import com.ebanking.cui.model.account.Account;
+import com.ebanking.cui.model.account.Client;
+import com.ebanking.cui.model.account.Role;
+import com.ebanking.cui.model.address.Address;
+import com.ebanking.cui.model.address.City;
+import com.ebanking.cui.model.address.Country;
 import com.ebanking.cui.service.request.LoginClientRQ;
 import com.ebanking.cui.service.response.LoginClientRS;
 
@@ -81,42 +87,42 @@ public class UserLoginServiceSoapBindingStub extends org.apache.axis.client.Stub
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
             qName = new javax.xml.namespace.QName("http://account.model.ws.ebanking.com", "Account");
             cachedSerQNames.add(qName);
-            cls = com.ebanking.cui.model.account.Account.class;
+            cls = Account.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://account.model.ws.ebanking.com", "Client");
             cachedSerQNames.add(qName);
-            cls = com.ebanking.cui.model.account.Client.class;
+            cls = Client.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://account.model.ws.ebanking.com", "Role");
             cachedSerQNames.add(qName);
-            cls = com.ebanking.cui.model.account.Role.class;
+            cls = Role.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://address.model.ws.ebanking.com", "Address");
             cachedSerQNames.add(qName);
-            cls = com.ebanking.cui.model.address.Address.class;
+            cls = Address.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://address.model.ws.ebanking.com", "City");
             cachedSerQNames.add(qName);
-            cls = com.ebanking.cui.model.address.City.class;
+            cls = City.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://address.model.ws.ebanking.com", "Country");
             cachedSerQNames.add(qName);
-            cls = com.ebanking.cui.model.address.Country.class;
+            cls = Country.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);

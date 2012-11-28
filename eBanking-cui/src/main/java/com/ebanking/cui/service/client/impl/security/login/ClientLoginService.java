@@ -23,9 +23,9 @@ public class ClientLoginService implements ServiceClient<LoginClientRQ, LoginCli
             LoginClientRS loginClientRS = (LoginClientRS) service.execute(request);
             return loginClientRS;
         } catch (RemoteException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            e.printStackTrace();
         } catch (ServiceException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            e.printStackTrace();
         }
         return new LoginClientRS();
     }

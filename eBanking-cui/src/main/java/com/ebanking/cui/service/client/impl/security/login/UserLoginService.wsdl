@@ -193,7 +193,7 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       <wsdl:port binding="impl:UserLoginServiceSoapBinding" name="UserLoginService">
 
-         <wsdlsoap:address location="http://localhost:8080/services/com/ebanking/ws/service/security/UserLoginService"/>
+         <wsdlsoap:address location="http://localhost:8082/services/com/ebanking/ws/service/security/UserLoginService"/>
 
       </wsdl:port>
 
