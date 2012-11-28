@@ -6,11 +6,13 @@ import com.ebanking.ws.dao.impl.CommonDAOImpl;
 import com.ebanking.ws.model.account.Account;
 import com.ebanking.ws.model.account.Client;
 import com.ebanking.ws.model.account.Role;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Transactional
+@Repository
 public class AccountDAOImpl extends CommonDAOImpl implements AccountDAO {
 
     /**

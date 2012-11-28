@@ -13,7 +13,7 @@ import java.util.Date;
 public class Operation {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "OPERATION_ID")
     private long operationId;
 

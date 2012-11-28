@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class OperationType {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "OPERATION_TYPE_ID")
     private long operationTypeId;
 

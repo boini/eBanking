@@ -24,7 +24,7 @@ public class AddressDAOImplTest {
 
     @Test
     public void test() throws Exception {
-        /*Address address = (Address) CastorMockUtil.createMock(CastorMockUtil.MockEntity.ADDRESS);
+        Address address = (Address) CastorMockUtil.createMock(CastorMockUtil.MockEntity.ADDRESS);
 
         List<Address> addressListOrigin = addressDAO.list();
         Assert.assertNotNull(addressListOrigin);
@@ -41,6 +41,6 @@ public class AddressDAOImplTest {
         addressDAO.delete(newAddress);
         addressList = addressDAO.list();
         Assert.assertNotNull(addressList);
-        Assert.assertEquals(addressList.size(), addressListOrigin.size());*/
+        Assert.assertEquals(addressList.size(), addressListOrigin.size());
     }
 }

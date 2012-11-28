@@ -3,11 +3,13 @@ package com.ebanking.ws.dao.impl;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 /**
  * Common DAO for all the DAO implementations
  * Contains session factory to use
  */
+@Repository
 public abstract class CommonDAOImpl {
     /**
      * Hibernate session factory

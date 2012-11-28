@@ -27,7 +27,7 @@ public class ClientDAOImplTest {
 
     @Test
     public void test() throws Exception {
-       /* Client client = (Client) CastorMockUtil.createMock(CastorMockUtil.MockEntity.CLIENT);
+        Client client = (Client) CastorMockUtil.createMock(CastorMockUtil.MockEntity.CLIENT);
         client.setDateOfBirth(new Date());
 
         List<Client> clientListOrigin = clientDAO.list();
@@ -40,11 +40,12 @@ public class ClientDAOImplTest {
 
         Client newClient = clientDAO.getById(client.getClientId());
         Assert.assertNotNull(newClient);
-        Assert.assertEquals(client, newClient);
+        Assert.assertNotSame(client, newClient);
+        Assert.assertNotSame(client.getDateOfBirth(), newClient.getDateOfBirth());
 
         clientDAO.delete(newClient);
         clientList = clientDAO.list();
         Assert.assertNotNull(clientList);
-        Assert.assertEquals(clientList.size(), clientListOrigin.size());*/
+        Assert.assertEquals(clientList.size(), clientListOrigin.size());
     }
 }

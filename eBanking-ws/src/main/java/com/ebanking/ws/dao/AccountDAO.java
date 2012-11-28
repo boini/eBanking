@@ -3,6 +3,7 @@ package com.ebanking.ws.dao;
 import com.ebanking.ws.model.account.Account;
 import com.ebanking.ws.model.account.Role;
 import com.ebanking.ws.model.address.City;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 

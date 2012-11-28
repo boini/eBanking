@@ -4,8 +4,12 @@
        xmlns:tx="http://www.springframework.org/schema/tx"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:bean="http://www.springframework.org/schema/beans"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xsi:schemaLocation="
+                http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+                http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd
+                http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.1.xsd
+                http://www.springframework.org/schema/tx
+                http://www.springframework.org/schema/tx/spring-tx.xsd">
 
     <import resource="spring-database.xml"/>
 
@@ -20,7 +24,7 @@
             <value>
                 hibernate.format_sql=true
                 hibernate.show_sql=true
-                hibernate.dialect=org.hibernate.dialect.Oracle10gDialect
+                hibernate.dialect=org.hibernate.dialect.MySQLDialect
             </value>
         </property>
     </bean>
@@ -28,7 +32,7 @@
     <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
-<!--
-    <tx:annotation-driven transaction-manager="transactionManager" />-->
+
+    <tx:annotation-driven transaction-manager="transactionManager" />
 
 </beans>

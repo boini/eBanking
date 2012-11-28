@@ -14,10 +14,10 @@
     <context:annotation-config />
 
     <bean id="testDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
-        <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
-        <property name="username" value="anton" />
-        <property name="password" value="anton" />
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://localhost:3306/ebanking" />
+        <property name="username" value="root" />
+        <property name="password" value="" />
     </bean>
 
     <bean id="testSessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
@@ -31,7 +31,7 @@
             <value>
                 hibernate.format_sql=true
                 hibernate.show_sql=true
-                hibernate.dialect=org.hibernate.dialect.Oracle10gDialect
+                hibernate.dialect=org.hibernate.dialect.MySQLDialect
             </value>
         </property>
     </bean>

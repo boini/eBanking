@@ -10,7 +10,7 @@ import java.util.Set;
 public class CardAccount {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "CARD_ACCOUNT_ID")
     private long cardAccountId;
 /*

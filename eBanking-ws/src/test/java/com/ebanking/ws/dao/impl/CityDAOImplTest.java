@@ -23,7 +23,7 @@ public class CityDAOImplTest {
 
     @Test
     public void test() throws Exception {
-        /*City city = (City) CastorMockUtil.createMock(CastorMockUtil.MockEntity.CITY);
+        City city = (City) CastorMockUtil.createMock(CastorMockUtil.MockEntity.CITY);
 
         List<City> cityListOrigin = cityDAO.list();
         Assert.assertNotNull(cityListOrigin);
@@ -40,6 +40,6 @@ public class CityDAOImplTest {
         cityDAO.delete(newCity);
         cityList = cityDAO.list();
         Assert.assertNotNull(cityList);
-        Assert.assertEquals(cityList.size(), cityListOrigin.size());*/
+        Assert.assertEquals(cityList.size(), cityListOrigin.size());
     }
 }

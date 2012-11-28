@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Table(name = "CARD_TYPE")
 public class CardType {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "CARD_TYPE_ID")
     private long cardTypeId;
     @Column(name = "CARD_TYPE_NAME")

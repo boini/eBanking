@@ -21,7 +21,7 @@ public class CountryDAOImplTest {
 
     @Test
     public void test() throws Exception {
-        /*Country country = (Country) CastorMockUtil.createMock(CastorMockUtil.MockEntity.COUNTRY);
+        Country country = (Country) CastorMockUtil.createMock(CastorMockUtil.MockEntity.COUNTRY);
 
         List<Country> countryListOrigin = countryDAO.list();
         Assert.assertNotNull(countryListOrigin);
@@ -38,6 +38,6 @@ public class CountryDAOImplTest {
         countryDAO.delete(newCountry);
         countryList = countryDAO.list();
         Assert.assertNotNull(countryList);
-        Assert.assertEquals(countryList.size(), countryListOrigin.size());*/
+        Assert.assertEquals(countryList.size(), countryListOrigin.size());
     }
 }
