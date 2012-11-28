@@ -11,5 +11,6 @@ http://www.springframework.org/schema/context/spring-context-3.1.xsd">
     <context:annotation-config />
 
     <bean id="loginClientService" class="com.ebanking.cui.service.client.impl.security.login.ClientLoginService"/>
+    <bean id="NBRBCurencyService" class="com.ebanking.cui.service.client.impl.currency.nbrb.NBRBCurrencyService"/>
 
 </beans>

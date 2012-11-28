@@ -52,12 +52,12 @@
         <beanMapping qname="ns:local" xmlns:ns="account" languageSpecificType="java:com.ebanking.ws.model.account.Account"/>
         <beanMapping qname="ns:local" xmlns:ns="client" languageSpecificType="java:com.ebanking.ws.model.account.Client"/>
         <beanMapping qname="ns:local" xmlns:ns="role" languageSpecificType="java:com.ebanking.ws.model.account.Role"/>
-        <beanMapping qname="ns:local" xmlns:ns="date" languageSpecificType="java:java.util.Date"/>
+        <!--<beanMapping qname="ns:local" xmlns:ns="date" languageSpecificType="java:java.util.Date"/>-->
         <beanMapping qname="ns:local" xmlns:ns="address" languageSpecificType="java:com.ebanking.ws.model.address.Address"/>
         <beanMapping qname="ns:local" xmlns:ns="city" languageSpecificType="java:com.ebanking.ws.model.address.City"/>
         <beanMapping qname="ns:local" xmlns:ns="country" languageSpecificType="java:com.ebanking.ws.model.address.Country"/>
 
-        <typeMapping qname="ns:AccountDAO" xmlns:ns="http://security.service.ws.ebanking.com"
+        <!--<typeMapping qname="ns:AccountDAO" xmlns:ns="http://security.service.ws.ebanking.com"
                      languageSpecificType="java:com.ebanking.ws.dao.AccountDAO"
                      serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
                      deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
@@ -106,7 +106,7 @@
                      languageSpecificType="java:com.ebanking.ws.service.request.LoginClientRQ"
                      serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
                      deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
-                     encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+                     encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>-->
     </service>
 
     <handler name="soapmonitor" type="java:org.apache.axis.handlers.SOAPMonitorHandler">

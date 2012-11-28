@@ -17,7 +17,7 @@
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
         <property name="url" value="jdbc:mysql://localhost:3306/ebanking" />
         <property name="username" value="root" />
-        <property name="password" value="" />
+        <property name="password" value="anton" />
     </bean>
 
     <bean id="testSessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">

@@ -1,9 +1,11 @@
 package com.ebanking.cui.presentation.action;
 
+import com.ebanking.cui.service.client.ServiceClient;
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,6 +16,10 @@ import javax.servlet.http.HttpServletResponse;
  * @param <RS> Response type
  */
 public abstract class BaseRQRSAction<RQ, RS> extends Action {
+
+    protected ServiceClient<RQ, RS> serviceClient;
+
+    public abstract void setServiceClient(ServiceClient<RQ, RS> serviceClient);
 
     /**
      * Prepare request instance
@@ -42,8 +48,7 @@ public abstract class BaseRQRSAction<RQ, RS> extends Action {
                                  HttpServletRequest request, HttpServletResponse response) throws Exception {
         final RQ requestObject = prepareRequest();
 
-        // TODO add integration with web service call
-        final RS responseObject = null;
+        final RS responseObject = serviceClient.execute(requestObject);
 
         String actionForwardPath = processResponse(responseObject);
         return mapping.findForward(actionForwardPath);
