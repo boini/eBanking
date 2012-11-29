@@ -1,4 +1,4 @@
-package com.ebanking.ws.service.security;
+package com.ebanking.ws.service.impl.security;
 
 import com.ebanking.ws.dao.AccountDAO;
 import com.ebanking.ws.model.account.Account;

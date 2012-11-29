@@ -1,50 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions targetNamespace="http://card.impl.service.ws.ebanking.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://card.impl.service.ws.ebanking.com" xmlns:intf="http://card.impl.service.ws.ebanking.com" xmlns:tns1="http://request.service.ws.ebanking.com" xmlns:tns2="http://response.service.ws.ebanking.com" xmlns:tns3="http://card.model.ws.ebanking.com" xmlns:tns4="http://account.model.ws.ebanking.com" xmlns:tns5="http://address.model.ws.ebanking.com" xmlns:tns6="http://finance.model.ws.ebanking.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<wsdl:definitions targetNamespace="http://client.impl.service.ws.ebanking.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://client.impl.service.ws.ebanking.com" xmlns:intf="http://client.impl.service.ws.ebanking.com" xmlns:tns1="http://request.service.ws.ebanking.com" xmlns:tns2="http://response.service.ws.ebanking.com" xmlns:tns3="http://account.model.ws.ebanking.com" xmlns:tns4="http://address.model.ws.ebanking.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 <!--WSDL created by Apache Axis version: 1.4
 Built on Apr 22, 2006 (06:55:48 PDT)-->
  <wsdl:types>
   <schema elementFormDefault="qualified" targetNamespace="http://request.service.ws.ebanking.com" xmlns="http://www.w3.org/2001/XMLSchema">
-   <import namespace="http://card.impl.service.ws.ebanking.com"/>
    <import namespace="http://response.service.ws.ebanking.com"/>
-   <import namespace="http://card.model.ws.ebanking.com"/>
    <import namespace="http://account.model.ws.ebanking.com"/>
    <import namespace="http://address.model.ws.ebanking.com"/>
-   <import namespace="http://finance.model.ws.ebanking.com"/>
-   <complexType name="CardAccountRQ">
+   <complexType name="FetchAccountRQ">
     <sequence>
-     <element name="clientId" type="xsd:long"/>
+     <element name="login" nillable="true" type="xsd:string"/>
+     <element name="password" nillable="true" type="xsd:string"/>
     </sequence>
    </complexType>
   </schema>
-  <schema elementFormDefault="qualified" targetNamespace="http://card.impl.service.ws.ebanking.com" xmlns="http://www.w3.org/2001/XMLSchema">
+  <schema elementFormDefault="qualified" targetNamespace="http://client.impl.service.ws.ebanking.com" xmlns="http://www.w3.org/2001/XMLSchema">
    <import namespace="http://response.service.ws.ebanking.com"/>
-   <import namespace="http://card.model.ws.ebanking.com"/>
    <import namespace="http://request.service.ws.ebanking.com"/>
    <import namespace="http://account.model.ws.ebanking.com"/>
    <import namespace="http://address.model.ws.ebanking.com"/>
-   <import namespace="http://finance.model.ws.ebanking.com"/>
-   <element name="request" type="tns1:CardAccountRQ"/>
-   <complexType name="ArrayOf_xsd_anyType">
-    <sequence>
-     <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:anyType"/>
-    </sequence>
-   </complexType>
-   <complexType name="ArrayOf_tns3_CardAccount">
-    <sequence>
-     <element maxOccurs="unbounded" minOccurs="0" name="item" type="tns3:CardAccount"/>
-    </sequence>
-   </complexType>
-   <element name="executeReturn" type="tns2:CardAccountRS"/>
+   <element name="request" type="tns1:FetchAccountRQ"/>
+   <element name="executeReturn" type="tns2:FetchAccountRS"/>
    <element name="x0" type="xsd:anyType"/>
    <element name="executeReturn1" type="xsd:anyType"/>
   </schema>
   <schema elementFormDefault="qualified" targetNamespace="http://address.model.ws.ebanking.com" xmlns="http://www.w3.org/2001/XMLSchema">
-   <import namespace="http://card.impl.service.ws.ebanking.com"/>
    <import namespace="http://response.service.ws.ebanking.com"/>
-   <import namespace="http://card.model.ws.ebanking.com"/>
    <import namespace="http://request.service.ws.ebanking.com"/>
    <import namespace="http://account.model.ws.ebanking.com"/>
-   <import namespace="http://finance.model.ws.ebanking.com"/>
    <complexType name="Country">
     <sequence>
      <element name="countryId" type="xsd:long"/>
@@ -55,13 +38,13 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
     <sequence>
      <element name="cityId" type="xsd:long"/>
      <element name="cityName" nillable="true" type="xsd:string"/>
-     <element name="country" nillable="true" type="tns5:Country"/>
+     <element name="country" nillable="true" type="tns4:Country"/>
     </sequence>
    </complexType>
    <complexType name="Address">
     <sequence>
      <element name="addressId" type="xsd:long"/>
-     <element name="city" nillable="true" type="tns5:City"/>
+     <element name="city" nillable="true" type="tns4:City"/>
      <element name="flatNumber" nillable="true" type="xsd:string"/>
      <element name="houseNumber" nillable="true" type="xsd:string"/>
      <element name="region" nillable="true" type="xsd:string"/>
@@ -69,15 +52,12 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
    </complexType>
   </schema>
   <schema elementFormDefault="qualified" targetNamespace="http://account.model.ws.ebanking.com" xmlns="http://www.w3.org/2001/XMLSchema">
-   <import namespace="http://card.impl.service.ws.ebanking.com"/>
    <import namespace="http://response.service.ws.ebanking.com"/>
-   <import namespace="http://card.model.ws.ebanking.com"/>
    <import namespace="http://request.service.ws.ebanking.com"/>
    <import namespace="http://address.model.ws.ebanking.com"/>
-   <import namespace="http://finance.model.ws.ebanking.com"/>
    <complexType name="Client">
     <sequence>
-     <element name="address" nillable="true" type="tns5:Address"/>
+     <element name="address" nillable="true" type="tns4:Address"/>
      <element name="clientId" type="xsd:long"/>
      <element name="dateOfBirth" nillable="true" type="xsd:dateTime"/>
      <element name="email" nillable="true" type="xsd:string"/>
@@ -90,49 +70,29 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      <element name="secretWord" nillable="true" type="xsd:string"/>
     </sequence>
    </complexType>
-  </schema>
-  <schema elementFormDefault="qualified" targetNamespace="http://finance.model.ws.ebanking.com" xmlns="http://www.w3.org/2001/XMLSchema">
-   <import namespace="http://card.impl.service.ws.ebanking.com"/>
-   <import namespace="http://response.service.ws.ebanking.com"/>
-   <import namespace="http://card.model.ws.ebanking.com"/>
-   <import namespace="http://request.service.ws.ebanking.com"/>
-   <import namespace="http://account.model.ws.ebanking.com"/>
-   <import namespace="http://address.model.ws.ebanking.com"/>
-   <complexType name="Currency">
+   <complexType name="Role">
     <sequence>
-     <element name="currencyCode" nillable="true" type="xsd:string"/>
-     <element name="currencyDescription" nillable="true" type="xsd:string"/>
-     <element name="currencyId" type="xsd:long"/>
+     <element name="roleId" type="xsd:long"/>
+     <element name="roleName" nillable="true" type="xsd:string"/>
     </sequence>
    </complexType>
-  </schema>
-  <schema elementFormDefault="qualified" targetNamespace="http://card.model.ws.ebanking.com" xmlns="http://www.w3.org/2001/XMLSchema">
-   <import namespace="http://card.impl.service.ws.ebanking.com"/>
-   <import namespace="http://response.service.ws.ebanking.com"/>
-   <import namespace="http://request.service.ws.ebanking.com"/>
-   <import namespace="http://account.model.ws.ebanking.com"/>
-   <import namespace="http://address.model.ws.ebanking.com"/>
-   <import namespace="http://finance.model.ws.ebanking.com"/>
-   <complexType name="CardAccount">
+   <complexType name="Account">
     <sequence>
-     <element name="balance" nillable="true" type="xsd:double"/>
-     <element name="cardAccountId" type="xsd:long"/>
-     <element name="cards" nillable="true" type="impl:ArrayOf_xsd_anyType"/>
-     <element name="client" nillable="true" type="tns4:Client"/>
-     <element name="currency" nillable="true" type="tns6:Currency"/>
+     <element name="accountId" type="xsd:long"/>
+     <element name="client" nillable="true" type="tns3:Client"/>
+     <element name="login" nillable="true" type="xsd:string"/>
+     <element name="password" nillable="true" type="xsd:string"/>
+     <element name="role" nillable="true" type="tns3:Role"/>
     </sequence>
    </complexType>
   </schema>
   <schema elementFormDefault="qualified" targetNamespace="http://response.service.ws.ebanking.com" xmlns="http://www.w3.org/2001/XMLSchema">
-   <import namespace="http://card.impl.service.ws.ebanking.com"/>
-   <import namespace="http://card.model.ws.ebanking.com"/>
    <import namespace="http://request.service.ws.ebanking.com"/>
    <import namespace="http://account.model.ws.ebanking.com"/>
    <import namespace="http://address.model.ws.ebanking.com"/>
-   <import namespace="http://finance.model.ws.ebanking.com"/>
-   <complexType name="CardAccountRS">
+   <complexType name="FetchAccountRS">
     <sequence>
-     <element name="cardAccounts" nillable="true" type="impl:ArrayOf_tns3_CardAccount"/>
+     <element name="account" nillable="true" type="tns3:Account"/>
     </sequence>
    </complexType>
   </schema>
@@ -141,14 +101,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
    <wsdl:message name="executeResponse1">
 
       <wsdl:part element="impl:executeReturn1" name="executeReturn">
-
-      </wsdl:part>
-
-   </wsdl:message>
-
-   <wsdl:message name="executeResponse">
-
-      <wsdl:part element="impl:executeReturn" name="executeReturn">
 
       </wsdl:part>
 
@@ -170,7 +122,15 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
-   <wsdl:portType name="CardAccountService">
+   <wsdl:message name="executeResponse">
+
+      <wsdl:part element="impl:executeReturn" name="executeReturn">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="FetchClientAccount">
 
       <wsdl:operation name="execute" parameterOrder="request">
 
@@ -198,7 +158,7 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:portType>
 
-   <wsdl:binding name="CardAccountServiceSoapBinding" type="impl:CardAccountService">
+   <wsdl:binding name="FetchClientAccountSoapBinding" type="impl:FetchClientAccount">
 
       <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
 
@@ -240,11 +200,11 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:binding>
 
-   <wsdl:service name="CardAccountServiceService">
+   <wsdl:service name="FetchClientAccountService">
 
-      <wsdl:port binding="impl:CardAccountServiceSoapBinding" name="CardAccountService">
+      <wsdl:port binding="impl:FetchClientAccountSoapBinding" name="FetchClientAccount">
 
-         <wsdlsoap:address location="http://localhost:8082/services/com/ebanking/ws/service/impl/card/CardAccountService"/>
+         <wsdlsoap:address location="http://localhost:8082/services/com/ebanking/ws/service/impl/client/FetchClientAccount"/>
 
       </wsdl:port>
 

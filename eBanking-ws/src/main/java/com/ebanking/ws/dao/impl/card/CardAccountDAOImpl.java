@@ -22,4 +22,9 @@ public class CardAccountDAOImpl extends CommonDAOImpl implements CardAccountDAO 
                 .setLong(0, id)
                 .list();
     }
+
+    @Override
+    public CardAccount getById(Long id) {
+        return (CardAccount) currentSession().get(CardAccount.class, id);
+    }
 }

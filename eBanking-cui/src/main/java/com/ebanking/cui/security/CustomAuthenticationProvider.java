@@ -4,6 +4,7 @@ import com.ebanking.cui.model.account.Account;
 import com.ebanking.cui.service.client.ServiceClient;
 import com.ebanking.cui.service.request.LoginClientRQ;
 import com.ebanking.cui.service.response.LoginClientRS;
+import com.ebanking.cui.session.HttpSessionUtil;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -55,7 +56,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
             throw new BadCredentialsException("Bad credentials");
         }
 
-        account.setPassword(null);
+        HttpSessionUtil.setClientAccount(account);
         List<GrantedAuthority> grantedAuthorityList = new ArrayList<GrantedAuthority>();
         grantedAuthorityList.add(new SimpleGrantedAuthority(account.getRole().toString()));
 

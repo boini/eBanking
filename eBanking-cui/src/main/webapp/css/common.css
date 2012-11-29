@@ -1,4 +1,7 @@
 body { font-size: 11px; }
+table { font-size: 11px; }
+
+.wrapper { min-width: 960px; }
 
 .login-container { padding-top: 40px; padding-bottom: 40px; }
 .navbar-inner { border-radius: 0px; }

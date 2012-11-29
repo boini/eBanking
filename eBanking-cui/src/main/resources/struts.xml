@@ -16,15 +16,34 @@
             <result name="success">/jsp/login.jsp</result>
         </action>
 
-        <action name="main" class="LoginForwardAction">
+        <action name="main" class="MainPageForwardAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">sessionRecreation</param>
+            </result>
+        </action>
+
+        <action name="sessionRecreation" class="SessionRecreationForwardAction">
             <result name="success" type="redirectAction">
                 <param name="actionName">nbrbCurrency</param>
             </result>
         </action>
 
         <action name="nbrbCurrency" class="NBRBCurrencyAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">fetchClientAccount</param>
+            </result>
+        </action>
+
+        <action name="fetchClientAccount" class="FetchClientAccountAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">updateCardAccount</param>
+            </result>
+        </action>
+
+        <action name="updateCardAccount" class="UpdateCardAccountAction">
             <result name="success" type="tiles">/main.tiles</result>
         </action>
+
     </package>
 
 </struts>

@@ -40,7 +40,8 @@ public class CardAccountService extends SpringSupportService implements Service<
                         card.setCardAccount(null);
                     }
                 }
-                cardAccountRS.setCardAccounts(cardAccounts);
+                CardAccount[] cardAccountsArray = cardAccounts.toArray(new CardAccount[cardAccounts.size()]);
+                cardAccountRS.setCardAccounts(cardAccountsArray);
             }
         }
         return cardAccountRS;

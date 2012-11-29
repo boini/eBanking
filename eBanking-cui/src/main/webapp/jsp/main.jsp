@@ -1,4 +1,12 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
+
 <div>
+    <div>
+        <s:property value="#session['CLIENT_ACCOUNT'].client.firstname" />
+        <s:property value="#session['CLIENT_ACCOUNT'].client.middlename" />
+        <s:property value="#session['CLIENT_ACCOUNT'].client.lastname" />
+        Добро пожаловать в систему "eBanking"
+    </div>
     <div id="quick-payment">
         <h3>Быстрая оплата услуг</h3>
         <ul>

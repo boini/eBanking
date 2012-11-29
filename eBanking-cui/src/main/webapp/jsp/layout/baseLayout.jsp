@@ -17,14 +17,15 @@
 <body>
     <tiles:insertAttribute name="header"/>
 
-    <div class="container-fluid">
+    <div class="container-fluid wrapper">
         <div class="row-fluid">
             <div class="span2">
                 <tiles:insertAttribute name="menu"/>
             </div>
-            <div class="span10">
+            <div class="span5">
                 <tiles:insertAttribute name="body"/>
             </div>
+            <div class="span5"></div>
         </div>
     </div>
 

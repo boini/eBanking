@@ -12,13 +12,13 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class CardAccountRS {
-    private List<CardAccount> cardAccounts;
+    private CardAccount[] cardAccounts;
 
-    public List<CardAccount> getCardAccounts() {
+    public CardAccount[] getCardAccounts() {
         return cardAccounts;
     }
 
-    public void setCardAccounts(List<CardAccount> cardAccounts) {
+    public void setCardAccounts(CardAccount[] cardAccounts) {
         this.cardAccounts = cardAccounts;
     }
 }

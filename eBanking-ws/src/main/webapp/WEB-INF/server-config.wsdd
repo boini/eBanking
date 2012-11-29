@@ -42,13 +42,29 @@
         <parameter name="className" value="org.apache.axis.monitor.SOAPMonitorService"/>
     </service>
     <service name="UserLoginService" provider="java:RPC" style="document" use="literal">
-        <parameter name="className" value="com.ebanking.ws.service.security.UserLoginService"/>
+        <parameter name="className" value="com.ebanking.ws.service.impl.security.UserLoginService"/>
         <parameter name="allowedMethods" value="*"/>
         <parameter name="scope" value="Application"/>
         <namespace>http://security.service.ws.ebanking.com</namespace>
 
         <beanMapping qname="ns:local" xmlns:ns="loginClientRQ" languageSpecificType="java:com.ebanking.ws.service.request.LoginClientRQ"/>
         <beanMapping qname="ns:local" xmlns:ns="loginClientRS" languageSpecificType="java:com.ebanking.ws.service.response.LoginClientRS"/>
+        <beanMapping qname="ns:local" xmlns:ns="account" languageSpecificType="java:com.ebanking.ws.model.account.Account"/>
+        <beanMapping qname="ns:local" xmlns:ns="client" languageSpecificType="java:com.ebanking.ws.model.account.Client"/>
+        <beanMapping qname="ns:local" xmlns:ns="role" languageSpecificType="java:com.ebanking.ws.model.account.Role"/>
+        <beanMapping qname="ns:local" xmlns:ns="address" languageSpecificType="java:com.ebanking.ws.model.address.Address"/>
+        <beanMapping qname="ns:local" xmlns:ns="city" languageSpecificType="java:com.ebanking.ws.model.address.City"/>
+        <beanMapping qname="ns:local" xmlns:ns="country" languageSpecificType="java:com.ebanking.ws.model.address.Country"/>
+
+    </service>
+    <service name="FetchClientAccount" provider="java:RPC" style="document" use="literal">
+        <parameter name="className" value="com.ebanking.ws.service.impl.client.FetchClientAccount"/>
+        <parameter name="allowedMethods" value="*"/>
+        <parameter name="scope" value="Application"/>
+        <namespace>http://client.impl.service.ws.ebanking.com</namespace>
+
+        <beanMapping qname="ns:local" xmlns:ns="fetchAccountRQ" languageSpecificType="java:com.ebanking.ws.service.request.FetchAccountRQ"/>
+        <beanMapping qname="ns:local" xmlns:ns="fetchAccountRS" languageSpecificType="java:com.ebanking.ws.service.response.FetchAccountRS"/>
         <beanMapping qname="ns:local" xmlns:ns="account" languageSpecificType="java:com.ebanking.ws.model.account.Account"/>
         <beanMapping qname="ns:local" xmlns:ns="client" languageSpecificType="java:com.ebanking.ws.model.account.Client"/>
         <beanMapping qname="ns:local" xmlns:ns="role" languageSpecificType="java:com.ebanking.ws.model.account.Role"/>
