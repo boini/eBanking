@@ -35,12 +35,6 @@
         </action>
 
         <action name="fetchClientAccount" class="FetchClientAccountAction">
-            <result name="success" type="redirectAction">
-                <param name="actionName">updateCardAccount</param>
-            </result>
-        </action>
-
-        <action name="updateCardAccount" class="UpdateCardAccountAction">
             <result name="success" type="tiles">/main.tiles</result>
         </action>
 
