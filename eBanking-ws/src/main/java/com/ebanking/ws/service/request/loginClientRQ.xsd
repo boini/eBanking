@@ -4,6 +4,7 @@
   <xs:complexType name="loginClientRQ">
     <xs:sequence>
       <xs:element name="login" type="xs:string" minOccurs="0"/>
+      <xs:element name="password" type="xs:string" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
 </xs:schema>

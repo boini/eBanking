@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+    <constant name="struts.objectFactory" value="spring"/>
+    <constant name="struts.devMode" value="true"/>
+
+    <package name="default" namespace="/" extends="struts-default">
+        <result-types>
+            <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult"/>
+        </result-types>
+
+        <action name="login" class="LoginForwardAction">
+            <result name="success">/jsp/login.jsp</result>
+        </action>
+
+        <action name="main" class="LoginForwardAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">nbrbCurrency</param>
+            </result>
+        </action>
+
+        <action name="nbrbCurrency" class="NBRBCurrencyAction">
+            <result name="success" type="tiles">/main.tiles</result>
+        </action>
+    </package>
+
+</struts>

@@ -82,6 +82,5 @@ public class AccountDAOImpl extends CommonDAOImpl implements AccountDAO {
         return (Account) currentSession().createQuery("from Account as account where account.login = ?")
                 .setString(0, login)
                 .list().get(0);
-
     }
 }

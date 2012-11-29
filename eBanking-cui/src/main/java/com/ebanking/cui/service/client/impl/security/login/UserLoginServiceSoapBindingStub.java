@@ -16,7 +16,7 @@ import com.ebanking.cui.model.address.Country;
 import com.ebanking.cui.service.request.LoginClientRQ;
 import com.ebanking.cui.service.response.LoginClientRS;
 
-public class UserLoginServiceSoapBindingStub extends org.apache.axis.client.Stub implements com.ebanking.cui.service.client.impl.security.login.UserLoginService_PortType {
+public class UserLoginServiceSoapBindingStub extends org.apache.axis.client.Stub implements UserLoginService_PortType {
     private java.util.Vector cachedSerClasses = new java.util.Vector();
     private java.util.Vector cachedSerQNames = new java.util.Vector();
     private java.util.Vector cachedSerFactories = new java.util.Vector();

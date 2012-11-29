@@ -7,7 +7,7 @@
 
 package com.ebanking.cui.service.client.impl.security.login;
 
-public class UserLoginServiceServiceLocator extends org.apache.axis.client.Service implements com.ebanking.cui.service.client.impl.security.login.UserLoginServiceService {
+public class UserLoginServiceServiceLocator extends org.apache.axis.client.Service implements UserLoginServiceService {
 
     public UserLoginServiceServiceLocator() {
     }
@@ -39,7 +39,7 @@ public class UserLoginServiceServiceLocator extends org.apache.axis.client.Servi
         UserLoginServiceWSDDServiceName = name;
     }
 
-    public com.ebanking.cui.service.client.impl.security.login.UserLoginService_PortType getUserLoginService() throws javax.xml.rpc.ServiceException {
+    public UserLoginService_PortType getUserLoginService() throws javax.xml.rpc.ServiceException {
        java.net.URL endpoint;
         try {
             endpoint = new java.net.URL(UserLoginService_address);
@@ -50,9 +50,9 @@ public class UserLoginServiceServiceLocator extends org.apache.axis.client.Servi
         return getUserLoginService(endpoint);
     }
 
-    public com.ebanking.cui.service.client.impl.security.login.UserLoginService_PortType getUserLoginService(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
+    public UserLoginService_PortType getUserLoginService(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
         try {
-            com.ebanking.cui.service.client.impl.security.login.UserLoginServiceSoapBindingStub _stub = new com.ebanking.cui.service.client.impl.security.login.UserLoginServiceSoapBindingStub(portAddress, this);
+            UserLoginServiceSoapBindingStub _stub = new UserLoginServiceSoapBindingStub(portAddress, this);
             _stub.setPortName(getUserLoginServiceWSDDServiceName());
             return _stub;
         }
@@ -72,8 +72,8 @@ public class UserLoginServiceServiceLocator extends org.apache.axis.client.Servi
      */
     public java.rmi.Remote getPort(Class serviceEndpointInterface) throws javax.xml.rpc.ServiceException {
         try {
-            if (com.ebanking.cui.service.client.impl.security.login.UserLoginService_PortType.class.isAssignableFrom(serviceEndpointInterface)) {
-                com.ebanking.cui.service.client.impl.security.login.UserLoginServiceSoapBindingStub _stub = new com.ebanking.cui.service.client.impl.security.login.UserLoginServiceSoapBindingStub(new java.net.URL(UserLoginService_address), this);
+            if (UserLoginService_PortType.class.isAssignableFrom(serviceEndpointInterface)) {
+                UserLoginServiceSoapBindingStub _stub = new UserLoginServiceSoapBindingStub(new java.net.URL(UserLoginService_address), this);
                 _stub.setPortName(getUserLoginServiceWSDDServiceName());
                 return _stub;
             }

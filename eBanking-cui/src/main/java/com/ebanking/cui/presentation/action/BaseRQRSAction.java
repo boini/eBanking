@@ -1,21 +1,14 @@
 package com.ebanking.cui.presentation.action;
 
 import com.ebanking.cui.service.client.ServiceClient;
-import org.apache.struts.action.Action;
-import org.apache.struts.action.ActionForm;
-import org.apache.struts.action.ActionForward;
-import org.apache.struts.action.ActionMapping;
-import org.springframework.beans.factory.annotation.Autowired;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import com.opensymphony.xwork2.ActionSupport;
 
 /**
  * Base request-response action for all the action classes
  * @param <RQ> Request type
  * @param <RS> Response type
  */
-public abstract class BaseRQRSAction<RQ, RS> extends Action {
+public abstract class BaseRQRSAction<RQ, RS> extends ActionSupport {
 
     protected ServiceClient<RQ, RS> serviceClient;
 
@@ -37,20 +30,14 @@ public abstract class BaseRQRSAction<RQ, RS> extends Action {
     /**
      * Action execute method. Prepares request, makes call to web services layer,
      * process response and finds path to action forward
-     * @param mapping ActionMapping instance
-     * @param form ActionForm to use
-     * @param request Http request instance
-     * @param response Http response instance
-     * @return ActionForward object
      * @throws Exception In case of error
      */
-    public ActionForward execute(ActionMapping mapping, ActionForm form,
-                                 HttpServletRequest request, HttpServletResponse response) throws Exception {
+    public String execute() throws Exception {
         final RQ requestObject = prepareRequest();
 
         final RS responseObject = serviceClient.execute(requestObject);
 
         String actionForwardPath = processResponse(responseObject);
-        return mapping.findForward(actionForwardPath);
+        return actionForwardPath;
     }
 }

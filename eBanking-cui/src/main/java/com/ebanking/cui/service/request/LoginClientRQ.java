@@ -10,12 +10,16 @@ package com.ebanking.cui.service.request;
 public class LoginClientRQ  implements java.io.Serializable {
     private java.lang.String login;
 
+    private java.lang.String password;
+
     public LoginClientRQ() {
     }
 
     public LoginClientRQ(
-           java.lang.String login) {
+           java.lang.String login,
+           java.lang.String password) {
            this.login = login;
+           this.password = password;
     }
 
 
@@ -38,6 +42,26 @@ public class LoginClientRQ  implements java.io.Serializable {
         this.login = login;
     }
 
+
+    /**
+     * Gets the password value for this LoginClientRQ.
+     * 
+     * @return password
+     */
+    public java.lang.String getPassword() {
+        return password;
+    }
+
+
+    /**
+     * Sets the password value for this LoginClientRQ.
+     * 
+     * @param password
+     */
+    public void setPassword(java.lang.String password) {
+        this.password = password;
+    }
+
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof LoginClientRQ)) return false;
@@ -52,7 +76,10 @@ public class LoginClientRQ  implements java.io.Serializable {
         _equals = true && 
             ((this.login==null && other.getLogin()==null) || 
              (this.login!=null &&
-              this.login.equals(other.getLogin())));
+              this.login.equals(other.getLogin()))) &&
+            ((this.password==null && other.getPassword()==null) || 
+             (this.password!=null &&
+              this.password.equals(other.getPassword())));
         __equalsCalc = null;
         return _equals;
     }
@@ -67,6 +94,9 @@ public class LoginClientRQ  implements java.io.Serializable {
         if (getLogin() != null) {
             _hashCode += getLogin().hashCode();
         }
+        if (getPassword() != null) {
+            _hashCode += getPassword().hashCode();
+        }
         __hashCodeCalc = false;
         return _hashCode;
     }
@@ -80,6 +110,12 @@ public class LoginClientRQ  implements java.io.Serializable {
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("login");
         elemField.setXmlName(new javax.xml.namespace.QName("http://request.service.ws.ebanking.com", "login"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setNillable(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("password");
+        elemField.setXmlName(new javax.xml.namespace.QName("http://request.service.ws.ebanking.com", "password"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);

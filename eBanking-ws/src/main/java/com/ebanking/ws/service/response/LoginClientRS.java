@@ -10,7 +10,6 @@ import com.ebanking.ws.model.account.Account;
  * To change this template use File | Settings | File Templates.
  */
 public class LoginClientRS {
-    private String login;
     private Account account;
 
     public Account getAccount() {
@@ -19,13 +18,5 @@ public class LoginClientRS {
 
     public void setAccount(Account account) {
         this.account = account;
-    }
-
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
     }
 }

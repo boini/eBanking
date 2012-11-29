@@ -15,6 +15,7 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
    <complexType name="LoginClientRQ">
     <sequence>
      <element name="login" nillable="true" type="xsd:string"/>
+     <element name="password" nillable="true" type="xsd:string"/>
     </sequence>
    </complexType>
   </schema>
@@ -97,7 +98,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
    <complexType name="LoginClientRS">
     <sequence>
      <element name="account" nillable="true" type="tns3:Account"/>
-     <element name="login" nillable="true" type="xsd:string"/>
     </sequence>
    </complexType>
   </schema>
@@ -105,25 +105,33 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    <wsdl:message name="executeResponse1">
 
-      <wsdl:part element="impl:executeReturn1" name="executeReturn"/>
+      <wsdl:part element="impl:executeReturn1" name="executeReturn">
+
+      </wsdl:part>
 
    </wsdl:message>
 
    <wsdl:message name="executeRequest1">
 
-      <wsdl:part element="impl:x0" name="x0"/>
+      <wsdl:part element="impl:x0" name="x0">
+
+      </wsdl:part>
 
    </wsdl:message>
 
    <wsdl:message name="executeRequest">
 
-      <wsdl:part element="impl:request" name="request"/>
+      <wsdl:part element="impl:request" name="request">
+
+      </wsdl:part>
 
    </wsdl:message>
 
    <wsdl:message name="executeResponse">
 
-      <wsdl:part element="impl:executeReturn" name="executeReturn"/>
+      <wsdl:part element="impl:executeReturn" name="executeReturn">
+
+      </wsdl:part>
 
    </wsdl:message>
 
@@ -131,17 +139,25 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       <wsdl:operation name="execute" parameterOrder="request">
 
-         <wsdl:input message="impl:executeRequest" name="executeRequest"/>
+         <wsdl:input message="impl:executeRequest" name="executeRequest">
 
-         <wsdl:output message="impl:executeResponse" name="executeResponse"/>
+       </wsdl:input>
+
+         <wsdl:output message="impl:executeResponse" name="executeResponse">
+
+       </wsdl:output>
 
       </wsdl:operation>
 
       <wsdl:operation name="execute" parameterOrder="x0">
 
-         <wsdl:input message="impl:executeRequest1" name="executeRequest1"/>
+         <wsdl:input message="impl:executeRequest1" name="executeRequest1">
 
-         <wsdl:output message="impl:executeResponse1" name="executeResponse1"/>
+       </wsdl:input>
+
+         <wsdl:output message="impl:executeResponse1" name="executeResponse1">
+
+       </wsdl:output>
 
       </wsdl:operation>
 

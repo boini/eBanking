@@ -10,7 +10,7 @@ package com.ebanking.cui.service.client.impl.security.login;
 public interface UserLoginServiceService extends javax.xml.rpc.Service {
     public java.lang.String getUserLoginServiceAddress();
 
-    public com.ebanking.cui.service.client.impl.security.login.UserLoginService_PortType getUserLoginService() throws javax.xml.rpc.ServiceException;
+    public UserLoginService_PortType getUserLoginService() throws javax.xml.rpc.ServiceException;
 
-    public com.ebanking.cui.service.client.impl.security.login.UserLoginService_PortType getUserLoginService(java.net.URL portAddress) throws javax.xml.rpc.ServiceException;
+    public UserLoginService_PortType getUserLoginService(java.net.URL portAddress) throws javax.xml.rpc.ServiceException;
 }

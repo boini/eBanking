@@ -1,5 +1,5 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!doctype html>
 <head>
@@ -12,12 +12,12 @@
 
     <div class="container login-container">
 
-        <form class="form-signin" action="<c:url value='j_spring_security_check'/>" method="POST">
-            <h3 class="form-signin-heading">Please sign in</h3>
-            <input type="text" name="j_username" class="input-block-level" placeholder="Email address">
-            <input type="password" name="j_password" class="input-block-level" placeholder="Password">
-            <button class="btn btn-big btn-primary" type="submit">Sign in</button>
-        </form>
+        <s:form cssClass="form-signin" action="/j_spring_security_check" method="post">
+            <h3 css="form-signin-heading">Please sign in</h3>
+            <s:textfield name="j_username" cssClass="input-block-level" placeholder="Email address" />
+            <s:password name="j_password" cssClass="input-block-level" placeholder="Password" />
+            <s:submit cssClass="btn btn-big btn-primary" label="Sign In" />
+        </s:form>
 
     </div>
 

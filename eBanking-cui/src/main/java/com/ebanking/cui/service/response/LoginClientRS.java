@@ -12,16 +12,12 @@ import com.ebanking.cui.model.account.Account;
 public class LoginClientRS  implements java.io.Serializable {
     private Account account;
 
-    private java.lang.String login;
-
     public LoginClientRS() {
     }
 
     public LoginClientRS(
-           Account account,
-           java.lang.String login) {
+           Account account) {
            this.account = account;
-           this.login = login;
     }
 
 
@@ -44,26 +40,6 @@ public class LoginClientRS  implements java.io.Serializable {
         this.account = account;
     }
 
-
-    /**
-     * Gets the login value for this LoginClientRS.
-     * 
-     * @return login
-     */
-    public java.lang.String getLogin() {
-        return login;
-    }
-
-
-    /**
-     * Sets the login value for this LoginClientRS.
-     * 
-     * @param login
-     */
-    public void setLogin(java.lang.String login) {
-        this.login = login;
-    }
-
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof LoginClientRS)) return false;
@@ -78,10 +54,7 @@ public class LoginClientRS  implements java.io.Serializable {
         _equals = true && 
             ((this.account==null && other.getAccount()==null) || 
              (this.account!=null &&
-              this.account.equals(other.getAccount()))) &&
-            ((this.login==null && other.getLogin()==null) || 
-             (this.login!=null &&
-              this.login.equals(other.getLogin())));
+              this.account.equals(other.getAccount())));
         __equalsCalc = null;
         return _equals;
     }
@@ -95,9 +68,6 @@ public class LoginClientRS  implements java.io.Serializable {
         int _hashCode = 1;
         if (getAccount() != null) {
             _hashCode += getAccount().hashCode();
-        }
-        if (getLogin() != null) {
-            _hashCode += getLogin().hashCode();
         }
         __hashCodeCalc = false;
         return _hashCode;
@@ -113,12 +83,6 @@ public class LoginClientRS  implements java.io.Serializable {
         elemField.setFieldName("account");
         elemField.setXmlName(new javax.xml.namespace.QName("http://response.service.ws.ebanking.com", "account"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://account.model.ws.ebanking.com", "Account"));
-        elemField.setNillable(true);
-        typeDesc.addFieldDesc(elemField);
-        elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("login");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://response.service.ws.ebanking.com", "login"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
     }

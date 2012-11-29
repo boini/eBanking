@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+        "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+    <definition name="/baseLayout" template="/jsp/layout/baseLayout.jsp">
+        <put-attribute name="title" value=""/>
+        <put-attribute name="header" value="/jsp/layout/header.jsp"/>
+        <put-attribute name="menu" value="/jsp/layout/menu.jsp"/>
+        <put-attribute name="body" value="/jsp/layout/body.jsp"/>
+        <put-attribute name="footer" value="/jsp/layout/footer.jsp"/>
+        <put-list-attribute name="styles"/>
+        <put-list-attribute name="scripts">
+            <add-attribute value="/js/jquery-1.8.2.js"/>
+            <add-attribute value="/js/bootstrap.js"/>
+        </put-list-attribute>
+    </definition>
+    
+    <definition name="/main.tiles" extends="/baseLayout">
+        <put-attribute name="title" value="eBanking"/>
+        <put-attribute name="body" value="/jsp/main.jsp"/>
+        <put-list-attribute name="styles">
+            <add-attribute value="/css/normalize.css"/>
+            <add-attribute value="/css/bootstrap.css"/>
+            <add-attribute value="/css/common.css"/>
+        </put-list-attribute>
+    </definition>
+
+</tiles-definitions>

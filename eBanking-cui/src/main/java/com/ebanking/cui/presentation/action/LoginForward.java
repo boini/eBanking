@@ -1,19 +1,10 @@
 package com.ebanking.cui.presentation.action;
 
-import org.apache.struts.action.Action;
-import org.apache.struts.action.ActionForm;
-import org.apache.struts.action.ActionForward;
-import org.apache.struts.action.ActionMapping;
+import com.opensymphony.xwork2.ActionSupport;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+public class LoginForward extends ActionSupport {
 
-public class LoginForward extends Action {
-
-    public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
-                                 HttpServletResponse response) throws Exception {
-        System.setProperty("http.proxyHost", "");
-        System.setProperty("http.proxyPort", "");
-        return mapping.findForward("success");
+    public String execute() throws Exception {
+        return "success";
     }
 }

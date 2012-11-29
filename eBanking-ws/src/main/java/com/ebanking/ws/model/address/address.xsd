@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
+  <xs:complexType name="country">
+    <xs:sequence>
+      <xs:element name="countryId" type="xs:long"/>
+      <xs:element name="countryName" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
   <xs:complexType name="city">
     <xs:sequence>
       <xs:element name="cityId" type="xs:long"/>
       <xs:element name="cityName" type="xs:string" minOccurs="0"/>
       <xs:element name="country" type="country" minOccurs="0"/>
-    </xs:sequence>
-  </xs:complexType>
-
-  <xs:complexType name="country">
-    <xs:sequence>
-      <xs:element name="countryId" type="xs:long"/>
-      <xs:element name="countryName" type="xs:string" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
 

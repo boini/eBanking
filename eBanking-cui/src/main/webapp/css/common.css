@@ -7,6 +7,6 @@ body { font-size: 11px; }
 .form-signin .form-signin-heading, .form-signin .checkbox { margin-bottom: 10px; }
 .form-signin input[type="text"], .form-signin input[type="password"] { font-size: 16px; height: auto; margin-bottom: 15px; padding: 7px 9px; }
 
-#quick-payment h3 { padding: 0; margin: 0; }
-#quick-payment ul { list-style: none; }
+#quick-payment h3 { padding: 0; margin: 0; margin-top: -10px; }
+#quick-payment ul { list-style: none; display: inline-block; }
 #quick-payment li { float: left; margin-right: 15px; }

@@ -7,6 +7,7 @@ import com.ebanking.cui.service.response.LoginClientRS;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
@@ -43,13 +44,15 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 
         final LoginClientRQ loginClientRQ = new LoginClientRQ();
         loginClientRQ.setLogin(login);
+        loginClientRQ.setPassword(password);
 
         LoginClientRS loginClientRS = loginClientService.execute(loginClientRQ);
 
         Account account = loginClientRS.getAccount();
 
-        if (account.getPassword().equals(password)) {
+        if (account == null) {
             LOGGER.error("Bad credentials");
+            throw new BadCredentialsException("Bad credentials");
         }
 
         account.setPassword(null);
