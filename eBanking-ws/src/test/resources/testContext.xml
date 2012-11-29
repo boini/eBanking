@@ -17,7 +17,7 @@
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
         <property name="url" value="jdbc:mysql://localhost:3306/ebanking" />
         <property name="username" value="root" />
-        <property name="password" value="anton" />
+        <property name="password" value="" />
     </bean>
 
     <bean id="testSessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
@@ -47,5 +47,6 @@
     <bean id="addressDAO" class="com.ebanking.ws.dao.impl.address.AddressDAOImpl"></bean>
     <bean id="clientDAO" class="com.ebanking.ws.dao.impl.account.ClientDAOImpl"></bean>
     <bean id="accountDAO" class="com.ebanking.ws.dao.impl.account.AccountDAOImpl"></bean>
+    <bean id="cardAccountDAO" class="com.ebanking.ws.dao.impl.card.CardAccountDAOImpl"></bean>
 
 </beans>

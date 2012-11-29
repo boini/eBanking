@@ -27,10 +27,32 @@ public class Card {
 
     @Column(name = "CVV")
     private String cvv;
-/*
-    @Type(type = "com.ebanking.ws.model.finance.AmountType")
+
     @Column(name = "CREDIT_LIMIT")
-    private Amount creditLimit;*/
+    private Double creditLimit;
+
+    @ManyToOne
+    @JoinColumn(name = "CARD_ACCOUNT_ID", nullable = false)
+    private CardAccount cardAccount;
+
+    @Transient
+    private Long cardAccountID;
+
+    public Long getCardAccountID() {
+        return cardAccountID;
+    }
+
+    public void setCardAccountID(Long cardAccountID) {
+        this.cardAccountID = cardAccountID;
+    }
+
+    public CardAccount getCardAccount() {
+        return cardAccount;
+    }
+
+    public void setCardAccount(CardAccount cardAccount) {
+        this.cardAccount = cardAccount;
+    }
 
     public long getCardId() {
         return cardId;
@@ -72,11 +94,11 @@ public class Card {
         this.cvv = cvv;
     }
 
-    /*public Amount getCreditLimit() {
+    public Double getCreditLimit() {
         return creditLimit;
     }
 
-    public void setCreditLimit(Amount creditLimit) {
+    public void setCreditLimit(Double creditLimit) {
         this.creditLimit = creditLimit;
-    }*/
+    }
 }

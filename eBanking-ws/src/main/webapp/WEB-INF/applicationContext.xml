@@ -11,6 +11,7 @@ http://www.springframework.org/schema/context/spring-context-3.1.xsd">
     <context:annotation-config />
 
     <bean id="accountDAO" class="com.ebanking.ws.dao.impl.account.AccountDAOImpl" />
+    <bean id="cardAccountDAO" class="com.ebanking.ws.dao.impl.card.CardAccountDAOImpl" />
 <!--
     <bean id="userLoginServiceBean" class="com.ebanking.ws.service.security.UserLoginService">
         <property name="accountDAO" ref="accountDAO" />

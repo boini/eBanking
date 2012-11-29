@@ -1,5 +1,10 @@
 package com.ebanking.ws.model.finance;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  * Created with IntelliJ IDEA.
  * User: antonkholodok
@@ -7,9 +12,15 @@ package com.ebanking.ws.model.finance;
  * Time: 2:16 PM
  * To change this template use File | Settings | File Templates.
  */
+@Entity
+@Table(name = "CURRENCY")
 public class Currency {
+    @Id
+    @Column(name = "CURRENCY_ID")
     private long currencyId;
+    @Column(name = "CURRENCY_CODE")
     private String currencyCode;
+    @Column(name = "DESCRIPTION")
     private String currencyDescription;
 
     public long getCurrencyId() {
