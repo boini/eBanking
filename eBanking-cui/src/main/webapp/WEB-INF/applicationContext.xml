@@ -16,11 +16,13 @@ http://www.springframework.org/schema/context/spring-context-3.1.xsd">
     <bean id="loginClientService" class="com.ebanking.cui.service.client.impl.security.login.ClientLoginService"/>
     <bean id="nbrbCurrencyService" class="com.ebanking.cui.service.client.impl.currency.nbrb.NBRBCurrencyService"/>
     <bean id="fetchClientAccountService" class="com.ebanking.cui.service.client.impl.client.account.FetchAccountService"/>
+    <bean id="clientCardsService" class="com.ebanking.cui.service.client.impl.client.card.ClientCardsService"/>
 
     <bean name="LoginForwardAction" class="com.ebanking.cui.presentation.action.LoginForward"/>
     <bean name="SessionRecreationForwardAction" class="com.ebanking.cui.presentation.action.SessionRecreationForwardAction"/>
     <bean name="NBRBCurrencyAction" class="com.ebanking.cui.presentation.action.currency.NBRBCurrencyAction"/>
     <bean name="MainPageForwardAction" class="com.ebanking.cui.presentation.action.MainPageForwardAction"/>
     <bean name="FetchClientAccountAction" class="com.ebanking.cui.presentation.action.client.FetchClientAccountAction"/>
+    <bean name="ClientCardsAction" class="com.ebanking.cui.presentation.action.client.ClientCardsAction"/>
 
 </beans>
