@@ -13,16 +13,20 @@ http://www.springframework.org/schema/context/spring-context-3.1.xsd">
     <context:component-scan base-package="com.ebanking.cui.service.client.impl"/>
     <context:component-scan base-package="com.ebanking.cui.security"/>
 
+    <bean id="clientInfoForm" class="com.ebanking.cui.presentation.form.ClientInfoForm"/>
+    <bean id="clientCardsInfoForm" class="com.ebanking.cui.presentation.form.ClientCardsInfoForm"/>
+    <bean id="nbrbCurrencyRatesForm" class="com.ebanking.cui.presentation.form.NBRBCurrencyRatesForm"/>
+
     <bean id="loginClientService" class="com.ebanking.cui.service.client.impl.security.login.ClientLoginService"/>
     <bean id="nbrbCurrencyService" class="com.ebanking.cui.service.client.impl.currency.nbrb.NBRBCurrencyService"/>
-    <bean id="cardAccountService" class="com.ebanking.cui.service.client.impl.card.account.CardAccountService"/>
     <bean id="fetchClientAccountService" class="com.ebanking.cui.service.client.impl.client.account.FetchAccountService"/>
+    <bean id="clientCardsService" class="com.ebanking.cui.service.client.impl.client.card.ClientCardsService"/>
 
     <bean name="LoginForwardAction" class="com.ebanking.cui.presentation.action.LoginForward"/>
     <bean name="SessionRecreationForwardAction" class="com.ebanking.cui.presentation.action.SessionRecreationForwardAction"/>
     <bean name="NBRBCurrencyAction" class="com.ebanking.cui.presentation.action.currency.NBRBCurrencyAction"/>
     <bean name="MainPageForwardAction" class="com.ebanking.cui.presentation.action.MainPageForwardAction"/>
-    <bean name="UpdateCardAccountAction" class="com.ebanking.cui.presentation.action.card.UpdateCardAccountAction"/>
     <bean name="FetchClientAccountAction" class="com.ebanking.cui.presentation.action.client.FetchClientAccountAction"/>
+    <bean name="ClientCardsAction" class="com.ebanking.cui.presentation.action.client.ClientCardsAction"/>
 
 </beans>

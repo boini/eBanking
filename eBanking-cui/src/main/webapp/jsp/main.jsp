@@ -1,23 +1,13 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <div>
-    <div>
-        <s:property value="#session['CLIENT_ACCOUNT'].client.firstname" />
-        <s:property value="#session['CLIENT_ACCOUNT'].client.middlename" />
-        <s:property value="#session['CLIENT_ACCOUNT'].client.lastname" />
+    <div id="greeting">
+        <h5>
+            <s:property value="#session['clientInfoForm'].fullName"/>
+        </h5>
         Добро пожаловать в систему "eBanking"
-    </div>
-    <div id="quick-payment">
-        <h3>Быстрая оплата услуг</h3>
-        <ul>
-            <li><img src="http://placehold.it/64x64" class="img-rounded"/></li>
-            <li><img src="http://placehold.it/64x64" class="img-rounded"/></li>
-            <li><img src="http://placehold.it/64x64" class="img-rounded"/></li>
-            <li><img src="http://placehold.it/64x64" class="img-rounded"/></li>
-            <li><img src="http://placehold.it/64x64" class="img-rounded"/></li>
-            <li><img src="http://placehold.it/64x64" class="img-rounded"/></li>
-            <li><img src="http://placehold.it/64x64" class="img-rounded"/></li>
-        </ul>
     </div>
 
     <div>
@@ -25,7 +15,6 @@
             <caption>Ваши карты (остаток по состоянию на 07.11.2012 17:25:51) </caption>
             <thead>
                 <tr>
-                    <th></th>
                     <th>Номер карты</th>
                     <th>Остаток</th>
                     <th>Лимит кредита</th>
@@ -34,22 +23,50 @@
                 </tr>
             </thead>
             <tbody>
+                <s:iterator value="#session['clientCardsForm'].cards" var="card">
+                    <tr>
+                        <td>
+                            <s:property value="#card.cardNumber"/>
+                        </td>
+                        <td>
+                            <s:property value="#card.cardAccount.balance"/>
+                        </td>
+                        <td>
+                            <s:property value="#card.creditLimit"/>
+                        </td>
+                        <td>
+                            <s:property value="#card.cardAccount.currency.currencyCode"/>
+                        </td>
+                        <td>
+                            <img src="http://placehold.it/64x32"/>
+                        </td>
+                    </tr>
+                </s:iterator>
+            </tbody>
+        </table>
+        <table class="table table-condensed table-hover">
+            <caption>Курсы валют по операциям с картами (по состоянию на 30.11.2012)</caption>
+            <thead>
+            <tr>
+                <th>Наименование валюты</th>
+                <th>Код</th>
+                <th>Курс</th>
+            </tr>
+            </thead>
+            <tbody>
+            <s:iterator value="#session['nbrbCurrencyRatesForm'].rates.dailyExRatesOnDate" var="rate">
                 <tr>
-                    <td>Изменить название</td>
-                    <td>1234XXXXXXXX5678</td>
-                    <td>123.45</td>
-                    <td>0.00</td>
-                    <td>USD</td>
-                    <td><img src="http://placehold.it/64x32"/></td>
+                    <td>
+                        <s:property value="#rate.curQuotName"/>
+                    </td>
+                    <td>
+                        <s:property value="#rate.curAbbreviation"/>
+                    </td>
+                    <td>
+                        <s:property value="#rate.curOfficialRate"/>
+                    </td>
                 </tr>
-                <tr>
-                    <td>Изменить название</td>
-                    <td>1234XXXXXXXX5678</td>
-                    <td>123.45</td>
-                    <td>0.00</td>
-                    <td>USD</td>
-                    <td><img src="http://placehold.it/64x32"/></td>
-                </tr>
+            </s:iterator>
             </tbody>
         </table>
     </div>

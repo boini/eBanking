@@ -2,6 +2,7 @@ package com.ebanking.cui.presentation.action.client;
 
 import com.ebanking.cui.model.account.Account;
 import com.ebanking.cui.presentation.action.BaseRQRSAction;
+import com.ebanking.cui.presentation.form.ClientInfoForm;
 import com.ebanking.cui.service.client.ServiceClient;
 import com.ebanking.cui.service.request.FetchAccountRQ;
 import com.ebanking.cui.service.response.FetchAccountRS;
@@ -19,6 +20,9 @@ import org.springframework.security.core.userdetails.User;
  * To change this template use File | Settings | File Templates.
  */
 public class FetchClientAccountAction extends BaseRQRSAction<FetchAccountRQ, FetchAccountRS> {
+
+    @Autowired
+    private ClientInfoForm clientInfoForm;
 
     @Override
     @Autowired
@@ -39,8 +43,13 @@ public class FetchClientAccountAction extends BaseRQRSAction<FetchAccountRQ, Fet
     @Override
     protected String processResponse(FetchAccountRS responseObject) {
         Account account = responseObject.getAccount();
-
         HttpSessionUtil.setClientAccount(account);
+
+        clientInfoForm.setFirstname(account.getClient().getFirstname());
+        clientInfoForm.setMiddlename(account.getClient().getMiddlename());
+        clientInfoForm.setLastname(account.getClient().getLastname());
+        HttpSessionUtil.setClientInfoForm(clientInfoForm);
+
         return "success";
     }
 }

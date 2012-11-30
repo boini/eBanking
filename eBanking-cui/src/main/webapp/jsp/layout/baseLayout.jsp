@@ -25,7 +25,9 @@
             <div class="span5">
                 <tiles:insertAttribute name="body"/>
             </div>
-            <div class="span5"></div>
+            <div class="span5">
+                <tiles:insertAttribute name="info"/>
+            </div>
         </div>
     </div>
 

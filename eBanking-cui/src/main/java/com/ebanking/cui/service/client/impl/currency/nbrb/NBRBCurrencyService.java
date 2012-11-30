@@ -4,6 +4,7 @@ import com.ebanking.cui.service.client.ServiceClient;
 
 import javax.xml.rpc.ServiceException;
 import java.rmi.RemoteException;
+import java.util.Calendar;
 
 /**
  * Created with IntelliJ IDEA.
@@ -12,15 +13,15 @@ import java.rmi.RemoteException;
  * Time: 9:40 PM
  * To change this template use File | Settings | File Templates.
  */
-public class NBRBCurrencyService implements ServiceClient<CurrenciesRef, CurrenciesRefResponseCurrenciesRefResult> {
+public class NBRBCurrencyService implements ServiceClient<Calendar, ExRatesDailyResponseExRatesDailyResult> {
 
 
     @Override
-    public CurrenciesRefResponseCurrenciesRefResult execute(CurrenciesRef request) {
+    public ExRatesDailyResponseExRatesDailyResult execute(Calendar calendar) {
         ExRatesLocator locator = new ExRatesLocator();
         try {
             ExRatesSoap_PortType service = locator.getExRatesSoap();
-            CurrenciesRefResponseCurrenciesRefResult result = service.currenciesRef(0);
+            ExRatesDailyResponseExRatesDailyResult result = service.exRatesDaily(calendar);
             return result;
         } catch (ServiceException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
