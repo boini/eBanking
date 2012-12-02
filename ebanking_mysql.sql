@@ -1,4 +1,4 @@
-CREATE DATABASE  IF NOT EXISTS `ebanking` /*!40100 DEFAULT CHARACTER SET latin1 */;
+CREATE DATABASE  IF NOT EXISTS `ebanking` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `ebanking`;
 -- MySQL dump 10.13  Distrib 5.5.16, for Win32 (x86)
 --
@@ -28,7 +28,7 @@ CREATE TABLE `role` (
   `role_id` int(11) NOT NULL AUTO_INCREMENT,
   `role_name` varchar(100) NOT NULL,
   PRIMARY KEY (`role_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -53,7 +53,7 @@ CREATE TABLE `country` (
   `country_name` varchar(100) NOT NULL,
   PRIMARY KEY (`country_id`),
   UNIQUE KEY `country_name_UNIQUE` (`country_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -80,7 +80,7 @@ CREATE TABLE `city` (
   PRIMARY KEY (`city_id`),
   KEY `city_country_fk_idx` (`country_id`),
   CONSTRAINT `fk_city_country` FOREIGN KEY (`country_id`) REFERENCES `country` (`country_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -110,7 +110,7 @@ CREATE TABLE `address` (
   PRIMARY KEY (`address_id`),
   KEY `address_sity_idx` (`city_id`),
   CONSTRAINT `fk_address_city` FOREIGN KEY (`city_id`) REFERENCES `city` (`city_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -145,7 +145,7 @@ CREATE TABLE `client` (
   PRIMARY KEY (`client_id`),
   KEY `address_client_idx` (`address_id`),
   CONSTRAINT `fk_client_address` FOREIGN KEY (`address_id`) REFERENCES `address` (`address_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -177,7 +177,7 @@ CREATE TABLE `account` (
   KEY `account_role_idx` (`role_id`),
   CONSTRAINT `fk_account_client` FOREIGN KEY (`client_id`) REFERENCES `client` (`client_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_account_role` FOREIGN KEY (`role_id`) REFERENCES `role` (`role_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -202,7 +202,7 @@ CREATE TABLE `card_type` (
   `card_type_name` varchar(100) NOT NULL,
   `description` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`card_type_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -226,7 +226,7 @@ CREATE TABLE `currency` (
   `currency_code` varchar(3) NOT NULL,
   `description` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`currency_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -255,7 +255,7 @@ CREATE TABLE `card_account` (
   KEY `card_account_currency_idx` (`currency_id`),
   CONSTRAINT `fk_card_account_client` FOREIGN KEY (`client_id`) REFERENCES `client` (`client_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_card_account_currency` FOREIGN KEY (`currency_id`) REFERENCES `currency` (`currency_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -287,7 +287,7 @@ CREATE TABLE `card` (
   KEY `card_type_card_fk_idx` (`card_type_id`),
   CONSTRAINT `fk_card_card_account` FOREIGN KEY (`card_account_id`) REFERENCES `card_account` (`card_account_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_card_card_type` FOREIGN KEY (`card_type_id`) REFERENCES `card_type` (`card_type_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -311,7 +311,7 @@ CREATE TABLE `operation_status` (
   `operation_status` varchar(100) NOT NULL,
   `description` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`operation_status_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -337,7 +337,7 @@ CREATE TABLE `operation_type` (
   `operation_type` varchar(100) NOT NULL,
   `description` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`operation_type_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -378,7 +378,7 @@ CREATE TABLE `operation` (
   CONSTRAINT `fk_operation_card_account` FOREIGN KEY (`contractor_account_id`) REFERENCES `card_account` (`card_account_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_operation_operation_status` FOREIGN KEY (`operation_status_id`) REFERENCES `operation_status` (`operation_status_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_operation_operation_type` FOREIGN KEY (`operation_type_id`) REFERENCES `operation_type` (`operation_type_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -403,7 +403,7 @@ CREATE TABLE `app_log` (
   `log_action` varchar(100) NOT NULL,
   `log_message` varchar(500) NOT NULL,
   PRIMARY KEY (`log_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -431,7 +431,7 @@ CREATE TABLE `account_log` (
   PRIMARY KEY (`log_id`),
   KEY `fk_account_log_account_idx` (`account_id`),
   CONSTRAINT `fk_account_log_account` FOREIGN KEY (`account_id`) REFERENCES `account` (`account_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
