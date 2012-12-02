@@ -44,6 +44,14 @@
             <result name="success" type="tiles">/main.tiles</result>
         </action>
 
+        <action name="onlineInfo" class="OnlineInfoForwardAction">
+            <result name="success" type="tiles">/online.tiles</result>
+        </action>
+
+        <action name="payment" class="PaymentActionForward">
+            <result name="success" type="tiles">/payment.tiles</result>
+        </action>
+
     </package>
 
 </struts>

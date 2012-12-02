@@ -29,4 +29,8 @@ http://www.springframework.org/schema/context/spring-context-3.1.xsd">
     <bean name="FetchClientAccountAction" class="com.ebanking.cui.presentation.action.client.FetchClientAccountAction"/>
     <bean name="ClientCardsAction" class="com.ebanking.cui.presentation.action.client.ClientCardsAction"/>
 
+    <bean name="OnlineInfoForwardAction" class="com.ebanking.cui.presentation.action.statement.OnlineInfoForwardAction"/>
+
+    <bean name="PaymentActionForward" class="com.ebanking.cui.presentation.action.payment.PaymentForwardAction"/>
+
 </beans>
