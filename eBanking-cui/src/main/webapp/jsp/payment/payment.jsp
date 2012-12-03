@@ -16,7 +16,7 @@
             <li>
                 Мобильная связь
                 <ul>
-                    <li>Velcom</li>
+                    <li><a href="/mobilePayment.action">Velcom</a></li>
                     <li>MTC</li>
                     <li>life:)</li>
                 </ul>

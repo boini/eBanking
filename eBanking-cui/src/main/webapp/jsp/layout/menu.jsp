@@ -19,5 +19,5 @@
 
     <li class="nav-header">Сервис</li>
     <li><a href="#">Поменять пароль</a></li>
-    <li><a href="#">Смена пароля</a></li>
+    <li><a href="#">Смена логина</a></li>
 </ul>

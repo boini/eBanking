@@ -14,7 +14,7 @@
 
         <s:form cssClass="form-signin" action="/j_spring_security_check" method="post">
             <h3 css="form-signin-heading">Please sign in</h3>
-            <s:textfield name="j_username" cssClass="input-block-level" placeholder="Email address" />
+            <s:textfield name="j_username" cssClass="input-block-level" placeholder="Login" />
             <s:password name="j_password" cssClass="input-block-level" placeholder="Password" />
             <s:submit cssClass="btn btn-big btn-primary" label="Sign In" />
         </s:form>

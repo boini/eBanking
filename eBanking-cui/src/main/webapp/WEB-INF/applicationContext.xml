@@ -16,6 +16,7 @@ http://www.springframework.org/schema/context/spring-context-3.1.xsd">
     <bean id="clientInfoForm" class="com.ebanking.cui.presentation.form.ClientInfoForm"/>
     <bean id="clientCardsInfoForm" class="com.ebanking.cui.presentation.form.ClientCardsInfoForm"/>
     <bean id="nbrbCurrencyRatesForm" class="com.ebanking.cui.presentation.form.NBRBCurrencyRatesForm"/>
+    <bean id="mobilePaymentForm" class="com.ebanking.cui.presentation.form.MobilePaymentForm"/>
 
     <bean id="loginClientService" class="com.ebanking.cui.service.client.impl.security.login.ClientLoginService"/>
     <bean id="nbrbCurrencyService" class="com.ebanking.cui.service.client.impl.currency.nbrb.NBRBCurrencyService"/>
@@ -32,5 +33,8 @@ http://www.springframework.org/schema/context/spring-context-3.1.xsd">
     <bean name="OnlineInfoForwardAction" class="com.ebanking.cui.presentation.action.statement.OnlineInfoForwardAction"/>
 
     <bean name="PaymentActionForward" class="com.ebanking.cui.presentation.action.payment.PaymentForwardAction"/>
+
+    <bean name="MobilePaymentAction" class="com.ebanking.cui.presentation.action.payment.mobile.MobilePaymentForwardAction"/>
+    <bean name="MobilePaymentForwardAction" class="com.ebanking.cui.presentation.action.payment.mobile.MobilePaymentAction"/>
 
 </beans>

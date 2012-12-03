@@ -52,6 +52,16 @@
             <result name="success" type="tiles">/payment.tiles</result>
         </action>
 
+        <action name="mobilePayment" class="MobilePaymentAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">mobilePaymentForward</param>
+            </result>
+        </action>
+
+        <action name="mobilePaymentForward" class="MobilePaymentForwardAction">
+            <result name="success" type="tiles">/mobileNumber.tiles</result>
+        </action>
+
     </package>
 
 </struts>
