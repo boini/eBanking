@@ -34,8 +34,8 @@ http://www.springframework.org/schema/context/spring-context-3.1.xsd">
 
     <bean name="PaymentActionForward" class="com.ebanking.cui.presentation.action.payment.PaymentForwardAction"/>
 
-    <bean name="MobilePaymentAction" class="com.ebanking.cui.presentation.action.payment.mobile.MobilePaymentForwardAction"/>
-    <bean name="MobilePaymentForwardAction" class="com.ebanking.cui.presentation.action.payment.mobile.MobilePaymentAction"/>
+    <bean name="MobilePaymentForwardAction" class="com.ebanking.cui.presentation.action.payment.mobile.MobilePaymentForwardAction"/>
+    <bean name="MobilePaymentAction" class="com.ebanking.cui.presentation.action.payment.mobile.MobilePaymentAction"/>
     <bean name="MobilePaymentReviewForwardAction" class="com.ebanking.cui.presentation.action.payment.mobile.MobilePaymentReviewForwardAction"/>
     <bean name="MobilePaymentAmountForwardAction" class="com.ebanking.cui.presentation.action.payment.mobile.MobilePaymentAmountForwardAction"/>
 
