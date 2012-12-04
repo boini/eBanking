@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.authentication.encoding.PasswordEncoder;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
@@ -28,6 +29,13 @@ import java.util.List;
 public class CustomAuthenticationProvider implements AuthenticationProvider {
 
     private ServiceClient<LoginClientRQ, LoginClientRS> loginClientService;
+
+    @Autowired
+    public void setPasswordEncoder(PasswordEncoder passwordEncoder) {
+        this.passwordEncoder = passwordEncoder;
+    }
+
+    private PasswordEncoder passwordEncoder;
 
     @Autowired
     public void setLoginClientService(ServiceClient<LoginClientRQ, LoginClientRS> loginClientService) {
