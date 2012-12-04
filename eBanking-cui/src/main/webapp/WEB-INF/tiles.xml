@@ -58,4 +58,24 @@
         </put-list-attribute>
     </definition>
 
+    <definition name="/mobileAmount.tiles" extends="/baseLayout">
+        <put-attribute name="title" value="eBanking"/>
+        <put-attribute name="body" value="/jsp/payment/mobile/amount.jsp"/>
+        <put-list-attribute name="styles">
+            <add-attribute value="/css/normalize.css"/>
+            <add-attribute value="/css/bootstrap.css"/>
+            <add-attribute value="/css/common.css"/>
+        </put-list-attribute>
+    </definition>
+
+    <definition name="/mobilePaymentReview.tiles" extends="/baseLayout">
+        <put-attribute name="title" value="eBanking"/>
+        <put-attribute name="body" value="/jsp/payment/mobile/review.jsp"/>
+        <put-list-attribute name="styles">
+            <add-attribute value="/css/normalize.css"/>
+            <add-attribute value="/css/bootstrap.css"/>
+            <add-attribute value="/css/common.css"/>
+        </put-list-attribute>
+    </definition>
+
 </tiles-definitions>

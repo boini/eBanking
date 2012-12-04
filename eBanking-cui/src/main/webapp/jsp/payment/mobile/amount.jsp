@@ -11,24 +11,22 @@
     </div>
 
     <div>
-        <s:form action="/mobilePaymentAmount" method="POST" id="mobileNumberForm">
+        <s:form action="/mobilePaymentReview" method="POST" id="mobileNumberForm">
             <td colspan="2">
                 <h5>Наименование услуги: Velcom</h5>
             </td>
-            <s:select list="#session['mobilePaymentForm'].cards"
-                      label="Оплатить со счёта"
-                      headerValue="-выберите счёт-"
-                      listKey="cardId"
-                      key="cardId"
-                      listValue="%{cardNumber + ' [' + cardType.cardTypeName + ' ' + cardAccount.balance + ' ' + cardAccount.currency.currencyCode + ']'}">
-
-            </s:select>
+            <s:textfield label="Оплатить со счета:"
+                         value="%{#session.mobilePaymentForm.activeCard.cardNumber}"
+                         disabled="true"/>
+            <s:textfield label="Cумма (%{#session.mobilePaymentForm.activeCard.cardAccount.currency.currencyCode}):"
+                         key="amount"/>
             <td colspan="2">
                 <h5>Дополнительные реквизиты</h5>
             </td>
-            <s:textfield key="number"
+            <s:textfield name="mobileNumber"
                          label="Номер телефона"
-                         placeholder="29ххххххх"/>
+                         value="%{#session['mobilePaymentForm'].number}"
+                         disabled="true"/>
             <td>
                 <s:submit value="Продолжить"/>
             </td>

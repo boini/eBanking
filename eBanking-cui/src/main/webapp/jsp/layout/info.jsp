@@ -5,10 +5,8 @@
 <div id="quick-payment">
     <h4>Быстрая оплата услуг</h4>
     <ul>
-        <li><img src="http://placehold.it/64x64" class="img-rounded"/></li>
-        <li><img src="http://placehold.it/64x64" class="img-rounded"/></li>
-        <li><img src="http://placehold.it/64x64" class="img-rounded"/></li>
-        <li><img src="http://placehold.it/64x64" class="img-rounded"/></li>
-        <li><img src="http://placehold.it/64x64" class="img-rounded"/></li>
+        <li><a href="/mobilePayment.action"><img src="../../img/velcom.png"/></a></li>
+        <li><img src="../../img/mts.png"/></li>
+        <li><img src="../../img/life.png"/></li>
     </ul>
 </div>
