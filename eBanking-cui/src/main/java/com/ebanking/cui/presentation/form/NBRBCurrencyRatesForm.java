@@ -2,6 +2,8 @@ package com.ebanking.cui.presentation.form;
 
 import com.ebanking.cui.model.rate.NewDataSet;
 
+import java.util.Date;
+
 /**
  * Created with IntelliJ IDEA.
  * User: antonkholodok
@@ -11,6 +13,15 @@ import com.ebanking.cui.model.rate.NewDataSet;
  */
 public class NBRBCurrencyRatesForm {
     private NewDataSet rates;
+    private Date date;
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
 
     public NewDataSet getRates() {
         return rates;
