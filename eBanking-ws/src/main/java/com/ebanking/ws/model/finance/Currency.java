@@ -46,4 +46,27 @@ public class Currency {
     public void setCurrencyDescription(String currencyDescription) {
         this.currencyDescription = currencyDescription;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Currency currency = (Currency) o;
+
+        if (currencyId != currency.currencyId) return false;
+        if (!currencyCode.equals(currency.currencyCode)) return false;
+        if (currencyDescription != null ? !currencyDescription.equals(currency.currencyDescription) : currency.currencyDescription != null)
+            return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = (int) (currencyId ^ (currencyId >>> 32));
+        result = 31 * result + currencyCode.hashCode();
+        result = 31 * result + (currencyDescription != null ? currencyDescription.hashCode() : 0);
+        return result;
+    }
 }
