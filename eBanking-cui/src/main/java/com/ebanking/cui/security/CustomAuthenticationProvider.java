@@ -49,7 +49,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
         UsernamePasswordAuthenticationToken auth = (UsernamePasswordAuthenticationToken) authentication;
 
         String login = String.valueOf(auth.getPrincipal());
-        String password = String.valueOf(auth.getCredentials());
+        String password = passwordEncoder.encodePassword(String.valueOf(auth.getCredentials()), "12345");
 
         final LoginClientRQ loginClientRQ = new LoginClientRQ();
         loginClientRQ.setLogin(login);
