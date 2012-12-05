@@ -22,6 +22,14 @@ SET time_zone = "+00:00";
 
 -- --------------------------------------------------------
 
+CREATE TABLE `corporation` (
+  `corporation_id` int(11) NOT NULL AUTO_INCREMENT,
+  `corporation_name` varchar(45) NOT NULL,
+  `description` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`corporation_id`),
+  UNIQUE KEY `corporation_name_UNIQUE` (`corporation_name`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8$$
+
 --
 -- Структура таблицы `account`
 --
@@ -267,7 +275,23 @@ INSERT INTO `currency` (`currency_id`, `currency_code`, `description`) VALUES
 -- Структура таблицы `operation`
 --
 
-CREATE TABLE IF NOT EXISTS `operation` (
+CREATE TABLE `bank_account` (
+  `bank_account_id` int(11) NOT NULL AUTO_INCREMENT,
+  `corporation_id` int(11) DEFAULT NULL,
+  `client_id` int(11) DEFAULT NULL,
+  `currency_id` int(11) NOT NULL,
+  `amount` decimal(20,2) NOT NULL DEFAULT '0.00',
+  PRIMARY KEY (`bank_account_id`),
+  KEY `corporation_id_idx` (`corporation_id`),
+  KEY `client_id_idx` (`client_id`),
+  KEY `currency_id_idx` (`currency_id`),
+  CONSTRAINT `corporation_id` FOREIGN KEY (`corporation_id`) REFERENCES `corporation` (`corporation_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `client_id` FOREIGN KEY (`client_id`) REFERENCES `client` (`client_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `currency_id` FOREIGN KEY (`currency_id`) REFERENCES `currency` (`currency_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8$$
+
+
+CREATE TABLE `operation` (
   `operation_id` int(11) NOT NULL AUTO_INCREMENT,
   `operation_status_id` int(11) NOT NULL,
   `operation_type_id` int(11) NOT NULL,
@@ -275,16 +299,24 @@ CREATE TABLE IF NOT EXISTS `operation` (
   `processing_date` timestamp NULL DEFAULT NULL,
   `transaction_date` timestamp NULL DEFAULT NULL,
   `card_id` int(11) NOT NULL,
-  `address_id` int(11) NOT NULL,
+  `address_id` int(11) DEFAULT NULL,
   `transaction_amount` decimal(20,2) NOT NULL DEFAULT '0.00',
-  `contractor_account_id` int(11) NOT NULL,
+  `contractor_bank_account_id` int(11) DEFAULT NULL,
+  `contractor_card_account_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`operation_id`),
   KEY `fk_operation_operation_status_idx` (`operation_status_id`),
   KEY `fk_operation_operation_type_idx` (`operation_type_id`),
   KEY `fk_operation_card_idx` (`card_id`),
   KEY `fk_operation_address_idx` (`address_id`),
-  KEY `fk_operation_card_account_idx` (`contractor_account_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  KEY `fk_operation_card_account_idx` (`contractor_bank_account_id`),
+  CONSTRAINT `fk_operation_address` FOREIGN KEY (`address_id`) REFERENCES `address` (`address_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_operation_bank_account` FOREIGN KEY (`contractor_bank_account_id`) REFERENCES `bank_account` (`bank_account_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_operation_card` FOREIGN KEY (`card_id`) REFERENCES `card` (`card_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_operation_operation_status` FOREIGN KEY (`operation_status_id`) REFERENCES `operation_status` (`operation_status_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_operation_operation_type` FOREIGN KEY (`operation_type_id`) REFERENCES `operation_type` (`operation_type_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8$$
+
+
 
 -- --------------------------------------------------------
 
@@ -390,3 +422,5 @@ ALTER TABLE `operation`
   ADD CONSTRAINT `fk_operation_card_account` FOREIGN KEY (`contractor_account_id`) REFERENCES `card_account` (`card_account_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_operation_operation_status` FOREIGN KEY (`operation_status_id`) REFERENCES `operation_status` (`operation_status_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_operation_operation_type` FOREIGN KEY (`operation_type_id`) REFERENCES `operation_type` (`operation_type_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+
