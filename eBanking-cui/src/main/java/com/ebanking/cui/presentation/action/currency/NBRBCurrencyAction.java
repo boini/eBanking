@@ -13,6 +13,7 @@ import org.w3c.dom.Node;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import java.util.Calendar;
+import java.util.Date;
 
 public class NBRBCurrencyAction extends BaseRQRSAction<Calendar, ExRatesDailyResponseExRatesDailyResult> {
 
@@ -39,6 +40,7 @@ public class NBRBCurrencyAction extends BaseRQRSAction<Calendar, ExRatesDailyRes
             JAXBContext jaxbContext = JAXBContext.newInstance(NewDataSet.class);
             NewDataSet newDataSet = (NewDataSet) jaxbContext.createUnmarshaller().unmarshal(node);
             nbrbCurrencyRatesForm.setRates(newDataSet);
+            nbrbCurrencyRatesForm.setDate(new Date());
             HttpSessionUtil.setNbrbRatesForm(nbrbCurrencyRatesForm);
         } catch (JAXBException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.

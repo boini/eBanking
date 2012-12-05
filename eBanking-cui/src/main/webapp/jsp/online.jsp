@@ -13,8 +13,8 @@
     <div>
 
         <div>
-            <span>Параметры формирования выписки</span>
-            <input type="radio" name="bankStatement"/>За последнюю неделю <br/>
+            <span>Параметры формирования выписки</span><br/>
+            <input type="radio" name="bankStatement" checked="checked"/>За последнюю неделю <br/>
             <input type="radio" name="bankStatement"/>За последний месяц
         </div>
 

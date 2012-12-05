@@ -92,6 +92,20 @@
         <beanMapping qname="ns:local" xmlns:ns="country" languageSpecificType="java:com.ebanking.ws.model.address.Country"/>
 
     </service>
+    <service name="PaymentService" provider="java:RPC" style="document" use="literal">
+        <parameter name="className" value="com.ebanking.ws.service.impl.payment.PaymentService"/>
+        <parameter name="allowedMethods" value="*"/>
+        <parameter name="scope" value="Application"/>
+        <namespace>http://payment.impl.service.ws.ebanking.com</namespace>
+
+        <beanMapping qname="ns:local" xmlns:ns="paymentRQ" languageSpecificType="java:com.ebanking.ws.service.request.PaymentRQ"/>
+        <beanMapping qname="ns:local" xmlns:ns="paymentRS" languageSpecificType="java:com.ebanking.ws.service.response.PaymentRS"/>
+        <beanMapping qname="ns:local" xmlns:ns="client" languageSpecificType="java:com.ebanking.ws.model.account.Client"/>
+        <beanMapping qname="ns:local" xmlns:ns="address" languageSpecificType="java:com.ebanking.ws.model.address.Address"/>
+        <beanMapping qname="ns:local" xmlns:ns="city" languageSpecificType="java:com.ebanking.ws.model.address.City"/>
+        <beanMapping qname="ns:local" xmlns:ns="country" languageSpecificType="java:com.ebanking.ws.model.address.Country"/>
+
+    </service>
 
     <handler name="soapmonitor" type="java:org.apache.axis.handlers.SOAPMonitorHandler">
         <parameter name="wsdlURL" value="/axis/SOAPMonitorService-impl.wsdl"/>

@@ -16,13 +16,9 @@
             <result name="success">/jsp/login.jsp</result>
         </action>
 
-        <action name="main" class="MainPageForwardAction">
-            <result name="success" type="redirectAction">
-                <param name="actionName">sessionRecreation</param>
-            </result>
-        </action>
+        <!-- Main page -->
 
-        <action name="sessionRecreation" class="SessionRecreationForwardAction">
+        <action name="main" class="SessionRecreationForwardAction">
             <result name="success" type="redirectAction">
                 <param name="actionName">nbrbCurrency</param>
             </result>
@@ -41,12 +37,22 @@
         </action>
 
         <action name="fetchClientAccount" class="FetchClientAccountAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">mainPageForward</param>
+            </result>
+        </action>
+
+        <action name="mainPageForward" class="MainPageForwardAction">
             <result name="success" type="tiles">/main.tiles</result>
         </action>
 
-        <action name="onlineInfo" class="OnlineInfoForwardAction">
+        <!-- Online info -->
+
+        <action name="onlineInfoForward" class="OnlineInfoForwardAction">
             <result name="success" type="tiles">/online.tiles</result>
         </action>
+
+        <!-- Payment -->
 
         <action name="payment" class="PaymentActionForward">
             <result name="success" type="tiles">/payment.tiles</result>
@@ -68,6 +74,10 @@
 
         <action name="mobilePaymentReview" class="MobilePaymentReviewForwardAction">
             <result name="success" type="tiles">/mobilePaymentReview.tiles</result>
+        </action>
+        
+        <action name="mobilePaymentSubmit" class="MobilePaymentSubmitAction">
+            <result name="success" type="tiles">/mobilePaymentSubmit.tiles</result>
         </action>
 
     </package>

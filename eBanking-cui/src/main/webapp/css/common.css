@@ -14,15 +14,16 @@ input[type="text"] { height: 30px; }
 .form-signin input[type="text"], .form-signin input[type="password"] { font-size: 16px; height: auto; margin-bottom: 15px; padding: 7px 9px; }
 
 .label { width: 150px; }
+#header ul { float: right;}
 
 #mobileNumberForm { width: 300px; }
 #mobileNumberForm select, #mobileNumberForm input[type="text"] { width: 300px; }
 
-#menu-header, #info-header { padding-left: 15px; width: 100%; display: block; background: #025D8C; height: 40px; margin-bottom: 10px; color: white; }
-#menu-header h5, #info-header h5 { margin: 0; padding-top: 10px; }
+#menu-header, #info-header { width: 100%; display: block; background: #025D8C; height: 40px; margin-bottom: 10px; color: white; }
+#menu-header h5, #info-header h5 { margin: 0; margin-left: 15px; padding-top: 10px; }
 
 #quick-payment h4 { padding: 0; margin: 0; margin-top: 10px; }
-#quick-payment ul { list-style: none; display: inline-block; margin: 20px 0; }
+#quick-payment ul { list-style: none; display: inline-block; margin: 10px 0; }
 #quick-payment li { float: left; margin-right: 15px; }
 #quick-payment img {max-width: 100px; max-height: 100px; border: 1px solid #999; }
 

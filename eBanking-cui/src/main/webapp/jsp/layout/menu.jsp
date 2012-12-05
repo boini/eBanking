@@ -5,9 +5,8 @@
     <li class="active"><a href="/main.action">Главная страница</a></li>
 
     <li class="nav-header">Выписки</li>
-    <li><a href="/onlineInfo.action">Онлайн информация</a></li>
+    <li><a href="/onlineInfoForward.action">Онлайн информация</a></li>
     <li><a href="#">Выписка по карт-счетам</a></li>
-    <li><a href="#">Выписка по счетам</a></li>
 
     <li class="nav-header">Платежи</li>
     <li><a href="/payment.action">Оплатить услуги</a></li>

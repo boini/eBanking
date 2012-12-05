@@ -12,7 +12,9 @@
 
     <div>
         <table class="table table-condensed table-hover">
-            <caption>Ваши карты (остаток по состоянию на 07.11.2012 17:25:51) </caption>
+            <caption>Ваши карты (остаток по состоянию на
+                <s:property value="#session['clientCardsForm'].date"/>
+                ) </caption>
             <thead>
                 <tr>
                     <th>Номер карты</th>
@@ -45,7 +47,9 @@
             </tbody>
         </table>
         <table class="table table-condensed table-hover">
-            <caption>Курсы валют по операциям с картами (по состоянию на 30.11.2012)</caption>
+            <caption>Курсы валют по операциям с картами (по состоянию на
+                <s:property value="#session['nbrbCurrencyRatesForm'].date"/>
+                )</caption>
             <thead>
             <tr>
                 <th>Наименование валюты</th>

@@ -14,6 +14,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -48,6 +49,7 @@ public class ClientCardsAction extends BaseRQRSAction<ClientCardsRQ, ClientCards
         Card[] cards = responseObject.getCards();
         List<Card> cardsList = new ArrayList<Card>(Arrays.asList(cards));
         clientCardsInfoForm.setCards(cardsList);
+        clientCardsInfoForm.setDate(new Date());
         HttpSessionUtil.setClientCardsForm(clientCardsInfoForm);
         return "success";
     }
