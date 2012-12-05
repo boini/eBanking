@@ -1,6 +1,7 @@
 <div id="menu-header">
     <h5>Выберите действие</h5>
 </div>
+
 <ul class="nav nav-list">
     <li class="active"><a href="/main.action">Главная страница</a></li>
 
