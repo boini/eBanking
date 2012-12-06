@@ -29,7 +29,7 @@
     </definition>
 
     <definition name="/online.tiles" extends="/baseLayout">
-        <put-attribute name="title" value="eBanking"/>
+        <put-attribute name="title" value="Online Info | eBanking"/>
         <put-attribute name="body" value="/jsp/online.jsp"/>
         <put-list-attribute name="styles">
             <add-attribute value="/css/normalize.css"/>
@@ -39,7 +39,7 @@
     </definition>
 
     <definition name="/payment.tiles" extends="/baseLayout">
-        <put-attribute name="title" value="eBanking"/>
+        <put-attribute name="title" value="Payment | eBanking"/>
         <put-attribute name="body" value="/jsp/payment/payment.jsp"/>
         <put-list-attribute name="styles">
             <add-attribute value="/css/normalize.css"/>
@@ -49,7 +49,7 @@
     </definition>
 
     <definition name="/mobileNumber.tiles" extends="/baseLayout">
-        <put-attribute name="title" value="eBanking"/>
+        <put-attribute name="title" value="Mobile Payment | eBanking"/>
         <put-attribute name="body" value="/jsp/payment/mobile/number.jsp"/>
         <put-list-attribute name="styles">
             <add-attribute value="/css/normalize.css"/>
@@ -59,7 +59,7 @@
     </definition>
 
     <definition name="/mobileAmount.tiles" extends="/baseLayout">
-        <put-attribute name="title" value="eBanking"/>
+        <put-attribute name="title" value="Mobile Payment | eBanking"/>
         <put-attribute name="body" value="/jsp/payment/mobile/amount.jsp"/>
         <put-list-attribute name="styles">
             <add-attribute value="/css/normalize.css"/>
@@ -69,7 +69,7 @@
     </definition>
 
     <definition name="/mobilePaymentReview.tiles" extends="/baseLayout">
-        <put-attribute name="title" value="eBanking"/>
+        <put-attribute name="title" value="Mobile Payment | eBanking"/>
         <put-attribute name="body" value="/jsp/payment/mobile/review.jsp"/>
         <put-list-attribute name="styles">
             <add-attribute value="/css/normalize.css"/>
@@ -79,7 +79,7 @@
     </definition>
 
     <definition name="/mobilePaymentSubmit.tiles" extends="/baseLayout">
-        <put-attribute name="title" value="eBanking"/>
+        <put-attribute name="title" value="Mobile Payment | eBanking"/>
         <put-attribute name="body" value="/jsp/payment/mobile/submit.jsp"/>
         <put-list-attribute name="styles">
             <add-attribute value="/css/normalize.css"/>

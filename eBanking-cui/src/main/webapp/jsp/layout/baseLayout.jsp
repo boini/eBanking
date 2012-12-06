@@ -6,8 +6,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-    <tiles:useAttribute name="title"/>
-    <title><bean:message key="${title}" /></title>
+    <title><tiles:insertAttribute name="title"/></title>
 
     <tiles:useAttribute id="styles" name="styles" classname="java.util.List" />
     <c:forEach items="${styles}" var="style">
