@@ -51,8 +51,8 @@ public class Operation {
     private BankAccount contractorAccount;
 
     @ManyToOne
-    @JoinColumn(name = "CONTRACTOR_CARD_ACCOUNT_ID")
-    private CardAccount contractorCardAccount;
+    @JoinColumn(name = "CONTRACTOR_CARD_ID")
+    private Card contractorCard;
 
     public double getTransactionAmount() {
         return transactionAmount;
@@ -134,12 +134,12 @@ public class Operation {
         this.contractorAccount = contractorAccount;
     }
 
-    public CardAccount getContractorCardAccount() {
-        return contractorCardAccount;
+    public Card getContractorCard() {
+        return contractorCard;
     }
 
-    public void setContractorCardAccount(CardAccount contractorCardAccount) {
-        this.contractorCardAccount = contractorCardAccount;
+    public void setContractorCard(Card contractorCard) {
+        this.contractorCard = contractorCard;
     }
 
     @Override
@@ -155,7 +155,7 @@ public class Operation {
                 ", transactionAmount=" + transactionAmount +
                 ", card=" + card +
                 ", contractorAccount=" + contractorAccount +
-                ", contractorCardAccount=" + contractorCardAccount +
+                ", contractorCard=" + contractorCard +
                 '}';
     }
 }
