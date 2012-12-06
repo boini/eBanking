@@ -1,11 +1,14 @@
 package com.ebanking.ws.service.impl.security;
 
 import com.ebanking.ws.dao.AccountDAO;
+import com.ebanking.ws.log.RQRSLogger;
 import com.ebanking.ws.model.account.Account;
 import com.ebanking.ws.service.Service;
 import com.ebanking.ws.service.SpringSupportService;
 import com.ebanking.ws.service.request.LoginClientRQ;
 import com.ebanking.ws.service.response.LoginClientRS;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;
@@ -18,6 +21,7 @@ public class UserLoginService extends SpringSupportService implements Service<Lo
     @Override
     @WebMethod
     public LoginClientRS execute(LoginClientRQ request) {
+        RQRSLogger.logRequest(request, UserLoginService.class);
 
         accountDAO = (AccountDAO) getBean("accountDAO");
 
@@ -30,6 +34,8 @@ public class UserLoginService extends SpringSupportService implements Service<Lo
         if (account.getPassword().equals(password)) {
             loginClientRS.setAccount(account);
         }
+
+        RQRSLogger.logRequest(loginClientRS, UserLoginService.class);
 
         return loginClientRS;
     }
