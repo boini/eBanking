@@ -22,6 +22,7 @@ http://www.springframework.org/schema/context/spring-context-3.1.xsd">
     <bean id="nbrbCurrencyService" class="com.ebanking.cui.service.client.impl.currency.nbrb.NBRBCurrencyService"/>
     <bean id="fetchClientAccountService" class="com.ebanking.cui.service.client.impl.client.account.FetchAccountService"/>
     <bean id="clientCardsService" class="com.ebanking.cui.service.client.impl.client.card.ClientCardsService"/>
+    <bean id="paymentService" class="com.ebanking.cui.service.client.impl.payment.PaymentService"/>
 
     <bean name="LoginForwardAction" class="com.ebanking.cui.presentation.action.LoginForward"/>
     <bean name="SessionRecreationForwardAction" class="com.ebanking.cui.presentation.action.SessionRecreationForwardAction"/>
@@ -38,5 +39,6 @@ http://www.springframework.org/schema/context/spring-context-3.1.xsd">
     <bean name="MobilePaymentAction" class="com.ebanking.cui.presentation.action.payment.mobile.MobilePaymentAction"/>
     <bean name="MobilePaymentReviewForwardAction" class="com.ebanking.cui.presentation.action.payment.mobile.MobilePaymentReviewForwardAction"/>
     <bean name="MobilePaymentAmountForwardAction" class="com.ebanking.cui.presentation.action.payment.mobile.MobilePaymentAmountForwardAction"/>
+    <bean name="MobilePaymentSubmitAction" class="com.ebanking.cui.presentation.action.payment.mobile.MobilePaymentSubmitAction"/>
 
 </beans>

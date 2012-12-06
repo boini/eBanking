@@ -2,20 +2,68 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:bean="http://www.springframework.org/schema/beans"
+       xmlns:aop="http://www.springframework.org/schema/aop"
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
 http://www.springframework.org/schema/context
-http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+http://www.springframework.org/schema/context/spring-context-3.1.xsd
+http://www.springframework.org/schema/aop
+http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
 
     <context:annotation-config />
+    <context:component-scan base-package="com.ebanking.ws"/>
+
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
+
+    <bean id="loginService" class="com.ebanking.ws.service.impl.security.UserLoginService"/>
 
     <bean id="accountDAO" class="com.ebanking.ws.dao.impl.account.AccountDAOImpl" />
     <bean id="cardAccountDAO" class="com.ebanking.ws.dao.impl.card.CardAccountDAOImpl" />
+    <bean id="bankAccountDAO" class="com.ebanking.ws.dao.impl.account.BankAccountDAOImpl" />
     <bean id="cardDAO" class="com.ebanking.ws.dao.impl.card.CardDAOImpl" />
-<!--
-    <bean id="userLoginServiceBean" class="com.ebanking.ws.service.security.UserLoginService">
-        <property name="accountDAO" ref="accountDAO" />
-    </bean>-->
+    <bean id="operationDAO" class="com.ebanking.ws.dao.impl.operation.OperationDAOImpl"/>
+    <bean id="operationStatusDAO" class="com.ebanking.ws.dao.impl.operation.OperationStatusDAOImpl"/>
+    <bean id="operationTypeDAO" class="com.ebanking.ws.dao.impl.operation.OperationTypeDAOImpl"/>
+    <bean id="corporationDAO" class="com.ebanking.ws.dao.impl.account.CorporationDAOImpl"/>
+
+    <bean id="cardAccountChecker" class="com.ebanking.ws.operation.checker.CardAccountChecker"/>
+    <bean id="bankAccountChecker" class="com.ebanking.ws.operation.checker.BankAccountChecker"/>
+
+    <bean id="moneyTransfer" class="com.ebanking.ws.operation.transfer.MoneyTransfer"/>
+
+    <bean id="paymentOperationProcessor" class="com.ebanking.ws.operation.payment.processor.PaymentOperationProcessor"/>
+
+    <bean id="securityLogger" class="com.ebanking.ws.log.SecurityLogManager"/>
+
+    <!--Spring Quartz-->
+    <bean name="runMeJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+        <property name="jobClass" value="com.ebanking.ws.operation.quartz.QuartzPaymentJob"/>
+        <property name="jobDataAsMap">
+            <map>
+                <entry key="runMeTask" value-ref="paymentPeekerService"/>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="paymentPeekerService" class="com.ebanking.ws.operation.quartz.PaymentPeekerService"/>
+
+    <bean id="cronTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="runMeJob"/>
+        <property name="cronExpression" value="0/15 * * * * ?"/>
+    </bean>
+
+    <bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="jobDetails">
+            <list>
+                <ref bean="runMeJob"/>
+            </list>
+        </property>
+        <property name="triggers">
+            <list>
+                <ref bean="cronTrigger"/>
+            </list>
+        </property>
+    </bean>
 
 </beans>

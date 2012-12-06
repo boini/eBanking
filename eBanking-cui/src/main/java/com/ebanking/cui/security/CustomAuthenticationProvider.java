@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.authentication.encoding.PasswordEncoder;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
@@ -18,16 +19,16 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created with IntelliJ IDEA.
- * User: antonkholodok
- * Date: 11/27/12
- * Time: 10:49 AM
- * To change this template use File | Settings | File Templates.
- */
 public class CustomAuthenticationProvider implements AuthenticationProvider {
 
     private ServiceClient<LoginClientRQ, LoginClientRS> loginClientService;
+
+    @Autowired
+    public void setPasswordEncoder(PasswordEncoder passwordEncoder) {
+        this.passwordEncoder = passwordEncoder;
+    }
+
+    private PasswordEncoder passwordEncoder;
 
     @Autowired
     public void setLoginClientService(ServiceClient<LoginClientRQ, LoginClientRS> loginClientService) {
@@ -41,7 +42,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
         UsernamePasswordAuthenticationToken auth = (UsernamePasswordAuthenticationToken) authentication;
 
         String login = String.valueOf(auth.getPrincipal());
-        String password = String.valueOf(auth.getCredentials());
+        String password = passwordEncoder.encodePassword(String.valueOf(auth.getCredentials()), "12345");
 
         final LoginClientRQ loginClientRQ = new LoginClientRQ();
         loginClientRQ.setLogin(login);

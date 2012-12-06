@@ -2,29 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c656b9c-ac99-40fa-9677-4b5202fe31e9" name="Default" comment="Added:&#10;- Some DAO implementations&#10;- Model&#10;- Hibernate annotation mapping&#10;- Spring/Hibernate config files&#10;- DAO tests + Castor mock util">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../eBanking-cui/.idea/libraries/Maven__antlr_antlr_2_7_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../eBanking-cui/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_8_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../eBanking-cui/.idea/libraries/Maven__commons_chain_commons_chain_1_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../eBanking-cui/.idea/libraries/Maven__commons_validator_commons_validator_1_3_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../eBanking-cui/.idea/libraries/Maven__javax_servlet_servlet_api_2_5.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../eBanking-cui/.idea/libraries/Maven__org_apache_struts_struts_core_1_3_10.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../eBanking-cui/.idea/libraries/Maven__org_apache_struts_struts_taglib_1_3_10.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../eBanking-cui/.idea/libraries/Maven__org_apache_struts_struts_tiles_1_3_10.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../eBanking-cui/.idea/libraries/Maven__oro_oro_2_0_8.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../eBanking-cui/.idea/libraries/spring_security_3_1_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../eBanking-cui/.idea/libraries/spring_security_3_1_3__2_.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../eBanking-cui/.idea/libraries/struts2_2_3_4_struts2_2_3_4.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../eBanking-cui/.idea/artifacts/eBanking_cui_war_exploded.xml" afterPath="$PROJECT_DIR$/../eBanking-cui/.idea/artifacts/eBanking_cui_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../eBanking-cui/.idea/compiler.xml" afterPath="$PROJECT_DIR$/../eBanking-cui/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../eBanking-cui/.idea/encodings.xml" afterPath="$PROJECT_DIR$/../eBanking-cui/.idea/encodings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../eBanking-cui/src/main/java/com/ebanking/cui/model/payment/ProviderName.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../eBanking-cui/src/main/java/com/ebanking/cui/presentation/action/payment/mobile/MobilePaymentSubmitAction.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../eBanking-cui/src/main/java/com/ebanking/cui/service/request/MobilePaymentRQ.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../eBanking-cui/src/main/java/com/ebanking/cui/service/response/MobilePaymentRS.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../eBanking-cui/src/main/webapp/img/life.png" afterPath="$PROJECT_DIR$/../eBanking-cui/src/main/webapp/img/life.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../eBanking-cui/src/main/webapp/img/mts.png" afterPath="$PROJECT_DIR$/../eBanking-cui/src/main/webapp/img/mts.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../eBanking-cui/src/main/webapp/img/velcom.png" afterPath="$PROJECT_DIR$/../eBanking-cui/src/main/webapp/img/velcom.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../eBanking-cui/.idea/misc.xml" afterPath="$PROJECT_DIR$/../eBanking-cui/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../eBanking-cui/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../eBanking-cui/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../eBanking-cui/eBanking-cui.iml" afterPath="$PROJECT_DIR$/../eBanking-cui/eBanking-cui.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../eBanking-cui/pom.xml" afterPath="$PROJECT_DIR$/../eBanking-cui/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/eBanking_ws_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/eBanking_ws_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../eBanking-cui/src/main/java/com/ebanking/cui/presentation/action/payment/mobile/MobilePaymentAction.java" afterPath="$PROJECT_DIR$/../eBanking-cui/src/main/java/com/ebanking/cui/presentation/action/payment/mobile/MobilePaymentAction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../eBanking-cui/src/main/java/com/ebanking/cui/presentation/action/payment/mobile/MobilePaymentForwardAction.java" afterPath="$PROJECT_DIR$/../eBanking-cui/src/main/java/com/ebanking/cui/presentation/action/payment/mobile/MobilePaymentForwardAction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../eBanking-cui/src/main/java/com/ebanking/cui/presentation/action/payment/mobile/MobilePaymentReviewForwardAction.java" afterPath="$PROJECT_DIR$/../eBanking-cui/src/main/java/com/ebanking/cui/presentation/action/payment/mobile/MobilePaymentReviewForwardAction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../eBanking-cui/src/main/java/com/ebanking/cui/presentation/form/MobilePaymentForm.java" afterPath="$PROJECT_DIR$/../eBanking-cui/src/main/java/com/ebanking/cui/presentation/form/MobilePaymentForm.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../eBanking-cui/src/main/webapp/WEB-INF/applicationContext.xml" afterPath="$PROJECT_DIR$/../eBanking-cui/src/main/webapp/WEB-INF/applicationContext.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../eBanking-cui/src/main/webapp/WEB-INF/spring-security.xml" afterPath="$PROJECT_DIR$/../eBanking-cui/src/main/webapp/WEB-INF/spring-security.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../eBanking-cui/src/main/webapp/jsp/layout/info.jsp" afterPath="$PROJECT_DIR$/../eBanking-cui/src/main/webapp/jsp/layout/info.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../eBanking-cui/src/main/webapp/jsp/payment/mobile/amount.jsp" afterPath="$PROJECT_DIR$/../eBanking-cui/src/main/webapp/jsp/payment/mobile/amount.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../eBanking-cui/src/main/webapp/jsp/payment/mobile/number.jsp" afterPath="$PROJECT_DIR$/../eBanking-cui/src/main/webapp/jsp/payment/mobile/number.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../eBanking-cui/src/main/webapp/jsp/payment/mobile/review.jsp" afterPath="$PROJECT_DIR$/../eBanking-cui/src/main/webapp/jsp/payment/mobile/review.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../eBanking-cui/src/main/webapp/jsp/payment/payment.jsp" afterPath="$PROJECT_DIR$/../eBanking-cui/src/main/webapp/jsp/payment/payment.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eBanking-ws.iml" afterPath="$PROJECT_DIR$/eBanking-ws.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ebanking/ws/service/impl/card/ClientCardsService.java" afterPath="$PROJECT_DIR$/src/main/java/com/ebanking/ws/service/impl/card/ClientCardsService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ebanking/ws/utils/CardUtils.java" afterPath="$PROJECT_DIR$/src/main/java/com/ebanking/ws/utils/CardUtils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ebanking_mysql.sql" afterPath="$PROJECT_DIR$/../ebanking_mysql.sql" />
     </list>
     <ignored path="eBanking-ws.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,6 +50,19 @@
   <component name="DebuggerManager">
     <line_breakpoints>
       <breakpoint url="file://$PROJECT_DIR$/src/main/java/com/ebanking/ws/model/account/Account.java" line="84" class="com.ebanking.ws.model.account.Account" package="com.ebanking.ws.model.account">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/com/ebanking/ws/service/impl/card/ClientCardsService.java" line="40" class="com.ebanking.ws.service.impl.card.ClientCardsService" package="com.ebanking.ws.service.impl.card">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -102,46 +116,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="server-config.wsdd" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/server-config.wsdd">
+      <file leaf-file-name="ClientCardsService.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ebanking/ws/service/impl/card/ClientCardsService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="11" selection-start="959" selection-end="959" vertical-scroll-proportion="0.022421524">
+            <state line="41" column="0" selection-start="1420" selection-end="1420" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CardUtils.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ebanking/ws/utils/CardUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="71" selection-start="1162" selection-end="1162" vertical-scroll-proportion="0.55479455">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="spring-hibernate.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-hibernate.xml">
+      <file leaf-file-name="JavaProvider.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/apache/axis/axis/1.4/axis-1.4.jar!/org/apache/axis/providers/java/JavaProvider.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="1" selection-start="1499" selection-end="1499" vertical-scroll-proportion="0.0">
+            <state line="24" column="16" selection-start="1824" selection-end="1824" vertical-scroll-proportion="9.56">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AccountDAOImplTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/ebanking/ws/dao/impl/AccountDAOImplTest.java">
+      <file leaf-file-name="Card.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ebanking/ws/model/card/Card.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="42" selection-start="1032" selection-end="1032" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddressDAOImplTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/ebanking/ws/dao/impl/AddressDAOImplTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="10" selection-start="847" selection-end="1636" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CityDAOImplTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/ebanking/ws/dao/impl/CityDAOImplTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="55" selection-start="1340" selection-end="1340" vertical-scroll-proportion="0.0">
+            <state line="93" column="0" selection-start="1952" selection-end="1952" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -212,8 +219,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/ebanking/ws/service/request/LoginClientRQ.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ebanking/ws/service/response/LoginClientRS.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ebanking/ws/dao/AccountDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ebanking/ws/dao/impl/account/AccountDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ebanking/ws/service/security/UserLoginService.java" />
@@ -228,6 +233,8 @@
         <option value="$PROJECT_DIR$/src/test/java/com/ebanking/ws/dao/impl/AccountDAOImplTest.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-hibernate.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/server-config.wsdd" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ebanking/ws/service/impl/card/ClientCardsService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ebanking/ws/utils/CardUtils.java" />
       </list>
     </option>
   </component>
@@ -261,10 +268,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="67" />
-    <option name="y" value="22" />
-    <option name="width" value="1440" />
-    <option name="height" value="874" />
+    <option name="x" value="11" />
+    <option name="y" value="177" />
+    <option name="width" value="1332" />
+    <option name="height" value="665" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -299,20 +306,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="eBanking-ws" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="eBanking-ws" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -361,6 +354,178 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="eBanking-ws" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="eBanking-ws" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ws" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="utils" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="eBanking-ws" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="eBanking-ws" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ws" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="eBanking-ws" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="eBanking-ws" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ws" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="impl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="eBanking-ws" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="eBanking-ws" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ws" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="impl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="card" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="eBanking-ws" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="eBanking-ws" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ws" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="eBanking-ws" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="eBanking-ws" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -878,7 +1043,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="22" width="1440" height="874" extended-state="0" />
+    <frame x="11" y="177" width="1332" height="665" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -887,26 +1052,26 @@
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24946581" sideWeight="0.24330357" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.6004464" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39955357" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39889705" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.55245537" sideWeight="0.10512273" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5514706" sideWeight="0.10512273" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24946581" sideWeight="0.32700893" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.6004464" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3272059" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24946581" sideWeight="0.24330357" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924107" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24946581" sideWeight="0.24330357" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21879484" sideWeight="0.4488712" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21617419" sideWeight="0.45036766" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39967984" sideWeight="0.6004464" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14490674" sideWeight="0.4488712" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5511288" sideWeight="0.89114195" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27527216" sideWeight="0.45036766" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5496324" sideWeight="0.89114195" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="soapUI Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924107" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328125" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32802126" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="soapUI Navigator" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1005,35 +1170,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ebanking/ws/dao/impl/account/ClientDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="0" selection-start="882" selection-end="882" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ebanking/ws/service/response/loginClientRS.xsd">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorProvider">
-        <state />
-      </provider>
-      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleGeneralEditorProvider">
-        <state />
-      </provider>
-      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorReferencesProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="41" selection-start="460" selection-end="460" vertical-scroll-proportion="-7.65" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ebanking/ws/dao/impl/CommonDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="1" selection-start="713" selection-end="713" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml">
       <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
         <state />
@@ -1048,6 +1184,11 @@
       </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="29" column="1" selection-start="1499" selection-end="1499" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/server-config.wsdd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="25" selection-start="1112" selection-end="1112" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/ebanking/ws/dao/impl/AccountDAOImplTest.java">
@@ -1090,9 +1231,39 @@
         <state line="125" column="75" selection-start="4242" selection-end="4242" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/server-config.wsdd">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ebanking/ws/model/card/Card.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="11" selection-start="959" selection-end="959" vertical-scroll-proportion="0.022421524">
+        <state line="93" column="0" selection-start="1952" selection-end="1952" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/axis/axis/1.4/axis-1.4.jar!/org/apache/axis/utils/Messages.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="42" selection-start="2266" selection-end="2266" vertical-scroll-proportion="0.70408165">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ebanking/ws/service/impl/card/ClientCardsService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="0" selection-start="1420" selection-end="1420" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/axis/axis/1.4/axis-1.4.jar!/org/apache/axis/providers/java/JavaProvider.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="16" selection-start="1824" selection-end="1824" vertical-scroll-proportion="9.56">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ebanking/ws/utils/CardUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="71" selection-start="1162" selection-end="1162" vertical-scroll-proportion="0.55479455">
           <folding />
         </state>
       </provider>

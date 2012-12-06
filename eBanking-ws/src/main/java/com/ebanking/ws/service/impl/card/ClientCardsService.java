@@ -7,8 +7,11 @@ import com.ebanking.ws.service.Service;
 import com.ebanking.ws.service.SpringSupportService;
 import com.ebanking.ws.service.request.ClientCardsRQ;
 import com.ebanking.ws.service.response.ClientCardsRS;
+import com.ebanking.ws.utils.CardUtils;
 
 import java.util.List;
+
+import static com.ebanking.ws.utils.CardUtils.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -34,6 +37,9 @@ public class ClientCardsService extends SpringSupportService implements Service<
             cardAccount.setBalance(card.getCardAccount().getBalance());
             cardAccount.setCurrency(card.getCardAccount().getCurrency());
             card.setCardAccount(cardAccount);
+        }
+        for (Card card : cards) {
+            hideCardInfo(card);
         }
         Card[] cardsArray = cards.toArray(new Card[cards.size()]);
 

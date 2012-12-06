@@ -48,4 +48,12 @@ public class Role {
         result = 31 * result + roleName.hashCode();
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "Role{" +
+                "roleId=" + roleId +
+                ", roleName='" + roleName + '\'' +
+                '}';
+    }
 }

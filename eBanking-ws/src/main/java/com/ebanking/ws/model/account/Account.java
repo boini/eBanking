@@ -96,4 +96,15 @@ public class Account implements Serializable {
         result = 31 * result + client.hashCode();
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "accountId=" + accountId +
+                ", login='" + login + '\'' +
+                ", password='" + password + '\'' +
+                ", role=" + role +
+                ", client=" + client +
+                '}';
+    }
 }

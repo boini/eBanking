@@ -1,5 +1,6 @@
 package com.ebanking.ws.model.operation;
 
+import com.ebanking.ws.model.account.BankAccount;
 import com.ebanking.ws.model.address.Address;
 import com.ebanking.ws.model.card.Card;
 import com.ebanking.ws.model.card.CardAccount;
@@ -37,16 +38,29 @@ public class Operation {
     @ManyToOne
     @JoinColumn(name = "ADDRESS_ID")
     private Address address;
-/*
-    private Amount transactionAmount;*/
+
+    @Column(name = "TRANSACTION_AMOUNT")
+    private double transactionAmount;
 
     @ManyToOne
     @JoinColumn(name = "CARD_ID")
     private Card card;
 
     @ManyToOne
-    @JoinColumn(name = "CONTRACTOR_ACCOUNT_ID")
-    private CardAccount contractorAccount;
+    @JoinColumn(name = "CONTRACTOR_BANK_ACCOUNT_ID")
+    private BankAccount contractorAccount;
+
+    @ManyToOne
+    @JoinColumn(name = "CONTRACTOR_CARD_ACCOUNT_ID")
+    private CardAccount contractorCardAccount;
+
+    public double getTransactionAmount() {
+        return transactionAmount;
+    }
+
+    public void setTransactionAmount(double transactionAmount) {
+        this.transactionAmount = transactionAmount;
+    }
 
     public long getOperationId() {
         return operationId;
@@ -103,14 +117,6 @@ public class Operation {
     public void setAddress(Address address) {
         this.address = address;
     }
-/*
-    public Amount getTransactionAmount() {
-        return transactionAmount;
-    }
-
-    public void setTransactionAmount(Amount transactionAmount) {
-        this.transactionAmount = transactionAmount;
-    }*/
 
     public Card getCard() {
         return card;
@@ -120,11 +126,19 @@ public class Operation {
         this.card = card;
     }
 
-    public CardAccount getContractorAccount() {
+    public BankAccount getContractorAccount() {
         return contractorAccount;
     }
 
-    public void setContractorAccount(CardAccount contractorAccount) {
+    public void setContractorAccount(BankAccount contractorAccount) {
         this.contractorAccount = contractorAccount;
+    }
+
+    public CardAccount getContractorCardAccount() {
+        return contractorCardAccount;
+    }
+
+    public void setContractorCardAccount(CardAccount contractorCardAccount) {
+        this.contractorCardAccount = contractorCardAccount;
     }
 }

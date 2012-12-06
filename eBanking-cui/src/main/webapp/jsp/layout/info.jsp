@@ -7,7 +7,7 @@
 </div>
 
 <div id="quick-payment">
-    <h4>Быстрая оплата услуг</h4>
+    <h5>Быстрая оплата услуг</h5>
     <ul>
         <li>
             <s:url action="mobilePayment" var="velcomPaymentUrl">

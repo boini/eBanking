@@ -14,4 +14,5 @@ import java.util.List;
 public interface CardAccountDAO {
     List listByClientId(Long id);
     CardAccount getById(Long id);
+    void saveOrUpdate(CardAccount cardAccount);
 }
