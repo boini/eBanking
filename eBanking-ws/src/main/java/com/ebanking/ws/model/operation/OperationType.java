@@ -40,4 +40,13 @@ public class OperationType {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    @Override
+    public String toString() {
+        return "OperationType{" +
+                "operationTypeId=" + operationTypeId +
+                ", operationType='" + operationType + '\'' +
+                ", description='" + description + '\'' +
+                '}';
+    }
 }

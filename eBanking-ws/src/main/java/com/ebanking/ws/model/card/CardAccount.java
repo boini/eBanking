@@ -70,4 +70,15 @@ public class CardAccount {
     public void setCurrency(Currency currency) {
         this.currency = currency;
     }
+
+    @Override
+    public String toString() {
+        return "CardAccount{" +
+                "cardAccountId=" + cardAccountId +
+                ", cards=" + cards +
+                ", balance=" + balance +
+                ", currency=" + currency +
+                ", client=" + client +
+                '}';
+    }
 }

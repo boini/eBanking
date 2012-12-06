@@ -1,5 +1,6 @@
 package com.ebanking.ws.service;
 
+import com.ebanking.ws.log.RQRSLogger;
 import org.springframework.remoting.jaxrpc.ServletEndpointSupport;
 import org.springframework.web.context.WebApplicationContext;
 
@@ -11,6 +12,8 @@ import org.springframework.web.context.WebApplicationContext;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class SpringSupportService extends ServletEndpointSupport {
+
+    protected RQRSLogger logger;
 
     public Object getBean(String name) {
         return getWebApplicationContext().getBean(name);

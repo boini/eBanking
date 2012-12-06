@@ -27,4 +27,11 @@ public class PaymentRS {
         this.success = success;
     }
 
+    @Override
+    public String toString() {
+        return "PaymentRS{" +
+                "success=" + success +
+                ", exception='" + exception + '\'' +
+                '}';
+    }
 }

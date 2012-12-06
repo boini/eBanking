@@ -69,4 +69,13 @@ public class Currency {
         result = 31 * result + (currencyDescription != null ? currencyDescription.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "Currency{" +
+                "currencyId=" + currencyId +
+                ", currencyCode='" + currencyCode + '\'' +
+                ", currencyDescription='" + currencyDescription + '\'' +
+                '}';
+    }
 }

@@ -1,6 +1,7 @@
 package com.ebanking.ws.service.impl.card;
 
 import com.ebanking.ws.dao.CardDAO;
+import com.ebanking.ws.log.RQRSLogger;
 import com.ebanking.ws.model.card.Card;
 import com.ebanking.ws.model.card.CardAccount;
 import com.ebanking.ws.service.Service;
@@ -26,7 +27,10 @@ public class ClientCardsService extends SpringSupportService implements Service<
 
     @Override
     public ClientCardsRS execute(ClientCardsRQ request) {
+        logger = (RQRSLogger) getBean("RQRSLogger");
         cardDAO = (CardDAO) getBean("cardDAO");
+
+        logger.logRQRS(request, ClientCardsService.class);
 
         Long clientId = request.getClientId();
 
@@ -45,6 +49,9 @@ public class ClientCardsService extends SpringSupportService implements Service<
 
         ClientCardsRS clientCardsRS = new ClientCardsRS();
         clientCardsRS.setCards(cardsArray);
+
+        logger.logRQRS(clientCardsRS, ClientCardsService.class);
+
         return clientCardsRS;
     }
 }

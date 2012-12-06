@@ -66,4 +66,16 @@ public class PaymentRQ {
     public void setAmount(double amount) {
         this.amount = amount;
     }
+
+    @Override
+    public String toString() {
+        return "PaymentRQ{" +
+                "from=" + from +
+                ", to='" + to + '\'' +
+                ", date=" + date +
+                ", amount=" + amount +
+                ", client=" + client +
+                ", key='" + key + '\'' +
+                '}';
+    }
 }

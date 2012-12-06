@@ -26,7 +26,6 @@ public class PaymentPeekerService {
     public void execute() {
         List<Operation> operations = operationDAO.getOperationByStatus(OperationStatusEnum.NEW_OPERATION);
         if (operations != null && operations.size() > 0) {
-            System.out.println(operations.size());
             for (Operation operation : operations) {
                 paymentOperationProcessor.process(operation);
             }

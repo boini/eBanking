@@ -37,4 +37,13 @@ public class CardType {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    @Override
+    public String toString() {
+        return "CardType{" +
+                "cardTypeId=" + cardTypeId +
+                ", cardTypeName='" + cardTypeName + '\'' +
+                ", description='" + description + '\'' +
+                '}';
+    }
 }

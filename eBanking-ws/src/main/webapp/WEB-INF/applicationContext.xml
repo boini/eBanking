@@ -26,6 +26,7 @@ http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
     <bean id="operationStatusDAO" class="com.ebanking.ws.dao.impl.operation.OperationStatusDAOImpl"/>
     <bean id="operationTypeDAO" class="com.ebanking.ws.dao.impl.operation.OperationTypeDAOImpl"/>
     <bean id="corporationDAO" class="com.ebanking.ws.dao.impl.account.CorporationDAOImpl"/>
+    <bean id="appLogDAO" class="com.ebanking.ws.dao.impl.AppLogDAOImpl"/>
 
     <bean id="cardAccountChecker" class="com.ebanking.ws.operation.checker.CardAccountChecker"/>
     <bean id="bankAccountChecker" class="com.ebanking.ws.operation.checker.BankAccountChecker"/>
@@ -34,7 +35,7 @@ http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
 
     <bean id="paymentOperationProcessor" class="com.ebanking.ws.operation.payment.processor.PaymentOperationProcessor"/>
 
-    <bean id="securityLogger" class="com.ebanking.ws.log.SecurityLogManager"/>
+    <bean id="RQRSLogger" class="com.ebanking.ws.log.RQRSLogger"/>
 
     <!--Spring Quartz-->
     <bean name="runMeJob" class="org.springframework.scheduling.quartz.JobDetailBean">

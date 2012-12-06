@@ -70,4 +70,13 @@ public class City {
         result = 31 * result + country.hashCode();
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "City{" +
+                "cityId=" + cityId +
+                ", cityName='" + cityName + '\'' +
+                ", country=" + country +
+                '}';
+    }
 }

@@ -1,6 +1,7 @@
 package com.ebanking.ws.service.impl.client;
 
 import com.ebanking.ws.dao.AccountDAO;
+import com.ebanking.ws.log.RQRSLogger;
 import com.ebanking.ws.model.account.Account;
 import com.ebanking.ws.service.Service;
 import com.ebanking.ws.service.SpringSupportService;
@@ -21,7 +22,10 @@ public class FetchClientAccount extends SpringSupportService implements Service<
 
     @Override
     public FetchAccountRS execute(FetchAccountRQ request) {
+        logger = (RQRSLogger) getBean("RQRSLogger");
         accountDAO = (AccountDAO) getBean("accountDAO");
+
+        logger.logRQRS(request, FetchClientAccount.class);
 
         String login = request.getLogin();
         String password = request.getPassword();
@@ -32,6 +36,8 @@ public class FetchClientAccount extends SpringSupportService implements Service<
         if (account.getPassword().equals(password)) {
             fetchAccountRS.setAccount(account);
         }
+
+        logger.logRQRS(fetchAccountRS, FetchClientAccount.class);
 
         return fetchAccountRS;
     }

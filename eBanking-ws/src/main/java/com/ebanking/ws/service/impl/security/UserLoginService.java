@@ -21,7 +21,8 @@ public class UserLoginService extends SpringSupportService implements Service<Lo
     @Override
     @WebMethod
     public LoginClientRS execute(LoginClientRQ request) {
-        RQRSLogger.logRequest(request, UserLoginService.class);
+        logger = (RQRSLogger) getBean("RQRSLogger");
+        logger.logRQRS(request, UserLoginService.class);
 
         accountDAO = (AccountDAO) getBean("accountDAO");
 
@@ -35,7 +36,7 @@ public class UserLoginService extends SpringSupportService implements Service<Lo
             loginClientRS.setAccount(account);
         }
 
-        RQRSLogger.logRequest(loginClientRS, UserLoginService.class);
+        logger.logRQRS(loginClientRS, UserLoginService.class);
 
         return loginClientRS;
     }

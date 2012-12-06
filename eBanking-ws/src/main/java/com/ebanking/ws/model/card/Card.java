@@ -101,4 +101,18 @@ public class Card {
     public void setCreditLimit(Double creditLimit) {
         this.creditLimit = creditLimit;
     }
+
+    @Override
+    public String toString() {
+        return "Card{" +
+                "cardId=" + cardId +
+                ", cardType=" + cardType +
+                ", expirationDate=" + expirationDate +
+                ", cardNumber='" + cardNumber + '\'' +
+                ", cvv='" + cvv + '\'' +
+                ", creditLimit=" + creditLimit +
+                ", cardAccount=" + cardAccount +
+                ", cardAccountID=" + cardAccountID +
+                '}';
+    }
 }

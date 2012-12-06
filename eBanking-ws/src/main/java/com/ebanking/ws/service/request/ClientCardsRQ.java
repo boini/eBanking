@@ -17,4 +17,11 @@ public class ClientCardsRQ {
     public void setClientId(long clientId) {
         this.clientId = clientId;
     }
+
+    @Override
+    public String toString() {
+        return "ClientCardsRQ{" +
+                "clientId=" + clientId +
+                '}';
+    }
 }

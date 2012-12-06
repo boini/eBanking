@@ -92,4 +92,15 @@ public class Address {
         result = 31 * result + (flatNumber != null ? flatNumber.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "Address{" +
+                "addressId=" + addressId +
+                ", city=" + city +
+                ", region='" + region + '\'' +
+                ", houseNumber='" + houseNumber + '\'' +
+                ", flatNumber='" + flatNumber + '\'' +
+                '}';
+    }
 }

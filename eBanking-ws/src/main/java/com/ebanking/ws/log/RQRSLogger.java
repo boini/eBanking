@@ -10,7 +10,8 @@ import org.apache.log4j.Logger;
  * To change this template use File | Settings | File Templates.
  */
 public class RQRSLogger {
-    public static void logRequest(Object request, Class clazz) {
+
+    public void logRQRS(Object request, Class clazz) {
         Logger logger = Logger.getLogger(clazz);
         logger.info("[" + clazz.getName() + "] " + request);
     }

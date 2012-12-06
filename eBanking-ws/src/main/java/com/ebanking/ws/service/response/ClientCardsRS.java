@@ -2,6 +2,8 @@ package com.ebanking.ws.service.response;
 
 import com.ebanking.ws.model.card.Card;
 
+import java.util.Arrays;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Anton
@@ -18,5 +20,12 @@ public class ClientCardsRS {
 
     public void setCards(Card[] cards) {
         this.cards = cards;
+    }
+
+    @Override
+    public String toString() {
+        return "ClientCardsRS{" +
+                "cards=" + (cards == null ? null : Arrays.asList(cards)) +
+                '}';
     }
 }

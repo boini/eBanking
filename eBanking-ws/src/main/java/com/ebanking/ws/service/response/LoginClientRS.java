@@ -20,5 +20,10 @@ public class LoginClientRS {
         this.account = account;
     }
 
-
+    @Override
+    public String toString() {
+        return "LoginClientRS{" +
+                "account=" + account +
+                '}';
+    }
 }

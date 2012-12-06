@@ -141,4 +141,21 @@ public class Operation {
     public void setContractorCardAccount(CardAccount contractorCardAccount) {
         this.contractorCardAccount = contractorCardAccount;
     }
+
+    @Override
+    public String toString() {
+        return "Operation{" +
+                "operationId=" + operationId +
+                ", operationStatus=" + operationStatus +
+                ", operationType=" + operationType +
+                ", operationKey='" + operationKey + '\'' +
+                ", transactionDate=" + transactionDate +
+                ", processingDate=" + processingDate +
+                ", address=" + address +
+                ", transactionAmount=" + transactionAmount +
+                ", card=" + card +
+                ", contractorAccount=" + contractorAccount +
+                ", contractorCardAccount=" + contractorCardAccount +
+                '}';
+    }
 }

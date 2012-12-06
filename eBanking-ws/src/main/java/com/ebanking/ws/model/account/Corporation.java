@@ -59,4 +59,14 @@ public class Corporation {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    @Override
+    public String toString() {
+        return "Corporation{" +
+                "corporationId=" + corporationId +
+                ", corporationName='" + corporationName + '\'' +
+                ", description='" + description + '\'' +
+                ", bankAccountList=" + bankAccountList +
+                '}';
+    }
 }

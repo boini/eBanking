@@ -5,6 +5,7 @@ import com.ebanking.ws.dao.OperationDAO;
 import com.ebanking.ws.dao.OperationStatusDAO;
 import com.ebanking.ws.dao.OperationTypeDAO;
 import com.ebanking.ws.dao.CorporationDAO;
+import com.ebanking.ws.log.RQRSLogger;
 import com.ebanking.ws.model.account.BankAccount;
 import com.ebanking.ws.model.account.Client;
 import com.ebanking.ws.model.account.Corporation;
@@ -41,13 +42,14 @@ public class PaymentService extends SpringSupportService implements Service<Paym
 
     @Override
     public PaymentRS execute(PaymentRQ request) {
-
+        logger = (RQRSLogger) getBean("RQRSLogger");
         operationDAO = (OperationDAO) getBean("operationDAO");
         cardDAO = (CardDAO) getBean("cardDAO");
         corporationDAO = (CorporationDAO) getBean("corporationDAO");
         operationTypeDAO = (OperationTypeDAO) getBean("operationTypeDAO");
         operationStatusDAO = (OperationStatusDAO) getBean("operationStatusDAO");
 
+        logger.logRQRS(request, PaymentService.class);
 
         PaymentRS paymentRS = new PaymentRS();
 
@@ -97,6 +99,8 @@ public class PaymentService extends SpringSupportService implements Service<Paym
             paymentRS.setSuccess(false);
             paymentRS.setException("Bad request");
         }
+
+        logger.logRQRS(paymentRS, PaymentService.class);
 
         return paymentRS;
     }
