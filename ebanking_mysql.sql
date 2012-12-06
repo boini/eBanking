@@ -129,8 +129,8 @@ DROP TABLE IF EXISTS `app_log`;
 CREATE TABLE `app_log` (
   `log_id` int(11) NOT NULL AUTO_INCREMENT,
   `log_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `log_action` varchar(100) NOT NULL,
-  `log_message` varchar(500) NOT NULL,
+  `log_action` varchar(500) NOT NULL,
+  `log_message` varchar(2000) NOT NULL,
   PRIMARY KEY (`log_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -490,7 +490,7 @@ CREATE TABLE `operation` (
   `address_id` int(11) DEFAULT NULL,
   `transaction_amount` decimal(20,2) NOT NULL DEFAULT '0.00',
   `contractor_bank_account_id` int(11) DEFAULT NULL,
-  `contractor_card_account_id` int(11) DEFAULT NULL,
+  `contractor_card_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`operation_id`),
   KEY `fk_operation_operation_status_idx` (`operation_status_id`),
   KEY `fk_operation_operation_type_idx` (`operation_type_id`),
@@ -501,7 +501,8 @@ CREATE TABLE `operation` (
   CONSTRAINT `fk_operation_bank_account` FOREIGN KEY (`contractor_bank_account_id`) REFERENCES `bank_account` (`bank_account_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_operation_card` FOREIGN KEY (`card_id`) REFERENCES `card` (`card_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_operation_operation_status` FOREIGN KEY (`operation_status_id`) REFERENCES `operation_status` (`operation_status_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_operation_operation_type` FOREIGN KEY (`operation_type_id`) REFERENCES `operation_type` (`operation_type_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk_operation_operation_type` FOREIGN KEY (`operation_type_id`) REFERENCES `operation_type` (`operation_type_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_operation_contractor_card` FOREIGN KEY (`contractor_card_id`) REFERENCES `card` (`card_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -514,20 +515,6 @@ LOCK TABLES `operation` WRITE;
 INSERT INTO `operation` VALUES (2,2,1,'291258458','2012-12-06 01:58:25',NULL,2,NULL,10000.00,1,NULL),(3,2,1,'291258458','2012-12-06 01:58:49',NULL,2,NULL,10000.00,1,NULL),(9,2,1,'291258458','2012-12-06 01:58:49',NULL,2,NULL,9000.00,1,NULL),(10,2,1,'291258458','2012-12-06 01:58:49',NULL,2,NULL,9000.00,1,NULL),(11,2,1,'291258458','2012-12-06 01:58:49',NULL,2,NULL,9000.00,1,NULL),(12,2,1,'291258458','2012-12-06 01:58:49',NULL,2,NULL,9000.00,1,NULL),(13,2,1,'291258458','2012-12-06 04:08:12',NULL,2,NULL,200000.00,1,NULL),(14,2,1,'291258458','2012-12-06 04:12:24',NULL,2,NULL,2000000.00,1,NULL),(15,2,1,'12312312','2012-12-06 04:16:30',NULL,1,NULL,100.00,4,NULL),(16,2,1,'291258458','2012-12-06 04:17:07',NULL,1,NULL,23.00,6,NULL);
 /*!40000 ALTER TABLE `operation` ENABLE KEYS */;
 UNLOCK TABLES;
-
-ALTER TABLE `ebanking`.`operation` DROP FOREIGN KEY `fk_operation_address` ;
-ALTER TABLE `ebanking`.`operation` CHANGE COLUMN `address_id` `address_id` INT(11) NULL  , CHANGE COLUMN `contractor_card_account_id` `contractor_card_id` INT(11) NULL DEFAULT NULL  , 
-  ADD CONSTRAINT `fk_operation_address`
-  FOREIGN KEY (`address_id` )
-  REFERENCES `ebanking`.`address` (`address_id` )
-  ON DELETE NO ACTION
-  ON UPDATE NO ACTION, 
-  ADD CONSTRAINT `fk_operation_contractor_card`
-  FOREIGN KEY (`contractor_card_id` )
-  REFERENCES `ebanking`.`card` (`card_id` )
-  ON DELETE NO ACTION
-  ON UPDATE NO ACTION
-, ADD INDEX `fk_operation_contractor_card_idx` (`contractor_card_id` ASC) ;
 
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
