@@ -515,6 +515,19 @@ INSERT INTO `operation` VALUES (2,2,1,'291258458','2012-12-06 01:58:25',NULL,2,N
 /*!40000 ALTER TABLE `operation` ENABLE KEYS */;
 UNLOCK TABLES;
 
+ALTER TABLE `ebanking`.`operation` DROP FOREIGN KEY `fk_operation_address` ;
+ALTER TABLE `ebanking`.`operation` CHANGE COLUMN `address_id` `address_id` INT(11) NULL  , CHANGE COLUMN `contractor_card_account_id` `contractor_card_id` INT(11) NULL DEFAULT NULL  , 
+  ADD CONSTRAINT `fk_operation_address`
+  FOREIGN KEY (`address_id` )
+  REFERENCES `ebanking`.`address` (`address_id` )
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION, 
+  ADD CONSTRAINT `fk_operation_contractor_card`
+  FOREIGN KEY (`contractor_card_id` )
+  REFERENCES `ebanking`.`card` (`card_id` )
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION
+, ADD INDEX `fk_operation_contractor_card_idx` (`contractor_card_id` ASC) ;
 
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
