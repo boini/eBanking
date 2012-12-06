@@ -13,7 +13,9 @@
     <div>
         <s:form action="/mobilePaymentAmount" method="POST" id="mobileNumberForm">
             <td colspan="2">
-                <h5>Наименование услуги: Velcom</h5>
+                <h5>Наименование услуги:
+                    <s:property value="%{#session.mobilePaymentForm.providerName}"/>
+                </h5>
             </td>
             <s:select list="#session['mobilePaymentForm'].cards"
                       label="Оплатить со счёта"

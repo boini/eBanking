@@ -16,7 +16,9 @@
                 <caption>Подтверждение реквизитов. Если все реквизиты заполнены правильно нажмите "Отправить в банк" или вернитесь к редактированию документа.</caption>
                 <tr>
                     <td>Дата</td>
-                    <td>04.12.2012</td>
+                    <td>
+                        <s:property value="%{#session.mobilePaymentForm.date}"/>
+                    </td>
                 </tr>
                 <tr>
                     <td>Банк клиента</td>
@@ -24,23 +26,34 @@
                 </tr>
                 <tr>
                     <td>Клиент</td>
-                    <td>Холодок Антон Александрович</td>
+                    <td>
+                        <s:property value="#session['clientInfoForm'].fullName"/>
+                    </td>
                 </tr>
                 <tr>
                     <td>Оплачиваемая услуга</td>
-                    <td>Velcom</td>
+                    <td>
+                        <s:property value="%{#session.mobilePaymentForm.providerName}"/>
+                    </td>
                 </tr>
                 <tr>
                     <td>Оплатить с карты</td>
-                    <td>1231231231231231</td>
+                    <td>
+                        <s:property value="%{#session.mobilePaymentForm.activeCard.cardNumber}"/>
+                    </td>
                 </tr>
                 <tr>
                     <td>Cумма</td>
-                    <td>15000 (BYR)</td>
+                    <td>
+                        <s:property value="%{#session.mobilePaymentForm.amount}"/>
+                        (<s:property value="%{#session.mobilePaymentForm.activeCard.cardAccount.currency.currencyCode}"/>)
+                    </td>
                 </tr>
                 <tr>
                     <td>Номер телефона</td>
-                    <td>291258458</td>
+                    <td>
+                        <s:property value="%{#session.mobilePaymentForm.number}"/>
+                    </td>
                 </tr>
             </table>
             <td>

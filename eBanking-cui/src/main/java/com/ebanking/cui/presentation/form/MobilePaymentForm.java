@@ -1,7 +1,9 @@
 package com.ebanking.cui.presentation.form;
 
 import com.ebanking.cui.model.card.Card;
+import com.ebanking.cui.model.payment.ProviderName;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -16,6 +18,24 @@ public class MobilePaymentForm {
     private Long cardId;
     private double amount;
     private String number;
+    private Date date;
+    private ProviderName.Mobile providerName;
+
+    public ProviderName.Mobile getProviderName() {
+        return providerName;
+    }
+
+    public void setProviderName(String providerNameStr) {
+        this.providerName = ProviderName.Mobile.valueOf(providerNameStr.toUpperCase());
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
 
     public long getCardId() {
         return cardId;

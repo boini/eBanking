@@ -15,7 +15,7 @@
     <beans:bean id="authenticationProvider" class="com.ebanking.cui.security.CustomAuthenticationProvider" />
 
     <authentication-manager>
-        <authentication-provider ref="authenticationProvider" />
+        <authentication-provider ref="authenticationProvider"/>
     </authentication-manager>
 
 </beans:beans>
