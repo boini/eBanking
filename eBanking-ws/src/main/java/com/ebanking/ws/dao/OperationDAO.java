@@ -1,6 +1,9 @@
 package com.ebanking.ws.dao;
 
 import com.ebanking.ws.model.operation.Operation;
+import com.ebanking.ws.model.operation.OperationStatusEnum;
+
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -11,4 +14,5 @@ import com.ebanking.ws.model.operation.Operation;
  */
 public interface OperationDAO {
     void saveOrUpdate(Operation opearation);
+    List getOperationByStatus(OperationStatusEnum operationStatus);
 }

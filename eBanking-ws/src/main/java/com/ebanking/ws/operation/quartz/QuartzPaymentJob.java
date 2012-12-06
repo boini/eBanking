@@ -1,10 +1,7 @@
-package com.ebanking.ws.operation.payment.quartz;
+package com.ebanking.ws.operation.quartz;
 
-import com.ebanking.ws.dao.AccountDAO;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.scheduling.quartz.QuartzJobBean;
 import org.springframework.stereotype.Component;
 

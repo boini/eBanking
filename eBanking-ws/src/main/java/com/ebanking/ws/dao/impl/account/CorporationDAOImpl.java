@@ -1,7 +1,7 @@
 package com.ebanking.ws.dao.impl.account;
 
 import com.ebanking.ws.dao.impl.CommonDAOImpl;
-import com.ebanking.ws.dao.impl.CorporationDAO;
+import com.ebanking.ws.dao.CorporationDAO;
 import com.ebanking.ws.model.account.Corporation;
 import org.springframework.transaction.annotation.Transactional;
 

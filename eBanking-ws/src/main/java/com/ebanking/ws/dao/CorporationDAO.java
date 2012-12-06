@@ -1,4 +1,4 @@
-package com.ebanking.ws.dao.impl;
+package com.ebanking.ws.dao;
 
 import com.ebanking.ws.model.account.Corporation;
 

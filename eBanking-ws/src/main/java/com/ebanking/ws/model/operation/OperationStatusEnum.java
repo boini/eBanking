@@ -10,7 +10,8 @@ package com.ebanking.ws.model.operation;
 public enum OperationStatusEnum {
     COMPLETED_OPERATION("C"),
     NEW_OPERATION("N"),
-    ERROR_OPERATION("E");
+    ERROR_OPERATION("E"),
+    PROCESSING_OPERATION("P");
 
     private String operationStatus;
 

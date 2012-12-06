@@ -19,13 +19,6 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created with IntelliJ IDEA.
- * User: antonkholodok
- * Date: 11/27/12
- * Time: 10:49 AM
- * To change this template use File | Settings | File Templates.
- */
 public class CustomAuthenticationProvider implements AuthenticationProvider {
 
     private ServiceClient<LoginClientRQ, LoginClientRS> loginClientService;
