@@ -483,7 +483,7 @@ CREATE TABLE `operation` (
   `operation_id` int(11) NOT NULL AUTO_INCREMENT,
   `operation_status_id` int(11) NOT NULL,
   `operation_type_id` int(11) NOT NULL,
-  `operation_key` varchar(100) NOT NULL,
+  `operation_key` varchar(100),
   `processing_date` timestamp NULL DEFAULT NULL,
   `transaction_date` timestamp NULL DEFAULT NULL,
   `card_id` int(11) NOT NULL,
