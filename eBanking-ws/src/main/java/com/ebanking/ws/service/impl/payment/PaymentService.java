@@ -13,6 +13,7 @@ import com.ebanking.ws.model.card.Card;
 import com.ebanking.ws.model.operation.Operation;
 import com.ebanking.ws.model.operation.OperationStatusEnum;
 import com.ebanking.ws.model.operation.OperationTypeEnum;
+import com.ebanking.ws.operation.factory.OperationFactory;
 import com.ebanking.ws.service.Service;
 import com.ebanking.ws.service.SpringSupportService;
 import com.ebanking.ws.service.impl.payment.validator.PaymentValidator;
@@ -61,7 +62,7 @@ public class PaymentService extends SpringSupportService implements Service<Paym
             String operationKey = request.getKey();
             Date processingDate = request.getDate();
 
-            Operation operation = new Operation();
+            Operation operation = OperationFactory.getSingleton().operationWithType(OperationTypeEnum.PAYMENT);
 
             List<Card> clientCards = cardDAO.getCardsByClientId(client.getClientId());
             for (Card card : clientCards) {
@@ -84,11 +85,6 @@ public class PaymentService extends SpringSupportService implements Service<Paym
             }
 
             operation.setOperationKey(operationKey);
-
-            operation.setOperationStatus(operationStatusDAO.getOperationStatusByCode(
-                    OperationStatusEnum.NEW_OPERATION.getOperationStatus()));
-            operation.setOperationType(operationTypeDAO.getOperationTypeByCode(
-                    OperationTypeEnum.PAYMENT.getOperationType()));
 
             operation.setProcessingDate(processingDate);
 

@@ -52,4 +52,30 @@ public class MoneyTransfer {
         }
         return false;
     }
+
+    public boolean transfer(CardAccount cardAccount, CardAccount cardContractorAccount, double amount) {
+        if (cardAccountChecker.checkAccountForAmount(cardAccount.getCardAccountId(), amount)) {
+            cardAccount.setBalance(cardAccount.getBalance() - amount);
+            cardContractorAccount.setBalance(cardContractorAccount.getBalance() + amount);
+
+            cardAccountDAO.saveOrUpdate(cardAccount);
+            cardAccountDAO.saveOrUpdate(cardContractorAccount);
+
+            return true;
+        }
+        return false;
+    }
+
+    public boolean transfer(CardAccount cardAccount, CardAccount cardContractorAccount, double amount, double conversionCourse) {
+        if (cardAccountChecker.checkAccountForAmount(cardAccount.getCardAccountId(), amount)) {
+            cardAccount.setBalance(cardAccount.getBalance() - amount);
+            cardContractorAccount.setBalance(cardContractorAccount.getBalance() + amount*conversionCourse);
+
+            cardAccountDAO.saveOrUpdate(cardAccount);
+            cardAccountDAO.saveOrUpdate(cardContractorAccount);
+
+            return true;
+        }
+        return false;
+    }
 }

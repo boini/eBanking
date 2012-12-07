@@ -3,11 +3,15 @@ package com.ebanking.ws.operation.payment.processor;
 import com.ebanking.ws.dao.OperationDAO;
 import com.ebanking.ws.dao.OperationStatusDAO;
 import com.ebanking.ws.model.account.BankAccount;
+import com.ebanking.ws.model.card.Card;
 import com.ebanking.ws.model.card.CardAccount;
 import com.ebanking.ws.model.operation.Operation;
 import com.ebanking.ws.model.operation.OperationStatusEnum;
+import com.ebanking.ws.model.operation.OperationType;
+import com.ebanking.ws.model.operation.OperationTypeEnum;
 import com.ebanking.ws.operation.checker.BankAccountChecker;
 import com.ebanking.ws.operation.checker.CardAccountChecker;
+import com.ebanking.ws.operation.factory.OperationFactory;
 import com.ebanking.ws.operation.transfer.MoneyTransfer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -37,24 +41,47 @@ public class PaymentOperationProcessor {
     public void process(Operation operation) {
         operation.setOperationStatus(
                 operationStatusDAO.getOperationStatusByCode(
-                OperationStatusEnum.PROCESSING_OPERATION.getOperationStatus()));
+                        OperationStatusEnum.PROCESSING_OPERATION.getOperationStatus()));
         operationDAO.saveOrUpdate(operation);
 
+        boolean success = false;
+        OperationType operationType = operation.getOperationType();
+
         CardAccount clientCardAccount = operation.getCard().getCardAccount();
-        BankAccount corporationBankAccount = operation.getContractorAccount();
+        if (OperationTypeEnum.PAYMENT.getOperationType().equals(operationType.getOperationType())) {
+            BankAccount corporationBankAccount = operation.getContractorAccount();
+            success = moneyTransfer.transfer(clientCardAccount, corporationBankAccount, operation.getTransactionAmount());
+        } else { // TT(transfer to) or TF(transfer from) operation
+            Card contractorCard = operation.getContractorCard();
+            success = moneyTransfer.transfer(clientCardAccount, contractorCard.getCardAccount(), operation.getTransactionAmount());
+        }
 
-        boolean success = moneyTransfer.transfer(clientCardAccount, corporationBankAccount, operation.getTransactionAmount());
-
+        Operation additionalOperation = null;
         if (success) {
             operation.setOperationStatus(
                     operationStatusDAO.getOperationStatusByCode(
                             OperationStatusEnum.COMPLETED_OPERATION.getOperationStatus()));
             operation.setTransactionDate(new Date());
+            //if operation type was TT(transfer to) we need to initiate one more operation TF(transfer from)
+            if (OperationTypeEnum.TRANSFER_TO.getOperationType().equals(operationType.getOperationType())) {
+                additionalOperation = OperationFactory.getSingleton().operationWithType(OperationTypeEnum.TRANSFER_FROM);
+                additionalOperation.setCard(operation.getContractorCard());
+                additionalOperation.setContractorCard(operation.getCard());
+                additionalOperation.setTransactionAmount(operation.getTransactionAmount());
+                additionalOperation.setProcessingDate(new Date());
+                /*
+                additionalOperation.setOperationKey(---HZ---);
+                additionalOperation.setAddress(---HZ---);
+                */
+            }
         } else {
             operation.setOperationStatus(
                     operationStatusDAO.getOperationStatusByCode(
                             OperationStatusEnum.ERROR_OPERATION.getOperationStatus()));
         }
         operationDAO.saveOrUpdate(operation);
+        if (additionalOperation != null) {
+            operationDAO.saveOrUpdate(additionalOperation);
+        }
     }
 }
