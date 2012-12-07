@@ -7,11 +7,13 @@ import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.interceptor.SessionAware;
 
 import javax.servlet.http.HttpSession;
+import java.util.Date;
 import java.util.Map;
 
 public class LoginForward extends ActionSupport {
 
     public String execute() throws Exception {
+        System.out.println(new Date().getTime());
         Map attributes = ActionContext.getContext().getSession();
         UserHttpSession userHttpSession = new UserHttpSession();
         userHttpSession.setSession(attributes);

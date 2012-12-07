@@ -7,7 +7,7 @@
     <constant name="struts.objectFactory" value="spring"/>
     <constant name="struts.devMode" value="true"/>
 
-    <package name="default" namespace="/" extends="struts-default">
+    <package name="default" namespace="/" extends="struts-default,json-default">
         <result-types>
             <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult"/>
         </result-types>
@@ -78,6 +78,10 @@
         
         <action name="mobilePaymentSubmit" class="MobilePaymentSubmitAction">
             <result name="success" type="tiles">/mobilePaymentSubmit.tiles</result>
+        </action>
+
+        <action name="cardOperationHistory" method="getJson" class="CardOperationHistoryAction">
+            <result name="success" type="json"/>
         </action>
 
     </package>

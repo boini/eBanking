@@ -3,6 +3,7 @@ package com.ebanking.ws.dao;
 import com.ebanking.ws.model.operation.Operation;
 import com.ebanking.ws.model.operation.OperationStatusEnum;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -15,4 +16,5 @@ import java.util.List;
 public interface OperationDAO {
     void saveOrUpdate(Operation opearation);
     List getOperationByStatus(OperationStatusEnum operationStatus);
+    List getCardOperations(long cardId, Date fromDate, Date toDate);
 }

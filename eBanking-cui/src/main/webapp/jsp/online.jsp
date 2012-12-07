@@ -11,14 +11,14 @@
     </div>
 
     <div>
-
+        <s:form action="/cardOperationHistory" method="get">
         <div>
             <span>Параметры формирования выписки</span><br/>
             <input type="radio" name="bankStatement" checked="checked"/>За последнюю неделю <br/>
             <input type="radio" name="bankStatement"/>За последний месяц
         </div>
 
-        <table class="table table-condensed table-hover">
+        <table class="table table-condensed table-hover" id="cards">
             <caption>Ваши карты (остаток по состоянию на 07.11.2012 17:25:51) </caption>
             <thead>
             <tr>
@@ -34,7 +34,7 @@
             <s:iterator value="#session['clientCardsForm'].cards" var="card">
                 <tr>
                     <td>
-                        <input type="checkbox"/>
+                        <s:checkbox name="checkboxes[%{#card.cardId}]" theme="simple"/>
                     </td>
                     <td>
                         <s:property value="#card.cardNumber"/>
@@ -60,5 +60,9 @@
             </s:iterator>
             </tbody>
         </table>
+
+        <s:submit value="Получить" />
+
+        </s:form>
     </div>
 </div>

@@ -106,6 +106,28 @@
         <beanMapping qname="ns:local" xmlns:ns="country" languageSpecificType="java:com.ebanking.ws.model.address.Country"/>
 
     </service>
+    <service name="CardOperationHistoryService" provider="java:RPC" style="document" use="literal">
+        <parameter name="className" value="com.ebanking.ws.service.impl.info.CardOperationHistoryService"/>
+        <parameter name="allowedMethods" value="*"/>
+        <parameter name="scope" value="Application"/>
+        <namespace>http://info.impl.service.ws.ebanking.com</namespace>
+
+        <beanMapping qname="ns:local" xmlns:ns="cardOperationHistoryRQ" languageSpecificType="java:com.ebanking.ws.service.request.CardOperationHistoryRQ"/>
+        <beanMapping qname="ns:local" xmlns:ns="cardOperationHistoryRS" languageSpecificType="java:com.ebanking.ws.service.response.CardOperationHistoryRS"/>
+        <beanMapping qname="ns:local" xmlns:ns="operation" languageSpecificType="java:com.ebanking.ws.model.operation.Operation"/>
+        <beanMapping qname="ns:local" xmlns:ns="operationType" languageSpecificType="java:com.ebanking.ws.model.operation.OperationType"/>
+        <beanMapping qname="ns:local" xmlns:ns="operationStatus" languageSpecificType="java:com.ebanking.ws.model.operation.OperationStatus"/>
+        <beanMapping qname="ns:local" xmlns:ns="address" languageSpecificType="java:com.ebanking.ws.model.address.Address"/>
+        <beanMapping qname="ns:local" xmlns:ns="city" languageSpecificType="java:com.ebanking.ws.model.address.City"/>
+        <beanMapping qname="ns:local" xmlns:ns="country" languageSpecificType="java:com.ebanking.ws.model.address.Country"/>
+        <beanMapping qname="ns:local" xmlns:ns="card" languageSpecificType="java:com.ebanking.ws.model.card.Card"/>
+        <beanMapping qname="ns:local" xmlns:ns="cardType" languageSpecificType="java:com.ebanking.ws.model.card.CardType"/>
+        <beanMapping qname="ns:local" xmlns:ns="cardAccount" languageSpecificType="java:com.ebanking.ws.model.card.CardAccount"/>
+        <beanMapping qname="ns:local" xmlns:ns="currency" languageSpecificType="java:com.ebanking.ws.model.finance.Currency"/>
+        <beanMapping qname="ns:local" xmlns:ns="client" languageSpecificType="java:com.ebanking.ws.model.account.Client"/>
+        <beanMapping qname="ns:local" xmlns:ns="bankAccount" languageSpecificType="java:com.ebanking.ws.model.account.BankAccount"/>
+        <beanMapping qname="ns:local" xmlns:ns="corporation" languageSpecificType="java:com.ebanking.ws.model.account.Corporation"/>
+    </service>
 
     <handler name="soapmonitor" type="java:org.apache.axis.handlers.SOAPMonitorHandler">
         <parameter name="wsdlURL" value="/axis/SOAPMonitorService-impl.wsdl"/>

@@ -7,6 +7,7 @@ import com.ebanking.ws.model.operation.OperationStatus;
 import com.ebanking.ws.model.operation.OperationStatusEnum;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -29,6 +30,16 @@ public class OperationDAOImpl extends CommonDAOImpl implements OperationDAO {
                 currentSession().createQuery("from Operation as op where op.operationStatus.operationStatus = ?")
                         .setString(0, operationStatus.getOperationStatus())
                         .setMaxResults(2)
+                        .list();
+        return operations;
+    }
+
+    @Override
+    public List getCardOperations(long cardId, Date fromDate, Date toDate) {
+        List<Operation> operations =
+                currentSession().createQuery(
+                        "from Operation as op where op.card.cardId = ?")
+                        .setLong(0, cardId)/*.setDate(1, fromDate).setDate(2, toDate)*/
                         .list();
         return operations;
     }

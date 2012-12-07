@@ -23,6 +23,7 @@ http://www.springframework.org/schema/context/spring-context-3.1.xsd">
     <bean id="fetchClientAccountService" class="com.ebanking.cui.service.client.impl.client.account.FetchAccountService"/>
     <bean id="clientCardsService" class="com.ebanking.cui.service.client.impl.client.card.ClientCardsService"/>
     <bean id="paymentService" class="com.ebanking.cui.service.client.impl.payment.PaymentService"/>
+    <bean id="cardOperationHistoryService" class="com.ebanking.cui.service.client.impl.info.CardOperationHistoryService"/>
 
     <bean name="LoginForwardAction" class="com.ebanking.cui.presentation.action.LoginForward"/>
     <bean name="SessionRecreationForwardAction" class="com.ebanking.cui.presentation.action.SessionRecreationForwardAction"/>
@@ -30,6 +31,8 @@ http://www.springframework.org/schema/context/spring-context-3.1.xsd">
     <bean name="MainPageForwardAction" class="com.ebanking.cui.presentation.action.MainPageForwardAction"/>
     <bean name="FetchClientAccountAction" class="com.ebanking.cui.presentation.action.client.FetchClientAccountAction"/>
     <bean name="ClientCardsAction" class="com.ebanking.cui.presentation.action.client.ClientCardsAction"/>
+
+    <bean name="CardOperationHistoryAction" class="com.ebanking.cui.presentation.action.info.CardOperationHistoryAction"/>
 
     <bean name="OnlineInfoForwardAction" class="com.ebanking.cui.presentation.action.statement.OnlineInfoForwardAction"/>
 

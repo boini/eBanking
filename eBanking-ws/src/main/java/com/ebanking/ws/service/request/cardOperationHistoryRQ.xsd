@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:complexType name="cardOperationHistoryRQ">
+    <xs:sequence>
+      <xs:element name="cardIdList" type="xs:long" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="fromDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="toDate" type="xs:dateTime" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+

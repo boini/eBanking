@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://info.impl.service.ws.ebanking.com"
+                  xmlns:impl="http://info.impl.service.ws.ebanking.com"
+                  xmlns:tns1="http://request.service.ws.ebanking.com"
+                  xmlns:tns2="http://response.service.ws.ebanking.com"
+                  xmlns:tns3="http://operation.model.ws.ebanking.com" xmlns:tns4="http://address.model.ws.ebanking.com"
+                  xmlns:tns5="http://card.model.ws.ebanking.com" xmlns:tns6="http://account.model.ws.ebanking.com"
+                  xmlns:tns7="http://finance.model.ws.ebanking.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://info.impl.service.ws.ebanking.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://response.service.ws.ebanking.com"/>
+   <import namespace="http://card.model.ws.ebanking.com"/>
+   <import namespace="http://request.service.ws.ebanking.com"/>
+   <import namespace="http://operation.model.ws.ebanking.com"/>
+   <import namespace="http://account.model.ws.ebanking.com"/>
+   <import namespace="http://address.model.ws.ebanking.com"/>
+   <import namespace="http://finance.model.ws.ebanking.com"/>
+   <complexType name="ArrayOf_xsd_long">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:long"/>
+    </sequence>
+   </complexType>
+   <element name="request" type="tns1:CardOperationHistoryRQ"/>
+   <complexType name="ArrayOf_xsd_anyType">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:anyType"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOf_tns3_Operation">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="tns3:Operation"/>
+    </sequence>
+   </complexType>
+   <element name="executeReturn" type="tns2:CardOperationHistoryRS"/>
+   <element name="x0" type="xsd:anyType"/>
+   <element name="executeReturn1" type="xsd:anyType"/>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://request.service.ws.ebanking.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://response.service.ws.ebanking.com"/>
+   <import namespace="http://card.model.ws.ebanking.com"/>
+   <import namespace="http://operation.model.ws.ebanking.com"/>
+   <import namespace="http://account.model.ws.ebanking.com"/>
+   <import namespace="http://info.impl.service.ws.ebanking.com"/>
+   <import namespace="http://address.model.ws.ebanking.com"/>
+   <import namespace="http://finance.model.ws.ebanking.com"/>
+   <complexType name="CardOperationHistoryRQ">
+    <sequence>
+     <element name="cardIdList" nillable="true" type="impl:ArrayOf_xsd_long"/>
+     <element name="fromDate" nillable="true" type="xsd:dateTime"/>
+     <element name="toDate" nillable="true" type="xsd:dateTime"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://address.model.ws.ebanking.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://response.service.ws.ebanking.com"/>
+   <import namespace="http://card.model.ws.ebanking.com"/>
+   <import namespace="http://request.service.ws.ebanking.com"/>
+   <import namespace="http://operation.model.ws.ebanking.com"/>
+   <import namespace="http://account.model.ws.ebanking.com"/>
+   <import namespace="http://info.impl.service.ws.ebanking.com"/>
+   <import namespace="http://finance.model.ws.ebanking.com"/>
+   <complexType name="Country">
+    <sequence>
+     <element name="countryId" type="xsd:long"/>
+     <element name="countryName" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="City">
+    <sequence>
+     <element name="cityId" type="xsd:long"/>
+     <element name="cityName" nillable="true" type="xsd:string"/>
+     <element name="country" nillable="true" type="tns4:Country"/>
+    </sequence>
+   </complexType>
+   <complexType name="Address">
+    <sequence>
+     <element name="addressId" type="xsd:long"/>
+     <element name="city" nillable="true" type="tns4:City"/>
+     <element name="flatNumber" nillable="true" type="xsd:string"/>
+     <element name="houseNumber" nillable="true" type="xsd:string"/>
+     <element name="region" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://account.model.ws.ebanking.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://response.service.ws.ebanking.com"/>
+   <import namespace="http://card.model.ws.ebanking.com"/>
+   <import namespace="http://request.service.ws.ebanking.com"/>
+   <import namespace="http://operation.model.ws.ebanking.com"/>
+   <import namespace="http://info.impl.service.ws.ebanking.com"/>
+   <import namespace="http://address.model.ws.ebanking.com"/>
+   <import namespace="http://finance.model.ws.ebanking.com"/>
+   <complexType name="Client">
+    <sequence>
+     <element name="address" nillable="true" type="tns4:Address"/>
+     <element name="clientId" type="xsd:long"/>
+     <element name="dateOfBirth" nillable="true" type="xsd:dateTime"/>
+     <element name="email" nillable="true" type="xsd:string"/>
+     <element name="firstname" nillable="true" type="xsd:string"/>
+     <element name="lastname" nillable="true" type="xsd:string"/>
+     <element name="middlename" nillable="true" type="xsd:string"/>
+     <element name="mobileNumber" nillable="true" type="xsd:string"/>
+     <element name="personalCode" nillable="true" type="xsd:string"/>
+     <element name="phoneNumber" nillable="true" type="xsd:string"/>
+     <element name="secretWord" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="Corporation">
+    <sequence>
+     <element name="bankAccountList" nillable="true" type="impl:ArrayOf_xsd_anyType"/>
+     <element name="corporationId" type="xsd:long"/>
+     <element name="corporationName" nillable="true" type="xsd:string"/>
+     <element name="description" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="BankAccount">
+    <sequence>
+     <element name="amount" type="xsd:double"/>
+     <element name="bankAccountId" type="xsd:long"/>
+     <element name="client" nillable="true" type="tns6:Client"/>
+     <element name="corporation" nillable="true" type="tns6:Corporation"/>
+     <element name="currency" nillable="true" type="tns7:Currency"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://finance.model.ws.ebanking.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://response.service.ws.ebanking.com"/>
+   <import namespace="http://card.model.ws.ebanking.com"/>
+   <import namespace="http://request.service.ws.ebanking.com"/>
+   <import namespace="http://operation.model.ws.ebanking.com"/>
+   <import namespace="http://account.model.ws.ebanking.com"/>
+   <import namespace="http://info.impl.service.ws.ebanking.com"/>
+   <import namespace="http://address.model.ws.ebanking.com"/>
+   <complexType name="Currency">
+    <sequence>
+     <element name="currencyCode" nillable="true" type="xsd:string"/>
+     <element name="currencyDescription" nillable="true" type="xsd:string"/>
+     <element name="currencyId" type="xsd:long"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://card.model.ws.ebanking.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://response.service.ws.ebanking.com"/>
+   <import namespace="http://request.service.ws.ebanking.com"/>
+   <import namespace="http://operation.model.ws.ebanking.com"/>
+   <import namespace="http://account.model.ws.ebanking.com"/>
+   <import namespace="http://info.impl.service.ws.ebanking.com"/>
+   <import namespace="http://address.model.ws.ebanking.com"/>
+   <import namespace="http://finance.model.ws.ebanking.com"/>
+   <complexType name="CardAccount">
+    <sequence>
+     <element name="balance" nillable="true" type="xsd:double"/>
+     <element name="cardAccountId" type="xsd:long"/>
+     <element name="cards" nillable="true" type="impl:ArrayOf_xsd_anyType"/>
+     <element name="client" nillable="true" type="tns6:Client"/>
+     <element name="currency" nillable="true" type="tns7:Currency"/>
+    </sequence>
+   </complexType>
+   <complexType name="CardType">
+    <sequence>
+     <element name="cardTypeId" type="xsd:long"/>
+     <element name="cardTypeName" nillable="true" type="xsd:string"/>
+     <element name="description" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="Card">
+    <sequence>
+     <element name="cardAccount" nillable="true" type="tns5:CardAccount"/>
+     <element name="cardAccountID" nillable="true" type="xsd:long"/>
+     <element name="cardId" type="xsd:long"/>
+     <element name="cardNumber" nillable="true" type="xsd:string"/>
+     <element name="cardType" nillable="true" type="tns5:CardType"/>
+     <element name="creditLimit" nillable="true" type="xsd:double"/>
+     <element name="cvv" nillable="true" type="xsd:string"/>
+     <element name="expirationDate" nillable="true" type="xsd:dateTime"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://operation.model.ws.ebanking.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://response.service.ws.ebanking.com"/>
+   <import namespace="http://card.model.ws.ebanking.com"/>
+   <import namespace="http://request.service.ws.ebanking.com"/>
+   <import namespace="http://account.model.ws.ebanking.com"/>
+   <import namespace="http://info.impl.service.ws.ebanking.com"/>
+   <import namespace="http://address.model.ws.ebanking.com"/>
+   <import namespace="http://finance.model.ws.ebanking.com"/>
+   <complexType name="OperationStatus">
+    <sequence>
+     <element name="description" nillable="true" type="xsd:string"/>
+     <element name="operationStatus" nillable="true" type="xsd:string"/>
+     <element name="operationStatusId" type="xsd:long"/>
+    </sequence>
+   </complexType>
+   <complexType name="OperationType">
+    <sequence>
+     <element name="description" nillable="true" type="xsd:string"/>
+     <element name="operationType" nillable="true" type="xsd:string"/>
+     <element name="operationTypeId" type="xsd:long"/>
+    </sequence>
+   </complexType>
+   <complexType name="Operation">
+    <sequence>
+     <element name="address" nillable="true" type="tns4:Address"/>
+     <element name="card" nillable="true" type="tns5:Card"/>
+     <element name="contractorAccount" nillable="true" type="tns6:BankAccount"/>
+     <element name="contractorCard" nillable="true" type="tns5:Card"/>
+     <element name="operationId" type="xsd:long"/>
+     <element name="operationKey" nillable="true" type="xsd:string"/>
+     <element name="operationStatus" nillable="true" type="tns3:OperationStatus"/>
+     <element name="operationType" nillable="true" type="tns3:OperationType"/>
+     <element name="processingDate" nillable="true" type="xsd:dateTime"/>
+     <element name="transactionAmount" type="xsd:double"/>
+     <element name="transactionDate" nillable="true" type="xsd:dateTime"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://response.service.ws.ebanking.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://card.model.ws.ebanking.com"/>
+   <import namespace="http://request.service.ws.ebanking.com"/>
+   <import namespace="http://operation.model.ws.ebanking.com"/>
+   <import namespace="http://account.model.ws.ebanking.com"/>
+   <import namespace="http://info.impl.service.ws.ebanking.com"/>
+   <import namespace="http://address.model.ws.ebanking.com"/>
+   <import namespace="http://finance.model.ws.ebanking.com"/>
+   <complexType name="CardOperationHistoryRS">
+    <sequence>
+     <element name="operations" nillable="true" type="impl:ArrayOf_tns3_Operation"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="executeResponse">
+
+      <wsdl:part element="impl:executeReturn" name="executeReturn">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="executeRequest1">
+
+      <wsdl:part element="impl:x0" name="x0">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="executeRequest">
+
+      <wsdl:part element="impl:request" name="request">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="executeResponse1">
+
+      <wsdl:part element="impl:executeReturn1" name="executeReturn">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="CardOperationHistoryService">
+
+      <wsdl:operation name="execute" parameterOrder="request">
+
+         <wsdl:input message="impl:executeRequest" name="executeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:executeResponse" name="executeResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="execute" parameterOrder="x0">
+
+         <wsdl:input message="impl:executeRequest1" name="executeRequest1">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:executeResponse1" name="executeResponse1">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="CardOperationHistoryServiceSoapBinding" type="impl:CardOperationHistoryService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="execute">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="executeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="executeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="execute">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="executeRequest1">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="executeResponse1">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="CardOperationHistoryServiceService">
+
+      <wsdl:port binding="impl:CardOperationHistoryServiceSoapBinding" name="CardOperationHistoryService">
+
+         <wsdlsoap:address location="http://localhost:8082/services/com/ebanking/ws/service/impl/info/CardOperationHistoryService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
