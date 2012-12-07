@@ -22,8 +22,8 @@ public class PaymentOperationProcessor {
 
     private OperationDAO operationDAO;
     private OperationStatusDAO operationStatusDAO;
-
     private MoneyTransfer moneyTransfer;
+    private OperationFactory operationFactory;
 
     @Autowired
     public void setOperationDAO(OperationDAO operationDAO) {
@@ -36,6 +36,10 @@ public class PaymentOperationProcessor {
     @Autowired
     public void setMoneyTransfer(MoneyTransfer moneyTransfer) {
         this.moneyTransfer = moneyTransfer;
+    }
+    @Autowired
+    public void setOperationFactory(OperationFactory operationFactory) {
+        this.operationFactory = operationFactory;
     }
 
     public void process(Operation operation) {
@@ -64,7 +68,10 @@ public class PaymentOperationProcessor {
             operation.setTransactionDate(new Date());
             //if operation type was TT(transfer to) we need to initiate one more operation TF(transfer from)
             if (OperationTypeEnum.TRANSFER_TO.getOperationType().equals(operationType.getOperationType())) {
-                additionalOperation = OperationFactory.getSingleton().operationWithType(OperationTypeEnum.TRANSFER_FROM);
+
+                additionalOperation = operationFactory.operationWithType(
+                        OperationTypeEnum.TRANSFER_FROM, OperationStatusEnum.COMPLETED_OPERATION);
+
                 additionalOperation.setCard(operation.getContractorCard());
                 additionalOperation.setContractorCard(operation.getCard());
                 additionalOperation.setTransactionAmount(operation.getTransactionAmount());
@@ -80,6 +87,7 @@ public class PaymentOperationProcessor {
                             OperationStatusEnum.ERROR_OPERATION.getOperationStatus()));
         }
         operationDAO.saveOrUpdate(operation);
+
         if (additionalOperation != null) {
             operationDAO.saveOrUpdate(additionalOperation);
         }

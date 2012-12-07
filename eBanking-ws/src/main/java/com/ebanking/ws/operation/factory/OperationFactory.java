@@ -5,6 +5,8 @@ import com.ebanking.ws.model.operation.Operation;
 import com.ebanking.ws.model.operation.OperationStatusEnum;
 import com.ebanking.ws.model.operation.OperationTypeEnum;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 /**
  * Created with IntelliJ IDEA.
@@ -13,29 +15,31 @@ import org.springframework.beans.factory.annotation.Autowired;
  * Time: 2:04
  * To change this template use File | Settings | File Templates.
  */
+@Component
+@Scope(value = "singleton")
 public class OperationFactory {
-
-    @Autowired
     private OperationStatusDAO operationStatusDAO;
-    @Autowired
     private OperationTypeDAO operationTypeDAO;
 
-    private static OperationFactory instance;
-
-    private OperationFactory() {}
-
-    public static OperationFactory getSingleton() {
-        if (instance == null) {
-            instance = new OperationFactory();
-        }
-        return instance;
+    @Autowired
+    public void setOperationStatusDAO(OperationStatusDAO operationStatusDAO) {
+        this.operationStatusDAO = operationStatusDAO;
     }
 
-    public Operation operationWithType(OperationTypeEnum operationType) {
+    @Autowired
+    public void setOperationTypeDAO(OperationTypeDAO operationTypeDAO) {
+        this.operationTypeDAO = operationTypeDAO;
+    }
+
+    public Operation operationWithType(OperationTypeEnum operationType, OperationStatusEnum operationStatus) {
 
         Operation operation = new Operation();
-        operation.setOperationType(operationTypeDAO.getOperationTypeByCode(operationType.getOperationType()));
-        operation.setOperationStatus(operationStatusDAO.getOperationStatusByCode(OperationStatusEnum.NEW_OPERATION.getOperationStatus()));
+        operation.setOperationType(
+                operationTypeDAO.getOperationTypeByCode(
+                operationType.getOperationType()));
+        operation.setOperationStatus(
+                operationStatusDAO.getOperationStatusByCode(
+                operationStatus.getOperationStatus()));
 
         return operation;
     }

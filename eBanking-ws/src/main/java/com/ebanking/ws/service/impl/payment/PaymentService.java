@@ -25,13 +25,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
-/**
- * Created with IntelliJ IDEA.
- * User: antonkholodok
- * Date: 12/5/12
- * Time: 6:54 AM
- * To change this template use File | Settings | File Templates.
- */
 @Transactional
 public class PaymentService extends SpringSupportService implements Service<PaymentRQ, PaymentRS> {
 
@@ -40,6 +33,7 @@ public class PaymentService extends SpringSupportService implements Service<Paym
     private CorporationDAO corporationDAO;
     private OperationStatusDAO operationStatusDAO;
     private OperationTypeDAO operationTypeDAO;
+    private OperationFactory operationFactory;
 
     @Override
     public PaymentRS execute(PaymentRQ request) {
@@ -49,6 +43,7 @@ public class PaymentService extends SpringSupportService implements Service<Paym
         corporationDAO = (CorporationDAO) getBean("corporationDAO");
         operationTypeDAO = (OperationTypeDAO) getBean("operationTypeDAO");
         operationStatusDAO = (OperationStatusDAO) getBean("operationStatusDAO");
+        operationFactory = (OperationFactory) getBean("operationFactoryBean");
 
         logger.logRQRS(request, PaymentService.class);
 
@@ -62,7 +57,8 @@ public class PaymentService extends SpringSupportService implements Service<Paym
             String operationKey = request.getKey();
             Date processingDate = request.getDate();
 
-            Operation operation = OperationFactory.getSingleton().operationWithType(OperationTypeEnum.PAYMENT);
+            Operation operation = operationFactory.operationWithType(
+                    OperationTypeEnum.PAYMENT, OperationStatusEnum.NEW_OPERATION);
 
             List<Card> clientCards = cardDAO.getCardsByClientId(client.getClientId());
             for (Card card : clientCards) {
