@@ -11,7 +11,7 @@
     </div>
 
     <div>
-        <table class="table table-condensed table-hover">
+        <table class="table table-condensed table-hover" id="cards">
             <caption>Ваши карты (остаток по состоянию на
                 <s:property value="#session['clientCardsForm'].date"/>
                 ) </caption>
@@ -40,7 +40,12 @@
                             <s:property value="#card.cardAccount.currency.currencyCode"/>
                         </td>
                         <td>
-                            <img src="http://placehold.it/64x32"/>
+                            <s:if test="%{#card.cardType.cardTypeName=='VISA'}">
+                                <img src="../img/visa.png"/>
+                            </s:if>
+                            <s:if test="%{#card.cardType.cardTypeName=='MC'}">
+                                <img src="../img/mc.png"/>
+                            </s:if>
                         </td>
                     </tr>
                 </s:iterator>

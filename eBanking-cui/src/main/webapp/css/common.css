@@ -16,6 +16,8 @@ input[type="text"] { height: 30px; }
 .label { width: 150px; }
 #header ul { float: right;}
 
+#cards img {width: 50px; border: 1px solid #555; }
+
 #mobileNumberForm { width: 300px; }
 #mobileNumberForm select, #mobileNumberForm input[type="text"] { width: 300px; }
 
