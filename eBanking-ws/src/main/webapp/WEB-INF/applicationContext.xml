@@ -37,6 +37,8 @@ http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
 
     <bean id="RQRSLogger" class="com.ebanking.ws.log.RQRSLogger"/>
 
+    <bean id="operationFactory" class="com.ebanking.ws.operation.factory.OperationFactory"/>
+
     <!--Spring Quartz-->
     <bean name="runMeJob" class="org.springframework.scheduling.quartz.JobDetailBean">
         <property name="jobClass" value="com.ebanking.ws.operation.quartz.QuartzPaymentJob"/>
