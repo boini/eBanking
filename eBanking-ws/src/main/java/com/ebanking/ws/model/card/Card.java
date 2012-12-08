@@ -102,7 +102,7 @@ public class Card {
         this.creditLimit = creditLimit;
     }
 
-    @Override
+    /*@Override
     public String toString() {
         return "Card{" +
                 "cardId=" + cardId +
@@ -114,5 +114,5 @@ public class Card {
                 ", cardAccount=" + cardAccount +
                 ", cardAccountID=" + cardAccountID +
                 '}';
-    }
+    }*/
 }

@@ -70,7 +70,7 @@ public class BankAccount {
         this.amount = amount;
     }
 
-    @Override
+/*    @Override
     public String toString() {
         return "BankAccount{" +
                 "bankAccountId=" + bankAccountId +
@@ -79,5 +79,5 @@ public class BankAccount {
                 ", currency=" + currency +
                 ", amount=" + amount +
                 '}';
-    }
+    }*/
 }

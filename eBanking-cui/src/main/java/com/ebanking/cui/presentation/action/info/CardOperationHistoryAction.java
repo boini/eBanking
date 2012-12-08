@@ -11,6 +11,9 @@ import com.opensymphony.xwork2.ActionSupport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
@@ -21,15 +24,41 @@ import java.util.*;
  * To change this template use File | Settings | File Templates.
  */
 public class CardOperationHistoryAction extends BaseRQRSAction<CardOperationHistoryRQ, CardOperationHistoryRS> {
-    private Map<Long, Boolean> checkboxes;
+    private String cardIdList;
+    private String fromDate;
+    private String toDate;
     private List<Operation> operations;
 
-    public Map<Long, Boolean> getCheckboxes() {
-        return checkboxes;
+    public String getCardIdList() {
+        return cardIdList;
     }
 
-    public void setCheckboxes(Map<Long, Boolean> checkboxes) {
-        this.checkboxes = checkboxes;
+    public void setCardIdList(String cardIdList) {
+        this.cardIdList = cardIdList;
+    }
+
+    public String getFromDate() {
+        return fromDate;
+    }
+
+    public void setFromDate(String fromDate) {
+        this.fromDate = fromDate;
+    }
+
+    public String getToDate() {
+        return toDate;
+    }
+
+    public void setToDate(String toDate) {
+        this.toDate = toDate;
+    }
+
+    public List<Operation> getOperations() {
+        return operations;
+    }
+
+    public void setOperations(List<Operation> operations) {
+        this.operations = operations;
     }
 
     @Override
@@ -47,30 +76,35 @@ public class CardOperationHistoryAction extends BaseRQRSAction<CardOperationHist
     protected CardOperationHistoryRQ prepareRequest() {
         CardOperationHistoryRQ cardOperationHistoryRQ = new CardOperationHistoryRQ();
 
-        List<Long> checkedList = new ArrayList<Long>();
-        Set<Long> keySet = checkboxes.keySet();
-        for (Long key : keySet) {
-            boolean checked = checkboxes.get(key);
-            if (checked) {
-                checkedList.add(key);
-            }
+        String[] cardIdArrayStr = cardIdList.split(",");
+        long[] cardIdArray = new long[cardIdArrayStr.length];
+        for (int index = 0; index < cardIdArray.length; ++index) {
+            cardIdArray[index] = Long.valueOf(cardIdArrayStr[index]);
         }
 
-        long[] cardIdArray = new long[checkedList.size()];
-        for (int index = 0; index < checkedList.size(); ++index) {
-            cardIdArray[index] = checkedList.get(index);
+        DateFormat formatter = new SimpleDateFormat("dd-MM-yy HH:mm:ss");
+        Calendar fromCalendar = Calendar.getInstance();
+        Calendar toCalendar = Calendar.getInstance();
+        try {
+            Date fromDateFormatted = (Date)formatter.parse(fromDate);
+            Date toDateFormatted = (Date)formatter.parse(toDate);
+            fromCalendar.setTime(fromDateFormatted);
+            toCalendar.setTime(toDateFormatted);
+        } catch (ParseException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
 
         cardOperationHistoryRQ.setCardIdList(cardIdArray);
-        cardOperationHistoryRQ.setFromDate(Calendar.getInstance());
-        cardOperationHistoryRQ.setToDate(Calendar.getInstance());
+        cardOperationHistoryRQ.setFromDate(fromCalendar);
+        cardOperationHistoryRQ.setToDate(toCalendar);
 
         return cardOperationHistoryRQ;
     }
 
     @Override
     protected String processResponse(CardOperationHistoryRS responseObject) {
-        System.out.println(responseObject);
+        Operation[] operationArray = responseObject.getOperations();
+        operations = new ArrayList(Arrays.asList(operationArray));
         return "success";
     }
 }

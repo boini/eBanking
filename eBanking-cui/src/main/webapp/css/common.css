@@ -14,10 +14,9 @@ input[type="text"] { height: 30px; }
 .form-signin input[type="text"], .form-signin input[type="password"] { font-size: 16px; height: auto; margin-bottom: 15px; padding: 7px 9px; }
 
 .label { width: 150px; }
+
 #header ul { float: right;}
-
 #cards img {width: 50px; border: 1px solid #555; }
-
 #mobileNumberForm { width: 300px; }
 #mobileNumberForm select, #mobileNumberForm input[type="text"] { width: 300px; }
 
@@ -31,3 +30,5 @@ input[type="text"] { height: 30px; }
 
 #greeting { display: block; background: #6FBF4D; color: white; margin-bottom: 10px; padding-left: 5px; }
 #greeting h5 { margin: 0; margin-right: 10px; }
+
+#onlineInfoSubmit {float: right; margin-bottom: 20px;}

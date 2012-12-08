@@ -32,6 +32,16 @@ public class CardOperationHistoryService extends SpringSupportService implements
             operations.addAll(operationDAO.getCardOperations(cardIdList[index], startDate, endDate));
         }
 
+        for (Operation operation : operations) {
+            operation.getCard().getCardAccount().setCards(null);
+            if (operation.getContractorCard() != null) {
+                operation.getContractorCard().getCardAccount().setCards(null);
+            }
+            if (operation.getContractorAccount() != null) {
+                operation.getContractorAccount().getCorporation().setBankAccountList(null);
+            }
+        }
+
         if (operations.size() > 0) {
             Operation[] operationArray = operations.toArray(new Operation[operations.size()]);
             cardOperationHistoryRS.setOperations(operationArray);

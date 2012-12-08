@@ -38,8 +38,8 @@ public class OperationDAOImpl extends CommonDAOImpl implements OperationDAO {
     public List getCardOperations(long cardId, Date fromDate, Date toDate) {
         List<Operation> operations =
                 currentSession().createQuery(
-                        "from Operation as op where op.card.cardId = ?")
-                        .setLong(0, cardId)/*.setDate(1, fromDate).setDate(2, toDate)*/
+                        "from Operation as op where op.card.cardId = ? and op.processingDate >= ? and op.processingDate <= ?")
+                        .setLong(0, cardId).setDate(1, fromDate).setDate(2, toDate)
                         .list();
         return operations;
     }

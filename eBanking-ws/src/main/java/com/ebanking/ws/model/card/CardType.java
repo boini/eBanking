@@ -38,12 +38,12 @@ public class CardType {
         this.description = description;
     }
 
-    @Override
+   /* @Override
     public String toString() {
         return "CardType{" +
                 "cardTypeId=" + cardTypeId +
                 ", cardTypeName='" + cardTypeName + '\'' +
                 ", description='" + description + '\'' +
                 '}';
-    }
+    }*/
 }

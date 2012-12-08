@@ -70,7 +70,7 @@ public class CardAccount {
     public void setCurrency(Currency currency) {
         this.currency = currency;
     }
-
+/*
     @Override
     public String toString() {
         return "CardAccount{" +
@@ -80,5 +80,5 @@ public class CardAccount {
                 ", currency=" + currency +
                 ", client=" + client +
                 '}';
-    }
+    }*/
 }

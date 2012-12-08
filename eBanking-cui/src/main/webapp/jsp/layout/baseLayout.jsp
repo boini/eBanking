@@ -1,6 +1,9 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
+<%@ taglib prefix="s" uri="/struts-tags"%>
+<%@ taglib prefix="sj" uri="/struts-jquery-tags"%>
+<%@ taglib prefix="sjg" uri="/struts-jquery-grid-tags"%>
 
 <html>
 <head>
@@ -12,6 +15,8 @@
     <c:forEach items="${styles}" var="style">
         <link rel="stylesheet" href="${style}" />
     </c:forEach>
+
+    <sj:head jqueryui="true" jquerytheme="redmond" />
 </head>
 <body>
     <tiles:insertAttribute name="header"/>

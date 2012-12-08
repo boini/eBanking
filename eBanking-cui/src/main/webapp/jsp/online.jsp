@@ -1,6 +1,9 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="s" uri="/struts-tags"%>
+<%@ taglib prefix="sj" uri="/struts-jquery-tags"%>
+<%@ taglib prefix="sjg" uri="/struts-jquery-grid-tags"%>
 
 <div>
     <div id="greeting">
@@ -11,11 +14,11 @@
     </div>
 
     <div>
-        <s:form action="/cardOperationHistory" method="get">
+
         <div>
             <span>Параметры формирования выписки</span><br/>
-            <input type="radio" name="bankStatement" checked="checked"/>За последнюю неделю <br/>
-            <input type="radio" name="bankStatement"/>За последний месяц
+            <input type="radio" id="weekRadio" name="bankStatement" checked="checked"/>За последнюю неделю <br/>
+            <input type="radio" id="monthRadio" name="bankStatement"/>За последний месяц
         </div>
 
         <table class="table table-condensed table-hover" id="cards">
@@ -34,7 +37,7 @@
             <s:iterator value="#session['clientCardsForm'].cards" var="card">
                 <tr>
                     <td>
-                        <s:checkbox name="checkboxes[%{#card.cardId}]" theme="simple"/>
+                        <s:checkbox name="%{#card.cardId}" theme="simple"/>
                     </td>
                     <td>
                         <s:property value="#card.cardNumber"/>
@@ -61,8 +64,10 @@
             </tbody>
         </table>
 
-        <s:submit value="Получить" />
+        <button class="btn btn-primary" id="onlineInfoSubmit">Получить</button>
 
-        </s:form>
+        <div id="onlineInfoTable">
+
+        </div>
     </div>
 </div>
