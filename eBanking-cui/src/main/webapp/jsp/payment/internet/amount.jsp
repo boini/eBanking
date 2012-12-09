@@ -11,7 +11,7 @@
     </div>
 
     <div>
-    <s:form action="/mobilePaymentReview" method="POST" id="mobileNumberForm">
+    <s:form action="/internetPaymentReview" method="POST" id="internetNumberForm">
         <td colspan="2">
             <h5>Наименование услуги:
                 <s:property value="%{#session.communicationsPaymentForm.providerName}"/>
@@ -25,8 +25,8 @@
         <td colspan="2">
             <h5>Дополнительные реквизиты</h5>
         </td>
-        <s:textfield name="mobileNumber"
-                     label="Номер телефона"
+        <s:textfield name="accountNumber"
+                     label="Номер счета"
                      value="%{#session['communicationsPaymentForm'].number}"
                      disabled="true"/>
         <td>

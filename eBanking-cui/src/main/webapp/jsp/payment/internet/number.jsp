@@ -11,7 +11,7 @@
     </div>
 
     <div>
-        <s:form action="/mobilePaymentAmount" method="POST" id="mobileNumberForm">
+        <s:form action="/internetPaymentAmount" method="POST" id="internetNumberForm">
             <td colspan="2">
                 <h5>Наименование услуги:
                     <s:property value="%{#session.communicationsPaymentForm.providerName}"/>
@@ -27,12 +27,10 @@
             </s:select>
             <td colspan="2">
                 <h5>Дополнительные реквизиты</h5>
-                <h6>Введите 9 цифр номера телефона в формате: 29ххххххх, 44ххххххх,
-                    25ххххххх, 33ххххххх</h6>
+                <h6>Введите номер договора</h6>
             </td>
             <s:textfield key="number"
-                         label="Номер телефона"
-                         placeholder="yyххххххх"/>
+                         label="Номер договора"/>
             <td>
                 <s:submit value="Продолжить"/>
             </td>

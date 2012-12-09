@@ -11,7 +11,7 @@
     </div>
 
     <div>
-        <s:form action="/mobilePaymentSubmit" method="POST" id="mobileNumberForm">
+        <s:form action="/internetPaymentSubmit" method="POST" id="internetNumberForm">
             <table class="table table-striped">
                 <tr>
                     <td>Дата</td>
@@ -49,7 +49,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Номер телефона</td>
+                    <td>Номер договора</td>
                     <td>
                         <s:property value="%{#session.communicationsPaymentForm.number}"/>
                     </td>

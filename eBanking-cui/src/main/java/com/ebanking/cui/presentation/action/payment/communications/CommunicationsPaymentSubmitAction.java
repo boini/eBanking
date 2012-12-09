@@ -1,9 +1,9 @@
-package com.ebanking.cui.presentation.action.payment.mobile;
+package com.ebanking.cui.presentation.action.payment.communications;
 
 import com.ebanking.cui.model.account.Account;
 import com.ebanking.cui.model.account.Client;
 import com.ebanking.cui.presentation.action.BaseRQRSAction;
-import com.ebanking.cui.presentation.form.payments.ServicePaymentForm;
+import com.ebanking.cui.presentation.form.payments.CommunicationsPaymentForm;
 import com.ebanking.cui.service.client.ServiceClient;
 import com.ebanking.cui.service.request.PaymentRQ;
 import com.ebanking.cui.service.response.PaymentRS;
@@ -21,7 +21,7 @@ import java.util.Calendar;
  * Time: 9:36 AM
  * To change this template use File | Settings | File Templates.
  */
-public class MobilePaymentSubmitAction extends BaseRQRSAction<PaymentRQ, PaymentRS> {
+public class CommunicationsPaymentSubmitAction extends BaseRQRSAction<PaymentRQ, PaymentRS> {
 
     @Override
     @Autowired
@@ -32,21 +32,21 @@ public class MobilePaymentSubmitAction extends BaseRQRSAction<PaymentRQ, Payment
 
     @Override
     protected PaymentRQ prepareRequest() {
-        PaymentRQ mobilePaymentRQ = new PaymentRQ();
-        ServicePaymentForm mobilePaymentForm = HttpSessionUtil.getMobilePaymentForm();
+        PaymentRQ communicationsPaymentRQ = new PaymentRQ();
+        CommunicationsPaymentForm communicationsPaymentForm = HttpSessionUtil.getMobilePaymentForm();
 
-        mobilePaymentRQ.setAmount(mobilePaymentForm.getAmount());
-        mobilePaymentRQ.setFrom(mobilePaymentForm.getCardId());
+        communicationsPaymentRQ.setAmount(communicationsPaymentForm.getAmount());
+        communicationsPaymentRQ.setFrom(communicationsPaymentForm.getCardId());
 
         Account principal = (Account) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         Client client = principal.getClient();
-        mobilePaymentRQ.setClient(client);
+        communicationsPaymentRQ.setClient(client);
 
-        mobilePaymentRQ.setKey(mobilePaymentForm.getNumber());
-        mobilePaymentRQ.setTo(mobilePaymentForm.getProviderName().toString());
-        mobilePaymentRQ.setDate(Calendar.getInstance());
+        communicationsPaymentRQ.setKey(communicationsPaymentForm.getNumber());
+        communicationsPaymentRQ.setTo(communicationsPaymentForm.getProviderName().toString());
+        communicationsPaymentRQ.setDate(Calendar.getInstance());
 
-        return mobilePaymentRQ;
+        return communicationsPaymentRQ;
     }
 
     @Override

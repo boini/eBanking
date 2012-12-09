@@ -1,6 +1,6 @@
-package com.ebanking.cui.presentation.action.payment.mobile;
+package com.ebanking.cui.presentation.action.payment.communications;
 
-import com.ebanking.cui.presentation.form.payments.MobilePaymentForm;
+import com.ebanking.cui.presentation.form.payments.CommunicationsPaymentForm;
 import com.ebanking.cui.session.HttpSessionUtil;
 
 import java.util.Date;
@@ -12,7 +12,7 @@ import java.util.Date;
  * Time: 8:57 AM
  * To change this template use File | Settings | File Templates.
  */
-public class MobilePaymentReviewForwardAction {
+public class CommunicationsPaymentReviewForwardAction {
     private double amount;
 
     public double getAmount() {
@@ -24,10 +24,10 @@ public class MobilePaymentReviewForwardAction {
     }
 
     public String execute() throws Exception {
-        MobilePaymentForm mobilePaymentForm = HttpSessionUtil.getMobilePaymentForm();
-        mobilePaymentForm.setAmount(amount);
+        CommunicationsPaymentForm communicationsPaymentForm = HttpSessionUtil.getMobilePaymentForm();
+        communicationsPaymentForm.setAmount(amount);
         Date currentDate = new Date();
-        mobilePaymentForm.setDate(currentDate);
+        communicationsPaymentForm.setDate(currentDate);
         return "success";
     }
 }

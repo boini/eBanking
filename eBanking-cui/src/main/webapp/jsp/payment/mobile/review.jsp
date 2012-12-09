@@ -17,7 +17,7 @@
                 <tr>
                     <td>Дата</td>
                     <td>
-                        <s:property value="%{#session.mobilePaymentForm.date}"/>
+                        <s:property value="%{#session.communicationsPaymentForm.date}"/>
                     </td>
                 </tr>
                 <tr>
@@ -33,31 +33,35 @@
                 <tr>
                     <td>Оплачиваемая услуга</td>
                     <td>
-                        <s:property value="%{#session.mobilePaymentForm.providerName}"/>
+                        <s:property value="%{#session.communicationsPaymentForm.providerName}"/>
                     </td>
                 </tr>
                 <tr>
                     <td>Оплатить с карты</td>
                     <td>
-                        <s:property value="%{#session.mobilePaymentForm.activeCard.cardNumber}"/>
+                        <s:property value="%{#session.communicationsPaymentForm.activeCard.cardNumber}"/>
                     </td>
                 </tr>
                 <tr>
                     <td>Cумма</td>
                     <td>
-                        <s:property value="%{#session.mobilePaymentForm.amount}"/>
-                        (<s:property value="%{#session.mobilePaymentForm.activeCard.cardAccount.currency.currencyCode}"/>)
+                        <s:property value="%{#session.communicationsPaymentForm.amount}"/>
+                        (<s:property value="%{#session.communicationsPaymentForm.activeCard.cardAccount.currency.currencyCode}"/>)
                     </td>
                 </tr>
                 <tr>
                     <td>Номер телефона</td>
                     <td>
-                        <s:property value="%{#session.mobilePaymentForm.number}"/>
+                        <s:property value="%{#session.communicationsPaymentForm.number}"/>
                     </td>
                 </tr>
             </table>
+            <h5>
+                Внимание! После нажания на кнопку "Отправить в банк" Вы совершите
+                платеж. Возврат средств на Ваш счет будет невозможен!
+            </h5>
             <td>
-                <s:submit value="Продолжить"/>
+                <s:submit value="Отправить в банк"/>
             </td>
         </s:form>
     </div>

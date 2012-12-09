@@ -1,8 +1,7 @@
-package com.ebanking.cui.presentation.action.payment.mobile;
+package com.ebanking.cui.presentation.action.payment.communications;
 
-import com.ebanking.cui.presentation.form.payments.MobilePaymentForm;
+import com.ebanking.cui.presentation.form.payments.CommunicationsPaymentForm;
 import com.ebanking.cui.session.HttpSessionUtil;
-import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * Created with IntelliJ IDEA.
@@ -11,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  * Time: 5:56 AM
  * To change this template use File | Settings | File Templates.
  */
-public class MobilePaymentAmountForwardAction {
+public class CommunicationsPaymentAmountForwardAction {
     private String number;
     private long cardId;
 
@@ -24,9 +23,9 @@ public class MobilePaymentAmountForwardAction {
     }
 
     public String execute() throws Exception {
-        MobilePaymentForm mobilePaymentForm1 = HttpSessionUtil.getMobilePaymentForm();
-        mobilePaymentForm1.setCardId(cardId);
-        mobilePaymentForm1.setNumber(number);
+        CommunicationsPaymentForm communicationsPaymentForm1 = HttpSessionUtil.getMobilePaymentForm();
+        communicationsPaymentForm1.setCardId(cardId);
+        communicationsPaymentForm1.setNumber(number);
         return "success";
     }
 }

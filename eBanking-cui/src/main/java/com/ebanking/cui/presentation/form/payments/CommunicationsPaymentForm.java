@@ -13,7 +13,7 @@ import java.util.List;
  * Time: 9:24 AM
  * To change this template use File | Settings | File Templates.
  */
-public class ServicePaymentForm {
+public class CommunicationsPaymentForm {
     private List<Card> cards;
     private Long cardId;
     private double amount;
