@@ -490,8 +490,8 @@ CREATE TABLE `operation` (
   `address_id` int(11) DEFAULT NULL,
   `transaction_amount` decimal(20,2) NOT NULL DEFAULT '0.00',
   `contractor_bank_account_id` int(11) DEFAULT NULL,
-  `contractor_card_id` int(11) DEFAULT NULL DEFAULT '0.00',
-  'card_account_amount' decimal(20,2) NOT NULL,
+  `contractor_card_id` int(11) DEFAULT NULL,
+  `card_account_amount` decimal(20,2) NOT NULL DEFAULT '0.00',
   PRIMARY KEY (`operation_id`),
   KEY `fk_operation_operation_status_idx` (`operation_status_id`),
   KEY `fk_operation_operation_type_idx` (`operation_type_id`),
@@ -506,16 +506,6 @@ CREATE TABLE `operation` (
   CONSTRAINT `fk_operation_contractor_card` FOREIGN KEY (`contractor_card_id`) REFERENCES `card` (`card_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `operation`
---
-
-LOCK TABLES `operation` WRITE;
-/*!40000 ALTER TABLE `operation` DISABLE KEYS */;
-INSERT INTO `operation` VALUES (2,2,1,'291258458','2012-12-06 01:58:25',NULL,2,NULL,10000.00,1,NULL),(3,2,1,'291258458','2012-12-06 01:58:49',NULL,2,NULL,10000.00,1,NULL),(9,2,1,'291258458','2012-12-06 01:58:49',NULL,2,NULL,9000.00,1,NULL),(10,2,1,'291258458','2012-12-06 01:58:49',NULL,2,NULL,9000.00,1,NULL),(11,2,1,'291258458','2012-12-06 01:58:49',NULL,2,NULL,9000.00,1,NULL),(12,2,1,'291258458','2012-12-06 01:58:49',NULL,2,NULL,9000.00,1,NULL),(13,2,1,'291258458','2012-12-06 04:08:12',NULL,2,NULL,200000.00,1,NULL),(14,2,1,'291258458','2012-12-06 04:12:24',NULL,2,NULL,2000000.00,1,NULL),(15,2,1,'12312312','2012-12-06 04:16:30',NULL,1,NULL,100.00,4,NULL),(16,2,1,'291258458','2012-12-06 04:17:07',NULL,1,NULL,23.00,6,NULL);
-/*!40000 ALTER TABLE `operation` ENABLE KEYS */;
-UNLOCK TABLES;
 
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

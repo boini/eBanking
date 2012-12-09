@@ -1,6 +1,7 @@
 body { font-size: 11px; }
 table { font-size: 11px; }
 input[type="text"] { height: 30px; }
+input[type="radio"] {margin-right: 5px;}
 
 .wrapper { min-width: 960px; }
 
