@@ -14,6 +14,7 @@
       <xs:element name="processingDate" type="xs:dateTime" minOccurs="0"/>
       <xs:element name="transactionAmount" type="xs:double"/>
       <xs:element name="transactionDate" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="cardAccountAmount" type="xs:double"/>
     </xs:sequence>
   </xs:complexType>
 

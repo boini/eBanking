@@ -16,6 +16,8 @@ public class Operation  implements java.io.Serializable {
 
     private Card card;
 
+    private double cardAccountAmount;
+
     private BankAccount contractorAccount;
 
     private Card contractorCard;
@@ -40,6 +42,7 @@ public class Operation  implements java.io.Serializable {
     public Operation(
            Address address,
            Card card,
+           double cardAccountAmount,
            BankAccount contractorAccount,
            Card contractorCard,
            long operationId,
@@ -51,6 +54,7 @@ public class Operation  implements java.io.Serializable {
            java.util.Calendar transactionDate) {
            this.address = address;
            this.card = card;
+           this.cardAccountAmount = cardAccountAmount;
            this.contractorAccount = contractorAccount;
            this.contractorCard = contractorCard;
            this.operationId = operationId;
@@ -100,6 +104,26 @@ public class Operation  implements java.io.Serializable {
      */
     public void setCard(Card card) {
         this.card = card;
+    }
+
+
+    /**
+     * Gets the cardAccountAmount value for this Operation.
+     * 
+     * @return cardAccountAmount
+     */
+    public double getCardAccountAmount() {
+        return cardAccountAmount;
+    }
+
+
+    /**
+     * Sets the cardAccountAmount value for this Operation.
+     * 
+     * @param cardAccountAmount
+     */
+    public void setCardAccountAmount(double cardAccountAmount) {
+        this.cardAccountAmount = cardAccountAmount;
     }
 
 
@@ -300,6 +324,7 @@ public class Operation  implements java.io.Serializable {
             ((this.card==null && other.getCard()==null) || 
              (this.card!=null &&
               this.card.equals(other.getCard()))) &&
+            this.cardAccountAmount == other.getCardAccountAmount() &&
             ((this.contractorAccount==null && other.getContractorAccount()==null) || 
              (this.contractorAccount!=null &&
               this.contractorAccount.equals(other.getContractorAccount()))) &&
@@ -340,6 +365,7 @@ public class Operation  implements java.io.Serializable {
         if (getCard() != null) {
             _hashCode += getCard().hashCode();
         }
+        _hashCode += new Double(getCardAccountAmount()).hashCode();
         if (getContractorAccount() != null) {
             _hashCode += getContractorAccount().hashCode();
         }
@@ -384,6 +410,12 @@ public class Operation  implements java.io.Serializable {
         elemField.setXmlName(new javax.xml.namespace.QName("http://operation.model.ws.ebanking.com", "card"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://card.model.ws.ebanking.com", "Card"));
         elemField.setNillable(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("cardAccountAmount");
+        elemField.setXmlName(new javax.xml.namespace.QName("http://operation.model.ws.ebanking.com", "cardAccountAmount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
+        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("contractorAccount");

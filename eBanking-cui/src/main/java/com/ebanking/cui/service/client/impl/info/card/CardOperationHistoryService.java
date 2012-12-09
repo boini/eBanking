@@ -1,4 +1,4 @@
-package com.ebanking.cui.service.client.impl.info;
+package com.ebanking.cui.service.client.impl.info.card;
 
 import com.ebanking.cui.service.client.ServiceClient;
 import com.ebanking.cui.service.request.CardOperationHistoryRQ;

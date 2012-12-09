@@ -192,35 +192,35 @@ public class Account  implements java.io.Serializable {
         new org.apache.axis.description.TypeDesc(Account.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://account.model.ws.ebanking.com", "Account"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://cardAccount.model.ws.ebanking.com", "Account"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("accountId");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://account.model.ws.ebanking.com", "accountId"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://cardAccount.model.ws.ebanking.com", "accountId"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("client");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://account.model.ws.ebanking.com", "client"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://account.model.ws.ebanking.com", "Client"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://cardAccount.model.ws.ebanking.com", "client"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://cardAccount.model.ws.ebanking.com", "Client"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("login");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://account.model.ws.ebanking.com", "login"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://cardAccount.model.ws.ebanking.com", "login"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("password");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://account.model.ws.ebanking.com", "password"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://cardAccount.model.ws.ebanking.com", "password"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("role");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://account.model.ws.ebanking.com", "role"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://account.model.ws.ebanking.com", "Role"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://cardAccount.model.ws.ebanking.com", "role"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://cardAccount.model.ws.ebanking.com", "Role"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
     }

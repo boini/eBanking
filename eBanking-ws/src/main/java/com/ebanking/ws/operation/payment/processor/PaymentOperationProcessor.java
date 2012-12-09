@@ -52,11 +52,12 @@ public class PaymentOperationProcessor {
         OperationType operationType = operation.getOperationType();
 
         CardAccount clientCardAccount = operation.getCard().getCardAccount();
+        Card contractorCard = null;
         if (OperationTypeEnum.PAYMENT.getOperationType().equals(operationType.getOperationType())) {
             BankAccount corporationBankAccount = operation.getContractorAccount();
             success = moneyTransfer.transfer(clientCardAccount, corporationBankAccount, operation.getTransactionAmount());
         } else { // TT(transfer to) or TF(transfer from) operation
-            Card contractorCard = operation.getContractorCard();
+            contractorCard = operation.getContractorCard();
             success = moneyTransfer.transfer(clientCardAccount, contractorCard.getCardAccount(), operation.getTransactionAmount());
         }
 
@@ -66,6 +67,7 @@ public class PaymentOperationProcessor {
                     operationStatusDAO.getOperationStatusByCode(
                             OperationStatusEnum.COMPLETED_OPERATION.getOperationStatus()));
             operation.setTransactionDate(new Date());
+            operation.setCardAccountAmount(clientCardAccount.getBalance());
             //if operation type was TT(transfer to) we need to initiate one more operation TF(transfer from)
             if (OperationTypeEnum.TRANSFER_TO.getOperationType().equals(operationType.getOperationType())) {
 
@@ -76,10 +78,7 @@ public class PaymentOperationProcessor {
                 additionalOperation.setContractorCard(operation.getCard());
                 additionalOperation.setTransactionAmount(operation.getTransactionAmount());
                 additionalOperation.setProcessingDate(new Date());
-                /*
-                additionalOperation.setOperationKey(---HZ---);
-                additionalOperation.setAddress(---HZ---);
-                */
+                additionalOperation.setCardAccountAmount(contractorCard.getCardAccount().getBalance());
             }
         } else {
             operation.setOperationStatus(

@@ -26,9 +26,10 @@ input[type="text"] { height: 30px; }
 #quick-payment h4 { padding: 0; margin: 0; margin-top: 10px; }
 #quick-payment ul { list-style: none; display: inline-block; margin: 10px 0; }
 #quick-payment li { float: left; margin-right: 15px; }
-#quick-payment img {max-width: 100px; max-height: 100px; border: 1px solid #999; }
+#quick-payment img {max-width: 70px; max-height: 100px; border: 1px solid #999; }
 
 #greeting { display: block; background: #6FBF4D; color: white; margin-bottom: 10px; padding-left: 5px; }
 #greeting h5 { margin: 0; margin-right: 10px; }
 
 #onlineInfoSubmit {float: right; margin-bottom: 20px;}
+#cardAccountInfoSubmit {float: right; margin-bottom: 20px;}

@@ -170,29 +170,29 @@ public class Corporation  implements java.io.Serializable {
         new org.apache.axis.description.TypeDesc(Corporation.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://account.model.ws.ebanking.com", "Corporation"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://cardAccount.model.ws.ebanking.com", "Corporation"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("bankAccountList");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://account.model.ws.ebanking.com", "bankAccountList"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://cardAccount.model.ws.ebanking.com", "bankAccountList"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "anyType"));
         elemField.setNillable(true);
         elemField.setItemQName(new javax.xml.namespace.QName("http://info.impl.service.ws.ebanking.com", "item"));
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("corporationId");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://account.model.ws.ebanking.com", "corporationId"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://cardAccount.model.ws.ebanking.com", "corporationId"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("corporationName");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://account.model.ws.ebanking.com", "corporationName"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://cardAccount.model.ws.ebanking.com", "corporationName"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("description");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://account.model.ws.ebanking.com", "description"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://cardAccount.model.ws.ebanking.com", "description"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);

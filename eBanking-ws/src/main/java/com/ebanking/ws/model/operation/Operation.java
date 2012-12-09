@@ -54,6 +54,17 @@ public class Operation {
     @JoinColumn(name = "CONTRACTOR_CARD_ID")
     private Card contractorCard;
 
+    @Column(name = "CARD_ACCOUNT_AMOUNT")
+    private double cardAccountAmount;
+
+    public double getCardAccountAmount() {
+        return cardAccountAmount;
+    }
+
+    public void setCardAccountAmount(double cardAccountAmount) {
+        this.cardAccountAmount = cardAccountAmount;
+    }
+
     public double getTransactionAmount() {
         return transactionAmount;
     }

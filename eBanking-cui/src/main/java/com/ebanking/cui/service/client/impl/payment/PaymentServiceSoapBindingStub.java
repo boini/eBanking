@@ -83,7 +83,7 @@ public class PaymentServiceSoapBindingStub extends org.apache.axis.client.Stub i
             java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
             java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
-            qName = new javax.xml.namespace.QName("http://account.model.ws.ebanking.com", "Client");
+            qName = new javax.xml.namespace.QName("http://cardAccount.model.ws.ebanking.com", "Client");
             cachedSerQNames.add(qName);
             cls = Client.class;
             cachedSerClasses.add(cls);
