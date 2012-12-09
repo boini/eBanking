@@ -1,4 +1,4 @@
-package com.ebanking.cui.presentation.form;
+package com.ebanking.cui.presentation.form.payments;
 
 import com.ebanking.cui.model.card.Card;
 import com.ebanking.cui.model.payment.ProviderName;
@@ -13,20 +13,20 @@ import java.util.List;
  * Time: 9:24 AM
  * To change this template use File | Settings | File Templates.
  */
-public class MobilePaymentForm {
+public class ServicePaymentForm {
     private List<Card> cards;
     private Long cardId;
     private double amount;
     private String number;
     private Date date;
-    private ProviderName.Mobile providerName;
+    private ProviderName.Names providerName;
 
-    public ProviderName.Mobile getProviderName() {
+    public ProviderName.Names getProviderName() {
         return providerName;
     }
 
     public void setProviderName(String providerNameStr) {
-        this.providerName = ProviderName.Mobile.valueOf(providerNameStr.toUpperCase());
+        this.providerName = ProviderName.Names.valueOf(providerNameStr.toUpperCase());
     }
 
     public Date getDate() {

@@ -3,8 +3,10 @@ package com.ebanking.cui.session;
 import com.ebanking.cui.model.account.Account;
 import com.ebanking.cui.presentation.form.ClientCardsInfoForm;
 import com.ebanking.cui.presentation.form.ClientInfoForm;
-import com.ebanking.cui.presentation.form.MobilePaymentForm;
+import com.ebanking.cui.presentation.form.payments.MobilePaymentForm;
+import com.ebanking.cui.presentation.form.payments.InternetPaymentForm;
 import com.ebanking.cui.presentation.form.NBRBCurrencyRatesForm;
+import com.ebanking.cui.presentation.form.payments.ServicePaymentForm;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
@@ -24,6 +26,7 @@ public class HttpSessionUtil {
     private static final String CLIENT_INFO_FORM = "clientInfoForm";
     private static final String NBRB_RATES_FORM = "nbrbCurrencyRatesForm";
     private static final String MOBILE_PAYMENT_FORM = "mobilePaymentForm";
+    private static final String INTERNET_PAYMENT_FORM = "internetPaymentForm";
 
     private static UserHttpSession userHttpSession;
 
@@ -82,5 +85,13 @@ public class HttpSessionUtil {
 
     public static MobilePaymentForm getMobilePaymentForm() {
         return (MobilePaymentForm) getAttribute(MOBILE_PAYMENT_FORM);
+    }
+
+    public static void setInternetPaymentForm(InternetPaymentForm internetPaymentForm) {
+        addAttribute(INTERNET_PAYMENT_FORM, internetPaymentForm);
+    }
+
+    public static InternetPaymentForm getInternetPaymentForm() {
+        return (InternetPaymentForm) getAttribute(INTERNET_PAYMENT_FORM);
     }
 }

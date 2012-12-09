@@ -84,6 +84,10 @@
             <result name="success" type="json"/>
         </action>
 
+        <action name="internetPayment" class="InternetPaymentAction">
+            <result name="success" type="tiles">mobileNumber.tiles</result>
+        </action>
+
     </package>
 
 </struts>

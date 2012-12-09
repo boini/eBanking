@@ -36,6 +36,29 @@
                     </li>
                 </ul>
             </li>
+            <li>
+                Интернет
+                <ul>
+                    <li>
+                        <s:url action="mobilePayment" var="velcomPaymentUrl">
+                            <s:param name="mobileProvider">velcom</s:param>
+                        </s:url>
+                        <s:a href="%{velcomPaymentUrl}">Velcom</s:a>
+                    </li>
+                    <li>
+                        <s:url action="mobilePayment" var="mtsPaymentUrl">
+                            <s:param name="mobileProvider">mts</s:param>
+                        </s:url>
+                        <s:a href="%{mtsPaymentUrl}">MTS</s:a>
+                    </li>
+                    <li>
+                        <s:url action="mobilePayment" var="lifePaymentUrl">
+                            <s:param name="mobileProvider">life</s:param>
+                        </s:url>
+                        <s:a href="%{lifePaymentUrl}">life:)</s:a>
+                    </li>
+                </ul>
+            </li>
         </ul>
     </div>
 </div>
