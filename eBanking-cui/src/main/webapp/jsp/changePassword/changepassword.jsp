@@ -18,12 +18,12 @@
 
     <div>
 
-        <s:form method="post">
-            <h3>Change password</h3>
-            <s:password name="j_oldpassword" placeholder="Old password" />
-            <s:password name="j_newpassword" placeholder="New password" />
-            <s:password name="j_confirmpassword" placeholder="Confirm password" />
-            <s:submit label="Change" />
+        <s:form action="/changePasswordSubmit.action" method="post" id="changePasswordForm">
+            <h3>Смена пароля</h3>
+            <s:password name="oldPassword" placeholder="Old password" />
+            <s:password name="newPassword" placeholder="New password" />
+            <s:password name="confirmPassword" placeholder="Confirm password" />
+            <s:submit value="Изменить" />
         </s:form>
 
     </div>

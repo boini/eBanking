@@ -119,6 +119,10 @@
             <result name="success" type="tiles">/changePassword.tiles</result>
         </action>
 
+        <action name="changePasswordSubmit" class="ChangePasswordSubmitAction">
+            <result name="success" type="tiles">/changePasswordSuccess.tiles</result>
+        </action>
+
     </package>
 
 </struts>

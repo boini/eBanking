@@ -1,6 +1,7 @@
 package com.ebanking.cui.session;
 
 import com.ebanking.cui.model.account.Account;
+import com.ebanking.cui.presentation.form.ChangePasswordForm;
 import com.ebanking.cui.presentation.form.ClientCardsInfoForm;
 import com.ebanking.cui.presentation.form.ClientInfoForm;
 import com.ebanking.cui.presentation.form.payments.MobilePaymentForm;
@@ -27,6 +28,7 @@ public class HttpSessionUtil {
     private static final String NBRB_RATES_FORM = "nbrbCurrencyRatesForm";
     private static final String MOBILE_PAYMENT_FORM = "mobilePaymentForm";
     private static final String INTERNET_PAYMENT_FORM = "internetPaymentForm";
+    private static final String CHANGE_PASSWORD_FORM = "changePasswordForm";
 
     private static UserHttpSession userHttpSession;
 
@@ -93,5 +95,13 @@ public class HttpSessionUtil {
 
     public static InternetPaymentForm getInternetPaymentForm() {
         return (InternetPaymentForm) getAttribute(INTERNET_PAYMENT_FORM);
+    }
+
+    public static void setChangePasswordForm(ChangePasswordForm changePasswordForm) {
+        addAttribute(CHANGE_PASSWORD_FORM, changePasswordForm);
+    }
+
+    public static ChangePasswordForm getChangePasswordForm() {
+        return (ChangePasswordForm) getAttribute(CHANGE_PASSWORD_FORM);
     }
 }
