@@ -13,13 +13,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Created with IntelliJ IDEA.
- * User: Anton
- * Date: 12/5/12
- * Time: 9:21 PM
- * To change this template use File | Settings | File Templates.
- */
 @Transactional
 public class OperationDAOImpl extends CommonDAOImpl implements OperationDAO {
     @Override
@@ -43,6 +36,28 @@ public class OperationDAOImpl extends CommonDAOImpl implements OperationDAO {
 
         criteria.add(Restrictions.eq("card.cardId", cardId));
         criteria.add(Restrictions.between("processingDate", fromDate, toDate));
+
+        List<Operation> operations = criteria.list();
+
+        return operations;
+    }
+
+    @Override
+    public List getAccountOperations(long clientId) {
+        List<Operation> operations =
+                currentSession().createQuery("from Operation as op where op.card.cardAccount.client.clientId = ?")
+                        .setLong(0, clientId)
+                        .list();
+        return operations;
+    }
+
+    @Override
+    public List getCardAccountOperations(long cardAccountId, Date fromDate, Date toDate) {
+        Criteria criteria = currentSession().createCriteria(Operation.class, "operation");
+        criteria.createAlias("operation.card", "c");
+        criteria.createAlias("c.cardAccount", "ca");
+        criteria.add(Restrictions.eq("ca.cardAccountId", cardAccountId));
+        criteria.add(Restrictions.between("operation.processingDate", fromDate, toDate));
 
         List<Operation> operations = criteria.list();
 

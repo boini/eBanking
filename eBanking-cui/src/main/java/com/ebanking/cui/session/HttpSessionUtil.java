@@ -5,7 +5,7 @@ import com.ebanking.cui.presentation.form.ClientCardsInfoForm;
 import com.ebanking.cui.presentation.form.ClientInfoForm;
 import com.ebanking.cui.presentation.form.NBRBCurrencyRatesForm;
 import com.ebanking.cui.presentation.form.payments.CommunicationsPaymentForm;
-
+import com.ebanking.cui.presentation.form.ClientOpertaionHistoryForm;
 /**
  * Created with IntelliJ IDEA.
  * User: antonkholodok
@@ -20,6 +20,7 @@ public class HttpSessionUtil {
     private static final String CLIENT_INFO_FORM = "clientInfoForm";
     private static final String NBRB_RATES_FORM = "nbrbCurrencyRatesForm";
     private static final String COMMUNICATIONS_PAYMENT_FORM = "communicationsPaymentForm";
+    private static final String CLIENT_OPERATION_HISTORY_FORM = "clientOperationHistoryForm";
 
     private static UserHttpSession userHttpSession;
 
@@ -78,5 +79,13 @@ public class HttpSessionUtil {
 
     public static CommunicationsPaymentForm getMobilePaymentForm() {
         return (CommunicationsPaymentForm) getAttribute(COMMUNICATIONS_PAYMENT_FORM);
+    }
+    
+    public static void setClientOperationHistoryForm(ClientOpertaionHistoryForm clientOperationHistoryForm) {
+        addAttribute(CLIENT_OPERATION_HISTORY_FORM, clientOperationHistoryForm);
+    }
+
+    public static ClientOpertaionHistoryForm getClientOperationHistoryForm() {
+        return (ClientOpertaionHistoryForm) getAttribute(CLIENT_OPERATION_HISTORY_FORM);
     }
 }

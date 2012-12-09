@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions targetNamespace="http://info.impl.service.ws.ebanking.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://info.impl.service.ws.ebanking.com" xmlns:intf="http://info.impl.service.ws.ebanking.com" xmlns:tns1="http://request.service.ws.ebanking.com" xmlns:tns2="http://response.service.ws.ebanking.com" xmlns:tns3="http://operation.model.ws.ebanking.com" xmlns:tns4="http://address.model.ws.ebanking.com" xmlns:tns5="http://card.model.ws.ebanking.com" xmlns:tns6="http://account.model.ws.ebanking.com" xmlns:tns7="http://finance.model.ws.ebanking.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<wsdl:definitions targetNamespace="http://info.impl.service.ws.ebanking.com"
+                  xmlns:impl="http://info.impl.service.ws.ebanking.com"
+                  xmlns:tns1="http://request.service.ws.ebanking.com"
+                  xmlns:tns2="http://response.service.ws.ebanking.com"
+                  xmlns:tns3="http://operation.model.ws.ebanking.com" xmlns:tns4="http://address.model.ws.ebanking.com"
+                  xmlns:tns5="http://card.model.ws.ebanking.com" xmlns:tns6="http://account.model.ws.ebanking.com"
+                  xmlns:tns7="http://finance.model.ws.ebanking.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 <!--WSDL created by Apache Axis version: 1.4
 Built on Apr 22, 2006 (06:55:48 PDT)-->
  <wsdl:types>
@@ -16,7 +23,7 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:long"/>
     </sequence>
    </complexType>
-   <element name="request" type="tns1:CardOperationHistoryRQ"/>
+   <element name="request" type="tns1:OperationHistoryRQ"/>
    <complexType name="ArrayOf_xsd_anyType">
     <sequence>
      <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:anyType"/>
@@ -27,7 +34,7 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      <element maxOccurs="unbounded" minOccurs="0" name="item" type="tns3:Operation"/>
     </sequence>
    </complexType>
-   <element name="executeReturn" type="tns2:CardOperationHistoryRS"/>
+   <element name="executeReturn" type="tns2:OperationHistoryRS"/>
    <element name="x0" type="xsd:anyType"/>
    <element name="executeReturn1" type="xsd:anyType"/>
   </schema>
@@ -39,10 +46,11 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
    <import namespace="http://info.impl.service.ws.ebanking.com"/>
    <import namespace="http://address.model.ws.ebanking.com"/>
    <import namespace="http://finance.model.ws.ebanking.com"/>
-   <complexType name="CardOperationHistoryRQ">
+   <complexType name="OperationHistoryRQ">
     <sequence>
-     <element name="cardIdList" nillable="true" type="impl:ArrayOf_xsd_long"/>
      <element name="fromDate" nillable="true" type="xsd:dateTime"/>
+     <element name="idList" nillable="true" type="impl:ArrayOf_xsd_long"/>
+     <element name="operationRequestType" nillable="true" type="xsd:string"/>
      <element name="toDate" nillable="true" type="xsd:dateTime"/>
     </sequence>
    </complexType>
@@ -219,7 +227,7 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
    <import namespace="http://info.impl.service.ws.ebanking.com"/>
    <import namespace="http://address.model.ws.ebanking.com"/>
    <import namespace="http://finance.model.ws.ebanking.com"/>
-   <complexType name="CardOperationHistoryRS">
+   <complexType name="OperationHistoryRS">
     <sequence>
      <element name="operations" nillable="true" type="impl:ArrayOf_tns3_Operation"/>
     </sequence>
@@ -259,7 +267,7 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
-   <wsdl:portType name="CardOperationHistoryService">
+   <wsdl:portType name="OperationHistoryService">
 
       <wsdl:operation name="execute" parameterOrder="request">
 
@@ -287,7 +295,7 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:portType>
 
-   <wsdl:binding name="CardOperationHistoryServiceSoapBinding" type="impl:CardOperationHistoryService">
+   <wsdl:binding name="OperationHistoryServiceSoapBinding" type="impl:OperationHistoryService">
 
       <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
 
@@ -329,11 +337,11 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:binding>
 
-   <wsdl:service name="CardOperationHistoryServiceService">
+   <wsdl:service name="OperationHistoryServiceService">
 
-      <wsdl:port binding="impl:CardOperationHistoryServiceSoapBinding" name="CardOperationHistoryService">
+      <wsdl:port binding="impl:OperationHistoryServiceSoapBinding" name="OperationHistoryService">
 
-         <wsdlsoap:address location="http://localhost:8082/services/com/ebanking/ws/service/impl/info/CardOperationHistoryService"/>
+         <wsdlsoap:address location="http://localhost:8082/services/com/ebanking/ws/service/impl/info/OperationHistoryService"/>
 
       </wsdl:port>
 

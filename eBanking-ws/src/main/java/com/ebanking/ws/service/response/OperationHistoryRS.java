@@ -2,7 +2,7 @@ package com.ebanking.ws.service.response;
 
 import com.ebanking.ws.model.operation.Operation;
 
-public class CardOperationHistoryRS {
+public class OperationHistoryRS {
     private Operation[] operations;
 
     public Operation[] getOperations() {

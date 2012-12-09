@@ -11,7 +11,7 @@
 
     <li class="nav-header">Платежи</li>
     <li><a href="/payment.action">Оплатить услуги</a></li>
-    <li><a href="#">Архив операций</a></li>
+    <li><a href="/clientOperationHistory.action">Архив операций</a></li>
 
     <li class="nav-header">Карты</li>
     <li><a href="#">Переводы между картами</a></li>

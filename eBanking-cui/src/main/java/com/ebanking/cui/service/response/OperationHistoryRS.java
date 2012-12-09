@@ -1,5 +1,5 @@
 /**
- * CardOperationHistoryRS.java
+ * OperationHistoryRS.java
  *
  * This file was auto-generated from WSDL
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
@@ -9,20 +9,20 @@ package com.ebanking.cui.service.response;
 
 import com.ebanking.cui.model.operation.Operation;
 
-public class CardOperationHistoryRS  implements java.io.Serializable {
+public class OperationHistoryRS  implements java.io.Serializable {
     private Operation[] operations;
 
-    public CardOperationHistoryRS() {
+    public OperationHistoryRS() {
     }
 
-    public CardOperationHistoryRS(
+    public OperationHistoryRS(
            Operation[] operations) {
            this.operations = operations;
     }
 
 
     /**
-     * Gets the operations value for this CardOperationHistoryRS.
+     * Gets the operations value for this OperationHistoryRS.
      * 
      * @return operations
      */
@@ -32,7 +32,7 @@ public class CardOperationHistoryRS  implements java.io.Serializable {
 
 
     /**
-     * Sets the operations value for this CardOperationHistoryRS.
+     * Sets the operations value for this OperationHistoryRS.
      * 
      * @param operations
      */
@@ -42,8 +42,8 @@ public class CardOperationHistoryRS  implements java.io.Serializable {
 
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
-        if (!(obj instanceof CardOperationHistoryRS)) return false;
-        CardOperationHistoryRS other = (CardOperationHistoryRS) obj;
+        if (!(obj instanceof OperationHistoryRS)) return false;
+        OperationHistoryRS other = (OperationHistoryRS) obj;
         if (obj == null) return false;
         if (this == obj) return true;
         if (__equalsCalc != null) {
@@ -83,10 +83,10 @@ public class CardOperationHistoryRS  implements java.io.Serializable {
 
     // Type metadata
     private static org.apache.axis.description.TypeDesc typeDesc =
-        new org.apache.axis.description.TypeDesc(CardOperationHistoryRS.class, true);
+        new org.apache.axis.description.TypeDesc(OperationHistoryRS.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://response.service.ws.ebanking.com", "CardOperationHistoryRS"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://response.service.ws.ebanking.com", "OperationHistoryRS"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("operations");
         elemField.setXmlName(new javax.xml.namespace.QName("http://response.service.ws.ebanking.com", "operations"));

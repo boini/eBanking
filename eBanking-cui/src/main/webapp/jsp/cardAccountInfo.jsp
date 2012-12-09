@@ -33,7 +33,7 @@
             <s:iterator value="#session['clientCardsForm'].cards" var="card">
                 <tr>
                     <td>
-                        <s:checkbox name="%{#card.cardId}" theme="simple"/>
+                        <s:checkbox name="%{#card.cardAccountID}" theme="simple"/>
                     </td>
                     <td>
                         <s:property value="#card.cardNumber"/>

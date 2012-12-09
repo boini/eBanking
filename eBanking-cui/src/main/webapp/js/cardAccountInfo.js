@@ -29,7 +29,7 @@ $('document').ready(function() {
             url: '/cardAccountHistory.action',
             type: 'post',
             data: {
-                'cardAccountIdList': cardAccounts,
+                'idList': cardAccounts,
                 'fromDate': fromDateFormatted,
                 'toDate': toDateFormatted
             },

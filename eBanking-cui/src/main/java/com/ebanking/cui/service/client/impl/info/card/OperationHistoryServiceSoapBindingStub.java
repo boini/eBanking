@@ -1,5 +1,5 @@
 /**
- * CardOperationHistoryServiceSoapBindingStub.java
+ * OperationHistoryServiceSoapBindingStub.java
  *
  * This file was auto-generated from WSDL
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
@@ -20,10 +20,10 @@ import com.ebanking.cui.model.finance.Currency;
 import com.ebanking.cui.model.operation.Operation;
 import com.ebanking.cui.model.operation.OperationStatus;
 import com.ebanking.cui.model.operation.OperationType;
-import com.ebanking.cui.service.request.CardOperationHistoryRQ;
-import com.ebanking.cui.service.response.CardOperationHistoryRS;
+import com.ebanking.cui.service.request.OperationHistoryRQ;
+import com.ebanking.cui.service.response.OperationHistoryRS;
 
-public class CardOperationHistoryServiceSoapBindingStub extends org.apache.axis.client.Stub implements CardOperationHistoryService_PortType {
+public class OperationHistoryServiceSoapBindingStub extends org.apache.axis.client.Stub implements OperationHistoryService_PortType {
     private java.util.Vector cachedSerClasses = new java.util.Vector();
     private java.util.Vector cachedSerQNames = new java.util.Vector();
     private java.util.Vector cachedSerFactories = new java.util.Vector();
@@ -41,10 +41,10 @@ public class CardOperationHistoryServiceSoapBindingStub extends org.apache.axis.
         org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("execute");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://info.impl.service.ws.ebanking.com", "request"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://request.service.ws.ebanking.com", "CardOperationHistoryRQ"), CardOperationHistoryRQ.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://info.impl.service.ws.ebanking.com", "request"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://request.service.ws.ebanking.com", "OperationHistoryRQ"), OperationHistoryRQ.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://response.service.ws.ebanking.com", "CardOperationHistoryRS"));
-        oper.setReturnClass(CardOperationHistoryRS.class);
+        oper.setReturnType(new javax.xml.namespace.QName("http://response.service.ws.ebanking.com", "OperationHistoryRS"));
+        oper.setReturnClass(OperationHistoryRS.class);
         oper.setReturnQName(new javax.xml.namespace.QName("http://info.impl.service.ws.ebanking.com", "executeReturn"));
         oper.setStyle(org.apache.axis.constants.Style.DOCUMENT);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
@@ -63,16 +63,16 @@ public class CardOperationHistoryServiceSoapBindingStub extends org.apache.axis.
 
     }
 
-    public CardOperationHistoryServiceSoapBindingStub() throws org.apache.axis.AxisFault {
+    public OperationHistoryServiceSoapBindingStub() throws org.apache.axis.AxisFault {
          this(null);
     }
 
-    public CardOperationHistoryServiceSoapBindingStub(java.net.URL endpointURL, javax.xml.rpc.Service service) throws org.apache.axis.AxisFault {
+    public OperationHistoryServiceSoapBindingStub(java.net.URL endpointURL, javax.xml.rpc.Service service) throws org.apache.axis.AxisFault {
          this(service);
          super.cachedEndpoint = endpointURL;
     }
 
-    public CardOperationHistoryServiceSoapBindingStub(javax.xml.rpc.Service service) throws org.apache.axis.AxisFault {
+    public OperationHistoryServiceSoapBindingStub(javax.xml.rpc.Service service) throws org.apache.axis.AxisFault {
         if (service == null) {
             super.service = new org.apache.axis.client.Service();
         } else {
@@ -210,16 +210,16 @@ public class CardOperationHistoryServiceSoapBindingStub extends org.apache.axis.
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://request.service.ws.ebanking.com", "CardOperationHistoryRQ");
+            qName = new javax.xml.namespace.QName("http://request.service.ws.ebanking.com", "OperationHistoryRQ");
             cachedSerQNames.add(qName);
-            cls = CardOperationHistoryRQ.class;
+            cls = OperationHistoryRQ.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://response.service.ws.ebanking.com", "CardOperationHistoryRS");
+            qName = new javax.xml.namespace.QName("http://response.service.ws.ebanking.com", "OperationHistoryRS");
             cachedSerQNames.add(qName);
-            cls = CardOperationHistoryRS.class;
+            cls = OperationHistoryRS.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
@@ -290,7 +290,7 @@ public class CardOperationHistoryServiceSoapBindingStub extends org.apache.axis.
         }
     }
 
-    public CardOperationHistoryRS execute(CardOperationHistoryRQ request) throws java.rmi.RemoteException {
+    public OperationHistoryRS execute(OperationHistoryRQ request) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -314,9 +314,9 @@ public class CardOperationHistoryServiceSoapBindingStub extends org.apache.axis.
         else {
             extractAttachments(_call);
             try {
-                return (CardOperationHistoryRS) _resp;
+                return (OperationHistoryRS) _resp;
             } catch (java.lang.Exception _exception) {
-                return (CardOperationHistoryRS) org.apache.axis.utils.JavaUtils.convert(_resp, CardOperationHistoryRS.class);
+                return (OperationHistoryRS) org.apache.axis.utils.JavaUtils.convert(_resp, OperationHistoryRS.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
