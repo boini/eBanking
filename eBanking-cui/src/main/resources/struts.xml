@@ -48,8 +48,36 @@
 
         <!-- Online info -->
 
+        <action name="onlineInfo" class="ClientCardsAction">
+            <result name="success" type="redirectAction">
+                /onlineInfoForward
+            </result>
+        </action>
+
         <action name="onlineInfoForward" class="OnlineInfoForwardAction">
             <result name="success" type="tiles">/online.tiles</result>
+        </action>
+
+
+        <action name="cardOperationHistory" method="getJson" class="CardOperationHistoryAction">
+            <result name="success" type="json"/>
+        </action>
+
+        <!-- Card cardAccount info -->
+
+        <action name="cardAccountInfo" class="ClientCardsAction">
+            <result name="success" type="redirectAction">
+                /cardAccountInfoForward
+            </result>
+        </action>
+
+        <action name="cardAccountInfoForward" class="CardAccountInfoForwardAction">
+            <result name="success" type="tiles">/cardAccountInfo.tiles</result>
+        </action>
+
+
+        <action name="cardAccountHistory" method="getJson" class="CardAccountHistoryAction">
+            <result name="success" type="json"/>
         </action>
 
         <!-- Payment -->
@@ -80,8 +108,9 @@
             <result name="success" type="tiles">/mobilePaymentSubmit.tiles</result>
         </action>
 
-        <action name="cardOperationHistory" method="getJson" class="CardOperationHistoryAction">
-            <result name="success" type="json"/>
+
+        <action name="internetPayment" class="InternetPaymentAction">
+            <result name="success" type="tiles">mobileNumber.tiles</result>
         </action>
 
         <!-- Change password -->

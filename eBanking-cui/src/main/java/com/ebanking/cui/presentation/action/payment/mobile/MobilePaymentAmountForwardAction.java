@@ -1,6 +1,6 @@
 package com.ebanking.cui.presentation.action.payment.mobile;
 
-import com.ebanking.cui.presentation.form.MobilePaymentForm;
+import com.ebanking.cui.presentation.form.payments.MobilePaymentForm;
 import com.ebanking.cui.session.HttpSessionUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 

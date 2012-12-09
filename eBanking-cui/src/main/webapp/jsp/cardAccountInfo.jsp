@@ -21,13 +21,10 @@
         </div>
 
         <table class="table table-condensed table-hover" id="cards">
-            <caption>Ваши карты (остаток по состоянию на 07.11.2012 17:25:51) </caption>
             <thead>
             <tr>
                 <th></th>
                 <th>Номер карты</th>
-                <th>Остаток</th>
-                <th>Лимит кредита</th>
                 <th>Валюта</th>
                 <th>Тип карты</th>
             </tr>
@@ -40,12 +37,6 @@
                     </td>
                     <td>
                         <s:property value="#card.cardNumber"/>
-                    </td>
-                    <td>
-                        <s:property value="#card.cardAccount.balance"/>
-                    </td>
-                    <td>
-                        <s:property value="#card.creditLimit"/>
                     </td>
                     <td>
                         <s:property value="#card.cardAccount.currency.currencyCode"/>
@@ -63,9 +54,9 @@
             </tbody>
         </table>
 
-        <button class="btn btn-primary" id="onlineInfoSubmit">Получить</button>
+        <button class="btn btn-primary" id="cardAccountInfoSubmit">Получить</button>
 
-        <div id="onlineInfoTable">
+        <div id="cardAccountInfoTable">
 
         </div>
     </div>

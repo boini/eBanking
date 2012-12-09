@@ -3,8 +3,7 @@ package com.ebanking.cui.presentation.action.payment.mobile;
 import com.ebanking.cui.model.account.Account;
 import com.ebanking.cui.model.account.Client;
 import com.ebanking.cui.presentation.action.BaseRQRSAction;
-import com.ebanking.cui.presentation.form.ClientCardsInfoForm;
-import com.ebanking.cui.presentation.form.MobilePaymentForm;
+import com.ebanking.cui.presentation.form.payments.ServicePaymentForm;
 import com.ebanking.cui.service.client.ServiceClient;
 import com.ebanking.cui.service.request.PaymentRQ;
 import com.ebanking.cui.service.response.PaymentRS;
@@ -14,7 +13,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.context.SecurityContextHolder;
 
 import java.util.Calendar;
-import java.util.Date;
 
 /**
  * Created with IntelliJ IDEA.
@@ -35,7 +33,7 @@ public class MobilePaymentSubmitAction extends BaseRQRSAction<PaymentRQ, Payment
     @Override
     protected PaymentRQ prepareRequest() {
         PaymentRQ mobilePaymentRQ = new PaymentRQ();
-        MobilePaymentForm mobilePaymentForm = HttpSessionUtil.getMobilePaymentForm();
+        ServicePaymentForm mobilePaymentForm = HttpSessionUtil.getMobilePaymentForm();
 
         mobilePaymentRQ.setAmount(mobilePaymentForm.getAmount());
         mobilePaymentRQ.setFrom(mobilePaymentForm.getCardId());

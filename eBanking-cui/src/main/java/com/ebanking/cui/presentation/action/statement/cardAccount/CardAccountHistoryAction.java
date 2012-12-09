@@ -1,13 +1,10 @@
-package com.ebanking.cui.presentation.action.info;
+package com.ebanking.cui.presentation.action.statement.cardAccount;
 
 import com.ebanking.cui.model.operation.Operation;
 import com.ebanking.cui.presentation.action.BaseRQRSAction;
 import com.ebanking.cui.service.client.ServiceClient;
 import com.ebanking.cui.service.request.CardOperationHistoryRQ;
-import com.ebanking.cui.service.request.PaymentRQ;
 import com.ebanking.cui.service.response.CardOperationHistoryRS;
-import com.ebanking.cui.service.response.PaymentRS;
-import com.opensymphony.xwork2.ActionSupport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
@@ -18,23 +15,23 @@ import java.util.*;
 
 /**
  * Created with IntelliJ IDEA.
- * User: antonkholodok
- * Date: 12/7/12
- * Time: 8:22 AM
+ * User: Anton
+ * Date: 12/8/12
+ * Time: 11:43 PM
  * To change this template use File | Settings | File Templates.
  */
-public class CardOperationHistoryAction extends BaseRQRSAction<CardOperationHistoryRQ, CardOperationHistoryRS> {
-    private String cardIdList;
+public class CardAccountHistoryAction extends BaseRQRSAction<CardOperationHistoryRQ, CardOperationHistoryRS> {
+    private String cardAccountIdList;
     private String fromDate;
     private String toDate;
     private List<Operation> operations;
 
-    public String getCardIdList() {
-        return cardIdList;
+    public String getCardAccountIdList() {
+        return cardAccountIdList;
     }
 
-    public void setCardIdList(String cardIdList) {
-        this.cardIdList = cardIdList;
+    public void setCardAccountIdList(String cardAccountIdList) {
+        this.cardAccountIdList = cardAccountIdList;
     }
 
     public String getFromDate() {
@@ -74,12 +71,12 @@ public class CardOperationHistoryAction extends BaseRQRSAction<CardOperationHist
 
     @Override
     protected CardOperationHistoryRQ prepareRequest() {
-        CardOperationHistoryRQ cardOperationHistoryRQ = new CardOperationHistoryRQ();
+        CardOperationHistoryRQ cardAccountHistoryRQ = new CardOperationHistoryRQ();
 
-        String[] cardIdArrayStr = cardIdList.split(",");
-        long[] cardIdArray = new long[cardIdArrayStr.length];
-        for (int index = 0; index < cardIdArray.length; ++index) {
-            cardIdArray[index] = Long.valueOf(cardIdArrayStr[index]);
+        String[] cardAccountIdArrayStr = cardAccountIdList.split(",");
+        long[] cardAccountIdArray = new long[cardAccountIdArrayStr.length];
+        for (int index = 0; index < cardAccountIdArray.length; ++index) {
+            cardAccountIdArray[index] = Long.valueOf(cardAccountIdArrayStr[index]);
         }
 
         DateFormat formatter = new SimpleDateFormat("dd-MM-yy HH:mm:ss");
@@ -94,11 +91,11 @@ public class CardOperationHistoryAction extends BaseRQRSAction<CardOperationHist
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
 
-        cardOperationHistoryRQ.setCardIdList(cardIdArray);
-        cardOperationHistoryRQ.setFromDate(fromCalendar);
-        cardOperationHistoryRQ.setToDate(toCalendar);
+        cardAccountHistoryRQ.setCardIdList(cardAccountIdArray);
+        cardAccountHistoryRQ.setFromDate(fromCalendar);
+        cardAccountHistoryRQ.setToDate(toCalendar);
 
-        return cardOperationHistoryRQ;
+        return cardAccountHistoryRQ;
     }
 
     @Override

@@ -230,7 +230,7 @@ public class PaymentRQ  implements java.io.Serializable {
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("client");
         elemField.setXmlName(new javax.xml.namespace.QName("http://request.service.ws.ebanking.com", "client"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://account.model.ws.ebanking.com", "Client"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://cardAccount.model.ws.ebanking.com", "Client"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();

@@ -22,9 +22,9 @@ public class FetchAccountRS  implements java.io.Serializable {
 
 
     /**
-     * Gets the account value for this FetchAccountRS.
+     * Gets the cardAccount value for this FetchAccountRS.
      * 
-     * @return account
+     * @return cardAccount
      */
     public Account getAccount() {
         return account;
@@ -32,7 +32,7 @@ public class FetchAccountRS  implements java.io.Serializable {
 
 
     /**
-     * Sets the account value for this FetchAccountRS.
+     * Sets the cardAccount value for this FetchAccountRS.
      * 
      * @param account
      */
@@ -80,9 +80,9 @@ public class FetchAccountRS  implements java.io.Serializable {
     static {
         typeDesc.setXmlType(new javax.xml.namespace.QName("http://response.service.ws.ebanking.com", "FetchAccountRS"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("account");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://response.service.ws.ebanking.com", "account"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://account.model.ws.ebanking.com", "Account"));
+        elemField.setFieldName("cardAccount");
+        elemField.setXmlName(new javax.xml.namespace.QName("http://response.service.ws.ebanking.com", "cardAccount"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://cardAccount.model.ws.ebanking.com", "Account"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
     }

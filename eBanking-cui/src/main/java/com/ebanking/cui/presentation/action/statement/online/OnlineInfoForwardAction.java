@@ -1,4 +1,4 @@
-package com.ebanking.cui.presentation.action.statement;
+package com.ebanking.cui.presentation.action.statement.online;
 
 import com.ebanking.cui.session.HttpSessionUtil;
 import com.ebanking.cui.session.UserHttpSession;

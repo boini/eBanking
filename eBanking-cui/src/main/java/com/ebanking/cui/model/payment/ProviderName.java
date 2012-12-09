@@ -8,9 +8,13 @@ package com.ebanking.cui.model.payment;
  * To change this template use File | Settings | File Templates.
  */
 public class ProviderName {
-    public enum Mobile {
+    public enum Names {
         VELCOM,
         MTS,
-        LIFE
+        LIFE,
+
+        SOLO,
+        SHPARKI_DAMAVIK,
+        BYFLY
     }
 }

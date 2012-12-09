@@ -58,6 +58,7 @@
         <beanMapping qname="ns:local" xmlns:ns="country" languageSpecificType="java:com.ebanking.ws.model.address.Country"/>
 
     </service>
+
     <service name="UserLoginService" provider="java:RPC" style="document" use="literal">
         <parameter name="className" value="com.ebanking.ws.service.impl.security.UserLoginService"/>
         <parameter name="allowedMethods" value="*"/>
@@ -106,6 +107,7 @@
         <beanMapping qname="ns:local" xmlns:ns="country" languageSpecificType="java:com.ebanking.ws.model.address.Country"/>
 
     </service>
+
     <service name="CardOperationHistoryService" provider="java:RPC" style="document" use="literal">
         <parameter name="className" value="com.ebanking.ws.service.impl.info.CardOperationHistoryService"/>
         <parameter name="allowedMethods" value="*"/>

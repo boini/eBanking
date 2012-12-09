@@ -102,16 +102,16 @@ public class Role  implements java.io.Serializable {
         new org.apache.axis.description.TypeDesc(Role.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://account.model.ws.ebanking.com", "Role"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://cardAccount.model.ws.ebanking.com", "Role"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("roleId");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://account.model.ws.ebanking.com", "roleId"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://cardAccount.model.ws.ebanking.com", "roleId"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("roleName");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://account.model.ws.ebanking.com", "roleName"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://cardAccount.model.ws.ebanking.com", "roleName"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);

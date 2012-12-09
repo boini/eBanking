@@ -1,13 +1,13 @@
 $('document').ready(function() {
-    $('#onlineInfoSubmit').on('click', function() {
+    $('#cardAccountInfoSubmit').on('click', function() {
         var checkboxes = $('input[type="checkbox"]');
-        var cards = '';
+        var cardAccounts = '';
         $.each(checkboxes, function(index, checkbox) {
             if ($(checkbox).prop('checked')) {
-                if (cards.length > 0) {
-                    cards += ',';
+                if (cardAccounts.length > 0) {
+                    cardAccounts += ',';
                 }
-                cards += $(checkbox).attr('name');
+                cardAccounts += $(checkbox).attr('name');
             }
         })
 
@@ -26,43 +26,43 @@ $('document').ready(function() {
         var toDateFormatted = $.format.date(toDate, 'dd-MM-yy HH:mm:ss');
 
         $.ajax({
-            url: '/cardOperationHistory.action',
+            url: '/cardAccountHistory.action',
             type: 'post',
             data: {
-                'cardIdList': cards,
+                'cardAccountIdList': cardAccounts,
                 'fromDate': fromDateFormatted,
                 'toDate': toDateFormatted
             },
             success: function(data) {
                 var operations = data.operations;
-                $('#cardOperations').remove();
+                $('#cardAccountHistory').remove();
                 if (operations.length > 0) {
-                    var onlineInfoTable = '<table class="table table-striped table-bordered" id="cardOperations">';
-                        onlineInfoTable += '<caption></caption>';
-                        onlineInfoTable += '<thead>' +
+                    var cardAccountInfoTable = '<table class="table table-striped table-bordered" id="cardAccountHistory">';
+                        cardAccountInfoTable += '<caption></caption>';
+                        cardAccountInfoTable += '<thead>' +
                             '<tr>' +
-                                '<th>Статус</th>' +
                                 '<th>Дата обработки</th>' +
                                 '<th>Дата транзакции</th>' +
                                 '<th>Карта</th>' +
                                 '<th>Описание операции</th>' +
                                 '<th>Валюта</th>' +
                                 '<th>Сумма</th>' +
+                                '<th>Остаток</th>' +
                             '</tr>' +
                         '</thead>' +
                         '<tbody>';
                     $.each(operations, function(index, operation) {
-                        onlineInfoTable += '<tr>';
-                        onlineInfoTable += '<td>' + operation.operationStatus.operationStatus + '</td>';
-                        onlineInfoTable += '<td>' + operation.processingDate + '</td>';
-                        onlineInfoTable += '<td>' + operation.transactionDate + '</td>';
-                        onlineInfoTable += '<td>' + operation.card.cardNumber + '</td>';
-                        onlineInfoTable += '<td>' + operation.operationType.operationType + '</td>';
-                        onlineInfoTable += '<td>' + operation.card.cardAccount.currency.currencyCode + '</td>';
-                        onlineInfoTable += '<td>' + operation.transactionAmount + '</td>';
+                        cardAccountInfoTable += '<tr>';
+                        cardAccountInfoTable += '<td>' + operation.processingDate + '</td>';
+                        cardAccountInfoTable += '<td>' + operation.transactionDate + '</td>';
+                        cardAccountInfoTable += '<td>' + operation.card.cardNumber + '</td>';
+                        cardAccountInfoTable += '<td>' + operation.operationType.operationType + '</td>';
+                        cardAccountInfoTable += '<td>' + operation.card.cardAccount.currency.currencyCode + '</td>';
+                        cardAccountInfoTable += '<td>' + operation.transactionAmount + '</td>';
+                        cardAccountInfoTable += '<td>' + operation.cardAccountAmount + '</td>';
                     })
-                    onlineInfoTable += '</tbody></table>';
-                    $('#onlineInfoTable').append(onlineInfoTable);
+                    cardAccountInfoTable += '</tbody></table>';
+                    $('#cardAccountInfoTable').append(cardAccountInfoTable);
                 }
             }
         })
