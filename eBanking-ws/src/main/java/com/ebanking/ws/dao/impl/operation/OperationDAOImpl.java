@@ -5,6 +5,9 @@ import com.ebanking.ws.dao.impl.CommonDAOImpl;
 import com.ebanking.ws.model.operation.Operation;
 import com.ebanking.ws.model.operation.OperationStatus;
 import com.ebanking.ws.model.operation.OperationStatusEnum;
+import org.hibernate.Criteria;
+import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
@@ -36,11 +39,13 @@ public class OperationDAOImpl extends CommonDAOImpl implements OperationDAO {
 
     @Override
     public List getCardOperations(long cardId, Date fromDate, Date toDate) {
-        List<Operation> operations =
-                currentSession().createQuery(
-                        "from Operation as op where op.card.cardId = ? and op.processingDate >= ? and op.processingDate <= ?")
-                        .setLong(0, cardId).setDate(1, fromDate).setDate(2, toDate)
-                        .list();
+        Criteria criteria = currentSession().createCriteria(Operation.class);
+
+        criteria.add(Restrictions.eq("card.cardId", cardId));
+        criteria.add(Restrictions.between("processingDate", fromDate, toDate));
+
+        List<Operation> operations = criteria.list();
+
         return operations;
     }
 }

@@ -4,14 +4,8 @@ import com.ebanking.cui.model.account.Account;
 import com.ebanking.cui.presentation.form.ChangePasswordForm;
 import com.ebanking.cui.presentation.form.ClientCardsInfoForm;
 import com.ebanking.cui.presentation.form.ClientInfoForm;
-import com.ebanking.cui.presentation.form.payments.MobilePaymentForm;
-import com.ebanking.cui.presentation.form.payments.InternetPaymentForm;
 import com.ebanking.cui.presentation.form.NBRBCurrencyRatesForm;
-import com.ebanking.cui.presentation.form.payments.ServicePaymentForm;
-import org.springframework.web.context.request.RequestContextHolder;
-import org.springframework.web.context.request.ServletRequestAttributes;
-
-import javax.servlet.http.HttpSession;
+import com.ebanking.cui.presentation.form.payments.CommunicationsPaymentForm;
 
 /**
  * Created with IntelliJ IDEA.
@@ -29,6 +23,7 @@ public class HttpSessionUtil {
     private static final String MOBILE_PAYMENT_FORM = "mobilePaymentForm";
     private static final String INTERNET_PAYMENT_FORM = "internetPaymentForm";
     private static final String CHANGE_PASSWORD_FORM = "changePasswordForm";
+    private static final String COMMUNICATIONS_PAYMENT_FORM = "communicationsPaymentForm";
 
     private static UserHttpSession userHttpSession;
 
@@ -81,20 +76,12 @@ public class HttpSessionUtil {
         return (NBRBCurrencyRatesForm) getAttribute(NBRB_RATES_FORM);
     }
 
-    public static void setMobilePaymentForm(MobilePaymentForm mobilePaymentForm) {
-        addAttribute(MOBILE_PAYMENT_FORM, mobilePaymentForm);
+    public static void setMobilePaymentForm(CommunicationsPaymentForm communicationsPaymentForm) {
+        addAttribute(COMMUNICATIONS_PAYMENT_FORM, communicationsPaymentForm);
     }
 
-    public static MobilePaymentForm getMobilePaymentForm() {
-        return (MobilePaymentForm) getAttribute(MOBILE_PAYMENT_FORM);
-    }
-
-    public static void setInternetPaymentForm(InternetPaymentForm internetPaymentForm) {
-        addAttribute(INTERNET_PAYMENT_FORM, internetPaymentForm);
-    }
-
-    public static InternetPaymentForm getInternetPaymentForm() {
-        return (InternetPaymentForm) getAttribute(INTERNET_PAYMENT_FORM);
+    public static CommunicationsPaymentForm getMobilePaymentForm() {
+        return (CommunicationsPaymentForm) getAttribute(COMMUNICATIONS_PAYMENT_FORM);
     }
 
     public static void setChangePasswordForm(ChangePasswordForm changePasswordForm) {

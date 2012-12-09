@@ -1,10 +1,10 @@
-package com.ebanking.cui.presentation.action.payment.mobile;
+package com.ebanking.cui.presentation.action.payment.communications;
 
 import com.ebanking.cui.model.account.Account;
 import com.ebanking.cui.model.card.Card;
 import com.ebanking.cui.presentation.action.BaseRQRSAction;
 import com.ebanking.cui.presentation.form.ClientCardsInfoForm;
-import com.ebanking.cui.presentation.form.payments.MobilePaymentForm;
+import com.ebanking.cui.presentation.form.payments.CommunicationsPaymentForm;
 import com.ebanking.cui.service.client.ServiceClient;
 import com.ebanking.cui.service.request.ClientCardsRQ;
 import com.ebanking.cui.service.response.ClientCardsRS;
@@ -24,21 +24,21 @@ import java.util.List;
  * Time: 9:28 AM
  * To change this template use File | Settings | File Templates.
  */
-public class MobilePaymentAction extends BaseRQRSAction<ClientCardsRQ, ClientCardsRS> {
+public class CommunicationsPaymentAction extends BaseRQRSAction<ClientCardsRQ, ClientCardsRS> {
 
     @Autowired
     private ClientCardsInfoForm clientCardsInfoForm;
     @Autowired
-    private MobilePaymentForm mobilePaymentForm;
+    private CommunicationsPaymentForm communicationsPaymentForm;
 
-    private String mobileProvider;
+    private String communicationsProvider;
 
-    public String getMobileProvider() {
-        return mobileProvider;
+    public String getCommunicationsProvider() {
+        return communicationsProvider;
     }
 
-    public void setMobileProvider(String mobileProvider) {
-        this.mobileProvider = mobileProvider;
+    public void setCommunicationsProvider(String communicationsProvider) {
+        this.communicationsProvider = communicationsProvider;
     }
 
     @Override
@@ -50,7 +50,7 @@ public class MobilePaymentAction extends BaseRQRSAction<ClientCardsRQ, ClientCar
 
     @Override
     protected ClientCardsRQ prepareRequest() {
-        mobilePaymentForm.setProviderName(mobileProvider);
+        communicationsPaymentForm.setProviderName(communicationsProvider);
 
         ClientCardsRQ clientCardsRQ = new ClientCardsRQ();
         Account principal = (Account) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -62,8 +62,8 @@ public class MobilePaymentAction extends BaseRQRSAction<ClientCardsRQ, ClientCar
     protected String processResponse(ClientCardsRS responseObject) {
         Card[] cards = responseObject.getCards();
         List<Card> cardsList = new ArrayList<Card>(Arrays.asList(cards));
-        mobilePaymentForm.setCards(cardsList);
-        HttpSessionUtil.setMobilePaymentForm(mobilePaymentForm);
+        communicationsPaymentForm.setCards(cardsList);
+        HttpSessionUtil.setMobilePaymentForm(communicationsPaymentForm);
         return "success";
     }
 }

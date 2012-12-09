@@ -11,8 +11,9 @@
     </div>
 
     <div>
-        <s:form action="/mobilePaymentSubmit" method="POST" id="mobileNumberForm">
+        <s:form action="/internetPaymentSubmit" method="POST" id="mobileNumberForm">
             <table class="table table-striped">
+                <caption>Подтверждение реквизитов. Если все реквизиты заполнены правильно нажмите "Отправить в банк" или вернитесь к редактированию документа.</caption>
                 <tr>
                     <td>Дата</td>
                     <td>
@@ -49,14 +50,18 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Номер телефона</td>
+                    <td>Номер договора</td>
                     <td>
                         <s:property value="%{#session.communicationsPaymentForm.number}"/>
                     </td>
                 </tr>
             </table>
+            <h5>
+                Внимание! После нажания на кнопку "Отправить в банк" Вы совершите
+                платеж. Возврат средств на Ваш счет будет невозможен!
+            </h5>
             <td>
-                <s:submit value="Готово"/>
+                <s:submit value="Отправить в банк"/>
             </td>
         </s:form>
     </div>

@@ -86,31 +86,54 @@
             <result name="success" type="tiles">/payment.tiles</result>
         </action>
 
-        <action name="mobilePayment" class="MobilePaymentAction">
+
+        <!-- Mobile payment -->
+
+        <action name="mobilePayment" class="CommunicationsPaymentAction">
             <result name="success" type="redirectAction">
                 <param name="actionName">mobilePaymentForward</param>
             </result>
         </action>
 
-        <action name="mobilePaymentForward" class="MobilePaymentForwardAction">
+        <action name="mobilePaymentForward" class="CommunicationsPaymentForwardAction">
             <result name="success" type="tiles">/mobileNumber.tiles</result>
         </action>
 
-        <action name="mobilePaymentAmount" class="MobilePaymentAmountForwardAction">
+        <action name="mobilePaymentAmount" class="CommunicationsPaymentAmountForwardAction">
             <result name="success" type="tiles">/mobileAmount.tiles</result>
         </action>
 
-        <action name="mobilePaymentReview" class="MobilePaymentReviewForwardAction">
+        <action name="mobilePaymentReview" class="CommunicationsPaymentReviewForwardAction">
             <result name="success" type="tiles">/mobilePaymentReview.tiles</result>
         </action>
         
-        <action name="mobilePaymentSubmit" class="MobilePaymentSubmitAction">
+        <action name="mobilePaymentSubmit" class="CommunicationsPaymentSubmitAction">
             <result name="success" type="tiles">/mobilePaymentSubmit.tiles</result>
         </action>
 
 
-        <action name="internetPayment" class="InternetPaymentAction">
-            <result name="success" type="tiles">mobileNumber.tiles</result>
+        <!-- Internet payment -->
+
+        <action name="internetPayment" class="CommunicationsPaymentAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">internetPaymentForward</param>
+            </result>
+        </action>
+
+        <action name="internetPaymentForward" class="CommunicationsPaymentForwardAction">
+            <result name="success" type="tiles">/internetNumber.tiles</result>
+        </action>
+
+        <action name="internetPaymentAmount" class="CommunicationsPaymentAmountForwardAction">
+            <result name="success" type="tiles">/internetAmount.tiles</result>
+        </action>
+
+        <action name="internetPaymentReview" class="CommunicationsPaymentReviewForwardAction">
+            <result name="success" type="tiles">/internetPaymentReview.tiles</result>
+        </action>
+
+        <action name="internetPaymentSubmit" class="CommunicationsPaymentSubmitAction">
+            <result name="success" type="tiles">/internetPaymentSubmit.tiles</result>
         </action>
 
         <!-- Change password -->
