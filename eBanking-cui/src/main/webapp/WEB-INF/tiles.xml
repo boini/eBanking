@@ -94,4 +94,14 @@
         </put-list-attribute>
     </definition>
 
+    <definition name="/changePassword.tiles" extends="/baseLayout">
+        <put-attribute name="title" value="Change Password | eBanking" />
+        <put-attribute name="body" value="/jsp/changepassword.jsp" />
+        <put-list-attribute name="styles">
+            <add-attribute value="/css/normalize.css"/>
+            <add-attribute value="/css/bootstrap.css"/>
+            <add-attribute value="/css/common.css"/>
+        </put-list-attribute>
+    </definition>
+
 </tiles-definitions>

@@ -43,5 +43,6 @@ http://www.springframework.org/schema/context/spring-context-3.1.xsd">
     <bean name="MobilePaymentReviewForwardAction" class="com.ebanking.cui.presentation.action.payment.mobile.MobilePaymentReviewForwardAction"/>
     <bean name="MobilePaymentAmountForwardAction" class="com.ebanking.cui.presentation.action.payment.mobile.MobilePaymentAmountForwardAction"/>
     <bean name="MobilePaymentSubmitAction" class="com.ebanking.cui.presentation.action.payment.mobile.MobilePaymentSubmitAction"/>
+    <bean name="ChangePasswordAction" class="com.ebanking.cui.presentation.action.client.ChangePasswordAction" />
 
 </beans>

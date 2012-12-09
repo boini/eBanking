@@ -18,6 +18,6 @@
     <li><a href="#">Мои карты</a></li>
 
     <li class="nav-header">Сервис</li>
-    <li><a href="#">Поменять пароль</a></li>
+    <li><a href="/changePassword.action">Поменять пароль</a></li>
     <li><a href="#">Смена логина</a></li>
 </ul>

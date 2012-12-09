@@ -84,6 +84,12 @@
             <result name="success" type="json"/>
         </action>
 
+        <!-- Change password -->
+
+        <action name="changePassword" class="ChangePasswordAction" >
+            <result name="success" type="tiles">/changePassword.tiles</result>
+        </action>
+
     </package>
 
 </struts>
