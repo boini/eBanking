@@ -44,9 +44,6 @@ public class ChangePasswordSubmitAction extends BaseRQRSAction<ClientCardsRQ, Cl
     @Override
     protected ClientCardsRQ/*ChangePasswordRQ*/ prepareRequest() {
         //TODO: implement
-
-        ChangePasswordForm changePasswordForm = HttpSessionUtil.getChangePasswordForm();
-
 //        ChangePasswordRQ request = new ChangePasswordRQ();
         ClientCardsRQ request = new ClientCardsRQ();
         return request;
