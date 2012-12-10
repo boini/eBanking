@@ -3,8 +3,9 @@ package com.ebanking.cui.presentation.action.statement.cardAccount;
 import com.ebanking.cui.model.operation.Operation;
 import com.ebanking.cui.presentation.action.BaseRQRSAction;
 import com.ebanking.cui.service.client.ServiceClient;
-import com.ebanking.cui.service.request.CardOperationHistoryRQ;
-import com.ebanking.cui.service.response.CardOperationHistoryRS;
+import com.ebanking.cui.service.client.impl.info.card.OperationRequestType;
+import com.ebanking.cui.service.request.OperationHistoryRQ;
+import com.ebanking.cui.service.response.OperationHistoryRS;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
@@ -20,18 +21,18 @@ import java.util.*;
  * Time: 11:43 PM
  * To change this template use File | Settings | File Templates.
  */
-public class CardAccountHistoryAction extends BaseRQRSAction<CardOperationHistoryRQ, CardOperationHistoryRS> {
-    private String cardAccountIdList;
+public class CardAccountHistoryAction extends BaseRQRSAction<OperationHistoryRQ, OperationHistoryRS> {
+    private String idList;
     private String fromDate;
     private String toDate;
     private List<Operation> operations;
 
-    public String getCardAccountIdList() {
-        return cardAccountIdList;
+    public String getIdList() {
+        return idList;
     }
 
-    public void setCardAccountIdList(String cardAccountIdList) {
-        this.cardAccountIdList = cardAccountIdList;
+    public void setIdList(String idList) {
+        this.idList = idList;
     }
 
     public String getFromDate() {
@@ -60,8 +61,8 @@ public class CardAccountHistoryAction extends BaseRQRSAction<CardOperationHistor
 
     @Override
     @Autowired
-    @Qualifier("cardOperationHistoryService")
-    public void setServiceClient(ServiceClient<CardOperationHistoryRQ, CardOperationHistoryRS> serviceClient) {
+    @Qualifier("operationHistoryService")
+    public void setServiceClient(ServiceClient<OperationHistoryRQ, OperationHistoryRS> serviceClient) {
         this.serviceClient = serviceClient;
     }
 
@@ -70,13 +71,13 @@ public class CardAccountHistoryAction extends BaseRQRSAction<CardOperationHistor
     }
 
     @Override
-    protected CardOperationHistoryRQ prepareRequest() {
-        CardOperationHistoryRQ cardAccountHistoryRQ = new CardOperationHistoryRQ();
+    protected OperationHistoryRQ prepareRequest() {
+        OperationHistoryRQ operationHistoryRQ = new OperationHistoryRQ();
 
-        String[] cardAccountIdArrayStr = cardAccountIdList.split(",");
-        long[] cardAccountIdArray = new long[cardAccountIdArrayStr.length];
-        for (int index = 0; index < cardAccountIdArray.length; ++index) {
-            cardAccountIdArray[index] = Long.valueOf(cardAccountIdArrayStr[index]);
+        String[] idArrayStr = idList.split(",");
+        long[] idArray = new long[idArrayStr.length];
+        for (int index = 0; index < idArray.length; ++index) {
+            idArray[index] = Long.valueOf(idArrayStr[index]);
         }
 
         DateFormat formatter = new SimpleDateFormat("dd-MM-yy HH:mm:ss");
@@ -88,18 +89,19 @@ public class CardAccountHistoryAction extends BaseRQRSAction<CardOperationHistor
             fromCalendar.setTime(fromDateFormatted);
             toCalendar.setTime(toDateFormatted);
         } catch (ParseException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            e.printStackTrace();
         }
 
-        cardAccountHistoryRQ.setCardIdList(cardAccountIdArray);
-        cardAccountHistoryRQ.setFromDate(fromCalendar);
-        cardAccountHistoryRQ.setToDate(toCalendar);
+        operationHistoryRQ.setIdList(idArray);
+        operationHistoryRQ.setFromDate(fromCalendar);
+        operationHistoryRQ.setToDate(toCalendar);
+        operationHistoryRQ.setOperationRequestType(OperationRequestType.CARD_ACCOUNT.toString());
 
-        return cardAccountHistoryRQ;
+        return operationHistoryRQ;
     }
 
     @Override
-    protected String processResponse(CardOperationHistoryRS responseObject) {
+    protected String processResponse(OperationHistoryRS responseObject) {
         Operation[] operationArray = responseObject.getOperations();
         operations = new ArrayList(Arrays.asList(operationArray));
         return "success";

@@ -3,8 +3,9 @@ package com.ebanking.cui.presentation.action.statement.online;
 import com.ebanking.cui.model.operation.Operation;
 import com.ebanking.cui.presentation.action.BaseRQRSAction;
 import com.ebanking.cui.service.client.ServiceClient;
-import com.ebanking.cui.service.request.CardOperationHistoryRQ;
-import com.ebanking.cui.service.response.CardOperationHistoryRS;
+import com.ebanking.cui.service.client.impl.info.card.OperationRequestType;
+import com.ebanking.cui.service.request.OperationHistoryRQ;
+import com.ebanking.cui.service.response.OperationHistoryRS;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
@@ -20,18 +21,18 @@ import java.util.*;
  * Time: 8:22 AM
  * To change this template use File | Settings | File Templates.
  */
-public class CardOperationHistoryAction extends BaseRQRSAction<CardOperationHistoryRQ, CardOperationHistoryRS> {
-    private String cardIdList;
+public class CardOperationHistoryAction extends BaseRQRSAction<OperationHistoryRQ, OperationHistoryRS> {
+    private String idList;
     private String fromDate;
     private String toDate;
     private List<Operation> operations;
 
-    public String getCardIdList() {
-        return cardIdList;
+    public String getIdList() {
+        return idList;
     }
 
-    public void setCardIdList(String cardIdList) {
-        this.cardIdList = cardIdList;
+    public void setIdList(String idList) {
+        this.idList = idList;
     }
 
     public String getFromDate() {
@@ -60,8 +61,8 @@ public class CardOperationHistoryAction extends BaseRQRSAction<CardOperationHist
 
     @Override
     @Autowired
-    @Qualifier("cardOperationHistoryService")
-    public void setServiceClient(ServiceClient<CardOperationHistoryRQ, CardOperationHistoryRS> serviceClient) {
+    @Qualifier("operationHistoryService")
+    public void setServiceClient(ServiceClient<OperationHistoryRQ, OperationHistoryRS> serviceClient) {
         this.serviceClient = serviceClient;
     }
 
@@ -70,13 +71,13 @@ public class CardOperationHistoryAction extends BaseRQRSAction<CardOperationHist
     }
 
     @Override
-    protected CardOperationHistoryRQ prepareRequest() {
-        CardOperationHistoryRQ cardOperationHistoryRQ = new CardOperationHistoryRQ();
+    protected OperationHistoryRQ prepareRequest() {
+        OperationHistoryRQ operationHistoryRQ = new OperationHistoryRQ();
 
-        String[] cardIdArrayStr = cardIdList.split(",");
-        long[] cardIdArray = new long[cardIdArrayStr.length];
-        for (int index = 0; index < cardIdArray.length; ++index) {
-            cardIdArray[index] = Long.valueOf(cardIdArrayStr[index]);
+        String[] idArrayStr = idList.split(",");
+        long[] idArray = new long[idArrayStr.length];
+        for (int index = 0; index < idArray.length; ++index) {
+            idArray[index] = Long.valueOf(idArrayStr[index]);
         }
 
         DateFormat formatter = new SimpleDateFormat("dd-MM-yy HH:mm:ss");
@@ -88,18 +89,19 @@ public class CardOperationHistoryAction extends BaseRQRSAction<CardOperationHist
             fromCalendar.setTime(fromDateFormatted);
             toCalendar.setTime(toDateFormatted);
         } catch (ParseException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            e.printStackTrace();
         }
 
-        cardOperationHistoryRQ.setCardIdList(cardIdArray);
-        cardOperationHistoryRQ.setFromDate(fromCalendar);
-        cardOperationHistoryRQ.setToDate(toCalendar);
+        operationHistoryRQ.setIdList(idArray);
+        operationHistoryRQ.setFromDate(fromCalendar);
+        operationHistoryRQ.setToDate(toCalendar);
+        operationHistoryRQ.setOperationRequestType(OperationRequestType.CARD.toString());
 
-        return cardOperationHistoryRQ;
+        return operationHistoryRQ;
     }
 
     @Override
-    protected String processResponse(CardOperationHistoryRS responseObject) {
+    protected String processResponse(OperationHistoryRS responseObject) {
         Operation[] operationArray = responseObject.getOperations();
         operations = new ArrayList(Arrays.asList(operationArray));
         return "success";

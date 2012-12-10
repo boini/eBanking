@@ -19,13 +19,15 @@ http://www.springframework.org/schema/context/spring-context-3.1.xsd">
     <bean id="mobilePaymentForm" class="com.ebanking.cui.presentation.form.payments.MobilePaymentForm"/>
     <bean id="changePasswordForm" class="com.ebanking.cui.presentation.form.ChangePasswordForm"/>
     <bean id="communicationsPaymentForm" class="com.ebanking.cui.presentation.form.payments.CommunicationsPaymentForm"/>
+    <bean id="clientOperationHistoryForm" class="com.ebanking.cui.presentation.form.ClientOpertaionHistoryForm"/>    
 
     <bean id="loginClientService" class="com.ebanking.cui.service.client.impl.security.login.ClientLoginService"/>
     <bean id="nbrbCurrencyService" class="com.ebanking.cui.service.client.impl.currency.nbrb.NBRBCurrencyService"/>
     <bean id="fetchClientAccountService" class="com.ebanking.cui.service.client.impl.client.account.FetchAccountService"/>
     <bean id="clientCardsService" class="com.ebanking.cui.service.client.impl.client.card.ClientCardsService"/>
     <bean id="paymentService" class="com.ebanking.cui.service.client.impl.payment.PaymentService"/>
-    <bean id="cardOperationHistoryService" class="com.ebanking.cui.service.client.impl.info.card.CardOperationHistoryService"/>
+
+    <bean id="operationHistoryService" class="com.ebanking.cui.service.client.impl.info.card.OperationHistoryService"/>
 
     <bean name="LoginForwardAction" class="com.ebanking.cui.presentation.action.LoginForward"/>
     <bean name="SessionRecreationForwardAction" class="com.ebanking.cui.presentation.action.SessionRecreationForwardAction"/>
@@ -39,6 +41,9 @@ http://www.springframework.org/schema/context/spring-context-3.1.xsd">
 
     <bean name="CardAccountInfoForwardAction" class="com.ebanking.cui.presentation.action.statement.cardAccount.CardAccountInfoForwardAction"/>
     <bean name="CardAccountHistoryAction" class="com.ebanking.cui.presentation.action.statement.cardAccount.CardAccountHistoryAction"/>
+
+    <bean name="ClientOperationHistoryAction" class="com.ebanking.cui.presentation.action.statement.client.ClientHistoryAction"/>
+    <bean name="ClientOperationHistoryForwardAction" class="com.ebanking.cui.presentation.action.statement.client.ClientHistoryForwardAction"/>
 
     <bean name="PaymentActionForward" class="com.ebanking.cui.presentation.action.payment.PaymentForwardAction"/>
 

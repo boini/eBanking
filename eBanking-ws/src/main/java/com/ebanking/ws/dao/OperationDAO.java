@@ -17,4 +17,6 @@ public interface OperationDAO {
     void saveOrUpdate(Operation opearation);
     List getOperationByStatus(OperationStatusEnum operationStatus);
     List getCardOperations(long cardId, Date fromDate, Date toDate);
+    List getAccountOperations(long clientId);
+    List getCardAccountOperations(long cardAccountId, Date fromDate, Date toDate);
 }

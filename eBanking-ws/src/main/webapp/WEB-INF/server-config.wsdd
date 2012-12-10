@@ -107,15 +107,13 @@
         <beanMapping qname="ns:local" xmlns:ns="country" languageSpecificType="java:com.ebanking.ws.model.address.Country"/>
 
     </service>
-
-    <service name="CardOperationHistoryService" provider="java:RPC" style="document" use="literal">
-        <parameter name="className" value="com.ebanking.ws.service.impl.info.CardOperationHistoryService"/>
+    <service name="OperationHistoryService" provider="java:RPC" style="document" use="literal">
+        <parameter name="className" value="com.ebanking.ws.service.impl.info.OperationHistoryService"/>
         <parameter name="allowedMethods" value="*"/>
         <parameter name="scope" value="Application"/>
         <namespace>http://info.impl.service.ws.ebanking.com</namespace>
-
-        <beanMapping qname="ns:local" xmlns:ns="cardOperationHistoryRQ" languageSpecificType="java:com.ebanking.ws.service.request.CardOperationHistoryRQ"/>
-        <beanMapping qname="ns:local" xmlns:ns="cardOperationHistoryRS" languageSpecificType="java:com.ebanking.ws.service.response.CardOperationHistoryRS"/>
+        <beanMapping qname="ns:local" xmlns:ns="operationHistoryRQ" languageSpecificType="java:com.ebanking.ws.service.request.OperationHistoryRQ"/>
+        <beanMapping qname="ns:local" xmlns:ns="operationHistoryRS" languageSpecificType="java:com.ebanking.ws.service.response.OperationHistoryRS"/>
         <beanMapping qname="ns:local" xmlns:ns="operation" languageSpecificType="java:com.ebanking.ws.model.operation.Operation"/>
         <beanMapping qname="ns:local" xmlns:ns="operationType" languageSpecificType="java:com.ebanking.ws.model.operation.OperationType"/>
         <beanMapping qname="ns:local" xmlns:ns="operationStatus" languageSpecificType="java:com.ebanking.ws.model.operation.OperationStatus"/>

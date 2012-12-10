@@ -80,6 +80,18 @@
             <result name="success" type="json"/>
         </action>
 
+        <!-- Client account info -->
+
+        <action name="clientOperationHistory" class="ClientOperationHistoryAction">
+            <result name="success" type="redirectAction">
+                /clientOperationHistoryForward
+            </result>
+        </action>
+
+        <action name="clientOperationHistoryForward" class="ClientOperationHistoryForwardAction">
+            <result name="success" type="tiles">/clientHistory.tiles</result>
+        </action>
+
         <!-- Payment -->
 
         <action name="payment" class="PaymentActionForward">
