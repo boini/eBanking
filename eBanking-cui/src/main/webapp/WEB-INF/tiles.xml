@@ -110,30 +110,10 @@
         </put-list-attribute>
     </definition>
 
-    <definition name="/changePassword.tiles" extends="/baseLayout">
-        <put-attribute name="title" value="Change Password | eBanking" />
-        <put-attribute name="body" value="/jsp/changePassword/changepassword.jsp" />
-	<put-list-attribute name="styles">
-            <add-attribute value="/css/normalize.css"/>
-            <add-attribute value="/css/bootstrap.css"/>
-            <add-attribute value="/css/common.css"/>
-        </put-list-attribute>
-    </definition>
-
     <definition name="/internetNumber.tiles" extends="/baseLayout">
         <put-attribute name="title" value="Internet Payment | eBanking"/>
         <put-attribute name="body" value="/jsp/payment/internet/number.jsp"/>
         <put-list-attribute name="styles">
-            <add-attribute value="/css/normalize.css"/>
-            <add-attribute value="/css/bootstrap.css"/>
-            <add-attribute value="/css/common.css"/>
-        </put-list-attribute>
-    </definition>
-
-    <definition name="/changePasswordSuccess.tiles" extends="/baseLayout">
-        <put-attribute name="title" value="Change Password | eBanking" />
-        <put-attribute name="body" value="/jsp/changePassword/changePasswordSuccess.jsp" />
-    	<put-list-attribute name="styles">
             <add-attribute value="/css/normalize.css"/>
             <add-attribute value="/css/bootstrap.css"/>
             <add-attribute value="/css/common.css"/>
@@ -163,6 +143,146 @@
     <definition name="/internetPaymentSubmit.tiles" extends="/baseLayout">
         <put-attribute name="title" value="Internet Payment | eBanking"/>
         <put-attribute name="body" value="/jsp/payment/internet/submit.jsp"/>
+        <put-list-attribute name="styles">
+            <add-attribute value="/css/normalize.css"/>
+            <add-attribute value="/css/bootstrap.css"/>
+            <add-attribute value="/css/common.css"/>
+        </put-list-attribute>
+    </definition>
+
+    <definition name="/phoneNumber.tiles" extends="/baseLayout">
+        <put-attribute name="title" value="Phone Payment | eBanking"/>
+        <put-attribute name="body" value="/jsp/payment/phone/number.jsp"/>
+        <put-list-attribute name="styles">
+            <add-attribute value="/css/normalize.css"/>
+            <add-attribute value="/css/bootstrap.css"/>
+            <add-attribute value="/css/common.css"/>
+        </put-list-attribute>
+    </definition>
+
+    <definition name="/phoneAmount.tiles" extends="/baseLayout">
+        <put-attribute name="title" value="Phone Payment | eBanking"/>
+        <put-attribute name="body" value="/jsp/payment/phone/amount.jsp"/>
+        <put-list-attribute name="styles">
+            <add-attribute value="/css/normalize.css"/>
+            <add-attribute value="/css/bootstrap.css"/>
+            <add-attribute value="/css/common.css"/>
+        </put-list-attribute>
+    </definition>
+
+    <definition name="/phonePaymentReview.tiles" extends="/baseLayout">
+        <put-attribute name="title" value="Phone Payment | eBanking"/>
+        <put-attribute name="body" value="/jsp/payment/phone/review.jsp"/>
+        <put-list-attribute name="styles">
+            <add-attribute value="/css/normalize.css"/>
+            <add-attribute value="/css/bootstrap.css"/>
+            <add-attribute value="/css/common.css"/>
+        </put-list-attribute>
+    </definition>
+
+    <definition name="/phonePaymentSubmit.tiles" extends="/baseLayout">
+        <put-attribute name="title" value="Phone Payment | eBanking"/>
+        <put-attribute name="body" value="/jsp/payment/phone/submit.jsp"/>
+        <put-list-attribute name="styles">
+            <add-attribute value="/css/normalize.css"/>
+            <add-attribute value="/css/bootstrap.css"/>
+            <add-attribute value="/css/common.css"/>
+        </put-list-attribute>
+    </definition>
+
+    <definition name="/rentNumber.tiles" extends="/baseLayout">
+        <put-attribute name="title" value="Rent Payment | eBanking"/>
+        <put-attribute name="body" value="/jsp/payment/rent/number.jsp"/>
+        <put-list-attribute name="styles">
+            <add-attribute value="/css/normalize.css"/>
+            <add-attribute value="/css/bootstrap.css"/>
+            <add-attribute value="/css/common.css"/>
+        </put-list-attribute>
+    </definition>
+
+    <definition name="/rentAmount.tiles" extends="/baseLayout">
+        <put-attribute name="title" value="Rent Payment | eBanking"/>
+        <put-attribute name="body" value="/jsp/payment/rent/amount.jsp"/>
+        <put-list-attribute name="styles">
+            <add-attribute value="/css/normalize.css"/>
+            <add-attribute value="/css/bootstrap.css"/>
+            <add-attribute value="/css/common.css"/>
+        </put-list-attribute>
+    </definition>
+
+    <definition name="/rentPaymentReview.tiles" extends="/baseLayout">
+        <put-attribute name="title" value="Rent Payment | eBanking"/>
+        <put-attribute name="body" value="/jsp/payment/rent/review.jsp"/>
+        <put-list-attribute name="styles">
+            <add-attribute value="/css/normalize.css"/>
+            <add-attribute value="/css/bootstrap.css"/>
+            <add-attribute value="/css/common.css"/>
+        </put-list-attribute>
+    </definition>
+
+    <definition name="/rentPaymentSubmit.tiles" extends="/baseLayout">
+        <put-attribute name="title" value="Rent Payment | eBanking"/>
+        <put-attribute name="body" value="/jsp/payment/rent/submit.jsp"/>
+        <put-list-attribute name="styles">
+            <add-attribute value="/css/normalize.css"/>
+            <add-attribute value="/css/bootstrap.css"/>
+            <add-attribute value="/css/common.css"/>
+        </put-list-attribute>
+    </definition>
+
+    <definition name="/electricityNumber.tiles" extends="/baseLayout">
+        <put-attribute name="title" value="Electricity Payment | eBanking"/>
+        <put-attribute name="body" value="/jsp/payment/electricity/number.jsp"/>
+        <put-list-attribute name="styles">
+            <add-attribute value="/css/normalize.css"/>
+            <add-attribute value="/css/bootstrap.css"/>
+            <add-attribute value="/css/common.css"/>
+        </put-list-attribute>
+    </definition>
+
+    <definition name="/electricityAmount.tiles" extends="/baseLayout">
+        <put-attribute name="title" value="Electricity Payment | eBanking"/>
+        <put-attribute name="body" value="/jsp/payment/electricity/amount.jsp"/>
+        <put-list-attribute name="styles">
+            <add-attribute value="/css/normalize.css"/>
+            <add-attribute value="/css/bootstrap.css"/>
+            <add-attribute value="/css/common.css"/>
+        </put-list-attribute>
+    </definition>
+
+    <definition name="/electricityPaymentReview.tiles" extends="/baseLayout">
+        <put-attribute name="title" value="Electricity Payment | eBanking"/>
+        <put-attribute name="body" value="/jsp/payment/electricity/review.jsp"/>
+        <put-list-attribute name="styles">
+            <add-attribute value="/css/normalize.css"/>
+            <add-attribute value="/css/bootstrap.css"/>
+            <add-attribute value="/css/common.css"/>
+        </put-list-attribute>
+    </definition>
+
+    <definition name="/electricityPaymentSubmit.tiles" extends="/baseLayout">
+        <put-attribute name="title" value="Electricity Payment | eBanking"/>
+        <put-attribute name="body" value="/jsp/payment/electricity/submit.jsp"/>
+        <put-list-attribute name="styles">
+            <add-attribute value="/css/normalize.css"/>
+            <add-attribute value="/css/bootstrap.css"/>
+            <add-attribute value="/css/common.css"/>
+        </put-list-attribute>
+    </definition>
+
+    <definition name="/changePassword.tiles" extends="/baseLayout">
+        <put-attribute name="title" value="Change Password | eBanking" />
+        <put-attribute name="body" value="/jsp/changePassword/changepassword.jsp" />
+        <put-list-attribute name="styles">
+            <add-attribute value="/css/normalize.css"/>
+            <add-attribute value="/css/bootstrap.css"/>
+            <add-attribute value="/css/common.css"/>
+        </put-list-attribute>
+    </definition>
+
+    <definition name="/changePasswordSuccess.tiles" extends="/baseLayout">
+        <put-attribute name="title" value="Change Password | eBanking" />
+        <put-attribute name="body" value="/jsp/changePassword/changePasswordSuccess.jsp" />
         <put-list-attribute name="styles">
             <add-attribute value="/css/normalize.css"/>
             <add-attribute value="/css/bootstrap.css"/>

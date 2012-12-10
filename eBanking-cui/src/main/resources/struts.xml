@@ -92,6 +92,29 @@
             <result name="success" type="tiles">/clientHistory.tiles</result>
         </action>
 
+
+        <!-- Change password -->
+
+        <action name="changePassword" class="ChangePasswordAction" >
+            <result name="success" type="tiles">/changePassword.tiles</result>
+        </action>
+
+        <action name="changePasswordSubmit" class="ChangePasswordSubmitAction">
+            <result name="success" type="tiles">/changePasswordSuccess.tiles</result>
+        </action>
+
+
+        <!-- Change login -->
+
+        <action name="changeLogin" class="ChangeLoginAction" >
+            <result name="success" type="tiles">/changeLogin.tiles</result>
+        </action>
+
+        <action name="changeLoginSubmit" class="ChangeLoginSubmitAction">
+            <result name="success" type="tiles">/changeLoginSuccess.tiles</result>
+        </action>
+        
+
         <!-- Payment -->
 
         <action name="payment" class="PaymentActionForward">
@@ -148,14 +171,79 @@
             <result name="success" type="tiles">/internetPaymentSubmit.tiles</result>
         </action>
 
-        <!-- Change password -->
 
-        <action name="changePassword" class="ChangePasswordAction" >
-            <result name="success" type="tiles">/changePassword.tiles</result>
+        <!-- Beltelecom phone payment -->
+
+        <action name="phonePayment" class="PhonePaymentAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">phonePaymentForward</param>
+            </result>
         </action>
 
-        <action name="changePasswordSubmit" class="ChangePasswordSubmitAction">
-            <result name="success" type="tiles">/changePasswordSuccess.tiles</result>
+        <action name="phonePaymentForward" class="PhonePaymentForwardAction">
+            <result name="success" type="tiles">/phoneNumber.tiles</result>
+        </action>
+
+        <action name="phonePaymentAmount" class="PhonePaymentAmountForwardAction">
+            <result name="success" type="tiles">/phoneAmount.tiles</result>
+        </action>
+
+        <action name="phonePaymentReview" class="PhonePaymentReviewForwardAction">
+            <result name="success" type="tiles">/phonePaymentReview.tiles</result>
+        </action>
+
+        <action name="phonePaymentSubmit" class="PhonePaymentSubmitAction">
+            <result name="success" type="tiles">/phonePaymentSubmit.tiles</result>
+        </action>
+
+
+        <!-- Rent payment -->
+
+        <action name="rentPayment" class="RentPaymentAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">rentPaymentForward</param>
+            </result>
+        </action>
+
+        <action name="rentPaymentForward" class="RentPaymentForwardAction">
+            <result name="success" type="tiles">/rentNumber.tiles</result>
+        </action>
+
+        <action name="rentPaymentAmount" class="RentPaymentAmountForwardAction">
+            <result name="success" type="tiles">/rentAmount.tiles</result>
+        </action>
+
+        <action name="rentPaymentReview" class="RentPaymentReviewForwardAction">
+            <result name="success" type="tiles">/rentPaymentReview.tiles</result>
+        </action>
+
+        <action name="rentPaymentSubmit" class="RentPaymentSubmitAction">
+            <result name="success" type="tiles">/rentPaymentSubmit.tiles</result>
+        </action>
+
+
+        <!-- Electricity payment -->
+
+        <action name="electricityPayment" class="ElectricityPaymentAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">electricityPaymentForward</param>
+            </result>
+        </action>
+
+        <action name="electricityPaymentForward" class="ElectricityPaymentForwardAction">
+            <result name="success" type="tiles">/electricityNumber.tiles</result>
+        </action>
+
+        <action name="electricityPaymentAmount" class="ElectricityPaymentAmountForwardAction">
+            <result name="success" type="tiles">/electricityAmount.tiles</result>
+        </action>
+
+        <action name="electricityPaymentReview" class="ElectricityPaymentReviewForwardAction">
+            <result name="success" type="tiles">/electricityPaymentReview.tiles</result>
+        </action>
+
+        <action name="electricityPaymentSubmit" class="ElectricityPaymentSubmitAction">
+            <result name="success" type="tiles">/electricityPaymentSubmit.tiles</result>
         </action>
 
     </package>

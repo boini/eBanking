@@ -14,6 +14,8 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class CommunicationsPaymentForm {
+    protected static final String NUMBER_KEY = "Number=";
+
     private List<Card> cards;
     private Long cardId;
     private double amount;
@@ -78,5 +80,9 @@ public class CommunicationsPaymentForm {
             }
         }
         return null;
+    }
+
+    public String getKey() {
+        return NUMBER_KEY + number;
     }
 }

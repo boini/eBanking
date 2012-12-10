@@ -18,19 +18,19 @@
                 <ul>
                     <li>
                         <s:url action="mobilePayment" var="velcomPaymentUrl">
-                            <s:param name="communicationsProvider">velcom</s:param>
+                            <s:param name="provider">velcom</s:param>
                         </s:url>
                         <s:a href="%{velcomPaymentUrl}">Velcom</s:a>
                     </li>
                     <li>
                         <s:url action="mobilePayment" var="mtsPaymentUrl">
-                            <s:param name="communicationsProvider">mts</s:param>
+                            <s:param name="provider">mts</s:param>
                         </s:url>
                         <s:a href="%{mtsPaymentUrl}">MTS</s:a>
                     </li>
                     <li>
                         <s:url action="mobilePayment" var="lifePaymentUrl">
-                            <s:param name="communicationsProvider">life</s:param>
+                            <s:param name="provider">life</s:param>
                         </s:url>
                         <s:a href="%{lifePaymentUrl}">life:)</s:a>
                     </li>
@@ -41,21 +41,55 @@
                 <ul>
                     <li>
                         <s:url action="internetPayment" var="soloPaymentUrl">
-                            <s:param name="communicationsProvider">solo</s:param>
+                            <s:param name="provider">solo</s:param>
                         </s:url>
                         <s:a href="%{soloPaymentUrl}">Соло</s:a>
                     </li>
                     <li>
                         <s:url action="internetPayment" var="shapkiDamavikPaymentUrl">
-                            <s:param name="communicationsProvider">shparki_damavik</s:param>
+                            <s:param name="provider">shparki_damavik</s:param>
                         </s:url>
                         <s:a href="%{shapkiDamavikPaymentUrl}">Шпаркi-Дамавік</s:a>
                     </li>
                     <li>
                         <s:url action="internetPayment" var="byFlyPaymentUrl">
-                            <s:param name="communicationsProvider">by_fly</s:param>
+                            <s:param name="provider">by_fly</s:param>
                         </s:url>
                         <s:a href="%{byFlyPaymentUrl}">ByFly</s:a>
+                    </li>
+                    <li>
+                        <s:url action="internetPayment" var="cosmosTVPaymentUrl">
+                            <s:param name="provider">cosmos_tv</s:param>
+                        </s:url>
+                        <s:a href="%{cosmosTVPaymentUrl}">Космос ТВ</s:a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Белтелеком
+                <ul>
+                    <li>
+                        <s:url action="phonePayment" var="beltelPhonePaymentUrl">
+                            <s:param name="provider">beltelecom_phone</s:param>
+                        </s:url>
+                        <s:a href="%{beltelPhonePaymentUrl}">Оплата за телефон</s:a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Квартира
+                <ul>
+                    <li>
+                        <s:url action="rentPayment" var="rentPaymentUrl">
+                            <s:param name="provider">rent</s:param>
+                        </s:url>
+                        <s:a href="%{rentPaymentUrl}">Квартплата</s:a>
+                    </li>
+                    <li>
+                        <s:url action="electricityPayment" var="electricityPaymentUrl">
+                            <s:param name="provider">electricity</s:param>
+                        </s:url>
+                        <s:a href="%{electricityPaymentUrl}">Электроэнергия (Минск)</s:a>
                     </li>
                 </ul>
             </li>

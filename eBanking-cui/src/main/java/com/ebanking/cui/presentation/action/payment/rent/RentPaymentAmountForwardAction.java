@@ -1,16 +1,17 @@
-package com.ebanking.cui.presentation.action.payment.communications;
+package com.ebanking.cui.presentation.action.payment.rent;
 
 import com.ebanking.cui.presentation.form.payments.CommunicationsPaymentForm;
+import com.ebanking.cui.presentation.form.payments.RentPaymentForm;
 import com.ebanking.cui.session.HttpSessionUtil;
 
 /**
  * Created with IntelliJ IDEA.
- * User: antonkholodok
- * Date: 12/4/12
- * Time: 5:56 AM
+ * User: vasilii91
+ * Date: 12/10/12
+ * Time: 23:28 PM
  * To change this template use File | Settings | File Templates.
  */
-public class CommunicationsPaymentAmountForwardAction {
+public class RentPaymentAmountForwardAction {
     private String number;
     private long cardId;
 
@@ -23,9 +24,9 @@ public class CommunicationsPaymentAmountForwardAction {
     }
 
     public String execute() throws Exception {
-        CommunicationsPaymentForm communicationsPaymentForm1 = HttpSessionUtil.getCommunicationsPaymentForm();
-        communicationsPaymentForm1.setCardId(cardId);
-        communicationsPaymentForm1.setNumber(number);
+        RentPaymentForm rentPaymentForm = HttpSessionUtil.getRentPaymentForm();
+        rentPaymentForm.setCardId(cardId);
+        rentPaymentForm.setNumber(number);
         return "success";
     }
 }

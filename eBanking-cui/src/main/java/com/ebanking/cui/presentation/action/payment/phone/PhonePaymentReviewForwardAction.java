@@ -1,18 +1,19 @@
-package com.ebanking.cui.presentation.action.payment.communications;
+package com.ebanking.cui.presentation.action.payment.phone;
 
 import com.ebanking.cui.presentation.form.payments.CommunicationsPaymentForm;
+import com.ebanking.cui.presentation.form.payments.PhonePaymentForm;
 import com.ebanking.cui.session.HttpSessionUtil;
 
 import java.util.Date;
 
 /**
  * Created with IntelliJ IDEA.
- * User: antonkholodok
- * Date: 12/3/12
- * Time: 8:57 AM
+ * User: vasilii91
+ * Date: 12/10/12
+ * Time: 17:56 PM
  * To change this template use File | Settings | File Templates.
  */
-public class CommunicationsPaymentReviewForwardAction {
+public class PhonePaymentReviewForwardAction {
     private double amount;
 
     public double getAmount() {
@@ -24,10 +25,10 @@ public class CommunicationsPaymentReviewForwardAction {
     }
 
     public String execute() throws Exception {
-        CommunicationsPaymentForm communicationsPaymentForm = HttpSessionUtil.getCommunicationsPaymentForm();
-        communicationsPaymentForm.setAmount(amount);
+        PhonePaymentForm phonePaymentForm = HttpSessionUtil.getPhonePaymentForm();
+        phonePaymentForm.setAmount(amount);
         Date currentDate = new Date();
-        communicationsPaymentForm.setDate(currentDate);
+        phonePaymentForm.setDate(currentDate);
         return "success";
     }
 }

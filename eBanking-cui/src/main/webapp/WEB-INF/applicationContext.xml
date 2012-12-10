@@ -16,10 +16,13 @@ http://www.springframework.org/schema/context/spring-context-3.1.xsd">
     <bean id="clientInfoForm" class="com.ebanking.cui.presentation.form.ClientInfoForm"/>
     <bean id="clientCardsInfoForm" class="com.ebanking.cui.presentation.form.ClientCardsInfoForm"/>
     <bean id="nbrbCurrencyRatesForm" class="com.ebanking.cui.presentation.form.NBRBCurrencyRatesForm"/>
-    <bean id="changePasswordForm" class="com.ebanking.cui.presentation.form.ChangePasswordForm"/>
     <bean id="communicationsPaymentForm" class="com.ebanking.cui.presentation.form.payments.CommunicationsPaymentForm"/>
-    <bean id="clientOperationHistoryForm" class="com.ebanking.cui.presentation.form.ClientOpertaionHistoryForm"/>    
-
+    <bean id="changePasswordForm" class="com.ebanking.cui.presentation.form.ChangePasswordForm"/>
+    <bean id="clientOperationHistoryForm" class="com.ebanking.cui.presentation.form.ClientOpertaionHistoryForm"/>
+    <bean id="phonePaymentForm" class="com.ebanking.cui.presentation.form.payments.PhonePaymentForm"/>
+    <bean id="rentPaymentForm" class="com.ebanking.cui.presentation.form.payments.RentPaymentForm"/>
+    <bean id="electricityPaymentForm" class="com.ebanking.cui.presentation.form.payments.ElectricityPaymentForm"/>
+    
     <bean id="loginClientService" class="com.ebanking.cui.service.client.impl.security.login.ClientLoginService"/>
     <bean id="nbrbCurrencyService" class="com.ebanking.cui.service.client.impl.currency.nbrb.NBRBCurrencyService"/>
     <bean id="fetchClientAccountService" class="com.ebanking.cui.service.client.impl.client.account.FetchAccountService"/>
@@ -27,7 +30,7 @@ http://www.springframework.org/schema/context/spring-context-3.1.xsd">
     <bean id="paymentService" class="com.ebanking.cui.service.client.impl.payment.PaymentService"/>
 
     <bean id="operationHistoryService" class="com.ebanking.cui.service.client.impl.info.card.OperationHistoryService"/>
-
+    
     <bean name="LoginForwardAction" class="com.ebanking.cui.presentation.action.LoginForward"/>
     <bean name="SessionRecreationForwardAction" class="com.ebanking.cui.presentation.action.SessionRecreationForwardAction"/>
     <bean name="NBRBCurrencyAction" class="com.ebanking.cui.presentation.action.currency.NBRBCurrencyAction"/>
@@ -43,17 +46,35 @@ http://www.springframework.org/schema/context/spring-context-3.1.xsd">
 
     <bean name="ClientOperationHistoryAction" class="com.ebanking.cui.presentation.action.statement.client.ClientHistoryAction"/>
     <bean name="ClientOperationHistoryForwardAction" class="com.ebanking.cui.presentation.action.statement.client.ClientHistoryForwardAction"/>
-
+    
     <bean name="PaymentActionForward" class="com.ebanking.cui.presentation.action.payment.PaymentForwardAction"/>
 
     <bean name="ChangePasswordAction" class="com.ebanking.cui.presentation.action.client.password.ChangePasswordAction" />
     <bean name="ChangePasswordSubmitAction" class="com.ebanking.cui.presentation.action.client.password.ChangePasswordSubmitAction" />
+    <bean name="ChangeLoginAction" class="com.ebanking.cui.presentation.action.client.login.ChangeLoginAction"/>
+    <bean name="ChangeLoginSubmitAction" class="com.ebanking.cui.presentation.action.client.login.ChangeLoginSubmitAction"/>
+    
     <bean name="CommunicationsPaymentForwardAction" class="com.ebanking.cui.presentation.action.payment.communications.CommunicationsPaymentForwardAction"/>
     <bean name="CommunicationsPaymentAction" class="com.ebanking.cui.presentation.action.payment.communications.CommunicationsPaymentAction"/>
     <bean name="CommunicationsPaymentReviewForwardAction" class="com.ebanking.cui.presentation.action.payment.communications.CommunicationsPaymentReviewForwardAction"/>
     <bean name="CommunicationsPaymentAmountForwardAction" class="com.ebanking.cui.presentation.action.payment.communications.CommunicationsPaymentAmountForwardAction"/>
     <bean name="CommunicationsPaymentSubmitAction" class="com.ebanking.cui.presentation.action.payment.communications.CommunicationsPaymentSubmitAction"/>
-    <bean name="ChangeLoginAction" class="com.ebanking.cui.presentation.action.client.login.ChangeLoginAction"/>
-    <bean name="ChangeLoginSubmitAction" class="com.ebanking.cui.presentation.action.client.login.ChangeLoginSubmitAction"/>
 
+    <bean name="PhonePaymentForwardAction" class="com.ebanking.cui.presentation.action.payment.phone.PhonePaymentForwardAction"/>
+    <bean name="PhonePaymentAction" class="com.ebanking.cui.presentation.action.payment.phone.PhonePaymentAction"/>
+    <bean name="PhonePaymentReviewForwardAction" class="com.ebanking.cui.presentation.action.payment.phone.PhonePaymentReviewForwardAction"/>
+    <bean name="PhonePaymentAmountForwardAction" class="com.ebanking.cui.presentation.action.payment.phone.PhonePaymentAmountForwardAction"/>
+    <bean name="PhonePaymentSubmitAction" class="com.ebanking.cui.presentation.action.payment.phone.PhonePaymentSubmitAction"/>
+
+    <bean name="RentPaymentForwardAction" class="com.ebanking.cui.presentation.action.payment.rent.RentPaymentForwardAction"/>
+    <bean name="RentPaymentAction" class="com.ebanking.cui.presentation.action.payment.rent.RentPaymentAction"/>
+    <bean name="RentPaymentReviewForwardAction" class="com.ebanking.cui.presentation.action.payment.rent.RentPaymentReviewForwardAction"/>
+    <bean name="RentPaymentAmountForwardAction" class="com.ebanking.cui.presentation.action.payment.rent.RentPaymentAmountForwardAction"/>
+    <bean name="RentPaymentSubmitAction" class="com.ebanking.cui.presentation.action.payment.rent.RentPaymentSubmitAction"/>
+
+    <bean name="ElectricityPaymentForwardAction" class="com.ebanking.cui.presentation.action.payment.electricity.ElectricityPaymentForwardAction"/>
+    <bean name="ElectricityPaymentAction" class="com.ebanking.cui.presentation.action.payment.electricity.ElectricityPaymentAction"/>
+    <bean name="ElectricityPaymentReviewForwardAction" class="com.ebanking.cui.presentation.action.payment.electricity.ElectricityPaymentReviewForwardAction"/>
+    <bean name="ElectricityPaymentAmountForwardAction" class="com.ebanking.cui.presentation.action.payment.electricity.ElectricityPaymentAmountForwardAction"/>
+    <bean name="ElectricityPaymentSubmitAction" class="com.ebanking.cui.presentation.action.payment.electricity.ElectricityPaymentSubmitAction"/>
 </beans>

@@ -8,6 +8,11 @@ public class ProviderName {
 
         SOLO,
         SHPARKI_DAMAVIK,
-        BYFLY
+        BYFLY,
+        COSMOS_TV,
+
+        BELTELECOM_PHONE,
+        RENT,
+        ELECTRICITY
     }
 }

@@ -1,9 +1,10 @@
-package com.ebanking.cui.presentation.action.payment.communications;
+package com.ebanking.cui.presentation.action.payment.phone;
 
 import com.ebanking.cui.model.account.Account;
 import com.ebanking.cui.model.account.Client;
 import com.ebanking.cui.presentation.action.BaseRQRSAction;
 import com.ebanking.cui.presentation.form.payments.CommunicationsPaymentForm;
+import com.ebanking.cui.presentation.form.payments.PhonePaymentForm;
 import com.ebanking.cui.service.client.ServiceClient;
 import com.ebanking.cui.service.request.PaymentRQ;
 import com.ebanking.cui.service.response.PaymentRS;
@@ -16,12 +17,12 @@ import java.util.Calendar;
 
 /**
  * Created with IntelliJ IDEA.
- * User: antonkholodok
- * Date: 12/4/12
- * Time: 9:36 AM
+ * User: vasilii91
+ * Date: 12/10/12
+ * Time: 17:56 PM
  * To change this template use File | Settings | File Templates.
  */
-public class CommunicationsPaymentSubmitAction extends BaseRQRSAction<PaymentRQ, PaymentRS> {
+public class PhonePaymentSubmitAction extends BaseRQRSAction<PaymentRQ, PaymentRS> {
 
     @Override
     @Autowired
@@ -32,21 +33,21 @@ public class CommunicationsPaymentSubmitAction extends BaseRQRSAction<PaymentRQ,
 
     @Override
     protected PaymentRQ prepareRequest() {
-        PaymentRQ communicationsPaymentRQ = new PaymentRQ();
-        CommunicationsPaymentForm communicationsPaymentForm = HttpSessionUtil.getCommunicationsPaymentForm();
+        PaymentRQ phonePaymentRQ = new PaymentRQ();
+        PhonePaymentForm phonePaymentForm = HttpSessionUtil.getPhonePaymentForm();
 
-        communicationsPaymentRQ.setAmount(communicationsPaymentForm.getAmount());
-        communicationsPaymentRQ.setFrom(communicationsPaymentForm.getCardId());
+        phonePaymentRQ.setAmount(phonePaymentForm.getAmount());
+        phonePaymentRQ.setFrom(phonePaymentForm.getCardId());
 
         Account principal = (Account) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         Client client = principal.getClient();
-        communicationsPaymentRQ.setClient(client);
+        phonePaymentRQ.setClient(client);
 
-        communicationsPaymentRQ.setKey(communicationsPaymentForm.getKey());
-        communicationsPaymentRQ.setTo(communicationsPaymentForm.getProviderName().toString());
-        communicationsPaymentRQ.setDate(Calendar.getInstance());
+        phonePaymentRQ.setKey(phonePaymentForm.getKey());
+        phonePaymentRQ.setTo(phonePaymentForm.getProviderName().toString());
+        phonePaymentRQ.setDate(Calendar.getInstance());
 
-        return communicationsPaymentRQ;
+        return phonePaymentRQ;
     }
 
     @Override

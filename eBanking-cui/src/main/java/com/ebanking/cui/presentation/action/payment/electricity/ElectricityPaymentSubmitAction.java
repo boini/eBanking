@@ -1,9 +1,9 @@
-package com.ebanking.cui.presentation.action.payment.communications;
+package com.ebanking.cui.presentation.action.payment.electricity;
 
 import com.ebanking.cui.model.account.Account;
 import com.ebanking.cui.model.account.Client;
 import com.ebanking.cui.presentation.action.BaseRQRSAction;
-import com.ebanking.cui.presentation.form.payments.CommunicationsPaymentForm;
+import com.ebanking.cui.presentation.form.payments.ElectricityPaymentForm;
 import com.ebanking.cui.service.client.ServiceClient;
 import com.ebanking.cui.service.request.PaymentRQ;
 import com.ebanking.cui.service.response.PaymentRS;
@@ -16,12 +16,12 @@ import java.util.Calendar;
 
 /**
  * Created with IntelliJ IDEA.
- * User: antonkholodok
- * Date: 12/4/12
- * Time: 9:36 AM
+ * User: vasilii91
+ * Date: 12/10/12
+ * Time: 23:55 PM
  * To change this template use File | Settings | File Templates.
  */
-public class CommunicationsPaymentSubmitAction extends BaseRQRSAction<PaymentRQ, PaymentRS> {
+public class ElectricityPaymentSubmitAction extends BaseRQRSAction<PaymentRQ, PaymentRS> {
 
     @Override
     @Autowired
@@ -32,21 +32,21 @@ public class CommunicationsPaymentSubmitAction extends BaseRQRSAction<PaymentRQ,
 
     @Override
     protected PaymentRQ prepareRequest() {
-        PaymentRQ communicationsPaymentRQ = new PaymentRQ();
-        CommunicationsPaymentForm communicationsPaymentForm = HttpSessionUtil.getCommunicationsPaymentForm();
+        PaymentRQ electricityPaymentRQ = new PaymentRQ();
+        ElectricityPaymentForm electricityPaymentForm = HttpSessionUtil.getElectricityPaymentForm();
 
-        communicationsPaymentRQ.setAmount(communicationsPaymentForm.getAmount());
-        communicationsPaymentRQ.setFrom(communicationsPaymentForm.getCardId());
+        electricityPaymentRQ.setAmount(electricityPaymentForm.getAmount());
+        electricityPaymentRQ.setFrom(electricityPaymentForm.getCardId());
 
         Account principal = (Account) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         Client client = principal.getClient();
-        communicationsPaymentRQ.setClient(client);
+        electricityPaymentRQ.setClient(client);
 
-        communicationsPaymentRQ.setKey(communicationsPaymentForm.getKey());
-        communicationsPaymentRQ.setTo(communicationsPaymentForm.getProviderName().toString());
-        communicationsPaymentRQ.setDate(Calendar.getInstance());
+        electricityPaymentRQ.setKey(electricityPaymentForm.getKey());
+        electricityPaymentRQ.setTo(electricityPaymentForm.getProviderName().toString());
+        electricityPaymentRQ.setDate(Calendar.getInstance());
 
-        return communicationsPaymentRQ;
+        return electricityPaymentRQ;
     }
 
     @Override
