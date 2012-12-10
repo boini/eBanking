@@ -1,12 +1,5 @@
 package com.ebanking.cui.presentation.form;
 
-/**
- * Created with IntelliJ IDEA.
- * User: antonkholodok
- * Date: 11/30/12
- * Time: 4:12 AM
- * To change this template use File | Settings | File Templates.
- */
 public class ClientInfoForm {
     private String firstname;
     private String middlename;
