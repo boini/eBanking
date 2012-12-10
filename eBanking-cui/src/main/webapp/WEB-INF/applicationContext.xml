@@ -16,7 +16,6 @@ http://www.springframework.org/schema/context/spring-context-3.1.xsd">
     <bean id="clientInfoForm" class="com.ebanking.cui.presentation.form.ClientInfoForm"/>
     <bean id="clientCardsInfoForm" class="com.ebanking.cui.presentation.form.ClientCardsInfoForm"/>
     <bean id="nbrbCurrencyRatesForm" class="com.ebanking.cui.presentation.form.NBRBCurrencyRatesForm"/>
-    <bean id="mobilePaymentForm" class="com.ebanking.cui.presentation.form.payments.MobilePaymentForm"/>
     <bean id="changePasswordForm" class="com.ebanking.cui.presentation.form.ChangePasswordForm"/>
     <bean id="communicationsPaymentForm" class="com.ebanking.cui.presentation.form.payments.CommunicationsPaymentForm"/>
     <bean id="clientOperationHistoryForm" class="com.ebanking.cui.presentation.form.ClientOpertaionHistoryForm"/>    
@@ -47,11 +46,6 @@ http://www.springframework.org/schema/context/spring-context-3.1.xsd">
 
     <bean name="PaymentActionForward" class="com.ebanking.cui.presentation.action.payment.PaymentForwardAction"/>
 
-    <bean name="MobilePaymentForwardAction" class="com.ebanking.cui.presentation.action.payment.mobile.MobilePaymentForwardAction"/>
-    <bean name="MobilePaymentAction" class="com.ebanking.cui.presentation.action.payment.mobile.MobilePaymentAction"/>
-    <bean name="MobilePaymentReviewForwardAction" class="com.ebanking.cui.presentation.action.payment.mobile.MobilePaymentReviewForwardAction"/>
-    <bean name="MobilePaymentAmountForwardAction" class="com.ebanking.cui.presentation.action.payment.mobile.MobilePaymentAmountForwardAction"/>
-    <bean name="MobilePaymentSubmitAction" class="com.ebanking.cui.presentation.action.payment.mobile.MobilePaymentSubmitAction"/>
     <bean name="ChangePasswordAction" class="com.ebanking.cui.presentation.action.client.password.ChangePasswordAction" />
     <bean name="ChangePasswordSubmitAction" class="com.ebanking.cui.presentation.action.client.password.ChangePasswordSubmitAction" />
     <bean name="CommunicationsPaymentForwardAction" class="com.ebanking.cui.presentation.action.payment.communications.CommunicationsPaymentForwardAction"/>
@@ -59,6 +53,7 @@ http://www.springframework.org/schema/context/spring-context-3.1.xsd">
     <bean name="CommunicationsPaymentReviewForwardAction" class="com.ebanking.cui.presentation.action.payment.communications.CommunicationsPaymentReviewForwardAction"/>
     <bean name="CommunicationsPaymentAmountForwardAction" class="com.ebanking.cui.presentation.action.payment.communications.CommunicationsPaymentAmountForwardAction"/>
     <bean name="CommunicationsPaymentSubmitAction" class="com.ebanking.cui.presentation.action.payment.communications.CommunicationsPaymentSubmitAction"/>
-
+    <bean name="ChangeLoginAction" class="com.ebanking.cui.presentation.action.client.login.ChangeLoginAction"/>
+    <bean name="ChangeLoginSubmitAction" class="com.ebanking.cui.presentation.action.client.login.ChangeLoginSubmitAction"/>
 
 </beans>

@@ -91,6 +91,7 @@ public class HttpSessionUtil {
 
     public static ChangePasswordForm getChangePasswordForm() {
         return (ChangePasswordForm) getAttribute(CHANGE_PASSWORD_FORM);
+    }
     
     public static void setClientOperationHistoryForm(ClientOpertaionHistoryForm clientOperationHistoryForm) {
         addAttribute(CLIENT_OPERATION_HISTORY_FORM, clientOperationHistoryForm);

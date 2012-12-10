@@ -180,4 +180,24 @@
         </put-list-attribute>
     </definition>
 
+    <definition name="/changeLogin.tiles" extends="/baseLayout">
+        <put-attribute name="title" value="Change Login | eBanking" />
+        <put-attribute name="body" value="/jsp/changeLogin/changelogin.jsp" />
+        <put-list-attribute name="styles">
+            <add-attribute value="/css/normalize.css"/>
+            <add-attribute value="/css/bootstrap.css"/>
+            <add-attribute value="/css/common.css"/>
+        </put-list-attribute>
+    </definition>
+
+    <definition name="/changeLoginSuccess.tiles" extends="/baseLayout">
+        <put-attribute name="title" value="Change Login | eBanking" />
+        <put-attribute name="body" value="/jsp/changeLogin/changeLoginSuccess.jsp" />
+        <put-list-attribute name="styles">
+            <add-attribute value="/css/normalize.css"/>
+            <add-attribute value="/css/bootstrap.css"/>
+            <add-attribute value="/css/common.css"/>
+        </put-list-attribute>
+    </definition>
+
 </tiles-definitions>
