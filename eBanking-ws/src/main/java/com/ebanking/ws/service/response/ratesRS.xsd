@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:complexType name="ratesRS">
+    <xs:sequence>
+      <xs:element name="rates" type="rate" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="rate">
+    <xs:sequence>
+      <xs:element name="currency" type="currency" minOccurs="0"/>
+      <xs:element name="purchase" type="xs:double"/>
+      <xs:element name="rateId" type="xs:long"/>
+      <xs:element name="sale" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="currency">
+    <xs:sequence>
+      <xs:element name="currencyCode" type="xs:string" minOccurs="0"/>
+      <xs:element name="currencyDescription" type="xs:string" minOccurs="0"/>
+      <xs:element name="currencyId" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+

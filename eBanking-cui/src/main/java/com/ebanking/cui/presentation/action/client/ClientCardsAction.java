@@ -17,13 +17,6 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Created with IntelliJ IDEA.
- * User: Anton
- * Date: 11/30/12
- * Time: 12:16 AM
- * To change this template use File | Settings | File Templates.
- */
 public class ClientCardsAction extends BaseRQRSAction<ClientCardsRQ, ClientCardsRS> {
 
     @Autowired

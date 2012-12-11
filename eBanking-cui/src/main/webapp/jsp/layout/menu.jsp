@@ -14,7 +14,7 @@
     <li><a href="/clientOperationHistory.action">Архив операций</a></li>
 
     <li class="nav-header">Карты</li>
-    <li><a href="#">Переводы между картами</a></li>
+    <li><a href="/transfer.action">Переводы между картами</a></li>
     <li><a href="#">Мои карты</a></li>
 
     <li class="nav-header">Сервис</li>
