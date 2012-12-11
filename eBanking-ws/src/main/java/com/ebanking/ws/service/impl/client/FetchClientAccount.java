@@ -9,13 +9,6 @@ import com.ebanking.ws.service.request.FetchAccountRQ;
 import com.ebanking.ws.service.response.FetchAccountRS;
 import com.ebanking.ws.service.response.LoginClientRS;
 
-/**
- * Created with IntelliJ IDEA.
- * User: antonkholodok
- * Date: 11/29/12
- * Time: 9:23 AM
- * To change this template use File | Settings | File Templates.
- */
 public class FetchClientAccount extends SpringSupportService implements Service<FetchAccountRQ, FetchAccountRS> {
 
     private AccountDAO accountDAO;

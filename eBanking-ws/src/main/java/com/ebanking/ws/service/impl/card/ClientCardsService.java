@@ -14,13 +14,6 @@ import java.util.List;
 
 import static com.ebanking.ws.utils.CardUtils.*;
 
-/**
- * Created with IntelliJ IDEA.
- * User: Anton
- * Date: 11/29/12
- * Time: 11:42 PM
- * To change this template use File | Settings | File Templates.
- */
 public class ClientCardsService extends SpringSupportService implements Service<ClientCardsRQ, ClientCardsRS> {
 
     private CardDAO cardDAO;

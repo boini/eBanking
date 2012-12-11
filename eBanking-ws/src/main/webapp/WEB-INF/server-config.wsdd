@@ -128,6 +128,18 @@
         <beanMapping qname="ns:local" xmlns:ns="bankAccount" languageSpecificType="java:com.ebanking.ws.model.account.BankAccount"/>
         <beanMapping qname="ns:local" xmlns:ns="corporation" languageSpecificType="java:com.ebanking.ws.model.account.Corporation"/>
     </service>
+    <service name="RatesService" provider="java:RPC" style="document" use="literal">
+        <parameter name="className" value="com.ebanking.ws.service.impl.finance.RatesService"/>
+        <parameter name="allowedMethods" value="*"/>
+        <parameter name="scope" value="Application"/>
+        <namespace>http://finance.impl.service.ws.ebanking.com</namespace>
+
+        <beanMapping qname="ns:local" xmlns:ns="rateRQ" languageSpecificType="java:com.ebanking.ws.service.request.RatesRQ"/>
+        <beanMapping qname="ns:local" xmlns:ns="rateRS" languageSpecificType="java:com.ebanking.ws.service.response.RatesRS"/>
+        <beanMapping qname="ns:local" xmlns:ns="rate" languageSpecificType="java:com.ebanking.ws.model.finance.Rate"/>
+        <beanMapping qname="ns:local" xmlns:ns="currency" languageSpecificType="java:com.ebanking.ws.model.finance.Currency"/>
+
+    </service>
 
     <handler name="soapmonitor" type="java:org.apache.axis.handlers.SOAPMonitorHandler">
         <parameter name="wsdlURL" value="/axis/SOAPMonitorService-impl.wsdl"/>

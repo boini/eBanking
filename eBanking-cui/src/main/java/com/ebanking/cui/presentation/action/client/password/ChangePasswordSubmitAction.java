@@ -1,11 +1,9 @@
 package com.ebanking.cui.presentation.action.client.password;
 
 import com.ebanking.cui.presentation.action.BaseRQRSAction;
-import com.ebanking.cui.presentation.form.ChangePasswordForm;
 import com.ebanking.cui.service.client.ServiceClient;
 import com.ebanking.cui.service.request.ClientCardsRQ;
 import com.ebanking.cui.service.response.ClientCardsRS;
-import com.ebanking.cui.session.HttpSessionUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 

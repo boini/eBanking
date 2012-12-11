@@ -505,6 +505,25 @@ CREATE TABLE `operation` (
   CONSTRAINT `fk_operation_operation_type` FOREIGN KEY (`operation_type_id`) REFERENCES `operation_type` (`operation_type_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_operation_contractor_card` FOREIGN KEY (`contractor_card_id`) REFERENCES `card` (`card_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
+
+CREATE  TABLE `ebanking`.`rate` (
+  `rate_id` INT NOT NULL AUTO_INCREMENT ,
+  `currency_id` INT NOT NULL ,
+  `purchase` DECIMAL(20,2) NOT NULL ,
+  `sale` DECIMAL(20,2) NOT NULL ,
+  PRIMARY KEY (`rate_id`) ,
+  INDEX `currency_rate_idx` (`currency_id` ASC) ,
+  CONSTRAINT `currency_rate`
+    FOREIGN KEY (`currency_id` )
+    REFERENCES `ebanking`.`currency` (`currency_id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+INSERT INTO `ebanking`.`currency` (`currency_id`, `currency_code`, `description`) VALUES ('3', 'EUR', 'Euro');
+INSERT INTO `ebanking`.`rate` (`rate_id`, `currency_id`, `purchase`, `sale`) VALUES ('1', '1', '8580', '8660');
+INSERT INTO `ebanking`.`rate` (`rate_id`, `currency_id`, `purchase`, `sale`) VALUES ('2', '3', '11050', '11220');
+
+
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

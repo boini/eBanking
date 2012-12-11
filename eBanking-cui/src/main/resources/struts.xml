@@ -246,6 +246,25 @@
             <result name="success" type="tiles">/electricityPaymentSubmit.tiles</result>
         </action>
 
+
+        <!-- Transfer -->
+
+        <action name="transfer" class="ClientCardsAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">/rates</param>
+            </result>
+        </action>
+
+        <action name="rates" class="RatesAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">/transferForward</param>
+            </result>
+        </action>
+
+        <action name="transferForward" class="TransferForwardAction">
+            <result name="success" type="tiles">/transfer.tiles</result>
+        </action>
+
     </package>
 
 </struts>

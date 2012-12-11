@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: charley
-  Date: 09.12.12
-  Time: 13:09
-  To change this template use File | Settings | File Templates.
---%>
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -18,7 +11,7 @@
 
     <div>
 
-        <s:form action="/changePasswordSubmit.action" method="post" id="changePasswordForm">
+        <s:form action="/changePasswordSubmit" method="post" id="changePasswordForm">
             <h3>Смена пароля</h3>
             <s:password name="oldPassword" placeholder="Old password" />
             <s:password name="newPassword" placeholder="New password" />

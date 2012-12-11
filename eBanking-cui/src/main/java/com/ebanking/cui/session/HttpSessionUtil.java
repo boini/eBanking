@@ -1,23 +1,12 @@
 package com.ebanking.cui.session;
 
 import com.ebanking.cui.model.account.Account;
-import com.ebanking.cui.presentation.form.ChangePasswordForm;
-import com.ebanking.cui.presentation.form.ClientCardsInfoForm;
-import com.ebanking.cui.presentation.form.ClientInfoForm;
-import com.ebanking.cui.presentation.form.NBRBCurrencyRatesForm;
+import com.ebanking.cui.presentation.form.*;
 import com.ebanking.cui.presentation.form.payments.CommunicationsPaymentForm;
 import com.ebanking.cui.presentation.form.payments.ElectricityPaymentForm;
 import com.ebanking.cui.presentation.form.payments.PhonePaymentForm;
 import com.ebanking.cui.presentation.form.payments.RentPaymentForm;
-import com.ebanking.cui.presentation.form.ClientOpertaionHistoryForm;
 
-/**
- * Created with IntelliJ IDEA.
- * User: antonkholodok
- * Date: 11/29/12
- * Time: 7:54 AM
- * To change this template use File | Settings | File Templates.
- */
 public class HttpSessionUtil {
 
     private static final String CLIENT_ACCOUNT ="clientAccount";
@@ -27,11 +16,11 @@ public class HttpSessionUtil {
     private static final String NBRB_RATES_FORM = "nbrbCurrencyRatesForm";
     private static final String MOBILE_PAYMENT_FORM = "mobilePaymentForm";
     private static final String INTERNET_PAYMENT_FORM = "internetPaymentForm";
-    private static final String CHANGE_PASSWORD_FORM = "changePasswordForm";
     private static final String COMMUNICATIONS_PAYMENT_FORM = "communicationsPaymentForm";
     private static final String PHONE_PAYMENT_FORM = "phonePaymentForm";
     private static final String RENT_PAYMENT_FORM = "rentPaymentForm";
     private static final String ELECTRICITY_PAYMENT_FORM = "electricityPaymentForm";
+    private static final String RATES_FORM = "ratesForm";
 
     private static UserHttpSession userHttpSession;
 
@@ -92,14 +81,6 @@ public class HttpSessionUtil {
         return (CommunicationsPaymentForm) getAttribute(COMMUNICATIONS_PAYMENT_FORM);
     }
 
-    public static void setChangePasswordForm(ChangePasswordForm changePasswordForm) {
-        addAttribute(CHANGE_PASSWORD_FORM, changePasswordForm);
-    }
-
-    public static ChangePasswordForm getChangePasswordForm() {
-        return (ChangePasswordForm) getAttribute(CHANGE_PASSWORD_FORM);
-    }
-
     public static void setClientOperationHistoryForm(ClientOpertaionHistoryForm clientOperationHistoryForm) {
         addAttribute(CLIENT_OPERATION_HISTORY_FORM, clientOperationHistoryForm);
     }
@@ -130,5 +111,13 @@ public class HttpSessionUtil {
 
     public static ElectricityPaymentForm getElectricityPaymentForm() {
         return (ElectricityPaymentForm) getAttribute(ELECTRICITY_PAYMENT_FORM);
+    }
+
+    public static void setRatesForm(RatesForm ratesForm) {
+        addAttribute(RATES_FORM, ratesForm);
+    }
+
+    public static RatesForm getRatesForm() {
+        return (RatesForm) getAttribute(RATES_FORM);
     }
 }
