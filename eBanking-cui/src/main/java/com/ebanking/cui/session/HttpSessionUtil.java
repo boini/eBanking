@@ -6,6 +6,7 @@ import com.ebanking.cui.presentation.form.payments.CommunicationsPaymentForm;
 import com.ebanking.cui.presentation.form.payments.ElectricityPaymentForm;
 import com.ebanking.cui.presentation.form.payments.PhonePaymentForm;
 import com.ebanking.cui.presentation.form.payments.RentPaymentForm;
+import com.ebanking.cui.presentation.form.transfer.TransferForm;
 
 public class HttpSessionUtil {
 
@@ -21,6 +22,7 @@ public class HttpSessionUtil {
     private static final String RENT_PAYMENT_FORM = "rentPaymentForm";
     private static final String ELECTRICITY_PAYMENT_FORM = "electricityPaymentForm";
     private static final String RATES_FORM = "ratesForm";
+    private static final String TRANSFER_FORM = "transferForm";
 
     private static UserHttpSession userHttpSession;
 
@@ -119,5 +121,12 @@ public class HttpSessionUtil {
 
     public static RatesForm getRatesForm() {
         return (RatesForm) getAttribute(RATES_FORM);
+    }
+
+    public static void setTransferForm(TransferForm transferForm) {
+        addAttribute(TRANSFER_FORM, transferForm);
+    }
+    public static TransferForm getTransferForm() {
+        return (TransferForm) getAttribute(TRANSFER_FORM);
     }
 }

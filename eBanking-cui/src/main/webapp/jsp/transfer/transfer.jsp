@@ -47,14 +47,14 @@
                   label="C карты"
                   headerValue="-выберите счёт-"
                   listKey="cardId"
-                  key="cardId"
+                  key="fromCardId"
                   listValue="%{cardNumber + ' [' + cardType.cardTypeName + ' ' + cardAccount.balance + ' ' + cardAccount.currency.currencyCode + ']'}"/>
 
         <s:select list="#session['clientCardsForm'].cards"
                   label="На карту"
                   headerValue="-выберите счёт-"
                   listKey="cardId"
-                  key="cardId"
+                  key="toCardId"
                   listValue="%{cardNumber + ' [' + cardType.cardTypeName + ' ' + cardAccount.balance + ' ' + cardAccount.currency.currencyCode + ']'}"/>
 
         <s:textfield key="amount"

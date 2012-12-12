@@ -17,8 +17,12 @@ public class TransferUtils {
 
     public static final String CURRENCY_CODE_BYR = "BYR";
 
-    @Autowired
     private RateDAO rateDAO;
+
+    @Autowired
+    public void setRateDAO(RateDAO rateDAO) {
+        this.rateDAO = rateDAO;
+    }
 
     public double convert(Currency inCurrency, Currency outCurrency, double amount) {
 

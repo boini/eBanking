@@ -6,6 +6,7 @@ import com.ebanking.ws.model.account.BankAccount;
 import com.ebanking.ws.model.card.CardAccount;
 import com.ebanking.ws.operation.checker.BankAccountChecker;
 import com.ebanking.ws.operation.checker.CardAccountChecker;
+import com.ebanking.ws.utils.TransferUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
@@ -22,6 +23,13 @@ public class MoneyTransfer {
 
     private BankAccountDAO bankAccountDAO;
     private CardAccountDAO cardAccountDAO;
+
+    private TransferUtils transferUtils;
+
+    @Autowired
+    public void setTransferUtils(TransferUtils transferUtils) {
+        this.transferUtils = transferUtils;
+    }
 
     @Autowired
     public void setCardAccountChecker(CardAccountChecker cardAccountChecker) {
@@ -54,22 +62,11 @@ public class MoneyTransfer {
     }
 
     public boolean transfer(CardAccount cardAccount, CardAccount cardContractorAccount, double amount) {
+        double contractorAmount = transferUtils.convert(cardAccount.getCurrency(), cardContractorAccount.getCurrency(), amount);
+
         if (cardAccountChecker.checkAccountForAmount(cardAccount.getCardAccountId(), amount)) {
             cardAccount.setBalance(cardAccount.getBalance() - amount);
-            cardContractorAccount.setBalance(cardContractorAccount.getBalance() + amount);
-
-            cardAccountDAO.saveOrUpdate(cardAccount);
-            cardAccountDAO.saveOrUpdate(cardContractorAccount);
-
-            return true;
-        }
-        return false;
-    }
-
-    public boolean transfer(CardAccount cardAccount, CardAccount cardContractorAccount, double amount, double conversionCourse) {
-        if (cardAccountChecker.checkAccountForAmount(cardAccount.getCardAccountId(), amount)) {
-            cardAccount.setBalance(cardAccount.getBalance() - amount);
-            cardContractorAccount.setBalance(cardContractorAccount.getBalance() + amount*conversionCourse);
+            cardContractorAccount.setBalance(cardContractorAccount.getBalance() + contractorAmount);
 
             cardAccountDAO.saveOrUpdate(cardAccount);
             cardAccountDAO.saveOrUpdate(cardContractorAccount);
