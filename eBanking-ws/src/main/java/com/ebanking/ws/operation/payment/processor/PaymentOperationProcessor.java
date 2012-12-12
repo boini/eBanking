@@ -15,6 +15,7 @@ import com.ebanking.ws.operation.checker.BankAccountChecker;
 import com.ebanking.ws.operation.checker.CardAccountChecker;
 import com.ebanking.ws.operation.factory.OperationFactory;
 import com.ebanking.ws.operation.transfer.MoneyTransfer;
+import com.ebanking.ws.utils.TransferUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -27,6 +28,12 @@ public class PaymentOperationProcessor {
     private MoneyTransfer moneyTransfer;
     private OperationFactory operationFactory;
     private MailService mailService;
+    private TransferUtils transferUtils;
+
+    @Autowired
+    public void setTransferUtils(TransferUtils transferUtils) {
+        this.transferUtils = transferUtils;
+    }
 
     @Autowired
     public void setMailService(MailService mailService) {
@@ -84,9 +91,12 @@ public class PaymentOperationProcessor {
 
                 additionalOperation.setCard(operation.getContractorCard());
                 additionalOperation.setContractorCard(operation.getCard());
-                additionalOperation.setTransactionAmount(operation.getTransactionAmount());
+                additionalOperation.setTransactionAmount(transferUtils.convert(
+                        clientCardAccount.getCurrency(), contractorCard.getCardAccount().getCurrency(),
+                        operation.getTransactionAmount()));
                 additionalOperation.setProcessingDate(new Date());
                 additionalOperation.setCardAccountAmount(contractorCard.getCardAccount().getBalance());
+                additionalOperation.setTransactionDate(operation.getTransactionDate());
             }
         } else {
             operation.setOperationStatus(

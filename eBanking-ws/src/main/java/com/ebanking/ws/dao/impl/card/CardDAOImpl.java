@@ -2,6 +2,7 @@ package com.ebanking.ws.dao.impl.card;
 
 import com.ebanking.ws.dao.CardDAO;
 import com.ebanking.ws.dao.impl.CommonDAOImpl;
+import com.ebanking.ws.model.card.Card;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -20,5 +21,10 @@ public class CardDAOImpl extends CommonDAOImpl implements CardDAO {
         return currentSession().createQuery("from Card as card where card.cardAccount.client.clientId = ?")
                 .setLong(0, id)
                 .list();
+    }
+
+    @Override
+    public Card getById(long cardId) {
+        return (Card) currentSession().get(Card.class, cardId);
     }
 }

@@ -330,8 +330,28 @@
 
     <definition name="/transfer.tiles" extends="/baseLayout">
         <put-attribute name="title" value="Transfer | eBanking"/>
-        <put-attribute name="actionName" value="transfer-action"/>
-        <put-attribute name="body" value="/jsp/transfer.jsp"/>
+        <put-attribute name="body" value="/jsp/transfer/transfer.jsp"/>
+        <put-list-attribute name="styles">
+            <add-attribute value="/css/normalize.css"/>
+            <add-attribute value="/css/bootstrap.css"/>
+            <add-attribute value="/css/common.css"/>
+        </put-list-attribute>
+    </definition>
+
+    <definition name="/transferReview.tiles" extends="/baseLayout">
+        <put-attribute name="title" value="Transfer Review | eBanking"/>
+        <put-attribute name="body" value="/jsp/transfer/transferReview.jsp"/>
+        <put-list-attribute name="styles">
+            <add-attribute value="/css/normalize.css"/>
+            <add-attribute value="/css/bootstrap.css"/>
+            <add-attribute value="/css/common.css"/>
+        </put-list-attribute>
+    </definition>
+
+    <definition name="/transferSubmit.tiles" extends="/baseLayout">
+        <put-attribute name="title" value="Transfer | eBanking"/>
+        <put-attribute name="body" value="/jsp/transfer/transferSubmit.jsp"/>
+        <put-attribute name="actionName" value="transfer-action"/>        
         <put-list-attribute name="styles">
             <add-attribute value="/css/normalize.css"/>
             <add-attribute value="/css/bootstrap.css"/>

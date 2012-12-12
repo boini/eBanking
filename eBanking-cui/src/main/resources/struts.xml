@@ -265,6 +265,24 @@
             <result name="success" type="tiles">/transfer.tiles</result>
         </action>
 
+        <action name="transferReview" class="TransferReviewForwardAction">
+            <result name="success" type="tiles">
+                /transferReview.tiles
+            </result>
+        </action>
+
+        <action name="transferSubmit" class="TransferSubmitAction">
+            <result name="success" type="redirectAction">
+                /transferSubmitForward
+            </result>
+        </action>
+        
+        <action name="transferSubmitForward" class="TransferSubmitForwardAction">
+            <result name="success" type="tiles">
+                /transferSubmit.tiles
+            </result>
+        </action>
+
     </package>
 
 </struts>

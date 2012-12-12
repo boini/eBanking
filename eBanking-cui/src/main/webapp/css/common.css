@@ -17,6 +17,8 @@ select {width: 300px;}
 
 .label { width: 150px; }
 
+.paid { background: url('../img/paid.png') 0 0 no-repeat; }
+
 #header ul { float: right;}
 #cards img {width: 50px; border: 1px solid #555; }
 #mobileNumberForm { width: 300px; }

@@ -11,8 +11,7 @@
     </div>
 
     <div>
-        <s:form action="/mobilePaymentSubmit" method="POST" id="mobileNumberForm">
-            <table class="table table-striped">
+            <table class="table table-bordered paid">
                 <tr>
                     <td>Дата</td>
                     <td>
@@ -55,9 +54,5 @@
                     </td>
                 </tr>
             </table>
-            <td>
-                <s:submit value="Готово"/>
-            </td>
-        </s:form>
     </div>
 </div>

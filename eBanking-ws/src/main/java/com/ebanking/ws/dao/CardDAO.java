@@ -1,5 +1,7 @@
 package com.ebanking.ws.dao;
 
+import com.ebanking.ws.model.card.Card;
+
 import java.util.List;
 
 /**
@@ -11,4 +13,5 @@ import java.util.List;
  */
 public interface CardDAO {
     List getCardsByClientId(Long id);
+    Card getById(long cardId);
 }

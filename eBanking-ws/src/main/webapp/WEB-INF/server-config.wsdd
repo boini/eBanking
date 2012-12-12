@@ -140,6 +140,20 @@
         <beanMapping qname="ns:local" xmlns:ns="currency" languageSpecificType="java:com.ebanking.ws.model.finance.Currency"/>
 
     </service>
+    <service name="TransferService" provider="java:RPC" style="document" use="literal">
+        <parameter name="className" value="com.ebanking.ws.service.impl.transfer.TransferService"/>
+        <parameter name="allowedMethods" value="*"/>
+        <parameter name="scope" value="Application"/>
+        <namespace>http://transfer.impl.service.ws.ebanking.com</namespace>
+
+        <beanMapping qname="ns:local" xmlns:ns="transferRQ" languageSpecificType="java:com.ebanking.ws.service.request.TransferRQ"/>
+        <beanMapping qname="ns:local" xmlns:ns="transferRS" languageSpecificType="java:com.ebanking.ws.service.response.TransferRS"/>
+        <beanMapping qname="ns:local" xmlns:ns="client" languageSpecificType="java:com.ebanking.ws.model.account.Client"/>
+        <beanMapping qname="ns:local" xmlns:ns="role" languageSpecificType="java:com.ebanking.ws.model.account.Role"/>
+        <beanMapping qname="ns:local" xmlns:ns="address" languageSpecificType="java:com.ebanking.ws.model.address.Address"/>
+        <beanMapping qname="ns:local" xmlns:ns="city" languageSpecificType="java:com.ebanking.ws.model.address.City"/>
+        <beanMapping qname="ns:local" xmlns:ns="country" languageSpecificType="java:com.ebanking.ws.model.address.Country"/>
+    </service>
 
     <handler name="soapmonitor" type="java:org.apache.axis.handlers.SOAPMonitorHandler">
         <parameter name="wsdlURL" value="/axis/SOAPMonitorService-impl.wsdl"/>

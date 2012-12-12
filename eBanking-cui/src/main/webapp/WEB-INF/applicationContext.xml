@@ -22,6 +22,7 @@ http://www.springframework.org/schema/context/spring-context-3.1.xsd">
     <bean id="rentPaymentForm" class="com.ebanking.cui.presentation.form.payments.RentPaymentForm"/>
     <bean id="electricityPaymentForm" class="com.ebanking.cui.presentation.form.payments.ElectricityPaymentForm"/>
     <bean id="ratesForm" class="com.ebanking.cui.presentation.form.RatesForm"/>
+    <bean id="transferForm" class="com.ebanking.cui.presentation.form.transfer.TransferForm"/>
 
     <bean id="loginClientService" class="com.ebanking.cui.service.client.impl.security.login.ClientLoginService"/>
     <bean id="nbrbCurrencyService" class="com.ebanking.cui.service.client.impl.currency.nbrb.NBRBCurrencyService"/>
@@ -29,6 +30,7 @@ http://www.springframework.org/schema/context/spring-context-3.1.xsd">
     <bean id="clientCardsService" class="com.ebanking.cui.service.client.impl.client.card.ClientCardsService"/>
     <bean id="paymentService" class="com.ebanking.cui.service.client.impl.payment.PaymentService"/>
     <bean id="ratesService" class="com.ebanking.cui.service.client.impl.finance.RatesService"/>
+    <bean id="transferService" class="com.ebanking.cui.service.client.impl.transfer.TransferService"/>
 
     <bean id="operationHistoryService" class="com.ebanking.cui.service.client.impl.info.card.OperationHistoryService"/>
     
@@ -80,6 +82,9 @@ http://www.springframework.org/schema/context/spring-context-3.1.xsd">
     <bean name="ElectricityPaymentSubmitAction" class="com.ebanking.cui.presentation.action.payment.electricity.ElectricityPaymentSubmitAction"/>
 
     <bean name="TransferForwardAction" class="com.ebanking.cui.presentation.action.transfer.TransferForwardAction"/>
+    <bean name="TransferReviewForwardAction" class="com.ebanking.cui.presentation.action.transfer.TransferReviewForwardAction"/>
+    <bean name="TransferSubmitAction" class="com.ebanking.cui.presentation.action.transfer.TransferSubmitAction"/>
+    <bean name="TransferSubmitForwardAction" class="com.ebanking.cui.presentation.action.transfer.TransferSubmitForwardAction"/>
 
     <bean name="RatesAction" class="com.ebanking.cui.presentation.action.finance.RatesAction"/>
 </beans>
