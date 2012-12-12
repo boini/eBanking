@@ -33,6 +33,7 @@ http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
     <bean id="bankAccountChecker" class="com.ebanking.ws.operation.checker.BankAccountChecker"/>
 
     <bean id="moneyTransfer" class="com.ebanking.ws.operation.transfer.MoneyTransfer"/>
+    <bean id="mailService" class="com.ebanking.ws.log.mailer.MailService"/>
 
     <bean id="paymentOperationProcessor" class="com.ebanking.ws.operation.payment.processor.PaymentOperationProcessor"/>
 

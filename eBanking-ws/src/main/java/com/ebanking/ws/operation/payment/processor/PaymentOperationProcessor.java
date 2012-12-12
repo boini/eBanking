@@ -2,6 +2,8 @@ package com.ebanking.ws.operation.payment.processor;
 
 import com.ebanking.ws.dao.OperationDAO;
 import com.ebanking.ws.dao.OperationStatusDAO;
+import com.ebanking.ws.log.mailer.MailService;
+import com.ebanking.ws.log.mailer.model.Mail;
 import com.ebanking.ws.model.account.BankAccount;
 import com.ebanking.ws.model.card.Card;
 import com.ebanking.ws.model.card.CardAccount;
@@ -24,6 +26,12 @@ public class PaymentOperationProcessor {
     private OperationStatusDAO operationStatusDAO;
     private MoneyTransfer moneyTransfer;
     private OperationFactory operationFactory;
+    private MailService mailService;
+
+    @Autowired
+    public void setMailService(MailService mailService) {
+        this.mailService = mailService;
+    }
 
     @Autowired
     public void setOperationDAO(OperationDAO operationDAO) {
@@ -90,5 +98,11 @@ public class PaymentOperationProcessor {
         if (additionalOperation != null) {
             operationDAO.saveOrUpdate(additionalOperation);
         }
+
+        String email = clientCardAccount.getClient().getEmail();
+        String descr = operation.getOperationType().getDescription();
+        double amount = operation.getTransactionAmount();
+        String name = clientCardAccount.getClient().getFirstname() + " " + clientCardAccount.getClient().getLastname();
+        mailService.prepareMail(email, new Mail(descr, amount, name));
     }
 }

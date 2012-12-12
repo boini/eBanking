@@ -203,5 +203,12 @@
             <version>3.2.1</version>
         </dependency>
 
+        <!--JasperReports-->
+        <dependency>
+            <groupId>jasperreports</groupId>
+            <artifactId>jasperreports</artifactId>
+            <version>3.5.3</version>
+        </dependency>
+
         </dependencies>
 </project>
