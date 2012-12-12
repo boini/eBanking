@@ -14,6 +14,7 @@ public class RatesService implements ServiceClient<RatesRQ, RatesRS> {
         try {
             RatesService_PortType service = locator.getRatesService();
             RatesRS ratesRS = service.execute(request);
+            return ratesRS;
         } catch (ServiceException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         } catch (RemoteException e) {
