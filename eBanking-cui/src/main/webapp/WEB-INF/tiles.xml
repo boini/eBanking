@@ -11,6 +11,7 @@
         <put-attribute name="body" value="/jsp/layout/body.jsp"/>
         <put-attribute name="info" value="/jsp/layout/info.jsp"/>
         <put-attribute name="footer" value="/jsp/layout/footer.jsp"/>
+        <put-attribute name="actionName" value="main-action"/>
         <put-list-attribute name="styles"/>
         <put-list-attribute name="scripts">
             <add-attribute value="/js/jquery-1.8.2.js"/>
@@ -21,6 +22,7 @@
     <definition name="/main.tiles" extends="/baseLayout">
         <put-attribute name="title" value="eBanking"/>
         <put-attribute name="body" value="/jsp/main.jsp"/>
+        <put-attribute name="actionName" value="main-action"/>
         <put-list-attribute name="styles">
             <add-attribute value="/css/normalize.css"/>
             <add-attribute value="/css/bootstrap.css"/>
@@ -30,6 +32,7 @@
 
     <definition name="/online.tiles" extends="/baseLayout">
         <put-attribute name="title" value="Online Info | eBanking"/>
+        <put-attribute name="actionName" value="info-action"/>
         <put-attribute name="body" value="/jsp/online.jsp"/>
         <put-list-attribute name="styles">
             <add-attribute value="/css/normalize.css"/>
@@ -46,6 +49,7 @@
 
     <definition name="/cardAccountInfo.tiles" extends="/baseLayout">
         <put-attribute name="title" value="Card Account Info | eBanking"/>
+        <put-attribute name="actionName" value="card-action"/>
         <put-attribute name="body" value="/jsp/cardAccountInfo.jsp"/>
         <put-list-attribute name="styles">
             <add-attribute value="/css/normalize.css"/>
@@ -62,6 +66,7 @@
 
     <definition name="/payment.tiles" extends="/baseLayout">
         <put-attribute name="title" value="Payment | eBanking"/>
+        <put-attribute name="actionName" value="payment-action"/>
         <put-attribute name="body" value="/jsp/payment/payment.jsp"/>
         <put-list-attribute name="styles">
             <add-attribute value="/css/normalize.css"/>
@@ -272,6 +277,7 @@
 
     <definition name="/changePassword.tiles" extends="/baseLayout">
         <put-attribute name="title" value="Change Password | eBanking" />
+        <put-attribute name="actionName" value="pass-action"/>
         <put-attribute name="body" value="/jsp/changePassword/changepassword.jsp" />
         <put-list-attribute name="styles">
             <add-attribute value="/css/normalize.css"/>
@@ -292,6 +298,7 @@
 
     <definition name="/clientHistory.tiles" extends="/baseLayout">
         <put-attribute name="title" value="Client History | eBanking"/>
+        <put-attribute name="actionName" value="history-action"/>
         <put-attribute name="body" value="/jsp/clientHistory.jsp"/>
         <put-list-attribute name="styles">
             <add-attribute value="/css/normalize.css"/>
@@ -302,6 +309,7 @@
 
     <definition name="/changeLogin.tiles" extends="/baseLayout">
         <put-attribute name="title" value="Change Login | eBanking" />
+        <put-attribute name="actionName" value="clogin-action"/>
         <put-attribute name="body" value="/jsp/changeLogin/changelogin.jsp" />
         <put-list-attribute name="styles">
             <add-attribute value="/css/normalize.css"/>
@@ -322,6 +330,7 @@
 
     <definition name="/transfer.tiles" extends="/baseLayout">
         <put-attribute name="title" value="Transfer | eBanking"/>
+        <put-attribute name="actionName" value="transfer-action"/>
         <put-attribute name="body" value="/jsp/transfer.jsp"/>
         <put-list-attribute name="styles">
             <add-attribute value="/css/normalize.css"/>

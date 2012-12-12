@@ -20,7 +20,7 @@
 </head>
 <body>
     <tiles:insertAttribute name="header"/>
-
+    <div id="actionName" style="display: none"><tiles:insertAttribute name="actionName"/></div>
     <div class="container-fluid wrapper">
         <div class="row-fluid">
             <div class="span2">
