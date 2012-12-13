@@ -1,7 +1,20 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#electricityNumberForm").validate({
+            rules: {
+                number: {
+                    required: true,
+                    minlength: 9,
+                    maxlength: 9,
+                    digits: true
+                }
+            }
+        });
+    });
+</script>
 <div>
     <div id="greeting">
         <h5>
