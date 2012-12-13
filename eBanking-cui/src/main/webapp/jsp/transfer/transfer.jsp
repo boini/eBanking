@@ -3,7 +3,20 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sj" uri="/struts-jquery-tags"%>
 <%@ taglib prefix="sjg" uri="/struts-jquery-grid-tags"%>
-
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#transfer").validate({
+            rules: {
+                amount: {
+                    required: true,
+                    minlength: 9,
+                    maxlength: 9,
+                    digits: true
+                }
+            }
+        });
+    });
+</script>
 <div>
     <div id="greeting">
         <h5>
@@ -42,7 +55,7 @@
         </tbody>
     </table>
 
-    <s:form action="/transferReview" method="post">
+    <s:form action="/transferReview" method="post" id="transfer">
         <s:select list="#session['clientCardsForm'].cards"
                   label="C карты"
                   headerValue="-выберите счёт-"
