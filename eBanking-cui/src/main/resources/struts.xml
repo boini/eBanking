@@ -50,7 +50,7 @@
 
         <action name="onlineInfo" class="ClientCardsAction">
             <result name="success" type="redirectAction">
-                /onlineInfoForward
+                <param name="actionName">onlineInfoForward</param>
             </result>
         </action>
 
@@ -67,7 +67,7 @@
 
         <action name="cardAccountInfo" class="ClientCardsAction">
             <result name="success" type="redirectAction">
-                /cardAccountInfoForward
+                <param name="actionName">cardAccountInfoForward</param>
             </result>
         </action>
 
@@ -84,7 +84,7 @@
 
         <action name="clientOperationHistory" class="ClientOperationHistoryAction">
             <result name="success" type="redirectAction">
-                /clientOperationHistoryForward
+                <param name="actionName">clientOperationHistoryForward</param>
             </result>
         </action>
 
@@ -251,13 +251,13 @@
 
         <action name="transfer" class="ClientCardsAction">
             <result name="success" type="redirectAction">
-                <param name="actionName">/rates</param>
+                <param name="actionName">rates</param>
             </result>
         </action>
 
         <action name="rates" class="RatesAction">
             <result name="success" type="redirectAction">
-                <param name="actionName">/transferForward</param>
+                <param name="actionName">transferForward</param>
             </result>
         </action>
 
@@ -273,7 +273,7 @@
 
         <action name="transferSubmit" class="TransferSubmitAction">
             <result name="success" type="redirectAction">
-                /transferSubmitForward
+                <param name="actionName">transferSubmitForward</param>
             </result>
         </action>
         
