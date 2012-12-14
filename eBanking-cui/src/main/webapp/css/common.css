@@ -37,3 +37,5 @@ select {width: 300px;}
 
 #onlineInfoSubmit {float: right; margin-bottom: 20px;}
 #cardAccountInfoSubmit {float: right; margin-bottom: 20px;}
+
+#onlineInfoTable h6, #cardAccountInfoTable h6 { padding-top: 14px;}

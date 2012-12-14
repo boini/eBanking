@@ -11,6 +11,11 @@ $('document').ready(function() {
             }
         })
 
+        if (cardAccounts.length == 0) {
+            alert('No card accounts were selected!');
+            return false;
+        }
+
         var week = $('#weekRadio').prop('checked');
 
         var toDate = new Date();
@@ -25,6 +30,10 @@ $('document').ready(function() {
         var fromDateFormatted = $.format.date(fromDate, 'dd-MM-yy HH:mm:ss');
         var toDateFormatted = $.format.date(toDate, 'dd-MM-yy HH:mm:ss');
 
+        $('#cardAccountHistory').remove();
+        $('#cardAccountInfoTable').html('');
+        $('#cardAccountInfoSubmit').button('loading');
+
         $.ajax({
             url: '/cardAccountHistory.action',
             type: 'post',
@@ -35,8 +44,7 @@ $('document').ready(function() {
             },
             success: function(data) {
                 var operations = data.operations;
-                $('#cardAccountHistory').remove();
-                if (operations.length > 0) {
+                if (operations != null && operations.length > 0) {
                     var cardAccountInfoTable = '<table class="table table-striped table-bordered" id="cardAccountHistory">';
                         cardAccountInfoTable += '<caption></caption>';
                         cardAccountInfoTable += '<thead>' +
@@ -62,7 +70,12 @@ $('document').ready(function() {
                         cardAccountInfoTable += '<td>' + operation.cardAccountAmount + '</td>';
                     })
                     cardAccountInfoTable += '</tbody></table>';
+                    $('#cardAccountInfoSubmit').button('reset');
                     $('#cardAccountInfoTable').append(cardAccountInfoTable);
+                } else {
+                    $('#cardAccountInfoSubmit').button('reset');
+                    $('#cardAccountInfoTable').append(
+                        '<h6>No card activities from ' + fromDateFormatted + ' to ' + toDateFormatted + '</h6>')
                 }
             }
         })
