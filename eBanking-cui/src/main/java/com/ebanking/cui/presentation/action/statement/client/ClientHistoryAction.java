@@ -1,5 +1,6 @@
 package com.ebanking.cui.presentation.action.statement.client;
 
+import com.ebanking.cui.exception.EBankingException;
 import com.ebanking.cui.model.account.Account;
 import com.ebanking.cui.presentation.action.BaseRQRSAction;
 import com.ebanking.cui.presentation.form.ClientOpertaionHistoryForm;
@@ -31,11 +32,15 @@ public class ClientHistoryAction extends BaseRQRSAction<OperationHistoryRQ, Oper
     }
 
     @Override
-    protected OperationHistoryRQ prepareRequest() {
+    protected OperationHistoryRQ prepareRequest() throws EBankingException {
         OperationHistoryRQ clientOperationHistoryRQ = new OperationHistoryRQ();
-        Account principal = (Account) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         long[] idList = new long[1];
-        idList[0] = principal.getClient().getClientId();
+        try {
+            Account principal = (Account) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+            idList[0] = principal.getClient().getClientId();
+        } catch (Exception e) {
+            throw new EBankingException("Error while preparing OperationHistory request for ClientHistory action", e.getCause().getMessage());
+        }
         clientOperationHistoryRQ.setIdList(idList);
         clientOperationHistoryRQ.setOperationRequestType(OperationRequestType.CLIENT.toString());
         return clientOperationHistoryRQ;

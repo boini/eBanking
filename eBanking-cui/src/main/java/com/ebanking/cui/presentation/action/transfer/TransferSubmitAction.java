@@ -1,5 +1,6 @@
 package com.ebanking.cui.presentation.action.transfer;
 
+import com.ebanking.cui.exception.EBankingException;
 import com.ebanking.cui.model.account.Account;
 import com.ebanking.cui.model.account.Client;
 import com.ebanking.cui.presentation.action.BaseRQRSAction;

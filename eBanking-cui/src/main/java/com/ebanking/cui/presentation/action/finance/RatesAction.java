@@ -1,5 +1,6 @@
 package com.ebanking.cui.presentation.action.finance;
 
+import com.ebanking.cui.exception.EBankingException;
 import com.ebanking.cui.model.finance.Currency;
 import com.ebanking.cui.model.finance.Rate;
 import com.ebanking.cui.presentation.action.BaseRQRSAction;
@@ -31,8 +32,11 @@ public class RatesAction extends BaseRQRSAction<RatesRQ, RatesRS> {
     }
 
     @Override
-    protected String processResponse(RatesRS responseObject) {
+    protected String processResponse(RatesRS responseObject) throws EBankingException {
         Rate[] rates = responseObject.getRates();
+        if (rates == null) {
+            throw new EBankingException("Error while processing Rates response for RatesAction. Rates array is null");
+        }
         ratesForm.setRates(rates);
         HttpSessionUtil.setRatesForm(ratesForm);
         return "success";

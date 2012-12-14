@@ -1,5 +1,6 @@
 package com.ebanking.cui.presentation.action.statement.cardAccount;
 
+import com.ebanking.cui.exception.EBankingException;
 import com.ebanking.cui.model.operation.Operation;
 import com.ebanking.cui.presentation.action.BaseRQRSAction;
 import com.ebanking.cui.service.client.ServiceClient;
@@ -71,7 +72,7 @@ public class CardAccountHistoryAction extends BaseRQRSAction<OperationHistoryRQ,
     }
 
     @Override
-    protected OperationHistoryRQ prepareRequest() {
+    protected OperationHistoryRQ prepareRequest() throws EBankingException {
         OperationHistoryRQ operationHistoryRQ = new OperationHistoryRQ();
 
         String[] idArrayStr = idList.split(",");
@@ -90,6 +91,7 @@ public class CardAccountHistoryAction extends BaseRQRSAction<OperationHistoryRQ,
             toCalendar.setTime(toDateFormatted);
         } catch (ParseException e) {
             e.printStackTrace();
+            throw new EBankingException("Date parsing error while preparing OperationHistory request for CardAccountHistory action", e.getCause().getMessage());
         }
 
         operationHistoryRQ.setIdList(idArray);
@@ -101,8 +103,11 @@ public class CardAccountHistoryAction extends BaseRQRSAction<OperationHistoryRQ,
     }
 
     @Override
-    protected String processResponse(OperationHistoryRS responseObject) {
+    protected String processResponse(OperationHistoryRS responseObject) throws EBankingException {
         Operation[] operationArray = responseObject.getOperations();
+        if (operationArray == null) {
+            throw new EBankingException("Error while processing OperationHistory response for CardAccountHistory action. Operation array is null");
+        }
         operations = new ArrayList(Arrays.asList(operationArray));
         return "success";
     }

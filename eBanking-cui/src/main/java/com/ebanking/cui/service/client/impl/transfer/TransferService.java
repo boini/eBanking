@@ -1,5 +1,6 @@
 package com.ebanking.cui.service.client.impl.transfer;
 
+import com.ebanking.cui.exception.EBankingException;
 import com.ebanking.cui.service.client.ServiceClient;
 import com.ebanking.cui.service.request.TransferRQ;
 import com.ebanking.cui.service.response.TransferRS;
@@ -16,17 +17,15 @@ import java.rmi.RemoteException;
  */
 public class TransferService implements ServiceClient<TransferRQ, TransferRS> {
     @Override
-    public TransferRS execute(TransferRQ request) {
+    public TransferRS execute(TransferRQ request) throws EBankingException {
         TransferServiceServiceLocator locator = new TransferServiceServiceLocator();
         try {
             TransferService_PortType service = locator.getTransferService();
             TransferRS transferRS = service.execute(request);
             return transferRS;
-        } catch (ServiceException e) {
+        } catch (Exception e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-        } catch (RemoteException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            throw new EBankingException("Exception while executing Transfer service", e.getMessage());
         }
-        return null;
     }
 }

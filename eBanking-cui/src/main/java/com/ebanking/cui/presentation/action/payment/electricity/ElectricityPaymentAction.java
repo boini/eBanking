@@ -1,5 +1,6 @@
 package com.ebanking.cui.presentation.action.payment.electricity;
 
+import com.ebanking.cui.exception.EBankingException;
 import com.ebanking.cui.model.account.Account;
 import com.ebanking.cui.model.card.Card;
 import com.ebanking.cui.presentation.action.BaseRQRSAction;
@@ -59,8 +60,11 @@ public class ElectricityPaymentAction extends BaseRQRSAction<ClientCardsRQ, Clie
     }
 
     @Override
-    protected String processResponse(ClientCardsRS responseObject) {
+    protected String processResponse(ClientCardsRS responseObject) throws EBankingException {
         Card[] cards = responseObject.getCards();
+        if (cards == null) {
+            throw new EBankingException("Error while processing ClientCards response for ElectricityPayment action. Cards array is null");
+        }
         List<Card> cardsList = new ArrayList<Card>(Arrays.asList(cards));
         electricityPaymentForm.setCards(cardsList);
         HttpSessionUtil.setElectricityPaymentForm(electricityPaymentForm);

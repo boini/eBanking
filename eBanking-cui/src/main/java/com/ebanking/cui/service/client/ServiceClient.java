@@ -1,5 +1,7 @@
 package com.ebanking.cui.service.client;
 
+import com.ebanking.cui.exception.EBankingException;
+
 /**
  * Created with IntelliJ IDEA.
  * User: antonkholodok
@@ -8,5 +10,5 @@ package com.ebanking.cui.service.client;
  * To change this template use File | Settings | File Templates.
  */
 public interface ServiceClient<RQ, RS> {
-    RS execute(RQ request);
+    RS execute(RQ request)  throws EBankingException;
 }
