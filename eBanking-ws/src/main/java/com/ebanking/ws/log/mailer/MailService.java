@@ -67,7 +67,7 @@ public class MailService {
      * Sends e-mail to receivers.
      */
     public void prepareMail(String email, Mail mail) {
-        String report = JasperReporter.generateJasperReport(Arrays.asList(mail));
+        byte[] report = JasperReporter.generateJasperReport(Arrays.asList(mail));
         sendMessage(report, email);
     }
 
@@ -77,15 +77,14 @@ public class MailService {
      * @param attach
      * @param address
      */
-    public void sendMessage(String attach, String address) {
+    public void sendMessage(byte[] attach, String address) {
         try {
             //Creates message
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(email));
-            message.setSubject("eBanking delivery");
+            message.setSubject("payment information");
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(address));
-            message.setContent(attach, "text/html");
-            //message.setText("hui");
+            message.setContent(attach, "application/pdf");
             Transport.send(message);
         } catch (MessagingException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.

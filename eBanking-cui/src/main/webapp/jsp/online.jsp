@@ -63,7 +63,7 @@
             </tbody>
         </table>
 
-        <button class="btn btn-primary" id="onlineInfoSubmit">Получить</button>
+        <button type="button" class="btn btn-primary" id="onlineInfoSubmit" data-loading-text="Loading...">Получить</button>
 
         <div id="onlineInfoTable">
 

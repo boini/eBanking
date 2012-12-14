@@ -11,6 +11,11 @@ $('document').ready(function() {
             }
         })
 
+        if (cards.length == 0) {
+            alert('No cards were selected!');
+            return false;
+        }
+
         var week = $('#weekRadio').prop('checked');
 
         var toDate = new Date();
@@ -25,6 +30,11 @@ $('document').ready(function() {
         var fromDateFormatted = $.format.date(fromDate, 'dd-MM-yy HH:mm:ss');
         var toDateFormatted = $.format.date(toDate, 'dd-MM-yy HH:mm:ss');
 
+        $('#cardOperations').remove();
+        $('#onlineInfoTable').html('');
+
+        $('#onlineInfoSubmit').button('loading');
+
         $.ajax({
             url: '/cardOperationHistory.action',
             type: 'post',
@@ -35,8 +45,7 @@ $('document').ready(function() {
             },
             success: function(data) {
                 var operations = data.operations;
-                $('#cardOperations').remove();
-                if (operations.length > 0) {
+                if (operations != null && operations.length > 0) {
                     var onlineInfoTable = '<table class="table table-striped table-bordered" id="cardOperations">';
                         onlineInfoTable += '<caption></caption>';
                         onlineInfoTable += '<thead>' +
@@ -62,7 +71,12 @@ $('document').ready(function() {
                         onlineInfoTable += '<td>' + operation.transactionAmount + '</td>';
                     })
                     onlineInfoTable += '</tbody></table>';
+                    $('#onlineInfoSubmit').button('reset');
                     $('#onlineInfoTable').append(onlineInfoTable);
+                } else {
+                    $('#onlineInfoSubmit').button('reset');
+                    $('#onlineInfoTable').append(
+                        '<h6>No card activities from ' + fromDateFormatted + ' to ' + toDateFormatted + '</h6>')
                 }
             }
         })

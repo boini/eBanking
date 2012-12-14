@@ -16,6 +16,7 @@
         <put-list-attribute name="scripts">
             <add-attribute value="/js/jquery-1.8.2.js"/>
             <add-attribute value="/js/bootstrap.js"/>
+            <add-attribute value="/js/jquery.validate.js"/>
         </put-list-attribute>
     </definition>
     

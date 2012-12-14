@@ -32,7 +32,7 @@ public class JasperReporter {
      * @param list data source for report generation
      * @return PDF file represented by <code>byte[]</code>
      */
-    public static String generateJasperReport(List<Mail> list) {
+    public static byte[] generateJasperReport(List<Mail> list) {
         try {
 
             URL url = JasperReporter.class.getClassLoader().getResource("jasperTemplate.xml");
@@ -44,17 +44,7 @@ public class JasperReporter {
             JasperReport jasperReport = JasperCompileManager.compileReport(jasperDesign);
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, beanColDataSource);
 
-            JasperExportManager.exportReportToHtmlFile(jasperPrint, "temp.html");
-            BufferedReader in = new BufferedReader( new FileReader( "temp.html" ));
-
-            String htmlText = "";
-            String str;
-            while ( (str = in.readLine()) != null ) {
-                htmlText += str;
-            }
-            in.close();
-            return htmlText;
-            //return JasperExportManager.exportReportToPdf(jasperPrint);
+            return JasperExportManager.exportReportToPdf(jasperPrint);
 
 
         } catch (JRException e) {

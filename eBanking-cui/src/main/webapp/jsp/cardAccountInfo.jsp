@@ -54,7 +54,7 @@
             </tbody>
         </table>
 
-        <button class="btn btn-primary" id="cardAccountInfoSubmit">Получить</button>
+        <button type="button" class="btn btn-primary" id="cardAccountInfoSubmit" data-loading-text="Loading...">Получить</button>
 
         <div id="cardAccountInfoTable">
 
