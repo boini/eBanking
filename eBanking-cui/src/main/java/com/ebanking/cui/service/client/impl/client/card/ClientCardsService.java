@@ -1,5 +1,6 @@
 package com.ebanking.cui.service.client.impl.client.card;
 
+import com.ebanking.cui.exception.EBankingException;
 import com.ebanking.cui.service.client.ServiceClient;
 import com.ebanking.cui.service.request.ClientCardsRQ;
 import com.ebanking.cui.service.response.ClientCardsRS;
@@ -16,17 +17,15 @@ import java.rmi.RemoteException;
  */
 public class ClientCardsService implements ServiceClient<ClientCardsRQ, ClientCardsRS> {
     @Override
-    public ClientCardsRS execute(ClientCardsRQ request) {
+    public ClientCardsRS execute(ClientCardsRQ request) throws EBankingException {
         ClientCardsServiceServiceLocator locator = new ClientCardsServiceServiceLocator();
         try {
             ClientCardsService_PortType service = locator.getClientCardsService();
             ClientCardsRS clientCardsRS = service.execute(request);
             return clientCardsRS;
-        } catch (ServiceException e) {
+        } catch (Exception e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-        } catch (RemoteException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            throw new EBankingException("Exception while executing ClientCard service", e.getMessage());
         }
-        return new ClientCardsRS();
     }
 }

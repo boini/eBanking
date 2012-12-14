@@ -1,5 +1,6 @@
 package com.ebanking.cui.presentation.action.payment.communications;
 
+import com.ebanking.cui.exception.EBankingException;
 import com.ebanking.cui.model.account.Account;
 import com.ebanking.cui.model.card.Card;
 import com.ebanking.cui.presentation.action.BaseRQRSAction;
@@ -59,8 +60,11 @@ public class CommunicationsPaymentAction extends BaseRQRSAction<ClientCardsRQ, C
     }
 
     @Override
-    protected String processResponse(ClientCardsRS responseObject) {
+    protected String processResponse(ClientCardsRS responseObject) throws EBankingException {
         Card[] cards = responseObject.getCards();
+        if (cards == null) {
+            throw new EBankingException("Error while processing ClientCards response for CommunicationsPayment action. Cards array is null");
+        }
         List<Card> cardsList = new ArrayList<Card>(Arrays.asList(cards));
         communicationsPaymentForm.setCards(cardsList);
         HttpSessionUtil.setCommunicationsPaymentForm(communicationsPaymentForm);

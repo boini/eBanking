@@ -1,5 +1,6 @@
 package com.ebanking.cui.presentation.action;
 
+import com.ebanking.cui.exception.EBankingException;
 import com.ebanking.cui.service.client.ServiceClient;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -18,14 +19,14 @@ public abstract class BaseRQRSAction<RQ, RS> extends ActionSupport {
      * Prepare request instance
      * @return Request instance
      */
-    protected abstract RQ prepareRequest();
+    protected abstract RQ prepareRequest() throws EBankingException;
 
     /**
      * Process response instance
      * @param responseObject Response object to process
      * @return Action forward path
      */
-    protected abstract String processResponse(RS responseObject);
+    protected abstract String processResponse(RS responseObject) throws EBankingException;
 
     /**
      * Action execute method. Prepares request, makes call to web services layer,
@@ -33,11 +34,18 @@ public abstract class BaseRQRSAction<RQ, RS> extends ActionSupport {
      * @throws Exception In case of error
      */
     public String execute() throws Exception {
-        final RQ requestObject = prepareRequest();
+        String actionForwardPath = "failure";
+        try {
+            final RQ requestObject = prepareRequest();
 
-        final RS responseObject = serviceClient.execute(requestObject);
+            final RS responseObject = serviceClient.execute(requestObject);
 
-        String actionForwardPath = processResponse(responseObject);
+            actionForwardPath = processResponse(responseObject);
+        } catch (EBankingException e) {
+            //TODO: handle exception
+        } catch (Exception e) {
+            //TODO: handle exception
+        }
         return actionForwardPath;
     }
 }

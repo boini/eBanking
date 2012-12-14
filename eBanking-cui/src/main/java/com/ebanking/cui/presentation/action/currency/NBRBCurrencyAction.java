@@ -1,5 +1,6 @@
 package com.ebanking.cui.presentation.action.currency;
 
+import com.ebanking.cui.exception.EBankingException;
 import com.ebanking.cui.model.rate.NewDataSet;
 import com.ebanking.cui.presentation.action.BaseRQRSAction;
 import com.ebanking.cui.presentation.form.NBRBCurrencyRatesForm;
@@ -34,7 +35,7 @@ public class NBRBCurrencyAction extends BaseRQRSAction<Calendar, ExRatesDailyRes
     }
 
     @Override
-    protected String processResponse(ExRatesDailyResponseExRatesDailyResult responseObject) {
+    protected String processResponse(ExRatesDailyResponseExRatesDailyResult responseObject) throws EBankingException {
         Node node = responseObject.get_any()[1].getFirstChild();
         try {
             JAXBContext jaxbContext = JAXBContext.newInstance(NewDataSet.class);
@@ -44,6 +45,7 @@ public class NBRBCurrencyAction extends BaseRQRSAction<Calendar, ExRatesDailyRes
             HttpSessionUtil.setNbrbRatesForm(nbrbCurrencyRatesForm);
         } catch (JAXBException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            throw new EBankingException("Error while processing response for NBRBCurrency action", e.getCause().getMessage());
         }
         return "success";
     }
