@@ -10,5 +10,5 @@ import com.ebanking.cui.exception.EBankingException;
  * To change this template use File | Settings | File Templates.
  */
 public interface ServiceClient<RQ, RS> {
-    RS execute(RQ request)  throws EBankingException;
+    RS execute(RQ request) throws EBankingException;
 }

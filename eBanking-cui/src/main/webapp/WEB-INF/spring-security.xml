@@ -9,7 +9,7 @@
 
     <http auto-config="true">
         <form-login login-page="/login" default-target-url="/main" authentication-failure-url="/login?error=true"/>
-        <logout logout-success-url="/login"/>
+        <logout logout-success-url="/login" delete-cookies="JSESSIONID"/>
     </http>
 
     <beans:bean id="passwordEncoder" class="org.springframework.security.authentication.encoding.Md5PasswordEncoder"/>

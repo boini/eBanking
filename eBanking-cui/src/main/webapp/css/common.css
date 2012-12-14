@@ -19,6 +19,8 @@ select {width: 300px;}
 
 .paid { background: url('../img/paid.png') 0 0 no-repeat; }
 
+.ui-datepicker-trigger { margin-left: 5px; margin-top: -8px;}
+
 #header ul { float: right;}
 #cards img {width: 50px; border: 1px solid #555; }
 #mobileNumberForm { width: 300px; }

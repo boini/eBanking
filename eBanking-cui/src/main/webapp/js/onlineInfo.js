@@ -1,4 +1,18 @@
 $('document').ready(function() {
+    $('.calendar-select input').prop('disabled', true);
+    $('.ui-datepicker-trigger').css('visibility', 'hidden');
+
+    $('input[type="radio"]').on('change', function() {
+        var checked = $('#customRadio').prop('checked');
+        if (checked) {
+            $('.calendar-select input').prop('disabled', false);
+            $('.ui-datepicker-trigger').css('visibility', 'visible');
+        } else {
+            $('.calendar-select input').prop('disabled', true).val('');
+            $('.ui-datepicker-trigger').css('visibility', 'hidden');
+        }
+    })
+
     $('#onlineInfoSubmit').on('click', function() {
         var checkboxes = $('input[type="checkbox"]');
         var cards = '';
@@ -16,15 +30,27 @@ $('document').ready(function() {
             return false;
         }
 
-        var week = $('#weekRadio').prop('checked');
-
         var toDate = new Date();
         var fromDate = new Date();
 
-        if (week) {
+        var period = $('input[type="radio"]:checked').val();
+        if (period == 'week') {
             fromDate.setDate(toDate.getDate() - 7);
-        } else {
+        }
+        if (period == 'month') {
             fromDate.setMonth(toDate.getMonth() - 1);
+        }
+        if (period == 'custom') {
+            var tDate = toDate;
+            var fDate = fromDate;
+            fromDate = new Date($('#fromDate').val());
+            toDate = new Date($('#toDate').val());
+            fromDate.setHours(fDate.getHours());
+            fromDate.setMinutes(fDate.getMinutes());
+            fromDate.setSeconds(fDate.getSeconds());
+            toDate.setHours(tDate.getHours());
+            toDate.setMinutes(tDate.getMinutes());
+            toDate.setSeconds(tDate.getSeconds());
         }
 
         var fromDateFormatted = $.format.date(fromDate, 'dd-MM-yy HH:mm:ss');
@@ -32,7 +58,6 @@ $('document').ready(function() {
 
         $('#cardOperations').remove();
         $('#onlineInfoTable').html('');
-
         $('#onlineInfoSubmit').button('loading');
 
         $.ajax({
