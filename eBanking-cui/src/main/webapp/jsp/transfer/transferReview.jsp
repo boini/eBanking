@@ -7,43 +7,43 @@
         <h5>
             <s:property value="#session['clientInfoForm'].fullName"/>
         </h5>
-        Добро пожаловать в систему "eBanking"
+        Welcome to the "eBanking"
     </div>
 
     <div>
         <s:form action="/transferSubmit" method="POST" id="mobileNumberForm">
             <table class="table table-striped">
-                <caption>Подтверждение реквизитов. Если все реквизиты заполнены правильно нажмите "Отправить в банк" или вернитесь к редактированию документа.</caption>
+                <caption>Confirmation details. If all of the details are filled in correctly, click "Submit" or go back to the document.</caption>
                 <tr>
-                    <td>Дата</td>
+                    <td>Date</td>
                     <td>
                         <s:property value="%{#session.transferForm.date}"/>
                     </td>
                 </tr>
                 <tr>
-                    <td>Банк клиента</td>
+                    <td>Client bank</td>
                     <td>eBanking</td>
                 </tr>
                 <tr>
-                    <td>Клиент</td>
+                    <td>Client</td>
                     <td>
                         <s:property value="#session['clientInfoForm'].fullName"/>
                     </td>
                 </tr>
                 <tr>
-                    <td>Оплачиваемая услуга</td>
+                    <td>Paid service</td>
                     <td>
-                        Перевод средств
+                        Money transfer
                     </td>
                 </tr>
                 <tr>
-                    <td>С карты</td>
+                    <td>From card</td>
                     <td>
                         <s:property value="%{#session.transferForm.fromCard.cardNumber}"/>
                     </td>
                 </tr>
                 <tr>
-                    <td>На карты</td>
+                    <td>To card</td>
                     <td>
                         <s:property value="%{#session.transferForm.toCard.cardNumber}"/>
                     </td>
@@ -59,11 +59,10 @@
                 </tr>
             </table>
             <h5>
-                Внимание! После нажания на кнопку "Отправить в банк" Вы совершите
-                платеж. Возврат средств на Ваш счет будет невозможен!
+                Attention! After pressing the "Submit" You will make a payment. Refund to your account won't be possible!
             </h5>
             <td>
-                <s:submit value="Отправить в банк"/>
+                <s:submit value="Submit"/>
             </td>
         </s:form>
     </div>

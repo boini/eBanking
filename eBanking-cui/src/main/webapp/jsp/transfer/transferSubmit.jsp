@@ -7,47 +7,47 @@
         <h5>
             <s:property value="#session['clientInfoForm'].fullName"/>
         </h5>
-        Добро пожаловать в систему "eBanking"
+        Welcome to the "eBanking"
     </div>
 
     <div>
         <table class="table table-bordered paid">
             <tr>
-                <td>Дата</td>
+                <td>Date</td>
                 <td>
                     <s:property value="%{#session.transferForm.date}"/>
                 </td>
             </tr>
             <tr>
-                <td>Банк клиента</td>
+                <td>Client bank</td>
                 <td>eBanking</td>
             </tr>
             <tr>
-                <td>Клиент</td>
+                <td>Client</td>
                 <td>
                     <s:property value="#session['clientInfoForm'].fullName"/>
                 </td>
             </tr>
             <tr>
-                <td>Оплачиваемая услуга</td>
+                <td>Paid service</td>
                 <td>
-                    Перевод средств
+                    Money transfer
                 </td>
             </tr>
             <tr>
-                <td>С карты</td>
+                <td>From card</td>
                 <td>
                     <s:property value="%{#session.transferForm.fromCard.cardNumber}"/>
                 </td>
             </tr>
             <tr>
-                <td>На карты</td>
+                <td>To card</td>
                 <td>
                     <s:property value="%{#session.transferForm.toCard.cardNumber}"/>
                 </td>
             </tr>
             <tr>
-                <td>Cумма</td>
+                <td>Sum</td>
                 <td>
                     <s:property value="%{#session.transferForm.amount}"/>
                     (<s:property value="%{#session.transferForm.fromCard.cardAccount.currency.currencyCode}"/>) =

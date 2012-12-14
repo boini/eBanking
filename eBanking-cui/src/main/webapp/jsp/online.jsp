@@ -9,27 +9,27 @@
         <h5>
             <s:property value="#session['clientInfoForm'].fullName"/>
         </h5>
-        Добро пожаловать в систему "eBanking"
+        Welcome to the "eBanking"
     </div>
 
     <div>
 
         <div>
-            <span>Параметры формирования выписки</span><br/>
-            <input type="radio" id="weekRadio" name="bankStatement" checked="checked"/>За последнюю неделю <br/>
-            <input type="radio" id="monthRadio" name="bankStatement"/>За последний месяц
+            <span>The parameters of the statement</span><br/>
+            <input type="radio" id="weekRadio" name="bankStatement" checked="checked"/>For the last week <br/>
+            <input type="radio" id="monthRadio" name="bankStatement"/>For the last month
         </div>
 
         <table class="table table-condensed table-hover" id="cards">
-            <caption>Ваши карты (остаток по состоянию на 07.11.2012 17:25:51) </caption>
+            <caption>Your cards (balance as at 07.11.2012 17:25:51) </caption>
             <thead>
             <tr>
                 <th></th>
-                <th>Номер карты</th>
-                <th>Остаток</th>
-                <th>Лимит кредита</th>
-                <th>Валюта</th>
-                <th>Тип карты</th>
+                <th>Card number</th>
+                <th>Balance</th>
+                <th>Credit limit</th>
+                <th>Currency</th>
+                <th>Card type</th>
             </tr>
             </thead>
             <tbody>

@@ -7,21 +7,21 @@
         <h5>
             <s:property value="#session['clientInfoForm'].fullName"/>
         </h5>
-        Добро пожаловать в систему "eBanking"
+        Welcome to the "eBanking"
     </div>
 
     <div>
         <table class="table table-condensed table-hover" id="cards">
-            <caption>Ваши карты (остаток по состоянию на
+            <caption>Your cards (balance as at
                 <s:property value="#session['clientCardsForm'].date"/>
                 ) </caption>
             <thead>
                 <tr>
-                    <th>Номер карты</th>
-                    <th>Остаток</th>
-                    <th>Лимит кредита</th>
-                    <th>Валюта</th>
-                    <th>Тип карты</th>
+                    <th>Card number</th>
+                    <th>Balance</th>
+                    <th>Credit limit</th>
+                    <th>Currency</th>
+                    <th>Card type</th>
                 </tr>
             </thead>
             <tbody>
@@ -52,14 +52,14 @@
             </tbody>
         </table>
         <table class="table table-condensed table-hover">
-            <caption>Курсы валют по операциям с картами (по состоянию на
+            <caption>Exchange rates on card transactions (as
                 <s:property value="#session['nbrbCurrencyRatesForm'].date"/>
                 )</caption>
             <thead>
             <tr>
-                <th>Наименование валюты</th>
-                <th>Код</th>
-                <th>Курс</th>
+                <th>Currency name</th>
+                <th>Code</th>
+                <th>Rate</th>
             </tr>
             </thead>
             <tbody>

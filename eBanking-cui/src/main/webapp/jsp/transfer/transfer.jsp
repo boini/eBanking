@@ -22,17 +22,17 @@
         <h5>
             <s:property value="#session['clientInfoForm'].fullName"/>
         </h5>
-        Добро пожаловать в систему "eBanking"
+        Welcome to the "eBanking"
     </div>
 
     <table class="table table-bordered table-condensed" id="cards">
-        <caption>Ваши карты (остаток по состоянию на 07.11.2012 17:25:51) </caption>
+        <caption>Your cards (balance as at 07.11.2012 17:25:51) </caption>
         <thead>
         <tr>
-            <th>Название валюты</th>
-            <th>Код</th>
-            <th>Курс покупки</th>
-            <th>Курс продажи</th>
+            <th>Currency name</th>
+            <th>Code</th>
+            <th>Purchasing rate</th>
+            <th>Selling rate</th>
         </tr>
         </thead>
         <tbody>
@@ -57,22 +57,22 @@
 
     <s:form action="/transferReview" method="post" id="transfer">
         <s:select list="#session['clientCardsForm'].cards"
-                  label="C карты"
-                  headerValue="-выберите счёт-"
+                  label="From card"
+                  headerValue="-select bill-"
                   listKey="cardId"
                   key="fromCardId"
                   listValue="%{cardNumber + ' [' + cardType.cardTypeName + ' ' + cardAccount.balance + ' ' + cardAccount.currency.currencyCode + ']'}"/>
 
         <s:select list="#session['clientCardsForm'].cards"
-                  label="На карту"
-                  headerValue="-выберите счёт-"
+                  label="To card"
+                  headerValue="-select bill-"
                   listKey="cardId"
                   key="toCardId"
                   listValue="%{cardNumber + ' [' + cardType.cardTypeName + ' ' + cardAccount.balance + ' ' + cardAccount.currency.currencyCode + ']'}"/>
 
         <s:textfield key="amount"
                      label="Сумма"/>
-        <s:submit value="Продолжить" cssClass="btn btn-primary"/>
+        <s:submit value="Continue" cssClass="btn btn-primary"/>
     </s:form>
 
 </div>

@@ -9,7 +9,7 @@
         <h5>
             <s:property value="#session['clientInfoForm'].fullName"/>
         </h5>
-        Добро пожаловать в систему "eBanking"
+        Welcome to the "eBanking"
     </div>
 
     <div>
@@ -18,11 +18,11 @@
             <caption></caption>
             <thead>
             <tr>
-                <th>Дата</th>
-                <th>Название</th>
-                <th>Сумма</th>
-                <th>Состоние</th>
-                <th>Ключ</th>
+                <th>Date</th>
+                <th>Name</th>
+                <th>Sum</th>
+                <th>State</th>
+                <th>Key</th>
             </tr>
             </thead>
             <tbody>
