@@ -14,10 +14,28 @@
 
     <div>
 
+        <script type="text/javascript">
+            $(function() {
+                $( "#fromDate, #toDate" ).datepicker({
+                    showOn: "button",
+                    buttonImage: "../../img/calendar.gif",
+                    buttonImageOnly: true,
+                    changeMonth: true,
+                    changeYear: true,
+                    beforeShow: customRange
+                });
+            });
+        </script>
+
         <div>
             <span>The parameters of the statement</span><br/>
-            <input type="radio" id="weekRadio" name="bankStatement" checked="checked"/>За последнюю неделю <br/>
-            <input type="radio" id="monthRadio" name="bankStatement"/>За последний месяц
+            <input type="radio" id="weekRadio" name="bankStatement" checked="checked" value="week"/>За последнюю неделю <br/>
+            <input type="radio" id="monthRadio" name="bankStatement" value="month"/>За последний месяц<br/>
+            <input type="radio" id="customRadio" name="bankStatement" value="custom"/> For the period<br/>
+            <div class="calendar-select">
+                From: <input type="text" id="fromDate" />
+                To:   <input type="text" id="toDate" />
+            </div>
         </div>
 
         <table class="table table-condensed table-hover" id="cards">

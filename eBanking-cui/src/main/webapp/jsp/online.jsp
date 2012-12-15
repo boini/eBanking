@@ -16,19 +16,13 @@
 
         <script type="text/javascript">
             $(function() {
-                $( "#fromDate" ).datepicker({
+                $( "#fromDate, #toDate" ).datepicker({
                     showOn: "button",
                     buttonImage: "../../img/calendar.gif",
                     buttonImageOnly: true,
                     changeMonth: true,
-                    changeYear: true
-                });
-                $( "#toDate" ).datepicker({
-                    showOn: "button",
-                    buttonImage: "../../img/calendar.gif",
-                    buttonImageOnly: true,
-                    changeMonth: true,
-                    changeYear: true
+                    changeYear: true,
+                    beforeShow: customRange
                 });
             });
         </script>

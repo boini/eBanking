@@ -1,4 +1,38 @@
 $('document').ready(function() {
+    $('.calendar-select input').prop('disabled', true);
+    $('.ui-datepicker-trigger').css('visibility', 'hidden');
+
+    $('#fromDate').on('change', function() {
+        var correct = isDate($(this).val());
+        if (!correct) {
+            $('#fromDate').css('background-color', '#FFD0D4');
+        } else {
+            $('#fromDate').css('background-color', '#fff');
+        }
+    })
+
+    $('#toDate').on('change', function() {
+        var correct = isDate($(this).val());
+        if (!correct) {
+            $('#toDate').css('background-color', '#FFD0D4');
+        } else {
+            $('#toDate').css('background-color', '#fff');
+        }
+    })
+
+    $('input[type="radio"]').on('change', function() {
+        var checked = $('#customRadio').prop('checked');
+        if (checked) {
+            $('.calendar-select input').prop('disabled', false);
+            $('.ui-datepicker-trigger').css('visibility', 'visible');
+            $('#fromDate, #toDate').css('background-color', '#FFF');
+        } else {
+            $('.calendar-select input').prop('disabled', true).val('');
+            $('.ui-datepicker-trigger').css('visibility', 'hidden');
+            $('#fromDate, #toDate').css('background-color', '#EEE');
+        }
+    })
+
     $('#cardAccountInfoSubmit').on('click', function() {
         var checkboxes = $('input[type="checkbox"]');
         var cardAccounts = '';
@@ -16,15 +50,40 @@ $('document').ready(function() {
             return false;
         }
 
-        var week = $('#weekRadio').prop('checked');
-
         var toDate = new Date();
         var fromDate = new Date();
 
-        if (week) {
+        var period = $('input[type="radio"]:checked').val();
+        if (period == 'week') {
             fromDate.setDate(toDate.getDate() - 7);
-        } else {
+        }
+        if (period == 'month') {
             fromDate.setMonth(toDate.getMonth() - 1);
+        }
+        if (period == 'custom') {
+            var isCorrect = true;
+            if (!isDate($('#fromDate').val())) {
+                $('#fromDate').css('background-color', '#FFD0D4');
+                isCorrect = false;
+            }
+            if (!isDate($('#toDate').val())) {
+                $('#toDate').css('background-color', '#FFD0D4');
+                isCorrect = false;
+            }
+            if (!isCorrect) {
+                return false;
+            }
+
+            var tDate = toDate;
+            var fDate = fromDate;
+            fromDate = new Date($('#fromDate').val());
+            toDate = new Date($('#toDate').val());
+            fromDate.setHours(0);
+            fromDate.setMinutes(0);
+            fromDate.setSeconds(0);
+            toDate.setHours(23);
+            toDate.setMinutes(59);
+            toDate.setSeconds(59);
         }
 
         var fromDateFormatted = $.format.date(fromDate, 'dd-MM-yy HH:mm:ss');
