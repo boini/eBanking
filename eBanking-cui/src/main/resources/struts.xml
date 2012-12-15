@@ -16,6 +16,12 @@
             <result name="success">/jsp/login.jsp</result>
         </action>
 
+        <action name="logout" class="LogoutForwardAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">login</param>
+            </result>
+        </action>
+
         <!-- Main page -->
 
         <action name="main" class="SessionRecreationForwardAction">

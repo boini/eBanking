@@ -13,7 +13,6 @@ import java.util.Map;
 public class LoginForward extends ActionSupport {
 
     public String execute() throws Exception {
-        System.out.println(new Date().getTime());
         Map attributes = ActionContext.getContext().getSession();
         UserHttpSession userHttpSession = new UserHttpSession();
         userHttpSession.setSession(attributes);

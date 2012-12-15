@@ -15,8 +15,6 @@ public class HttpSessionUtil {
     private static final String CLIENT_INFO_FORM = "clientInfoForm";
     private static final String CLIENT_OPERATION_HISTORY_FORM = "clientOperationHistoryForm";
     private static final String NBRB_RATES_FORM = "nbrbCurrencyRatesForm";
-    private static final String MOBILE_PAYMENT_FORM = "mobilePaymentForm";
-    private static final String INTERNET_PAYMENT_FORM = "internetPaymentForm";
     private static final String COMMUNICATIONS_PAYMENT_FORM = "communicationsPaymentForm";
     private static final String PHONE_PAYMENT_FORM = "phonePaymentForm";
     private static final String RENT_PAYMENT_FORM = "rentPaymentForm";
@@ -128,5 +126,19 @@ public class HttpSessionUtil {
     }
     public static TransferForm getTransferForm() {
         return (TransferForm) getAttribute(TRANSFER_FORM);
+    }
+
+    public static void invalidate() {
+        userHttpSession.remove(RATES_FORM);
+        userHttpSession.remove(TRANSFER_FORM);
+        userHttpSession.remove(CLIENT_ACCOUNT);
+        userHttpSession.remove(CLIENT_INFO_FORM);
+        userHttpSession.remove(CLIENT_CARDS_FORM);
+        userHttpSession.remove(CLIENT_OPERATION_HISTORY_FORM);
+        userHttpSession.remove(COMMUNICATIONS_PAYMENT_FORM);
+        userHttpSession.remove(ELECTRICITY_PAYMENT_FORM);
+        userHttpSession.remove(NBRB_RATES_FORM);
+        userHttpSession.remove(PHONE_PAYMENT_FORM);
+        userHttpSession.remove(RENT_PAYMENT_FORM);
     }
 }

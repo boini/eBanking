@@ -28,4 +28,8 @@ public class UserHttpSession {
     public Object getAttribute(String name) {
         return session.get(name);
     }
+
+    public void remove(String name) {
+        session.remove(name);
+    }
 }
