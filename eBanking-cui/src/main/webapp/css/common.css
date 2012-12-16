@@ -1,6 +1,6 @@
 body { font-size: 11px; }
 table { font-size: 11px; }
-input[type="text"] { height: 30px; }
+input[type="text"], input[type="password"] { height: 30px; }
 input[type="radio"] {margin-right: 5px;}
 select {width: 300px;}
 
@@ -42,3 +42,5 @@ select {width: 300px;}
 #cardAccountInfoSubmit {float: right; margin-bottom: 20px;}
 
 #onlineInfoTable h6, #cardAccountInfoTable h6 { padding-top: 14px;}
+
+#changeLoginSubmit {float: right;}

@@ -15,13 +15,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-/**
- * Created with IntelliJ IDEA.
- * User: antonkholodok
- * Date: 12/7/12
- * Time: 8:22 AM
- * To change this template use File | Settings | File Templates.
- */
 public class CardOperationHistoryAction extends BaseRQRSAction<OperationHistoryRQ, OperationHistoryRS> {
     private String idList;
     private String fromDate;

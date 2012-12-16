@@ -56,7 +56,7 @@ http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
 
     <bean id="cronTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
         <property name="jobDetail" ref="runMeJob"/>
-        <property name="cronExpression" value="0/15 * * * * ?"/>
+        <property name="cronExpression" value="0/30 * * * * ?"/>
     </bean>
 
     <bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">

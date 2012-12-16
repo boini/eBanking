@@ -117,7 +117,7 @@
         </action>
 
         <action name="changeLoginSubmit" class="ChangeLoginSubmitAction">
-            <result name="success" type="tiles">/changeLoginSuccess.tiles</result>
+            <result name="success" type="json"/>
         </action>
         
 

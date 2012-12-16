@@ -79,8 +79,12 @@ public class AccountDAOImpl extends CommonDAOImpl implements AccountDAO {
 
     @Override
     public Account getByLogin(String login) {
-        return (Account) currentSession().createQuery("from Account as account where account.login = ?")
+        List accounts = currentSession().createQuery("from Account as account where account.login = ?")
                 .setString(0, login)
-                .list().get(0);
+                .list();
+        if (accounts != null && accounts.size() > 0) {
+            return (Account) accounts.get(0);
+        }
+        return null;
     }
 }

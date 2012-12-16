@@ -1,5 +1,7 @@
 package com.ebanking.cui.presentation.action.payment.phone;
 
+import com.opensymphony.xwork2.ActionSupport;
+
 /**
  * Created with IntelliJ IDEA.
  * User: vasilii91
@@ -7,7 +9,7 @@ package com.ebanking.cui.presentation.action.payment.phone;
  * Time: 17:56 PM
  * To change this template use File | Settings | File Templates.
  */
-public class PhonePaymentForwardAction {
+public class PhonePaymentForwardAction extends ActionSupport {
 
     public String execute() throws Exception {
         return "success";

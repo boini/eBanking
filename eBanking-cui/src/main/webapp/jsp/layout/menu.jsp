@@ -20,7 +20,6 @@
 
     <li class="nav-header">Карты</li>
     <li id="transfer-action"><a href="/transfer.action">Переводы между картами</a></li>
-    <li id="cardinfo-action"><a href="#">Мои карты</a></li>
 
     <li class="nav-header">Сервис</li>
     <li id="pass-action"><a href="/changePassword.action">Поменять пароль</a></li>
