@@ -282,17 +282,6 @@
         </put-list-attribute>
     </definition>
 
-    <definition name="/changePassword.tiles" extends="/baseLayout">
-        <put-attribute name="title" value="Change Password | eBanking" />
-        <put-attribute name="actionName" value="pass-action"/>
-        <put-attribute name="body" value="/jsp/changePassword/changepassword.jsp" />
-        <put-list-attribute name="styles">
-            <add-attribute value="/css/normalize.css"/>
-            <add-attribute value="/css/bootstrap.css"/>
-            <add-attribute value="/css/common.css"/>
-        </put-list-attribute>
-    </definition>
-
     <definition name="/changePasswordSuccess.tiles" extends="/baseLayout">
         <put-attribute name="title" value="Change Password | eBanking" />
         <put-attribute name="body" value="/jsp/changePassword/changePasswordSuccess.jsp" />
@@ -311,6 +300,22 @@
             <add-attribute value="/css/normalize.css"/>
             <add-attribute value="/css/bootstrap.css"/>
             <add-attribute value="/css/common.css"/>
+        </put-list-attribute>
+    </definition>
+
+    <definition name="/changePassword.tiles" extends="/baseLayout">
+        <put-attribute name="title" value="Change Password | eBanking" />
+        <put-attribute name="actionName" value="pass-action"/>
+        <put-attribute name="body" value="/jsp/changePassword/changepassword.jsp" />
+        <put-list-attribute name="styles">
+            <add-attribute value="/css/normalize.css"/>
+            <add-attribute value="/css/bootstrap.css"/>
+            <add-attribute value="/css/common.css"/>
+        </put-list-attribute>
+        <put-list-attribute name="scripts">
+            <add-attribute value="/js/jquery-1.8.2.js"/>
+            <add-attribute value="/js/bootstrap.js"/>
+            <add-attribute value="/js/changePassword.js"/>
         </put-list-attribute>
     </definition>
 

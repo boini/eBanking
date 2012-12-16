@@ -1,6 +1,7 @@
 package com.ebanking.cui.presentation.action.client.login;
 
 import com.ebanking.cui.exception.EBankingException;
+import com.ebanking.cui.model.account.Account;
 import com.ebanking.cui.presentation.action.BaseRQRSAction;
 import com.ebanking.cui.service.client.ServiceClient;
 import com.ebanking.cui.service.request.ChangeLoginRQ;
@@ -10,6 +11,7 @@ import com.ebanking.cui.service.response.ClientCardsRS;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.authentication.encoding.PasswordEncoder;
+import org.springframework.security.core.context.SecurityContextHolder;
 
 public class ChangeLoginSubmitAction extends BaseRQRSAction<ChangeLoginRQ, ChangeLoginRS> {
 
@@ -78,6 +80,10 @@ public class ChangeLoginSubmitAction extends BaseRQRSAction<ChangeLoginRQ, Chang
             success = responseObject.isSuccess();
             exception = responseObject.getException();
             call = false;
+            if (success) {
+                Account principal = (Account) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+                principal.setLogin(newLogin);
+            }
         }
 
         return "success";

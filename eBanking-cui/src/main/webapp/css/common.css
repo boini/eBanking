@@ -43,4 +43,4 @@ select {width: 300px;}
 
 #onlineInfoTable h6, #cardAccountInfoTable h6 { padding-top: 14px;}
 
-#changeLoginSubmit {float: right;}
+#changeLoginSubmit, #changePasswordSubmit {float: right;}

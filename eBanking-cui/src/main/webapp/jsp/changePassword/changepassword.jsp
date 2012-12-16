@@ -9,16 +9,12 @@
         Добро пожаловать в систему "eBanking"
     </div>
 
-    <div>
-
-        <s:form action="/changePasswordSubmit" method="post" id="changePasswordForm">
-            <h3>Смена пароля</h3>
-            <s:password name="oldPassword" placeholder="Old password" />
-            <s:password name="newPassword" placeholder="New password" />
-            <s:password name="confirmPassword" placeholder="Confirm password" />
-            <s:submit value="Изменить" />
-        </s:form>
-
+    <div id="changePassword">
+        <s:password key="currentPassword" placeholder="password" label="Current password" id="currentPassword"/>
+        <s:password key="newPassword" placeholder="new password" label="New password" id="newPassword"/>
+        <s:password key="confirmPassword" placeholder="confirm password" label="Confirm password" id="confirmPassword"/>
+        <button type="button" id="changePasswordSubmit" data-loading-text="Loading..." class="btn btn-primary">Change</button>
+        <div id="changePasswordMessage"></div>
     </div>
 
 </div>

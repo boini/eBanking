@@ -164,6 +164,14 @@
         <beanMapping qname="ns:local" xmlns:ns="changeLoginRS" languageSpecificType="java:com.ebanking.ws.service.response.ChangeLoginRS"/>
 
     </service>
+    <service name="ChangePasswordService" provider="java:RPC" style="document" use="literal">
+        <parameter name="className" value="com.ebanking.ws.service.impl.password.ChangePasswordService"/>
+        <parameter name="allowedMethods" value="*"/>
+        <parameter name="scope" value="Application"/>
+        <namespace>http://password.impl.service.ws.ebanking.com</namespace>
+        <beanMapping qname="ns:local" xmlns:ns="changePasswordRQ" languageSpecificType="java:com.ebanking.ws.service.request.ChangePasswordRQ"/>
+        <beanMapping qname="ns:local" xmlns:ns="changePasswordRS" languageSpecificType="java:com.ebanking.ws.service.response.ChangePasswordRS"/>
+    </service>
 
     <handler name="soapmonitor" type="java:org.apache.axis.handlers.SOAPMonitorHandler">
         <parameter name="wsdlURL" value="/axis/SOAPMonitorService-impl.wsdl"/>
