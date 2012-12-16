@@ -20,34 +20,34 @@
         <h5>
             <s:property value="#session['clientInfoForm'].fullName"/>
         </h5>
-        Добро пожаловать в систему "eBanking"
+        Welcome to the "eBanking"
     </div>
 
     <div>
         <s:form action="/mobilePaymentAmount" method="POST" id="mobileNumberForm">
             <td colspan="2">
-                <h5>Наименование услуги:
+                <h5>Service name:
                     <s:property value="%{#session.communicationsPaymentForm.providerName}"/>
                 </h5>
             </td>
             <s:select list="#session['communicationsPaymentForm'].cards"
-                      label="Оплатить со счёта"
-                      headerValue="-выберите счёт-"
+                      label="Pay from the bank account"
+                      headerValue="-choose the bank account-"
                       listKey="cardId"
                       key="cardId"
                       listValue="%{cardNumber + ' [' + cardType.cardTypeName + ' ' + cardAccount.balance + ' ' + cardAccount.currency.currencyCode + ']'}">
 
             </s:select>
             <td colspan="2">
-                <h5>Дополнительные реквизиты</h5>
-                <h6>Введите 9 цифр номера телефона в формате: 29ххххххх, 44ххххххх,
+                <h5>Additional details</h5>
+                <h6>Enter 9 digits from your phone number in next format: 29ххххххх, 44ххххххх,
                     25ххххххх, 33ххххххх</h6>
             </td>
             <s:textfield key="number"
-                         label="Номер телефона"
+                         label="Phone number"
                          placeholder="yyххххххх"/>
             <td>
-                <s:submit value="Продолжить"/>
+                <s:submit value="Continue"/>
             </td>
         </s:form>
     </div>

@@ -49,7 +49,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Cумма</td>
+                    <td>Sum</td>
                     <td>
                         <s:property value="%{#session.transferForm.amount}"/>
                         (<s:property value="%{#session.transferForm.fromCard.cardAccount.currency.currencyCode}"/>) =

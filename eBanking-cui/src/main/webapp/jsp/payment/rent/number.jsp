@@ -20,32 +20,32 @@
         <h5>
             <s:property value="#session['clientInfoForm'].fullName"/>
         </h5>
-        Добро пожаловать в систему "eBanking"
+        Welcome to the "eBanking"
     </div>
 
     <div>
         <s:form action="/rentPaymentAmount" method="POST" id="rentNumberForm">
             <td colspan="2">
-                <h5>Наименование услуги:
+                <h5>Service name:
                     <s:property value="%{#session.rentPaymentForm.providerName}"/>
                 </h5>
             </td>
             <s:select list="#session['rentPaymentForm'].cards"
-                      label="Оплатить со счёта"
-                      headerValue="-выберите счёт-"
+                      label="Pay from the bank account"
+                      headerValue="-choose the bank account-"
                       listKey="cardId"
                       key="cardId"
                       listValue="%{cardNumber + ' [' + cardType.cardTypeName + ' ' + cardAccount.balance + ' ' + cardAccount.currency.currencyCode + ']'}">
 
             </s:select>
             <td colspan="2">
-                <h5>Дополнительные реквизиты</h5>
-                <h6>Кв.плата, вода, другие ком.услуги на р/c ГП "Центр информационных технологий Мингорисполкома"</h6>
+                <h5>Additional details</h5>
+                <h6>Rent, water, and other public utilities on client account "Information Technology Center of Mingorispolkom"</h6>
             </td>
             <s:textfield key="number"
-                         label="Лицевой счет"/>
+                         label="Personal account"/>
             <td>
-                <s:submit value="Продолжить"/>
+                <s:submit value="Continue"/>
             </td>
         </s:form>
     </div>

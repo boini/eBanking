@@ -7,14 +7,14 @@
         <h5>
             <s:property value="#session['clientInfoForm'].fullName"/>
         </h5>
-        Добро пожаловать в систему "eBanking"
+        Welcome to the "eBanking"
     </div>
 
     <div>
-        <h5>Услуги в системе "Расчет" (ЕРИП)</h5>
+        <h5>Services in "Calculation" (ERIP)</h5>
         <ul>
             <li>
-                Мобильная связь
+                Mobile
                 <ul>
                     <li>
                         <s:url action="mobilePayment" var="velcomPaymentUrl">
@@ -37,19 +37,19 @@
                 </ul>
             </li>
             <li>
-                Интернет
+                Internet
                 <ul>
                     <li>
                         <s:url action="internetPayment" var="soloPaymentUrl">
                             <s:param name="provider">solo</s:param>
                         </s:url>
-                        <s:a href="%{soloPaymentUrl}">Соло</s:a>
+                        <s:a href="%{soloPaymentUrl}">Solo</s:a>
                     </li>
                     <li>
                         <s:url action="internetPayment" var="shapkiDamavikPaymentUrl">
                             <s:param name="provider">shparki_damavik</s:param>
                         </s:url>
-                        <s:a href="%{shapkiDamavikPaymentUrl}">Шпаркi-Дамавік</s:a>
+                        <s:a href="%{shapkiDamavikPaymentUrl}">Shparki damavik</s:a>
                     </li>
                     <li>
                         <s:url action="internetPayment" var="byFlyPaymentUrl">
@@ -61,35 +61,35 @@
                         <s:url action="internetPayment" var="cosmosTVPaymentUrl">
                             <s:param name="provider">cosmos_tv</s:param>
                         </s:url>
-                        <s:a href="%{cosmosTVPaymentUrl}">Космос ТВ</s:a>
+                        <s:a href="%{cosmosTVPaymentUrl}">Cosmos TV</s:a>
                     </li>
                 </ul>
             </li>
             <li>
-                Белтелеком
+                Beltelecom
                 <ul>
                     <li>
                         <s:url action="phonePayment" var="beltelPhonePaymentUrl">
                             <s:param name="provider">beltelecom_phone</s:param>
                         </s:url>
-                        <s:a href="%{beltelPhonePaymentUrl}">Оплата за телефон</s:a>
+                        <s:a href="%{beltelPhonePaymentUrl}">Landline phone</s:a>
                     </li>
                 </ul>
             </li>
             <li>
-                Квартира
+                Flat
                 <ul>
                     <li>
                         <s:url action="rentPayment" var="rentPaymentUrl">
                             <s:param name="provider">rent</s:param>
                         </s:url>
-                        <s:a href="%{rentPaymentUrl}">Квартплата</s:a>
+                        <s:a href="%{rentPaymentUrl}">Rent</s:a>
                     </li>
                     <li>
                         <s:url action="electricityPayment" var="electricityPaymentUrl">
                             <s:param name="provider">electricity</s:param>
                         </s:url>
-                        <s:a href="%{electricityPaymentUrl}">Электроэнергия (Минск)</s:a>
+                        <s:a href="%{electricityPaymentUrl}">Electricity (Minsk)</s:a>
                     </li>
                 </ul>
             </li>

@@ -19,30 +19,30 @@
         <h5>
             <s:property value="#session['clientInfoForm'].fullName"/>
         </h5>
-        Добро пожаловать в систему "eBanking"
+        Welcome to the "eBanking"
     </div>
 
     <div>
     <s:form action="/rentPaymentReview" method="POST" id="rentNumberForm">
         <td colspan="2">
-            <h5>Наименование услуги:
+            <h5>Service name:
                 <s:property value="%{#session.rentPaymentForm.providerName}"/>
             </h5>
         </td>
-        <s:textfield label="Оплатить со счета:"
+        <s:textfield label="Pay from the bank account:"
                      value="%{#session.rentPaymentForm.activeCard.cardNumber}"
                      disabled="true"/>
-        <s:textfield label="Cумма (%{#session.rentPaymentForm.activeCard.cardAccount.currency.currencyCode}):"
+        <s:textfield label="Sum (%{#session.rentPaymentForm.activeCard.cardAccount.currency.currencyCode}):"
                      key="amount"/>
         <td colspan="2">
-            <h5>Дополнительные реквизиты</h5>
+            <h5>Additional details</h5>
         </td>
         <s:textfield name="rentNumber"
-                     label="Лицевой счет"
+                     label="Client account"
                      value="%{#session['rentPaymentForm'].number}"
                      disabled="true"/>
         <td>
-            <s:submit value="Продолжить"/>
+            <s:submit value="Continue"/>
         </td>
     </s:form>
 </div>
