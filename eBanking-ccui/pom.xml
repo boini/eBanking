@@ -3,10 +3,10 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.ebanking</groupId>
-    <artifactId>eBanking-cui</artifactId>
+    <artifactId>eBanking-ccui</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>eBanking-cui Maven Webapp</name>
+    <name>eBanking-ccui Maven Webapp</name>
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -181,7 +181,7 @@
     </dependencies>
 
     <build>
-        <finalName>eBanking-cui</finalName>
+        <finalName>eBanking-ccui</finalName>
         <plugins>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
