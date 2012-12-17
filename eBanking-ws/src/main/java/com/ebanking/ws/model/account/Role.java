@@ -49,11 +49,11 @@ public class Role {
         return result;
     }
 
-/*    @Override
+    @Override
     public String toString() {
         return "Role{" +
                 "roleId=" + roleId +
                 ", roleName='" + roleName + '\'' +
                 '}';
-    }*/
+    }
 }

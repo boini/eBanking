@@ -60,13 +60,12 @@ public class Corporation {
         this.description = description;
     }
 
-/*    @Override
+    @Override
     public String toString() {
         return "Corporation{" +
                 "corporationId=" + corporationId +
                 ", corporationName='" + corporationName + '\'' +
-                ", description='" + description + '\'' +
-                ", bankAccountList=" + bankAccountList +
+                ", description='" + description +
                 '}';
-    }*/
+    }
 }
