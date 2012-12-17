@@ -19,4 +19,12 @@ public class ChangePasswordRS {
     public void setException(String exception) {
         this.exception = exception;
     }
+
+    @Override
+    public String toString() {
+        return "ChangePasswordRS{" +
+                "success=" + success +
+                ", exception='" + exception + '\'' +
+                '}';
+    }
 }

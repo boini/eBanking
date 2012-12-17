@@ -23,6 +23,8 @@ public class OperationHistoryService extends SpringSupportService implements Ser
         operationDAO = (OperationDAO) getBean("operationDAO");
         logger = (RQRSLogger) getBean("RQRSLogger");
 
+        logger.logRQRS(request, OperationHistoryService.class);
+
         long[] idList = request.getIdList();
         String operationRequestTypeStr = request.getOperationRequestType();
         OperationRequestType operationRequestType = OperationRequestType.valueOf(operationRequestTypeStr.toUpperCase());
@@ -66,6 +68,8 @@ public class OperationHistoryService extends SpringSupportService implements Ser
             Operation[] operationArray = operations.toArray(new Operation[operations.size()]);
             operationHistoryRS.setOperations(operationArray);
         }
+
+        logger.logRQRS(operationHistoryRS, OperationHistoryService.class);
 
         return operationHistoryRS;
     }

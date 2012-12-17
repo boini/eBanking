@@ -1,6 +1,7 @@
 package com.ebanking.ws.service.impl.password;
 
 import com.ebanking.ws.dao.AccountDAO;
+import com.ebanking.ws.log.RQRSLogger;
 import com.ebanking.ws.model.account.Account;
 import com.ebanking.ws.service.Service;
 import com.ebanking.ws.service.SpringSupportService;
@@ -12,7 +13,10 @@ public class ChangePasswordService extends SpringSupportService implements Servi
 
     @Override
     public ChangePasswordRS execute(ChangePasswordRQ request) {
+        logger = (RQRSLogger) getBean("RQRSLogger");
         accountDAO = (AccountDAO) getBean("accountDAO");
+
+        logger.logRQRS(request, ChangePasswordService.class);
 
         String login = request.getLogin();
         String currentPassword = request.getCurrentPassword();
@@ -30,6 +34,9 @@ public class ChangePasswordService extends SpringSupportService implements Servi
         account.setPassword(newPassword);
         accountDAO.saveOrUpdate(account);
         changePasswordRS.setSuccess(true);
+
+        logger.logRQRS(changePasswordRS, ChangePasswordService.class);
+
         return changePasswordRS;
     }
 }

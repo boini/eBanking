@@ -19,4 +19,12 @@ public class SaveClientRS {
     public void setException(String exception) {
         this.exception = exception;
     }
+
+    @Override
+    public String toString() {
+        return "SaveClientRS{" +
+                "success=" + success +
+                ", exception='" + exception + '\'' +
+                '}';
+    }
 }

@@ -22,6 +22,11 @@ public class RQRSLogAspect {
     @Before("execution(* com.ebanking.ws.log.RQRSLogger.logRQRS(..))")
     public void rqrsLogging(JoinPoint joinPoint) {
         Object[] args = joinPoint.getArgs();
+
+        //DEBUG
+        System.out.println(args[0].toString());
+        //END OF DEBUG
+
         String message = args[0].toString();
         String action = ((Class)args[1]).getName();
 

@@ -20,6 +20,8 @@ public class RatesService extends SpringSupportService implements Service<RatesR
         rateDAO = (RateDAO) getBean("rateDAO");
         logger = (RQRSLogger) getBean("RQRSLogger");
 
+        logger.logRQRS(request, RatesService.class);
+
         Currency[] currencies = request.getCurrencies();
         List<Rate> rates = new ArrayList<Rate>();
 
@@ -37,6 +39,8 @@ public class RatesService extends SpringSupportService implements Service<RatesR
         RatesRS ratesRS = new RatesRS();
         Rate[] rateArray = rates.toArray(new Rate[rates.size()]);
         ratesRS.setRates(rateArray);
+
+        logger.logRQRS(ratesRS, RatesService.class);
 
         return ratesRS;
     }

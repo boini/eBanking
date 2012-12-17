@@ -12,4 +12,11 @@ public class SaveClientRQ {
     public void setClient(Client client) {
         this.client = client;
     }
+
+    @Override
+    public String toString() {
+        return "SaveClientRQ{" +
+                "client=" + client +
+                '}';
+    }
 }

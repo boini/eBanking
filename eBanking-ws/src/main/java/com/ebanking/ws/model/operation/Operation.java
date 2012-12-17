@@ -153,7 +153,7 @@ public class Operation {
         this.contractorCard = contractorCard;
     }
 
-/*    @Override
+    @Override
     public String toString() {
         return "Operation{" +
                 "operationId=" + operationId +
@@ -168,5 +168,5 @@ public class Operation {
                 ", contractorAccount=" + contractorAccount +
                 ", contractorCard=" + contractorCard +
                 '}';
-    }*/
+    }
 }

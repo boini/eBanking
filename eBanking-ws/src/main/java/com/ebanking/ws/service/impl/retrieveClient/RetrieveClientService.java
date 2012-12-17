@@ -1,6 +1,7 @@
 package com.ebanking.ws.service.impl.retrieveClient;
 
 import com.ebanking.ws.dao.ClientDAO;
+import com.ebanking.ws.log.RQRSLogger;
 import com.ebanking.ws.model.account.Client;
 import com.ebanking.ws.service.Service;
 import com.ebanking.ws.service.SpringSupportService;
@@ -15,7 +16,10 @@ public class RetrieveClientService extends SpringSupportService implements Servi
 
     @Override
     public RetrieveClientRS execute(RetrieveClientRQ request) {
+        logger = (RQRSLogger) getBean("RQRSLogger");
         clientDAO = (ClientDAO) getBean("clientDAO");
+
+        logger.logRQRS(request, RetrieveClientService.class);
 
         String type = request.getType();
         RetrieveClientType retrieveClientType = RetrieveClientType.valueOf(type.toUpperCase());
@@ -41,6 +45,8 @@ public class RetrieveClientService extends SpringSupportService implements Servi
         } else {
             retrieveClientRS.setSuccess(false);
         }
+
+        logger.logRQRS(retrieveClientRS, RetrieveClientService.class);
 
         return retrieveClientRS;
     }

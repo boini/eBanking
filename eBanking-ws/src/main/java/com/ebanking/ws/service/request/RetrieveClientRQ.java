@@ -37,4 +37,14 @@ public class RetrieveClientRQ {
     public void setSearchKey(String searchKey) {
         this.searchKey = searchKey;
     }
+
+    @Override
+    public String toString() {
+        return "RetrieveClientRQ{" +
+                "clientId=" + clientId +
+                ", type='" + type + '\'' +
+                ", searchField='" + searchField + '\'' +
+                ", searchKey='" + searchKey + '\'' +
+                '}';
+    }
 }
