@@ -26,6 +26,14 @@ input[type="submit"].btn { min-width: 100px; }
 .nav-list > li > a, .nav-list .nav-header { text-shadow: none; }
 .editForm h6 {border-bottom: 2px solid #eee;}
 
+.errorblock {
+    color: #ffffff;
+    background-color: #ffEEEE;
+    border: 3px solid #ff0000;
+    padding: 8px;
+    margin: 16px;
+}
+
 #header ul { float: right;}
 #cards img {width: 50px; border: 1px solid #555; }
 #mobileNumberForm { width: 300px; }
