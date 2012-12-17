@@ -18,6 +18,6 @@ public class MailServiceTest {
 
     @Test
     public void test() throws Exception {
-        ms.prepareMail("vadim.asadchiy@gmail.com", new Mail("4", 5.0, "6"));
+        ms.prepareMail("vadim.asadchiy@gmail.com", new Mail("4", "5 usd", "6"));
     }
 }

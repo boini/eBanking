@@ -14,7 +14,7 @@
     <field name="action" class="java.lang.String">
         <fieldDescription><![CDATA[action]]></fieldDescription>
     </field>
-    <field name="amount" class="java.lang.Double">
+    <field name="amount" class="java.lang.String">
         <fieldDescription><![CDATA[amount]]></fieldDescription>
     </field>
     <field name="userName" class="java.lang.String">
@@ -67,7 +67,7 @@
             <textField>
                 <reportElement x="136" y="0" width="150" height="15"/>
                 <textElement textAlignment="Center" verticalAlignment="Middle"/>
-                <textFieldExpression class="java.lang.Double"><![CDATA[$F{amount}]]></textFieldExpression>
+                <textFieldExpression class="java.lang.String"><![CDATA[$F{amount}]]></textFieldExpression>
             </textField>
             <textField>
                 <reportElement x="286" y="0" width="128" height="15"/>

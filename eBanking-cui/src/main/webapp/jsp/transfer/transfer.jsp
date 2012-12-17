@@ -9,8 +9,6 @@
             rules: {
                 amount: {
                     required: true,
-                    minlength: 9,
-                    maxlength: 9,
                     digits: true
                 }
             }

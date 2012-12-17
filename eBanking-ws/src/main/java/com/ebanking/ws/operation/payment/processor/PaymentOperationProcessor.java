@@ -110,8 +110,16 @@ public class PaymentOperationProcessor {
         }
 
         String email = clientCardAccount.getClient().getEmail();
-        String descr = operation.getOperationType().getDescription();
-        double amount = operation.getTransactionAmount();
+        String contractor = (operation.getContractorAccount() != null) ?
+                operation.getContractorAccount().getCorporation().getDescription() :
+                "card";
+        String descr = operation.getOperationType().getDescription() +
+                " " +
+                contractor;
+        String amount = Double.toString(operation.getTransactionAmount()) +
+                " " +
+                clientCardAccount.getCurrency().getCurrencyCode();
+
         String name = clientCardAccount.getClient().getFirstname() + " " + clientCardAccount.getClient().getLastname();
         mailService.prepareMail(email, new Mail(descr, amount, name));
     }

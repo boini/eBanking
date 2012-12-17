@@ -86,6 +86,7 @@
     <definition name="/mobileNumber.tiles" extends="/baseLayout">
         <put-attribute name="title" value="Mobile Payment | eBanking"/>
         <put-attribute name="body" value="/jsp/payment/mobile/number.jsp"/>
+        <put-attribute name="actionName" value="payment-action"/>
         <put-list-attribute name="styles">
             <add-attribute value="/css/normalize.css"/>
             <add-attribute value="/css/bootstrap.css"/>
@@ -96,6 +97,7 @@
     <definition name="/mobileAmount.tiles" extends="/baseLayout">
         <put-attribute name="title" value="Mobile Payment | eBanking"/>
         <put-attribute name="body" value="/jsp/payment/mobile/amount.jsp"/>
+        <put-attribute name="actionName" value="payment-action"/>
         <put-list-attribute name="styles">
             <add-attribute value="/css/normalize.css"/>
             <add-attribute value="/css/bootstrap.css"/>
@@ -106,6 +108,7 @@
     <definition name="/mobilePaymentReview.tiles" extends="/baseLayout">
         <put-attribute name="title" value="Mobile Payment | eBanking"/>
         <put-attribute name="body" value="/jsp/payment/mobile/review.jsp"/>
+        <put-attribute name="actionName" value="payment-action"/>
         <put-list-attribute name="styles">
             <add-attribute value="/css/normalize.css"/>
             <add-attribute value="/css/bootstrap.css"/>
@@ -116,6 +119,7 @@
     <definition name="/mobilePaymentSubmit.tiles" extends="/baseLayout">
         <put-attribute name="title" value="Mobile Payment | eBanking"/>
         <put-attribute name="body" value="/jsp/payment/mobile/submit.jsp"/>
+        <put-attribute name="actionName" value="payment-action"/>
         <put-list-attribute name="styles">
             <add-attribute value="/css/normalize.css"/>
             <add-attribute value="/css/bootstrap.css"/>
@@ -126,6 +130,7 @@
     <definition name="/internetNumber.tiles" extends="/baseLayout">
         <put-attribute name="title" value="Internet Payment | eBanking"/>
         <put-attribute name="body" value="/jsp/payment/internet/number.jsp"/>
+        <put-attribute name="actionName" value="payment-action"/>
         <put-list-attribute name="styles">
             <add-attribute value="/css/normalize.css"/>
             <add-attribute value="/css/bootstrap.css"/>
@@ -136,6 +141,7 @@
     <definition name="/internetAmount.tiles" extends="/baseLayout">
         <put-attribute name="title" value="Internet Payment | eBanking"/>
         <put-attribute name="body" value="/jsp/payment/internet/amount.jsp"/>
+        <put-attribute name="actionName" value="payment-action"/>
         <put-list-attribute name="styles">
             <add-attribute value="/css/normalize.css"/>
             <add-attribute value="/css/bootstrap.css"/>
@@ -146,6 +152,7 @@
     <definition name="/internetPaymentReview.tiles" extends="/baseLayout">
         <put-attribute name="title" value="Internet Payment | eBanking"/>
         <put-attribute name="body" value="/jsp/payment/internet/review.jsp"/>
+        <put-attribute name="actionName" value="payment-action"/>
         <put-list-attribute name="styles">
             <add-attribute value="/css/normalize.css"/>
             <add-attribute value="/css/bootstrap.css"/>
@@ -156,6 +163,7 @@
     <definition name="/internetPaymentSubmit.tiles" extends="/baseLayout">
         <put-attribute name="title" value="Internet Payment | eBanking"/>
         <put-attribute name="body" value="/jsp/payment/internet/submit.jsp"/>
+        <put-attribute name="actionName" value="payment-action"/>
         <put-list-attribute name="styles">
             <add-attribute value="/css/normalize.css"/>
             <add-attribute value="/css/bootstrap.css"/>
@@ -166,6 +174,7 @@
     <definition name="/phoneNumber.tiles" extends="/baseLayout">
         <put-attribute name="title" value="Phone Payment | eBanking"/>
         <put-attribute name="body" value="/jsp/payment/phone/number.jsp"/>
+        <put-attribute name="actionName" value="payment-action"/>
         <put-list-attribute name="styles">
             <add-attribute value="/css/normalize.css"/>
             <add-attribute value="/css/bootstrap.css"/>
@@ -176,6 +185,7 @@
     <definition name="/phoneAmount.tiles" extends="/baseLayout">
         <put-attribute name="title" value="Phone Payment | eBanking"/>
         <put-attribute name="body" value="/jsp/payment/phone/amount.jsp"/>
+        <put-attribute name="actionName" value="payment-action"/>
         <put-list-attribute name="styles">
             <add-attribute value="/css/normalize.css"/>
             <add-attribute value="/css/bootstrap.css"/>
@@ -186,6 +196,7 @@
     <definition name="/phonePaymentReview.tiles" extends="/baseLayout">
         <put-attribute name="title" value="Phone Payment | eBanking"/>
         <put-attribute name="body" value="/jsp/payment/phone/review.jsp"/>
+        <put-attribute name="actionName" value="payment-action"/>
         <put-list-attribute name="styles">
             <add-attribute value="/css/normalize.css"/>
             <add-attribute value="/css/bootstrap.css"/>
@@ -196,6 +207,7 @@
     <definition name="/phonePaymentSubmit.tiles" extends="/baseLayout">
         <put-attribute name="title" value="Phone Payment | eBanking"/>
         <put-attribute name="body" value="/jsp/payment/phone/submit.jsp"/>
+        <put-attribute name="actionName" value="payment-action"/>
         <put-list-attribute name="styles">
             <add-attribute value="/css/normalize.css"/>
             <add-attribute value="/css/bootstrap.css"/>
@@ -206,6 +218,7 @@
     <definition name="/rentNumber.tiles" extends="/baseLayout">
         <put-attribute name="title" value="Rent Payment | eBanking"/>
         <put-attribute name="body" value="/jsp/payment/rent/number.jsp"/>
+        <put-attribute name="actionName" value="payment-action"/>
         <put-list-attribute name="styles">
             <add-attribute value="/css/normalize.css"/>
             <add-attribute value="/css/bootstrap.css"/>
@@ -216,6 +229,7 @@
     <definition name="/rentAmount.tiles" extends="/baseLayout">
         <put-attribute name="title" value="Rent Payment | eBanking"/>
         <put-attribute name="body" value="/jsp/payment/rent/amount.jsp"/>
+        <put-attribute name="actionName" value="payment-action"/>
         <put-list-attribute name="styles">
             <add-attribute value="/css/normalize.css"/>
             <add-attribute value="/css/bootstrap.css"/>
@@ -226,6 +240,7 @@
     <definition name="/rentPaymentReview.tiles" extends="/baseLayout">
         <put-attribute name="title" value="Rent Payment | eBanking"/>
         <put-attribute name="body" value="/jsp/payment/rent/review.jsp"/>
+        <put-attribute name="actionName" value="payment-action"/>
         <put-list-attribute name="styles">
             <add-attribute value="/css/normalize.css"/>
             <add-attribute value="/css/bootstrap.css"/>
@@ -236,6 +251,7 @@
     <definition name="/rentPaymentSubmit.tiles" extends="/baseLayout">
         <put-attribute name="title" value="Rent Payment | eBanking"/>
         <put-attribute name="body" value="/jsp/payment/rent/submit.jsp"/>
+        <put-attribute name="actionName" value="payment-action"/>
         <put-list-attribute name="styles">
             <add-attribute value="/css/normalize.css"/>
             <add-attribute value="/css/bootstrap.css"/>
@@ -246,6 +262,7 @@
     <definition name="/electricityNumber.tiles" extends="/baseLayout">
         <put-attribute name="title" value="Electricity Payment | eBanking"/>
         <put-attribute name="body" value="/jsp/payment/electricity/number.jsp"/>
+        <put-attribute name="actionName" value="payment-action"/>
         <put-list-attribute name="styles">
             <add-attribute value="/css/normalize.css"/>
             <add-attribute value="/css/bootstrap.css"/>
@@ -256,6 +273,7 @@
     <definition name="/electricityAmount.tiles" extends="/baseLayout">
         <put-attribute name="title" value="Electricity Payment | eBanking"/>
         <put-attribute name="body" value="/jsp/payment/electricity/amount.jsp"/>
+        <put-attribute name="actionName" value="payment-action"/>
         <put-list-attribute name="styles">
             <add-attribute value="/css/normalize.css"/>
             <add-attribute value="/css/bootstrap.css"/>
@@ -266,6 +284,7 @@
     <definition name="/electricityPaymentReview.tiles" extends="/baseLayout">
         <put-attribute name="title" value="Electricity Payment | eBanking"/>
         <put-attribute name="body" value="/jsp/payment/electricity/review.jsp"/>
+        <put-attribute name="actionName" value="payment-action"/>
         <put-list-attribute name="styles">
             <add-attribute value="/css/normalize.css"/>
             <add-attribute value="/css/bootstrap.css"/>
@@ -276,6 +295,7 @@
     <definition name="/electricityPaymentSubmit.tiles" extends="/baseLayout">
         <put-attribute name="title" value="Electricity Payment | eBanking"/>
         <put-attribute name="body" value="/jsp/payment/electricity/submit.jsp"/>
+        <put-attribute name="actionName" value="payment-action"/>
         <put-list-attribute name="styles">
             <add-attribute value="/css/normalize.css"/>
             <add-attribute value="/css/bootstrap.css"/>
