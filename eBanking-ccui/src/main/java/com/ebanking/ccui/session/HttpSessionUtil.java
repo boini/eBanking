@@ -6,7 +6,6 @@ import com.ebanking.ccui.presentation.form.*;
 public class HttpSessionUtil {
 
     private static final String CLIENT_ACCOUNT ="clientAccount";
-    private static final String CLIENT_CARDS_FORM = "clientCardsForm";
     private static final String CLIENT_INFO_FORM = "clientInfoForm";
     private static final String CLIENT_OPERATION_HISTORY_FORM = "clientOperationHistoryForm";
     private static final String NBRB_RATES_FORM = "nbrbCurrencyRatesForm";
@@ -14,6 +13,7 @@ public class HttpSessionUtil {
 
     private static final String RETRIEVE_CLIENT_FORM = "retrieveClientForm";
     private static final String EDIT_CLIENT_FORM = "editClientForm";
+    private static final String CARD_ACCOUNTS_FORM = "cardAccountsForm";
 
     private static UserHttpSession userHttpSession;
 
@@ -40,14 +40,6 @@ public class HttpSessionUtil {
 
     public static void setClientAccount(Account account) {
         addAttribute(CLIENT_ACCOUNT, account);
-    }
-
-    public static void setClientCardsForm(ClientCardsInfoForm clientCardsForm) {
-        addAttribute(CLIENT_CARDS_FORM, clientCardsForm);
-    }
-
-    public static ClientCardsInfoForm getClientCardsForm() {
-        return (ClientCardsInfoForm) getAttribute(CLIENT_CARDS_FORM);
     }
 
     public static void setClientInfoForm(ClientInfoForm clientInfoForm) {
@@ -98,14 +90,22 @@ public class HttpSessionUtil {
         addAttribute(EDIT_CLIENT_FORM, editClientForm);
     }
 
+    public static CardAccountsForm getCardAccountsForm() {
+        return (CardAccountsForm) getAttribute(CARD_ACCOUNTS_FORM);
+    }
+
+    public static void setCardAccountsForm(CardAccountsForm cardAccountsForm) {
+        addAttribute(CARD_ACCOUNTS_FORM, cardAccountsForm);
+    }
+
     public static void invalidate() {
         userHttpSession.remove(RATES_FORM);
         userHttpSession.remove(CLIENT_ACCOUNT);
         userHttpSession.remove(CLIENT_INFO_FORM);
-        userHttpSession.remove(CLIENT_CARDS_FORM);
         userHttpSession.remove(CLIENT_OPERATION_HISTORY_FORM);
         userHttpSession.remove(NBRB_RATES_FORM);
         userHttpSession.remove(RETRIEVE_CLIENT_FORM);
         userHttpSession.remove(EDIT_CLIENT_FORM);
+        userHttpSession.remove(CARD_ACCOUNTS_FORM);
     }
 }
