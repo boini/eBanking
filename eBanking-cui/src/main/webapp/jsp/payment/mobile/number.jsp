@@ -3,13 +3,18 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <script type="text/javascript">
     $(document).ready(function(){
+        jQuery.validator.addMethod("mobileBY", function(value, element){
+            return /(44)|(33)|(29)|(25)\d{3,}/.test(value);
+        },
+        "Wrong phone number, please check")
         $("#mobileNumberForm").validate({
             rules: {
                 number: {
                     required: true,
-                    minlength: 9,
+                    minlength: 5,
                     maxlength: 9,
-                    digits: true
+                    digits: true,
+                    mobileBY: true
                 }
             }
         });

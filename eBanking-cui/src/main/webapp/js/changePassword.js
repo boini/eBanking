@@ -3,6 +3,17 @@ $(document).ready(function() {
         var currentPassword = $('#currentPassword').val();
         var newPassword = $('#newPassword').val();
         var confirmPassword = $('#confirmPassword').val();
+        if(newPassword !== confirmPassword){
+            $('#changePasswordMessage').append(
+                '<div class="alert alert-error">' +
+                    '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
+                    "Passwords not equal!!!" +
+                    '</div>');
+            $('#newPassword, #confirmPassword').one("keypress", function(){
+                $(".close").trigger("click");
+            });
+            return;
+        }
 
         $('#changePasswordMessage').html('');
         $('#changePasswordSubmit').button('loading');
