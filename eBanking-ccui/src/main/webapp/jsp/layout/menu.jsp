@@ -11,6 +11,13 @@
     <li id="main-action"><a href="/main.action">Main page</a></li>
 
     <li class="nav-header">Clients</li>
-    <li id="payment-action"><a href="/clients.action">View clients</a></li>
+    <li><a href="/clients.action">View clients</a></li>
+
+    <li class="nav-header">Rates</li>
+    <li><a href="#">Change rates</a></li>
+
+    <li class="nav-header">Logs</li>
+    <li><a href="#">App logs</a></li>
+    <li><a href="#">Account logs</a></li>
 
 </ul>

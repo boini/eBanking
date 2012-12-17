@@ -22,9 +22,11 @@
                 <th>Date of birth</th>
                 <th>Personal code</th>
                 <th>Secret word</th>
-                <th></th>
-                <th></th>
-                <th></th>
+                <th>Mobile number</th>
+                <th>Phone number</th>
+                <th>Email</th>
+                <th width="73"></th>
+                <th width="50"></th>
             </tr>
             </thead>
             <tbody>
@@ -53,10 +55,13 @@
                     </td>
 
                     <td>
-                        Contacts
+                        <s:property value="#client.mobileNumber"/>
                     </td>
                     <td>
-                        Account
+                        <s:property value="#client.phoneNumber"/>
+                    </td>
+                    <td>
+                        <s:property value="#client.email"/>
                     </td>
                     <td>
                         <s:url action="editClient" var="editClientUrl">
@@ -64,7 +69,15 @@
                                 <s:property value="#client.clientId"/>
                             </s:param>
                         </s:url>
-                        <s:a href="%{editClientUrl}">Edit</s:a>
+                        <s:a cssClass="btn btn-mini btn-success" href="%{editClientUrl}"><i class="icon-user"></i> Account</s:a>
+                    </td>
+                    <td>
+                        <s:url action="editClient" var="editClientUrl">
+                            <s:param name="id">
+                                <s:property value="#client.clientId"/>
+                            </s:param>
+                        </s:url>
+                        <s:a cssClass="btn btn-mini btn-primary" href="%{editClientUrl}"><i class="icon-pencil"></i> Edit</s:a>
                     </td>
                 </tr>
             </s:iterator>
