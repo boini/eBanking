@@ -20,6 +20,7 @@ http://www.springframework.org/schema/context/spring-context-3.1.xsd">
     <bean id="ratesForm" class="com.ebanking.ccui.presentation.form.RatesForm"/>
     <bean id="retrieveClientForm" class="com.ebanking.ccui.presentation.form.RetrieveClientForm"/>
     <bean id="editClientForm" class="com.ebanking.ccui.presentation.form.EditClientForm"/>
+    <bean id="cardAccountsForm" class="com.ebanking.ccui.presentation.form.CardAccountsForm"/>
 
     <bean id="loginClientService" class="com.ebanking.ccui.service.client.impl.security.login.ClientLoginService"/>
     <bean id="nbrbCurrencyService" class="com.ebanking.ccui.service.client.impl.currency.nbrb.NBRBCurrencyService"/>
@@ -34,8 +35,6 @@ http://www.springframework.org/schema/context/spring-context-3.1.xsd">
     <bean name="SessionRecreationForwardAction" class="com.ebanking.ccui.presentation.action.SessionRecreationForwardAction"/>
     <bean name="NBRBCurrencyAction" class="com.ebanking.ccui.presentation.action.currency.NBRBCurrencyAction"/>
     <bean name="MainPageForwardAction" class="com.ebanking.ccui.presentation.action.MainPageForwardAction"/>
-    <bean name="FetchClientAccountAction" class="com.ebanking.ccui.presentation.action.client.FetchClientAccountAction"/>
-    <bean name="ClientCardsAction" class="com.ebanking.ccui.presentation.action.client.ClientCardsAction"/>
     <bean name="RetrieveClientAction" class="com.ebanking.ccui.presentation.action.client.RetrieveClientAction"/>
 
     <bean name="RatesAction" class="com.ebanking.ccui.presentation.action.finance.RatesAction"/>
@@ -43,4 +42,6 @@ http://www.springframework.org/schema/context/spring-context-3.1.xsd">
     <bean name="EditClientForwardAction" class="com.ebanking.ccui.presentation.action.client.edit.EditClientForwardAction"/>
     <bean name="EditClientAction" class="com.ebanking.ccui.presentation.action.client.edit.EditClientAction"/>
     <bean name="SaveClientAction" class="com.ebanking.ccui.presentation.action.client.edit.SaveClientAction"/>
+
+    <bean name="RetrieveCardAccountsAction" class="com.ebanking.ccui.presentation.action.client.account.RetrieveCardAccountsAction"/>
 </beans>

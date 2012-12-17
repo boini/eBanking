@@ -35,6 +35,12 @@
         <put-attribute name="actionName" value="main-action"/>
     </definition>
 
+    <definition name="/viewAccount.tiles" extends="/baseLayout">
+        <put-attribute name="title" value="eBanking Call Center | Account"/>
+        <put-attribute name="body" value="/jsp/account/account.jsp"/>
+        <put-attribute name="actionName" value="main-action"/>
+    </definition>
+
     <definition name="/editClient.tiles" extends="/baseLayout">
         <put-attribute name="title" value="eBanking Call Center | Clients"/>
         <put-attribute name="body" value="/jsp/client/editClient.jsp"/>

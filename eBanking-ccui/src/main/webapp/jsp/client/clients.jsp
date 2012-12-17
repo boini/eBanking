@@ -64,12 +64,12 @@
                         <s:property value="#client.email"/>
                     </td>
                     <td>
-                        <s:url action="editClient" var="editClientUrl">
+                        <s:url action="viewAccount" var="viewAccountUrl">
                             <s:param name="id">
                                 <s:property value="#client.clientId"/>
                             </s:param>
                         </s:url>
-                        <s:a cssClass="btn btn-mini btn-success" href="%{editClientUrl}"><i class="icon-user"></i> Account</s:a>
+                        <s:a cssClass="btn btn-mini btn-success" href="%{viewAccountUrl}"><i class="icon-user"></i> Account</s:a>
                     </td>
                     <td>
                         <s:url action="editClient" var="editClientUrl">

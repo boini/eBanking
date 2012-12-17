@@ -56,6 +56,14 @@
             </result>
         </action>
 
+        <!-- Account -->
+
+        <action name="viewAccount" class="RetrieveCardAccountsAction">
+            <result name="success" type="tiles">
+                /viewAccount.tiles
+            </result>
+        </action>
+
     </package>
 
 </struts>
