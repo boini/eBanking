@@ -22,6 +22,14 @@ select {width: 300px;}
 .ui-datepicker-trigger { margin-left: 5px; margin-top: -8px;}
 .calendar-select input[type="text"] {width: 150px;}
 
+.errorblock {
+    color: #ff0000;
+    background-color: #ffEEEE;
+    border: 3px solid #ff0000;
+    padding: 8px;
+    margin: 16px;
+}
+
 #header ul { float: right;}
 #cards img {width: 50px; border: 1px solid #555; }
 #mobileNumberForm { width: 300px; }
