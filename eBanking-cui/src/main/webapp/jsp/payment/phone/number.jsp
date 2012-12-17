@@ -20,40 +20,40 @@
         <h5>
             <s:property value="#session['clientInfoForm'].fullName"/>
         </h5>
-        Добро пожаловать в систему "eBanking"
+        Welcome to the "eBanking"
     </div>
 
     <div>
         <s:form action="/phonePaymentAmount" method="POST" id="mobileNumberForm">
             <td colspan="2">
-                <h5>Наименование услуги:
+                <h5>Service name:
                     <s:property value="%{#session.phonePaymentForm.providerName}"/>
                 </h5>
             </td>
             <s:select list="#session['phonePaymentForm'].cards"
-                      label="Оплатить со счёта"
-                      headerValue="-выберите счёт-"
+                      label="Pay from the bank account"
+                      headerValue="-choose the bank account-"
                       listKey="cardId"
                       key="cardId"
                       listValue="%{cardNumber + ' [' + cardType.cardTypeName + ' ' + cardAccount.balance + ' ' + cardAccount.currency.currencyCode + ']'}">
 
             </s:select>
             <td colspan="2">
-                <h5>Дополнительные реквизиты</h5>
-                <h6>Телефон.</h6>
-                <h6>Необходимо ввести:</h6>
-                <h6>г.Минск - номер телефона</h6>
-                <h6>область - две последние цифры кода региона + номер телефона</h6>
-                <h6>Услуга доступна с 7-00 до 23-00</h6>
+                <h5>Additional details</h5>
+                <h6>Phone number.</h6>
+                <h6>Need to enter:</h6>
+                <h6>Minsk - phone number</h6>
+                <h6>oblast - last two digits of the code number + phone number</h6>
+                <h6>Service work from 7-00 to 23-00</h6>
             </td>
             <s:textfield key="number"
-                         label="Номер телефона"
+                         label="Phone number"
                          placeholder="+375xxххххххх"/>
             <s:textfield key="credential"
-                         label="ФИО"
-                         placeholder="Иванов Иван Иванович"/>
+                         label="Full name"
+                         placeholder="Ivanov Ivan Ivanovich"/>
             <td>
-                <s:submit value="Продолжить"/>
+                <s:submit value="Continue"/>
             </td>
         </s:form>
     </div>

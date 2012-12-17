@@ -522,6 +522,29 @@ CREATE  TABLE `ebanking`.`rate` (
 INSERT INTO `ebanking`.`currency` (`currency_id`, `currency_code`, `description`) VALUES ('3', 'EUR', 'Euro');
 INSERT INTO `ebanking`.`rate` (`rate_id`, `currency_id`, `purchase`, `sale`) VALUES ('1', '1', '8580', '8660');
 INSERT INTO `ebanking`.`rate` (`rate_id`, `currency_id`, `purchase`, `sale`) VALUES ('2', '3', '11050', '11220');
+INSERT INTO `ebanking`.`corporation` (`corporation_name`, `description`) VALUES ('SOLO', 'Solo');
+INSERT INTO `ebanking`.`corporation` (`corporation_name`, `description`) VALUES ('SHPARKI_DAMAVIK', 'SHPARKI DAMAVIK');
+INSERT INTO `ebanking`.`corporation` (`corporation_name`, `description`) VALUES ('BYFLY', 'By Fly');
+INSERT INTO `ebanking`.`corporation` (`corporation_name`, `description`) VALUES ('COSMOS_TV', 'Cosmos TV');
+INSERT INTO `ebanking`.`corporation` (`corporation_name`, `description`) VALUES ('BELTELECOM_PHONE', 'Beltelecom Phone');
+INSERT INTO `ebanking`.`corporation` (`corporation_name`, `description`) VALUES ('RENT', 'Rent');
+INSERT INTO `ebanking`.`corporation` (`corporation_name`, `description`) VALUES ('ELECTRICITY', 'Electricity');
+
+INSERT INTO `ebanking`.`bank_account` (`corporation_id`, `currency_id`, `amount`) VALUES ('4', '2', '100000');
+INSERT INTO `ebanking`.`bank_account` (`corporation_id`, `currency_id`, `amount`) VALUES ('4', '1', '100000');
+INSERT INTO `ebanking`.`bank_account` (`corporation_id`, `currency_id`, `amount`) VALUES ('5', '2', '100000');
+INSERT INTO `ebanking`.`bank_account` (`corporation_id`, `currency_id`, `amount`) VALUES ('5', '1', '100000');
+INSERT INTO `ebanking`.`bank_account` (`corporation_id`, `currency_id`, `amount`) VALUES ('6', '2', '100000');
+INSERT INTO `ebanking`.`bank_account` (`corporation_id`, `currency_id`, `amount`) VALUES ('6', '1', '100000');
+INSERT INTO `ebanking`.`bank_account` (`corporation_id`, `currency_id`, `amount`) VALUES ('7', '2', '100000');
+INSERT INTO `ebanking`.`bank_account` (`corporation_id`, `currency_id`, `amount`) VALUES ('7', '1', '100000');
+INSERT INTO `ebanking`.`bank_account` (`corporation_id`, `currency_id`, `amount`) VALUES ('8', '2', '100000');
+INSERT INTO `ebanking`.`bank_account` (`corporation_id`, `currency_id`, `amount`) VALUES ('8', '1', '100000');
+INSERT INTO `ebanking`.`bank_account` (`corporation_id`, `currency_id`, `amount`) VALUES ('9', '2', '100000');
+INSERT INTO `ebanking`.`bank_account` (`corporation_id`, `currency_id`, `amount`) VALUES ('9', '1', '100000');
+INSERT INTO `ebanking`.`bank_account` (`corporation_id`, `currency_id`, `amount`) VALUES ('10', '2', '100000');
+INSERT INTO `ebanking`.`bank_account` (`corporation_id`, `currency_id`, `amount`) VALUES ('10', '1', '100000');
+
 
 
 /*!40101 SET character_set_client = @saved_cs_client */;

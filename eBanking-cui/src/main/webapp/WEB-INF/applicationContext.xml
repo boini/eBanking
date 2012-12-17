@@ -31,10 +31,13 @@ http://www.springframework.org/schema/context/spring-context-3.1.xsd">
     <bean id="paymentService" class="com.ebanking.cui.service.client.impl.payment.PaymentService"/>
     <bean id="ratesService" class="com.ebanking.cui.service.client.impl.finance.RatesService"/>
     <bean id="transferService" class="com.ebanking.cui.service.client.impl.transfer.TransferService"/>
+    <bean id="changeLoginService" class="com.ebanking.cui.service.client.impl.login.ChangeLoginService"/>
+    <bean id="changePasswordService" class="com.ebanking.cui.service.client.impl.password.ChangePasswordService"/>
 
     <bean id="operationHistoryService" class="com.ebanking.cui.service.client.impl.info.card.OperationHistoryService"/>
     
     <bean name="LoginForwardAction" class="com.ebanking.cui.presentation.action.LoginForward"/>
+    <bean name="LogoutForwardAction" class="com.ebanking.cui.presentation.action.LogoutForward"/>
     <bean name="SessionRecreationForwardAction" class="com.ebanking.cui.presentation.action.SessionRecreationForwardAction"/>
     <bean name="NBRBCurrencyAction" class="com.ebanking.cui.presentation.action.currency.NBRBCurrencyAction"/>
     <bean name="MainPageForwardAction" class="com.ebanking.cui.presentation.action.MainPageForwardAction"/>

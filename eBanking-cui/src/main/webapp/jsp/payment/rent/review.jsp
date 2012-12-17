@@ -7,61 +7,60 @@
         <h5>
             <s:property value="#session['clientInfoForm'].fullName"/>
         </h5>
-        Добро пожаловать в систему "eBanking"
+        Welcome to the "eBanking"
     </div>
 
     <div>
         <s:form action="/rentPaymentSubmit" method="POST" id="rentNumberForm">
             <table class="table table-striped">
-                <caption>Подтверждение реквизитов. Если все реквизиты заполнены правильно нажмите "Отправить в банк" или вернитесь к редактированию документа.</caption>
+                <caption>Confirmation details. If all of the details are filled in correctly, click "Submit" or go back to the document.</caption>
                 <tr>
-                    <td>Дата</td>
+                    <td>Date</td>
                     <td>
                         <s:property value="%{#session.rentPaymentForm.date}"/>
                     </td>
                 </tr>
                 <tr>
-                    <td>Банк клиента</td>
+                    <td>Bank</td>
                     <td>eBanking</td>
                 </tr>
                 <tr>
-                    <td>Клиент</td>
+                    <td>Client</td>
                     <td>
                         <s:property value="#session['clientInfoForm'].fullName"/>
                     </td>
                 </tr>
                 <tr>
-                    <td>Оплачиваемая услуга</td>
+                    <td>Paid service</td>
                     <td>
                         <s:property value="%{#session.rentPaymentForm.providerName}"/>
                     </td>
                 </tr>
                 <tr>
-                    <td>Оплатить с карты</td>
+                    <td>Pay from card</td>
                     <td>
                         <s:property value="%{#session.rentPaymentForm.activeCard.cardNumber}"/>
                     </td>
                 </tr>
                 <tr>
-                    <td>Cумма</td>
+                    <td>Sum</td>
                     <td>
                         <s:property value="%{#session.rentPaymentForm.amount}"/>
                         (<s:property value="%{#session.rentPaymentForm.activeCard.cardAccount.currency.currencyCode}"/>)
                     </td>
                 </tr>
                 <tr>
-                    <td>Номер лицевого счета</td>
+                    <td>Personal client number</td>
                     <td>
                         <s:property value="%{#session.rentPaymentForm.number}"/>
                     </td>
                 </tr>
             </table>
             <h5>
-                Внимание! После нажания на кнопку "Отправить в банк" Вы совершите
-                платеж. Возврат средств на Ваш счет будет невозможен!
+                Attention! After pressing the "Submit" You will make a payment. Refund to your account won't be possible!
             </h5>
             <td>
-                <s:submit value="Отправить в банк"/>
+                <s:submit value="Send to the bank"/>
             </td>
         </s:form>
     </div>

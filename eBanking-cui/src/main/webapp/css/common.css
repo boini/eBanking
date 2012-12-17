@@ -1,6 +1,6 @@
 body { font-size: 11px; }
 table { font-size: 11px; }
-input[type="text"] { height: 30px; }
+input[type="text"], input[type="password"] { height: 30px; }
 input[type="radio"] {margin-right: 5px;}
 select {width: 300px;}
 
@@ -20,6 +20,7 @@ select {width: 300px;}
 .paid { background: url('../img/paid.png') 0 0 no-repeat; }
 
 .ui-datepicker-trigger { margin-left: 5px; margin-top: -8px;}
+.calendar-select input[type="text"] {width: 150px;}
 
 #header ul { float: right;}
 #cards img {width: 50px; border: 1px solid #555; }
@@ -41,3 +42,5 @@ select {width: 300px;}
 #cardAccountInfoSubmit {float: right; margin-bottom: 20px;}
 
 #onlineInfoTable h6, #cardAccountInfoTable h6 { padding-top: 14px;}
+
+#changeLoginSubmit, #changePasswordSubmit {float: right;}

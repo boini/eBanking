@@ -2,14 +2,34 @@ $('document').ready(function() {
     $('.calendar-select input').prop('disabled', true);
     $('.ui-datepicker-trigger').css('visibility', 'hidden');
 
+    $('#fromDate').on('change', function() {
+        var correct = isDate($(this).val());
+        if (!correct) {
+            $('#fromDate').css('background-color', 'FFD0D4');
+        } else {
+            $('#fromDate').css('background-color', 'fff');
+        }
+    })
+
+    $('#toDate').on('change', function() {
+        var correct = isDate($(this).val());
+        if (!correct) {
+            $('#toDate').css('background-color', 'FFD0D4');
+        } else {
+            $('#toDate').css('background-color', 'fff');
+        }
+    })
+
     $('input[type="radio"]').on('change', function() {
         var checked = $('#customRadio').prop('checked');
         if (checked) {
             $('.calendar-select input').prop('disabled', false);
             $('.ui-datepicker-trigger').css('visibility', 'visible');
+            $('#fromDate, #toDate').css('background-color', '#FFF');
         } else {
             $('.calendar-select input').prop('disabled', true).val('');
             $('.ui-datepicker-trigger').css('visibility', 'hidden');
+            $('#fromDate, #toDate').css('background-color', '#EEE');
         }
     })
 
@@ -41,16 +61,29 @@ $('document').ready(function() {
             fromDate.setMonth(toDate.getMonth() - 1);
         }
         if (period == 'custom') {
+            var isCorrect = true;
+            if (!isDate($('#fromDate').val())) {
+                $('#fromDate').css('background-color', 'FFD0D4');
+                isCorrect = false;
+            }
+            if (!isDate($('#toDate').val())) {
+                $('#toDate').css('background-color', 'FFD0D4');
+                isCorrect = false;
+            }
+            if (!isCorrect) {
+                return false;
+            }
+
             var tDate = toDate;
             var fDate = fromDate;
             fromDate = new Date($('#fromDate').val());
             toDate = new Date($('#toDate').val());
-            fromDate.setHours(fDate.getHours());
-            fromDate.setMinutes(fDate.getMinutes());
-            fromDate.setSeconds(fDate.getSeconds());
-            toDate.setHours(tDate.getHours());
-            toDate.setMinutes(tDate.getMinutes());
-            toDate.setSeconds(tDate.getSeconds());
+            fromDate.setHours(0);
+            fromDate.setMinutes(0);
+            fromDate.setSeconds(0);
+            toDate.setHours(23);
+            toDate.setMinutes(59);
+            toDate.setSeconds(59);
         }
 
         var fromDateFormatted = $.format.date(fromDate, 'dd-MM-yy HH:mm:ss');
@@ -75,13 +108,13 @@ $('document').ready(function() {
                         onlineInfoTable += '<caption></caption>';
                         onlineInfoTable += '<thead>' +
                             '<tr>' +
-                                '<th>Статус</th>' +
-                                '<th>Дата обработки</th>' +
-                                '<th>Дата транзакции</th>' +
-                                '<th>Карта</th>' +
-                                '<th>Описание операции</th>' +
-                                '<th>Валюта</th>' +
-                                '<th>Сумма</th>' +
+                                '<th>Status</th>' +
+                                '<th>Processing date</th>' +
+                                '<th>Transaction date</th>' +
+                                '<th>Card</th>' +
+                                '<th>Operation details</th>' +
+                                '<th>Currency</th>' +
+                                '<th>Sum</th>' +
                             '</tr>' +
                         '</thead>' +
                         '<tbody>';
