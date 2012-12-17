@@ -7,10 +7,13 @@ import com.ebanking.ws.service.Service;
 import com.ebanking.ws.service.SpringSupportService;
 import com.ebanking.ws.service.request.OperationHistoryRQ;
 import com.ebanking.ws.service.response.OperationHistoryRS;
+import com.ebanking.ws.utils.CardUtils;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import static com.ebanking.ws.utils.CardUtils.hideCardInfo;
 
 public class OperationHistoryService extends SpringSupportService implements Service<OperationHistoryRQ, OperationHistoryRS> {
     private OperationDAO operationDAO;
@@ -49,6 +52,7 @@ public class OperationHistoryService extends SpringSupportService implements Ser
         }
 
         for (Operation operation : operations) {
+            hideCardInfo(operation.getCard());
             operation.getCard().getCardAccount().setCards(null);
             if (operation.getContractorCard() != null) {
                 operation.getContractorCard().getCardAccount().setCards(null);
