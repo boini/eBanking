@@ -47,7 +47,10 @@ public class ClientHistoryAction extends BaseRQRSAction<OperationHistoryRQ, Oper
     }
 
     @Override
-    protected String processResponse(OperationHistoryRS responseObject) {
+    protected String processResponse(OperationHistoryRS responseObject) throws EBankingException {
+        if (responseObject == null) {
+            throw new EBankingException("Error while processing OperationHistory response for ClientHistory action. responseObject is null");
+        }
         clientOpertaionHistoryForm = new ClientOpertaionHistoryForm();
         clientOpertaionHistoryForm.setOperations(responseObject.getOperations());
         HttpSessionUtil.setClientOperationHistoryForm(clientOpertaionHistoryForm);
