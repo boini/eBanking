@@ -1,4 +1,4 @@
-body { font-size: 11px; background: #333; }
+body { font-size: 11px; background: #333; color: #fff;}
 table { font-size: 11px; color: #ddd; }
 input[type="text"], input[type="password"] { height: 30px; }
 input[type="radio"] {margin-right: 5px;}
@@ -13,6 +13,7 @@ input[type="submit"].btn { min-width: 100px; }
 .h5 { margin: 10px 0; font-family: inherit; font-weight: bold; line-height: 20px; color: inherit; text-rendering: optimizelegibility; font-size: 14px }
 
 .form-signin { max-width: 300px; padding: 19px 29px 29px; margin: 0 auto 20px; background-color: #fff; border: 1px solid #e5e5e5; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05); -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05); box-shadow: 0 1px 2px rgba(0,0,0,.05); border: 0;}
+.form-signin h4 {color: #333;}
 .form-signin .form-signin-heading, .form-signin .checkbox { margin-bottom: 10px; }
 .form-signin input[type="text"], .form-signin input[type="password"] { font-size: 16px; height: auto; margin-bottom: 15px; padding: 7px 9px; }
 
@@ -25,6 +26,14 @@ input[type="submit"].btn { min-width: 100px; }
 
 .nav-list > li > a, .nav-list .nav-header { text-shadow: none; }
 .editForm h6 {border-bottom: 2px solid #eee;}
+
+.errorblock {
+    color: #ffffff;
+    background-color: #ffEEEE;
+    border: 3px solid #ff0000;
+    padding: 8px;
+    margin: 16px;
+}
 
 #header ul { float: right;}
 #cards img {width: 50px; border: 1px solid #555; }

@@ -2,6 +2,8 @@ package com.ebanking.ws.service.response;
 
 import com.ebanking.ws.model.account.Client;
 
+import java.util.Arrays;
+
 public class RetrieveClientRS {
     private boolean success;
     private String exception;
@@ -29,5 +31,14 @@ public class RetrieveClientRS {
 
     public void setClients(Client[] clients) {
         this.clients = clients;
+    }
+
+    @Override
+    public String toString() {
+        return "RetrieveClientRS{" +
+                "success=" + success +
+                ", exception='" + exception + '\'' +
+                ", clients=" + (clients == null ? null : Arrays.asList(clients)) +
+                '}';
     }
 }

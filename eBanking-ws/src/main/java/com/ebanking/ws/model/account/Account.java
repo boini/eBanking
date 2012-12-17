@@ -96,7 +96,7 @@ public class Account implements Serializable {
         result = 31 * result + client.hashCode();
         return result;
     }
-/*
+
     @Override
     public String toString() {
         return "Account{" +
@@ -106,5 +106,5 @@ public class Account implements Serializable {
                 ", role=" + role +
                 ", client=" + client +
                 '}';
-    }*/
+    }
 }

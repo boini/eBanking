@@ -42,4 +42,14 @@ public class OperationHistoryRQ {
     public void setFromDate(Date fromDate) {
         this.fromDate = fromDate;
     }
+
+    @Override
+    public String toString() {
+        return "OperationHistoryRQ{" +
+                "idList=" + idList +
+                ", fromDate=" + fromDate +
+                ", toDate=" + toDate +
+                ", operationRequestType='" + operationRequestType + '\'' +
+                '}';
+    }
 }

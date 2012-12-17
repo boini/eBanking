@@ -50,4 +50,15 @@ public class TransferRQ {
     public void setDate(Date date) {
         this.date = date;
     }
+
+    @Override
+    public String toString() {
+        return "TransferRQ{" +
+                "client=" + client +
+                ", fromCardId=" + fromCardId +
+                ", toCardId=" + toCardId +
+                ", amount=" + amount +
+                ", date=" + date +
+                '}';
+    }
 }

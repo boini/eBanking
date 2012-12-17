@@ -1,6 +1,7 @@
 package com.ebanking.ws.service.impl.login;
 
 import com.ebanking.ws.dao.AccountDAO;
+import com.ebanking.ws.log.RQRSLogger;
 import com.ebanking.ws.model.account.Account;
 import com.ebanking.ws.service.Service;
 import com.ebanking.ws.service.SpringSupportService;
@@ -12,7 +13,10 @@ public class ChangeLoginService extends SpringSupportService implements Service<
 
     @Override
     public ChangeLoginRS execute(ChangeLoginRQ request) {
+        logger = (RQRSLogger) getBean("RQRSLogger");
         accountDAO = (AccountDAO) getBean("accountDAO");
+
+        logger.logRQRS(request, ChangeLoginService.class);
 
         String currentLogin = request.getCurrentLogin();
         String newLogin = request.getNewLogin();
@@ -37,6 +41,9 @@ public class ChangeLoginService extends SpringSupportService implements Service<
         account.setLogin(newLogin);
         accountDAO.saveOrUpdate(account);
         changeLoginRS.setSuccess(true);
+
+        logger.logRQRS(changeLoginRS, ChangeLoginService.class);
+
         return changeLoginRS;
     }
 }

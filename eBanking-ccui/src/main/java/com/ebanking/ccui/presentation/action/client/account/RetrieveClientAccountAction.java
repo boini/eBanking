@@ -1,4 +1,4 @@
-package com.ebanking.ccui.presentation.action.client;
+package com.ebanking.ccui.presentation.action.client.account;
 
 import com.ebanking.ccui.model.account.Account;
 import com.ebanking.ccui.presentation.action.BaseRQRSAction;
@@ -11,14 +11,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.context.SecurityContextHolder;
 
-/**
- * Created with IntelliJ IDEA.
- * User: antonkholodok
- * Date: 11/29/12
- * Time: 9:44 AM
- * To change this template use File | Settings | File Templates.
- */
-public class FetchClientAccountAction extends BaseRQRSAction<FetchAccountRQ, FetchAccountRS> {
+public class RetrieveClientAccountAction extends BaseRQRSAction<FetchAccountRQ, FetchAccountRS> {
+    private long id;
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
     @Autowired
     private ClientInfoForm clientInfoForm;

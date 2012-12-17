@@ -1,9 +1,11 @@
-package com.ebanking.ccui.presentation.action.client;
+package com.ebanking.ccui.presentation.action.client.account;
 
 import com.ebanking.ccui.exception.EBankingException;
 import com.ebanking.ccui.model.account.Account;
 import com.ebanking.ccui.model.card.Card;
+import com.ebanking.ccui.model.card.CardAccount;
 import com.ebanking.ccui.presentation.action.BaseRQRSAction;
+import com.ebanking.ccui.presentation.form.CardAccountsForm;
 import com.ebanking.ccui.presentation.form.ClientCardsInfoForm;
 import com.ebanking.ccui.service.client.ServiceClient;
 import com.ebanking.ccui.service.request.ClientCardsRQ;
@@ -13,15 +15,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.context.SecurityContextHolder;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
-public class ClientCardsAction extends BaseRQRSAction<ClientCardsRQ, ClientCardsRS> {
+public class RetrieveCardAccountsAction extends BaseRQRSAction<ClientCardsRQ, ClientCardsRS> {
+    private long id;
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
     @Autowired
-    private ClientCardsInfoForm clientCardsInfoForm;
+    private CardAccountsForm cardAccountsForm;
 
     @Override
     @Autowired
@@ -33,8 +37,7 @@ public class ClientCardsAction extends BaseRQRSAction<ClientCardsRQ, ClientCards
     @Override
     protected ClientCardsRQ prepareRequest() {
         ClientCardsRQ clientCardsRQ = new ClientCardsRQ();
-        Account principal = (Account) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        clientCardsRQ.setClientId(principal.getClient().getClientId());
+        clientCardsRQ.setClientId(id);
         return clientCardsRQ;
     }
 
@@ -45,9 +48,29 @@ public class ClientCardsAction extends BaseRQRSAction<ClientCardsRQ, ClientCards
             throw new  EBankingException("Error while processing ClientCards response for ClientCards action. Cards array is null");
         }
         List<Card> cardsList = new ArrayList<Card>(Arrays.asList(cards));
-        clientCardsInfoForm.setCards(cardsList);
-        clientCardsInfoForm.setDate(new Date());
-        HttpSessionUtil.setClientCardsForm(clientCardsInfoForm);
+
+        Set<CardAccount> cardAccounts = new HashSet<CardAccount>();
+        Map<CardAccount, List<Card>> cardAccountListMap = new HashMap<CardAccount, List<Card>>();
+
+        for (Card card : cardsList) {
+            cardAccounts.add(card.getCardAccount());
+        }
+        for (CardAccount cardAccount : cardAccounts) {
+            cardAccountListMap.put(cardAccount, new ArrayList<Card>());
+        }
+        for (Card card : cardsList) {
+            cardAccountListMap.get(card.getCardAccount()).add(card);
+        }
+        Set<CardAccount> keys = cardAccountListMap.keySet();
+        for (CardAccount cardAccount : keys) {
+            Card[] cardsArray = cardAccountListMap.get(cardAccount).
+                    toArray(new Card[cardAccountListMap.get(cardAccount).size()]);
+            cardAccount.setCards(cardsArray);
+        }
+        cardAccountsForm.setCardAccounts(cardAccountListMap.keySet());
+        cardAccountsForm.setDate(new Date());
+        HttpSessionUtil.setCardAccountsForm(cardAccountsForm);
+
         return "success";
     }
 }

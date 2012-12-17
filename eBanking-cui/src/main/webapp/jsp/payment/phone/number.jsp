@@ -48,7 +48,7 @@
             </td>
             <s:textfield key="number"
                          label="Phone number"
-                         placeholder="+375xxххххххх"/>
+                         placeholder="xxххххххх"/>
             <s:textfield key="credential"
                          label="Full name"
                          placeholder="Ivanov Ivan Ivanovich"/>

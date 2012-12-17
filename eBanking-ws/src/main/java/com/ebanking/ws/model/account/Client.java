@@ -198,7 +198,7 @@ public class Client {
         return result;
     }
 
-/*    @Override
+    @Override
     public String toString() {
         return "Client{" +
                 "clientId=" + clientId +
@@ -213,5 +213,5 @@ public class Client {
                 ", email='" + email + '\'' +
                 ", address=" + address +
                 '}';
-    }*/
+    }
 }

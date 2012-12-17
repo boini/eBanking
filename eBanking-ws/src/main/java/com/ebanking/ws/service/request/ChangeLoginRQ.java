@@ -28,4 +28,13 @@ public class ChangeLoginRQ {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    @Override
+    public String toString() {
+        return "ChangeLoginRQ{" +
+                "currentLogin='" + currentLogin + '\'' +
+                ", newLogin='" + newLogin + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
 }

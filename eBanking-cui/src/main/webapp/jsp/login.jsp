@@ -12,6 +12,13 @@
 
     <div class="container login-container">
 
+        <c:if test="${param.error == 'true'}">
+               <div class="errorblock">
+                   Your login attempt was not successful, try again.<br/> Caused :
+                       ${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}
+               </div>
+        </c:if>
+
         <s:form cssClass="form-signin" action="/j_spring_security_check" method="post">
             <h3 css="form-signin-heading">Please sign in</h3>
             <s:textfield name="j_username" cssClass="input-block-level" placeholder="Login" />
