@@ -108,13 +108,13 @@ $('document').ready(function() {
                         onlineInfoTable += '<caption></caption>';
                         onlineInfoTable += '<thead>' +
                             '<tr>' +
-                                '<th>Статус</th>' +
-                                '<th>Дата обработки</th>' +
-                                '<th>Дата транзакции</th>' +
-                                '<th>Карта</th>' +
-                                '<th>Описание операции</th>' +
-                                '<th>Валюта</th>' +
-                                '<th>Сумма</th>' +
+                                '<th>Status</th>' +
+                                '<th>Processing date</th>' +
+                                '<th>Transaction date</th>' +
+                                '<th>Card</th>' +
+                                '<th>Operation details</th>' +
+                                '<th>Currency</th>' +
+                                '<th>Sum</th>' +
                             '</tr>' +
                         '</thead>' +
                         '<tbody>';

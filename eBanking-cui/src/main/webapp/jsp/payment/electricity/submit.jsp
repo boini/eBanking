@@ -7,48 +7,48 @@
         <h5>
             <s:property value="#session['clientInfoForm'].fullName"/>
         </h5>
-        Добро пожаловать в систему "eBanking"
+        Welcome to the "eBanking"
     </div>
 
     <div>
             <table class="table table-bordered paid">
                 <tr>
-                    <td>Дата</td>
+                    <td>Date</td>
                     <td>
                         <s:property value="%{#session.electricityPaymentForm.date}"/>
                     </td>
                 </tr>
                 <tr>
-                    <td>Банк клиента</td>
+                    <td>Client bank</td>
                     <td>eBanking</td>
                 </tr>
                 <tr>
-                    <td>Клиент</td>
+                    <td>Client</td>
                     <td>
                         <s:property value="#session['clientInfoForm'].fullName"/>
                     </td>
                 </tr>
                 <tr>
-                    <td>Оплачиваемая услуга</td>
+                    <td>Paid service</td>
                     <td>
                         <s:property value="%{#session.electricityPaymentForm.providerName}"/>
                     </td>
                 </tr>
                 <tr>
-                    <td>Оплатить с карты</td>
+                    <td>Pay with card</td>
                     <td>
                         <s:property value="%{#session.electricityPaymentForm.activeCard.cardNumber}"/>
                     </td>
                 </tr>
                 <tr>
-                    <td>Cумма</td>
+                    <td>Sum</td>
                     <td>
                         <s:property value="%{#session.electricityPaymentForm.amount}"/>
                         (<s:property value="%{#session.electricityPaymentForm.activeCard.cardAccount.currency.currencyCode}"/>)
                     </td>
                 </tr>
                 <tr>
-                    <td>Номер абонента</td>
+                    <td>Abonent number</td>
                     <td>
                         <s:property value="%{#session.electricityPaymentForm.number}"/>
                     </td>

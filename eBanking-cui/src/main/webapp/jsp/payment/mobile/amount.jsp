@@ -20,30 +20,30 @@
         <h5>
             <s:property value="#session['clientInfoForm'].fullName"/>
         </h5>
-        Добро пожаловать в систему "eBanking"
+        Welcome to the "eBanking"
     </div>
 
     <div>
     <s:form action="/mobilePaymentReview" method="POST" id="mobileNumberForm">
         <td colspan="2">
-            <h5>Наименование услуги:
+            <h5>Service name:
                 <s:property value="%{#session.communicationsPaymentForm.providerName}"/>
             </h5>
         </td>
-        <s:textfield label="Оплатить со счета:"
+        <s:textfield label="Pay from the bank account:"
                      value="%{#session.communicationsPaymentForm.activeCard.cardNumber}"
                      disabled="true"/>
-        <s:textfield label="Cумма (%{#session.communicationsPaymentForm.activeCard.cardAccount.currency.currencyCode}):"
+        <s:textfield label="Sum (%{#session.communicationsPaymentForm.activeCard.cardAccount.currency.currencyCode}):"
                      key="amount"/>
         <td colspan="2">
-            <h5>Дополнительные реквизиты</h5>
+            <h5>Additional details</h5>
         </td>
         <s:textfield name="mobileNumber"
-                     label="Номер телефона"
+                     label="Mobile number"
                      value="%{#session['communicationsPaymentForm'].number}"
                      disabled="true"/>
         <td>
-            <s:submit value="Продолжить"/>
+            <s:submit value="Continue"/>
         </td>
     </s:form>
 </div>

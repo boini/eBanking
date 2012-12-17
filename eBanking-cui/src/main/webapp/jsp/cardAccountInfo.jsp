@@ -28,10 +28,10 @@
         </script>
 
         <div>
-            <span>The parameters of the statement</span><br/>
-            <input type="radio" id="weekRadio" name="bankStatement" checked="checked" value="week"/>За последнюю неделю <br/>
-            <input type="radio" id="monthRadio" name="bankStatement" value="month"/>За последний месяц<br/>
-            <input type="radio" id="customRadio" name="bankStatement" value="custom"/> For the period<br/>
+            <span>The parameters of the bank statement</span><br/>
+            <input type="radio" id="weekRadio" name="bankStatement" checked="checked" value="week"/>For the last week<br/>
+            <input type="radio" id="monthRadio" name="bankStatement" value="month"/>For the last month<br/>
+            <input type="radio" id="customRadio" name="bankStatement" value="custom"/>For the period<br/>
             <div class="calendar-select">
                 From: <input type="text" id="fromDate" />
                 To:   <input type="text" id="toDate" />
@@ -72,7 +72,7 @@
             </tbody>
         </table>
 
-        <button type="button" class="btn btn-primary" id="cardAccountInfoSubmit" data-loading-text="Loading...">Получить</button>
+        <button type="button" class="btn btn-primary" id="cardAccountInfoSubmit" data-loading-text="Loading...">Get info</button>
 
         <div id="cardAccountInfoTable">
 

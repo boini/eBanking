@@ -71,7 +71,7 @@
                   listValue="%{cardNumber + ' [' + cardType.cardTypeName + ' ' + cardAccount.balance + ' ' + cardAccount.currency.currencyCode + ']'}"/>
 
         <s:textfield key="amount"
-                     label="Сумма"/>
+                     label="Sum"/>
         <s:submit value="Continue" cssClass="btn btn-primary"/>
     </s:form>
 

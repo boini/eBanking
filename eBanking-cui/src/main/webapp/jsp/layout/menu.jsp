@@ -5,23 +5,23 @@
     });
 </script>
 <div id="menu-header">
-    <h5>Выберите действие</h5>
+    <h5>Choose action</h5>
 </div>
 <ul class="nav nav-list">
-    <li id="main-action"><a href="/main.action">Главная страница</a></li>
+    <li id="main-action"><a href="/main.action">Main page</a></li>
 
-    <li class="nav-header">Выписки</li>
-    <li id="info-action"><a href="/onlineInfo.action">Онлайн информация</a></li>
-    <li id="card-action"><a href="/cardAccountInfo.action">Выписка по карт-счетам</a></li>
+    <li class="nav-header">Bank statements</li>
+    <li id="info-action"><a href="/onlineInfo.action">Online info</a></li>
+    <li id="card-action"><a href="/cardAccountInfo.action">Bank statement by card accounts</a></li>
 
-    <li class="nav-header">Платежи</li>
-    <li id="payment-action"><a href="/payment.action">Оплатить услуги</a></li>
-    <li id="history-action"><a href="/clientOperationHistory.action">Архив операций</a></li>
+    <li class="nav-header">Payments</li>
+    <li id="payment-action"><a href="/payment.action">Pay for services</a></li>
+    <li id="history-action"><a href="/clientOperationHistory.action">Archive of operations</a></li>
 
-    <li class="nav-header">Карты</li>
-    <li id="transfer-action"><a href="/transfer.action">Переводы между картами</a></li>
+    <li class="nav-header">Cards</li>
+    <li id="transfer-action"><a href="/transfer.action">Transfers between cards</a></li>
 
-    <li class="nav-header">Сервис</li>
-    <li id="pass-action"><a href="/changePassword.action">Поменять пароль</a></li>
-    <li id="clogin-action"><a href="/changeLogin.action">Смена логина</a></li>
+    <li class="nav-header">Service</li>
+    <li id="pass-action"><a href="/changePassword.action">Change password</a></li>
+    <li id="clogin-action"><a href="/changeLogin.action">Change login</a></li>
 </ul>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:bean="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+    <context:annotation-config />
+    <context:component-scan base-package="com.ebanking.cui.presentation.action"/>
+    <context:component-scan base-package="com.ebanking.cui.service.client.impl"/>
+    <context:component-scan base-package="com.ebanking.cui.security"/>
+
+    <bean id="clientInfoForm" class="com.ebanking.cui.presentation.form.ClientInfoForm"/>
+    <bean id="clientCardsInfoForm" class="com.ebanking.cui.presentation.form.ClientCardsInfoForm"/>
+    <bean id="nbrbCurrencyRatesForm" class="com.ebanking.cui.presentation.form.NBRBCurrencyRatesForm"/>
+    <bean id="clientOperationHistoryForm" class="com.ebanking.cui.presentation.form.ClientOpertaionHistoryForm"/>
+    <bean id="ratesForm" class="com.ebanking.cui.presentation.form.RatesForm"/>
+    <bean id="retrieveClientForm" class="com.ebanking.cui.presentation.form.RetrieveClientForm"/>
+    <bean id="editClientForm" class="com.ebanking.cui.presentation.form.EditClientForm"/>
+
+    <bean id="loginClientService" class="com.ebanking.cui.service.client.impl.security.login.ClientLoginService"/>
+    <bean id="nbrbCurrencyService" class="com.ebanking.cui.service.client.impl.currency.nbrb.NBRBCurrencyService"/>
+    <bean id="fetchClientAccountService" class="com.ebanking.cui.service.client.impl.client.account.FetchAccountService"/>
+    <bean id="clientCardsService" class="com.ebanking.cui.service.client.impl.client.card.ClientCardsService"/>
+    <bean id="ratesService" class="com.ebanking.cui.service.client.impl.finance.RatesService"/>
+    <bean id="retrieveClientService" class="com.ebanking.cui.service.client.impl.client.retrieve.RetrieveClientService"/>
+    <bean id="saveClientService" class="com.ebanking.cui.service.client.impl.client.save.SaveClientService"/>
+
+    <bean name="LoginForwardAction" class="com.ebanking.cui.presentation.action.LoginForward"/>
+    <bean name="LogoutForwardAction" class="com.ebanking.cui.presentation.action.LogoutForward"/>
+    <bean name="SessionRecreationForwardAction" class="com.ebanking.cui.presentation.action.SessionRecreationForwardAction"/>
+    <bean name="NBRBCurrencyAction" class="com.ebanking.cui.presentation.action.currency.NBRBCurrencyAction"/>
+    <bean name="MainPageForwardAction" class="com.ebanking.cui.presentation.action.MainPageForwardAction"/>
+    <bean name="FetchClientAccountAction" class="com.ebanking.cui.presentation.action.client.FetchClientAccountAction"/>
+    <bean name="ClientCardsAction" class="com.ebanking.cui.presentation.action.client.ClientCardsAction"/>
+    <bean name="RetrieveClientAction" class="com.ebanking.cui.presentation.action.client.RetrieveClientAction"/>
+
+    <bean name="RatesAction" class="com.ebanking.cui.presentation.action.finance.RatesAction"/>
+
+    <bean name="EditClientForwardAction" class="com.ebanking.cui.presentation.action.client.edit.EditClientForwardAction"/>
+    <bean name="EditClientAction" class="com.ebanking.cui.presentation.action.client.edit.EditClientAction"/>
+    <bean name="SaveClientAction" class="com.ebanking.cui.presentation.action.client.edit.SaveClientAction"/>
+</beans>

@@ -1,0 +1,51 @@
+body { font-size: 11px; background: #333; }
+table { font-size: 11px; color: #ddd; }
+input[type="text"], input[type="password"] { height: 30px; }
+input[type="radio"] {margin-right: 5px;}
+select {width: 300px;}
+
+input[type="submit"].btn { min-width: 100px; }
+.wrapper { min-width: 960px; }
+
+.login-container { padding-top: 40px; padding-bottom: 40px; }
+.navbar-inner { border-radius: 0px; }
+
+.h5 { margin: 10px 0; font-family: inherit; font-weight: bold; line-height: 20px; color: inherit; text-rendering: optimizelegibility; font-size: 14px }
+
+.form-signin { max-width: 300px; padding: 19px 29px 29px; margin: 0 auto 20px; background-color: #fff; border: 1px solid #e5e5e5; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05); -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05); box-shadow: 0 1px 2px rgba(0,0,0,.05); border: 0;}
+.form-signin .form-signin-heading, .form-signin .checkbox { margin-bottom: 10px; }
+.form-signin input[type="text"], .form-signin input[type="password"] { font-size: 16px; height: auto; margin-bottom: 15px; padding: 7px 9px; }
+
+.label { width: 150px; }
+
+.paid { background: url('../img/paid.png') 0 0 no-repeat; }
+
+.ui-datepicker-trigger { margin-left: 5px; margin-top: -8px;}
+.calendar-select input[type="text"] {width: 150px;}
+
+.nav-list > li > a, .nav-list .nav-header { text-shadow: none; }
+.editForm h6 {border-bottom: 2px solid #eee;}
+
+#header ul { float: right;}
+#cards img {width: 50px; border: 1px solid #555; }
+#mobileNumberForm { width: 300px; }
+#mobileNumberForm select, #mobileNumberForm input[type="text"] { width: 300px; }
+
+#menu-header, #info-header { width: 100%; display: block; background: #025D8C; height: 40px; margin-bottom: 10px; color: white; }
+#menu-header h5, #info-header h5 { margin: 0; margin-left: 15px; padding-top: 10px; }
+
+#quick-payment h4 { padding: 0; margin: 0; margin-top: 10px; }
+#quick-payment ul { list-style: none; display: inline-block; margin: 10px 0; }
+#quick-payment li { float: left; margin-right: 15px; }
+#quick-payment img {max-width: 70px; max-height: 100px; border: 1px solid #999; }
+
+#greeting { display: block; background: #fb9600; color: white; margin-bottom: 10px; padding-left: 5px; }
+#greeting h5 { margin: 0; margin-right: 10px; }
+
+#onlineInfoSubmit {float: right; margin-bottom: 20px;}
+#cardAccountInfoSubmit {float: right; margin-bottom: 20px;}
+
+#onlineInfoTable h6, #cardAccountInfoTable h6 { padding-top: 14px;}
+
+#changeLoginSubmit, #changePasswordSubmit {float: right;}
+#contactInfo {float: left}

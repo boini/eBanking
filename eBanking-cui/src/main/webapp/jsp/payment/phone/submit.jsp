@@ -7,54 +7,54 @@
         <h5>
             <s:property value="#session['clientInfoForm'].fullName"/>
         </h5>
-        Добро пожаловать в систему "eBanking"
+        Welcome to the "eBanking"
     </div>
 
     <div>
             <table class="table table-bordered paid">
                 <tr>
-                    <td>Дата</td>
+                    <td>Date</td>
                     <td>
                         <s:property value="%{#session.phonePaymentForm.date}"/>
                     </td>
                 </tr>
                 <tr>
-                    <td>Банк клиента</td>
+                    <td>Bank</td>
                     <td>eBanking</td>
                 </tr>
                 <tr>
-                    <td>Клиент</td>
+                    <td>Client</td>
                     <td>
                         <s:property value="#session['clientInfoForm'].fullName"/>
                     </td>
                 </tr>
                 <tr>
-                    <td>Оплачиваемая услуга</td>
+                    <td>Paid service</td>
                     <td>
                         <s:property value="%{#session.phonePaymentForm.providerName}"/>
                     </td>
                 </tr>
                 <tr>
-                    <td>Оплатить с карты</td>
+                    <td>Pay from card</td>
                     <td>
                         <s:property value="%{#session.phonePaymentForm.activeCard.cardNumber}"/>
                     </td>
                 </tr>
                 <tr>
-                    <td>Cумма</td>
+                    <td>Sum</td>
                     <td>
                         <s:property value="%{#session.phonePaymentForm.amount}"/>
                         (<s:property value="%{#session.phonePaymentForm.activeCard.cardAccount.currency.currencyCode}"/>)
                     </td>
                 </tr>
                 <tr>
-                    <td>Номер телефона</td>
+                    <td>Phone number</td>
                     <td>
                         <s:property value="%{#session.phonePaymentForm.number}"/>
                     </td>
                 </tr>
                 <tr>
-                    <td>ФИО</td>
+                    <td>Full name</td>
                     <td>
                         <s:property value="%{#session.phonePaymentForm.credential}"/>
                     </td>

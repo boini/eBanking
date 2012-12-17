@@ -22,7 +22,7 @@ public class UserLoginService extends SpringSupportService implements Service<Lo
     @WebMethod
     public LoginClientRS execute(LoginClientRQ request) {
         logger = (RQRSLogger) getBean("RQRSLogger");
-        logger.logRQRS(request, UserLoginService.class);
+        /*logger.logRQRS(request, UserLoginService.class);*/
 
         accountDAO = (AccountDAO) getBean("accountDAO");
 
@@ -32,11 +32,13 @@ public class UserLoginService extends SpringSupportService implements Service<Lo
         LoginClientRS loginClientRS = new LoginClientRS();
 
         Account account = accountDAO.getByLogin(login);
-        if (account.getPassword().equals(password)) {
-            loginClientRS.setAccount(account);
+        if (account != null) {
+            if (account.getPassword().equals(password)) {
+                loginClientRS.setAccount(account);
+            }
         }
 
-        logger.logRQRS(loginClientRS, UserLoginService.class);
+        /*logger.logRQRS(loginClientRS, UserLoginService.class);*/
 
         return loginClientRS;
     }

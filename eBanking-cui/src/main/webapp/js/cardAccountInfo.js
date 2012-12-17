@@ -108,13 +108,13 @@ $('document').ready(function() {
                         cardAccountInfoTable += '<caption></caption>';
                         cardAccountInfoTable += '<thead>' +
                             '<tr>' +
-                                '<th>Дата обработки</th>' +
-                                '<th>Дата транзакции</th>' +
-                                '<th>Карта</th>' +
-                                '<th>Описание операции</th>' +
-                                '<th>Валюта</th>' +
-                                '<th>Сумма</th>' +
-                                '<th>Остаток</th>' +
+                                '<th>Processing date</th>' +
+                                '<th>Transaction date</th>' +
+                                '<th>Card</th>' +
+                                '<th>Operation details</th>' +
+                                '<th>Currency</th>' +
+                                '<th>Sum</th>' +
+                                '<th>Balance</th>' +
                             '</tr>' +
                         '</thead>' +
                         '<tbody>';

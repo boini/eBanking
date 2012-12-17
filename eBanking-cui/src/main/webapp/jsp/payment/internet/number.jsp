@@ -20,32 +20,32 @@
         <h5>
             <s:property value="#session['clientInfoForm'].fullName"/>
         </h5>
-        Добро пожаловать в систему "eBanking"
+        Welcome to the "eBanking"
     </div>
 
     <div>
         <s:form action="/internetPaymentAmount" method="POST" id="internetNumberForm">
             <td colspan="2">
-                <h5>Наименование услуги:
+                <h5>Service name:
                     <s:property value="%{#session.communicationsPaymentForm.providerName}"/>
                 </h5>
             </td>
             <s:select list="#session['communicationsPaymentForm'].cards"
-                      label="Оплатить со счёта"
-                      headerValue="-выберите счёт-"
+                      label="Pay from the bank account"
+                      headerValue="-choose the bank account-"
                       listKey="cardId"
                       key="cardId"
                       listValue="%{cardNumber + ' [' + cardType.cardTypeName + ' ' + cardAccount.balance + ' ' + cardAccount.currency.currencyCode + ']'}">
 
             </s:select>
             <td colspan="2">
-                <h5>Дополнительные реквизиты</h5>
-                <h6>Введите номер договора</h6>
+                <h5>Additional details</h5>
+                <h6>Enter contract number</h6>
             </td>
             <s:textfield key="number"
-                         label="Номер договора"/>
+                         label="Contract number"/>
             <td>
-                <s:submit value="Продолжить"/>
+                <s:submit value="Continue"/>
             </td>
         </s:form>
     </div>

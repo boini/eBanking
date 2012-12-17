@@ -20,32 +20,32 @@
         <h5>
             <s:property value="#session['clientInfoForm'].fullName"/>
         </h5>
-        Добро пожаловать в систему "eBanking"
+        Welcome to the "eBanking"
     </div>
 
     <div>
         <s:form action="/electricityPaymentAmount" method="POST" id="electricityNumberForm">
             <td colspan="2">
-                <h5>Наименование услуги:
+                <h5>Service name:
                     <s:property value="%{#session.electricityPaymentForm.providerName}"/>
                 </h5>
             </td>
             <s:select list="#session['electricityPaymentForm'].cards"
-                      label="Оплатить со счёта"
-                      headerValue="-выберите счёт-"
+                      label="Pay from the bank account"
+                      headerValue="-choose the bank account-"
                       listKey="cardId"
                       key="cardId"
                       listValue="%{cardNumber + ' [' + cardType.cardTypeName + ' ' + cardAccount.balance + ' ' + cardAccount.currency.currencyCode + ']'}">
 
             </s:select>
             <td colspan="2">
-                <h5>Дополнительные реквизиты</h5>
-                <h6>Электроэнергия. Один платеж - не более 10 000 000 бел. руб.</h6>
+                <h5>Additional details</h5>
+                <h6>Electricity. One payment - no more than 10 000 000 bel.r.</h6>
             </td>
             <s:textfield key="number"
-                         label="Номер абонента"/>
+                         label="Electricity account number"/>
             <td>
-                <s:submit value="Продолжить"/>
+                <s:submit value="Continue"/>
             </td>
         </s:form>
     </div>

@@ -3,11 +3,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <div id="info-header">
-    <h5>Дополнительная информация</h5>
+    <h5>Additional info</h5>
 </div>
 
 <div id="quick-payment">
-    <h5>Быстрая оплата услуг</h5>
+    <h5>Quick payment services</h5>
     <ul>
         <li>
             <s:url action="mobilePayment" var="velcomPaymentUrl">
