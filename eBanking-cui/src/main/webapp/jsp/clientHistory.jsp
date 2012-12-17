@@ -30,7 +30,6 @@
                 <tr>
                     <td>
                         <s:date name="#operation.processingDate.time" format="dd-MM-yyyy HH:mm:ss" />
-                        <%--<s:property value="#operation.processingDate.time"/>--%>
                     </td>
                     <td>
                         <s:property value="#operation.operationType.description"/>

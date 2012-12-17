@@ -1,12 +1,5 @@
 package com.ebanking.ws.service.request;
 
-/**
- * Created with IntelliJ IDEA.
- * User: antonkholodok
- * Date: 11/27/12
- * Time: 10:54 AM
- * To change this template use File | Settings | File Templates.
- */
 public class FetchAccountRQ {
     private String login;
     private String password;

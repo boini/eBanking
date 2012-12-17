@@ -171,7 +171,33 @@
         <namespace>http://password.impl.service.ws.ebanking.com</namespace>
         <beanMapping qname="ns:local" xmlns:ns="changePasswordRQ" languageSpecificType="java:com.ebanking.ws.service.request.ChangePasswordRQ"/>
         <beanMapping qname="ns:local" xmlns:ns="changePasswordRS" languageSpecificType="java:com.ebanking.ws.service.response.ChangePasswordRS"/>
+
     </service>
+    <service name="RetrieveClientService" provider="java:RPC" style="document" use="literal">
+        <parameter name="className" value="com.ebanking.ws.service.impl.retrieveClient.RetrieveClientService"/>
+        <parameter name="allowedMethods" value="*"/>
+        <parameter name="scope" value="Application"/>
+        <namespace>http://retrieveClient.impl.service.ws.ebanking.com</namespace>
+        <beanMapping qname="ns:local" xmlns:ns="retrieveClientRQ" languageSpecificType="java:com.ebanking.ws.service.request.RetrieveClientRQ"/>
+        <beanMapping qname="ns:local" xmlns:ns="retrieveClientRS" languageSpecificType="java:com.ebanking.ws.service.response.RetrieveClientRS"/>
+        <beanMapping qname="ns:local" xmlns:ns="client" languageSpecificType="java:com.ebanking.ws.model.account.Client"/>
+        <beanMapping qname="ns:local" xmlns:ns="address" languageSpecificType="java:com.ebanking.ws.model.address.Address"/>
+        <beanMapping qname="ns:local" xmlns:ns="city" languageSpecificType="java:com.ebanking.ws.model.address.City"/>
+        <beanMapping qname="ns:local" xmlns:ns="country" languageSpecificType="java:com.ebanking.ws.model.address.Country"/>
+    </service>
+    <service name="SaveClientService" provider="java:RPC" style="document" use="literal">
+        <parameter name="className" value="com.ebanking.ws.service.impl.saveClient.SaveClientService"/>
+        <parameter name="allowedMethods" value="*"/>
+        <parameter name="scope" value="Application"/>
+        <namespace>http://saveClient.impl.service.ws.ebanking.com</namespace>
+        <beanMapping qname="ns:local" xmlns:ns="saveClientRQ" languageSpecificType="java:com.ebanking.ws.service.request.SaveClientRQ"/>
+        <beanMapping qname="ns:local" xmlns:ns="saveClientRS" languageSpecificType="java:com.ebanking.ws.service.response.SaveClientRS"/>
+        <beanMapping qname="ns:local" xmlns:ns="client" languageSpecificType="java:com.ebanking.ws.model.account.Client"/>
+        <beanMapping qname="ns:local" xmlns:ns="address" languageSpecificType="java:com.ebanking.ws.model.address.Address"/>
+        <beanMapping qname="ns:local" xmlns:ns="city" languageSpecificType="java:com.ebanking.ws.model.address.City"/>
+        <beanMapping qname="ns:local" xmlns:ns="country" languageSpecificType="java:com.ebanking.ws.model.address.Country"/>
+    </service>
+
 
     <handler name="soapmonitor" type="java:org.apache.axis.handlers.SOAPMonitorHandler">
         <parameter name="wsdlURL" value="/axis/SOAPMonitorService-impl.wsdl"/>
