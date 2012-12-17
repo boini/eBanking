@@ -5,7 +5,7 @@
 <div>
     <div id="greeting">
         <h5>
-            <s:property value="#session.clientAccount.login"/>
+            Hello, <s:property value="#session['clientAccount'].login"/>
         </h5>
         Welcome to the "eBanking | Call Center"
     </div>
