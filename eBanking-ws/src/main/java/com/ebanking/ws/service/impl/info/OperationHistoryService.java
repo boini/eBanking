@@ -69,8 +69,6 @@ public class OperationHistoryService extends SpringSupportService implements Ser
             operationHistoryRS.setOperations(operationArray);
         }
 
-        logger.logRQRS(operationHistoryRS, OperationHistoryService.class);
-
         return operationHistoryRS;
     }
 }
