@@ -26,7 +26,7 @@
         <h5>
             <s:property value="#session['clientInfoForm'].fullName"/>
         </h5>
-        Welcome to the "eBanking"
+        Pay for the mobile
     </div>
     <div>
         <s:form action="/mobilePaymentAmount" method="POST" id="mobileNumberForm">

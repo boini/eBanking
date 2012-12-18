@@ -20,7 +20,7 @@
         <h5>
             <s:property value="#session['clientInfoForm'].fullName"/>
         </h5>
-        Welcome to the "eBanking"
+        Transfer your money between cards
     </div>
 
     <table class="table table-bordered table-condensed" id="cards">

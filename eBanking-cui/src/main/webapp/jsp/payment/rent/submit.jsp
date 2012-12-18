@@ -7,7 +7,7 @@
         <h5>
             <s:property value="#session['clientInfoForm'].fullName"/>
         </h5>
-        Welcome to the "eBanking"
+        Pay the rent
     </div>
 
     <div>
