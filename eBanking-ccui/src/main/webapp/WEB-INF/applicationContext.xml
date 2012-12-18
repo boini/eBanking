@@ -29,6 +29,7 @@ http://www.springframework.org/schema/context/spring-context-3.1.xsd">
     <bean id="ratesService" class="com.ebanking.ccui.service.client.impl.finance.RatesService"/>
     <bean id="retrieveClientService" class="com.ebanking.ccui.service.client.impl.client.retrieve.RetrieveClientService"/>
     <bean id="saveClientService" class="com.ebanking.ccui.service.client.impl.client.save.SaveClientService"/>
+    <bean id="addCardService" class="com.ebanking.ccui.service.client.impl.card.add.AddCardService"/>
 
     <bean name="LoginForwardAction" class="com.ebanking.ccui.presentation.action.LoginForward"/>
     <bean name="LogoutForwardAction" class="com.ebanking.ccui.presentation.action.LogoutForward"/>
@@ -44,4 +45,5 @@ http://www.springframework.org/schema/context/spring-context-3.1.xsd">
     <bean name="SaveClientAction" class="com.ebanking.ccui.presentation.action.client.edit.SaveClientAction"/>
 
     <bean name="RetrieveCardAccountsAction" class="com.ebanking.ccui.presentation.action.client.account.RetrieveCardAccountsAction"/>
+    <bean name="AddCardAction" class="com.ebanking.ccui.presentation.action.card.AddCardAction"/>
 </beans>

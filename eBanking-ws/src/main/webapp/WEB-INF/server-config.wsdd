@@ -197,6 +197,16 @@
         <beanMapping qname="ns:local" xmlns:ns="city" languageSpecificType="java:com.ebanking.ws.model.address.City"/>
         <beanMapping qname="ns:local" xmlns:ns="country" languageSpecificType="java:com.ebanking.ws.model.address.Country"/>
     </service>
+    <service name="AddCardService" provider="java:RPC" style="document" use="literal">
+        <parameter name="className" value="com.ebanking.ws.service.impl.addCard.AddCardService"/>
+        <parameter name="allowedMethods" value="*"/>
+        <parameter name="scope" value="Application"/>
+        <namespace>http://addCard.impl.service.ws.ebanking.com</namespace>
+
+        <beanMapping qname="ns:local" xmlns:ns="addCardRQ" languageSpecificType="java:com.ebanking.ws.service.request.AddCardRQ"/>
+        <beanMapping qname="ns:local" xmlns:ns="addCardRS" languageSpecificType="java:com.ebanking.ws.service.response.AddCardRS"/>
+
+    </service>
 
 
     <handler name="soapmonitor" type="java:org.apache.axis.handlers.SOAPMonitorHandler">

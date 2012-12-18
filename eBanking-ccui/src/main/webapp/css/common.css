@@ -27,6 +27,11 @@ input[type="submit"].btn { min-width: 100px; }
 .nav-list > li > a, .nav-list .nav-header { text-shadow: none; }
 .editForm h6 {border-bottom: 2px solid #eee;}
 
+.cardAccount {padding: 5px; }
+.cardAccount:hover {background: #222;}
+.cardAccount h6 {margin-top: 0;}
+hr {margin: 0;}
+
 .errorblock {
     color: #ffffff;
     background-color: #ffEEEE;
@@ -58,3 +63,7 @@ input[type="submit"].btn { min-width: 100px; }
 
 #changeLoginSubmit, #changePasswordSubmit {float: right;}
 #contactInfo {float: left}
+
+#cardAccountCards input[type="text"] {margin: 0; width: 100%; }
+#cardAccountCards select {margin: 0; width: 100% !important;}
+.newCardExpDate {width: 80% !important; }

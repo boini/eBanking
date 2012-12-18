@@ -11,149 +11,122 @@
     </div>
 
     <div>
+        <hr/>
         <s:iterator value="#session['cardAccountsForm'].cardAccounts" var="cardAccount" status="index">
-            <h6>Card Account #<s:property value="#index.index + 1"/></h6>
-            <a href="#" class="btn btn-mini btn-danger" style="float: right;"><i class="icon-remove"></i> Remove</a>
-            Currency : <s:property value="#cardAccount.currency.currencyCode"/>
-            <br/>
-            Balance  : <s:property value="#cardAccount.balance"/> (<s:property value="#cardAccount.currency.currencyCode"/>)
-            <table class="table table-condensed table-bordered" id="cards">
-                <caption>Your cards (balance as at
-                    <s:date format="MM/dd/yyyy HH:mm:ss" name="#session['cardAccountsForm'].date"/>
-                    ) </caption>
-                <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Card number</th>
-                    <th>Balance</th>
-                    <th>Credit limit</th>
-                    <th>Currency</th>
-                    <th>Card type</th>
-                    <th width="50"></th>
-                    <th width="70"></th>
-                </tr>
-                </thead>
-                <tbody>
-                <s:iterator value="#cardAccount.cards" var="card" status="cardStatus">
+            <div class="cardAccount">
+                <input type="hidden" class="cardAccountId" value="<s:property value='#cardAccount.cardAccountId'/>"/>
+                <h6>Card Account #<s:property value="#index.index + 1"/></h6>
+                <a href="#" class="btn btn-mini btn-danger" style="float: right;"><i class="icon-remove"></i> Remove</a>
+                Currency : <s:property value="#cardAccount.currency.currencyCode"/>
+                <br/>
+                Balance  : <s:property value="#cardAccount.balance"/> (<s:property value="#cardAccount.currency.currencyCode"/>)
+                <table class="table table-condensed table-bordered" id="cardAccountCards">
+                    <caption>Your cards (balance as at
+                        <s:date format="MM/dd/yyyy HH:mm:ss" name="#session['cardAccountsForm'].date"/>
+                        ) </caption>
+                    <thead>
                     <tr>
+                        <th>#</th>
+                        <th>Card number</th>
+                        <th>CVV</th>
+                        <th>Balance</th>
+                        <th>Credit limit</th>
+                        <th>Currency</th>
+                        <th>Card type</th>
+                        <th>Expiration date</th>
+                        <th width="70"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <s:iterator value="#cardAccount.cards" var="card" status="cardStatus">
+
+                        <tr>
+                            <td>
+                                <s:property value="#cardStatus.index + 1"/>
+                            </td>
+                            <td>
+                                <s:property value="#card.cardNumber"/>
+                            </td>
+                            <td>
+                                <s:property value="#card.cvv"/>
+                            </td>
+                            <td>
+                                <s:property value="#card.cardAccount.balance"/>
+                            </td>
+                            <td>
+                                <s:property value="#card.creditLimit"/>
+                            </td>
+                            <td>
+                                <s:property value="#card.cardAccount.currency.currencyCode"/>
+                            </td>
+                            <td>
+                                <s:property value="%{#card.cardType.cardTypeName}"/>
+                            </td>
+                            <td>
+                                <s:date name="#card.expirationDate" format="MM/dd/yyyy"/>
+                            </td>
+                            <td>
+                                <s:url action="viewAccount" var="viewAccountUrl">
+                                    <s:param name="id">
+                                        <s:property value="#client.clientId"/>
+                                    </s:param>
+                                </s:url>
+                                <s:a cssClass="btn btn-mini btn-danger" href="%{viewAccountUrl}"><i class="icon-remove"></i> Remove</s:a>
+                            </td>
+                        </tr>
+                    </s:iterator>
+
+                    <tr class="newCardRow">
+                        <td></td>
                         <td>
-                            <s:property value="#cardStatus.index + 1"/>
+                            <input type="text" class="newCardNumber" />
                         </td>
                         <td>
-                            <s:property value="#card.cardNumber"/>
+                            <input type="text" class="newCardCVV" />
                         </td>
                         <td>
-                            <s:property value="#card.cardAccount.balance"/>
+                            <input type="text" class="newCardBalance" disabled="disabled" value='<s:property value="#cardAccount.balance"/>' />
                         </td>
                         <td>
-                            <s:property value="#card.creditLimit"/>
+                            <input type="text" class="newCardCredit" />
                         </td>
                         <td>
-                            <s:property value="#card.cardAccount.currency.currencyCode"/>
+                            <input type="text" class="newCardCurrency" disabled="disabled" value='<s:property value="#cardAccount.currency.currencyCode"/>' />
                         </td>
                         <td>
-                            <s:property value="%{#card.cardType.cardTypeName}"/>
+                            <select class="newCardType">
+                                <option value="VISA">VISA</option>
+                                <option value="MC">MASTERCARD</option>
+                            </select>
                         </td>
                         <td>
-                            <s:url action="viewAccount" var="viewAccountUrl">
-                                <s:param name="id">
-                                    <s:property value="#client.clientId"/>
-                                </s:param>
-                            </s:url>
-                            <s:a cssClass="btn btn-mini btn-primary" href="%{viewAccountUrl}"><i class="icon-pencil"></i> Edit</s:a>
+                            <script type="text/javascript">
+                                $(function() {
+                                    $( ".newCardExpDate" ).datepicker({
+                                        showOn: "button",
+                                        buttonImage: "../../img/calendar.gif",
+                                        buttonImageOnly: true,
+                                        changeMonth: true,
+                                        changeYear: true,
+                                        minDate: new Date()
+                                    });
+                                });
+                            </script>
+
+                            <input type="text" class="newCardExpDate" />
                         </td>
                         <td>
-                            <s:url action="viewAccount" var="viewAccountUrl">
-                                <s:param name="id">
-                                    <s:property value="#client.clientId"/>
-                                </s:param>
-                            </s:url>
-                            <s:a cssClass="btn btn-mini btn-danger" href="%{viewAccountUrl}"><i class="icon-remove"></i> Remove</s:a>
+                            <a class="btn btn-mini btn-success add-card-btn-sbmt" href="#"><i class="icon-plus"></i></a>
+                            <a class="btn btn-mini btn-danger cancel-btn" href="#"><i class="icon-remove"></i></a>
                         </td>
                     </tr>
-                </s:iterator>
+
                 </tbody>
-            </table>
-            <s:url action="viewAccount" var="viewAccountUrl">
-                <s:param name="id">
-                    <s:property value="#client.clientId"/>
-                </s:param>
-            </s:url>
-            <s:a cssClass="btn btn-mini btn-success" href="%{viewAccountUrl}"><i class="icon-plus"></i> Add card</s:a>
+                </table>
+
+                <a class="btn btn-mini btn-success add-card-btn" href="#"><i class="icon-plus"></i> Add card</a>
+            </div>
             <hr/>
         </s:iterator>
-
-        <%--<table class="table table-condensed table-bordered" id="clients">
-            <caption>Clients</caption>
-            <thead>
-            <tr>
-                <th>#</th>
-                <th>Firstname</th>
-                <th>Middlename</th>
-                <th>Lastname</th>
-                <th>Date of birth</th>
-                <th>Personal code</th>
-                <th>Secret word</th>
-                <th>Mobile number</th>
-                <th>Phone number</th>
-                <th>Email</th>
-                <th width="73"></th>
-                <th width="50"></th>
-            </tr>
-            </thead>
-            <tbody>
-            <s:iterator value="#session['retrieveClientForm'].clients" var="client" status="index">
-                <tr>
-                    <td>
-                        <s:property value="#index.index + 1"/>
-                    </td>
-                    <td>
-                        <s:property value="#client.firstname"/>
-                    </td>
-                    <td>
-                        <s:property value="#client.middlename"/>
-                    </td>
-                    <td>
-                        <s:property value="#client.lastname"/>
-                    </td>
-                    <td>
-                        <s:date name="#client.dateOfBirth" format="dd-MM-yyyy" />
-                    </td>
-                    <td>
-                        <s:property value="#client.personalCode"/>
-                    </td>
-                    <td>
-                        <s:property value="#client.secretWord"/>
-                    </td>
-
-                    <td>
-                        <s:property value="#client.mobileNumber"/>
-                    </td>
-                    <td>
-                        <s:property value="#client.phoneNumber"/>
-                    </td>
-                    <td>
-                        <s:property value="#client.email"/>
-                    </td>
-                    <td>
-                        <s:url action="viewAccount" var="viewAccountUrl">
-                            <s:param name="id">
-                                <s:property value="#client.clientId"/>
-                            </s:param>
-                        </s:url>
-                        <s:a cssClass="btn btn-mini btn-success" href="%{viewAccount}"><i class="icon-user"></i> Account</s:a>
-                    </td>
-                    <td>
-                        <s:url action="editClient" var="editClientUrl">
-                            <s:param name="id">
-                                <s:property value="#client.clientId"/>
-                            </s:param>
-                        </s:url>
-                        <s:a cssClass="btn btn-mini btn-primary" href="%{editClientUrl}"><i class="icon-pencil"></i> Edit</s:a>
-                    </td>
-                </tr>
-            </s:iterator>
-            </tbody>
-        </table>--%>
     </div>
 </div>

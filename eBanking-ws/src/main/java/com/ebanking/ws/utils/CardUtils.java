@@ -14,10 +14,6 @@ public class CardUtils {
     private static final String CARD_NUMBER_PLACEHOLDER = "XXXXXXXX";
 
     public static void hideCardInfo(Card card) {
-
-        if (card.getCvv() != null) {
-            card.setCvv("");
-        }
         String cardNumber = card.getCardNumber();
         if (cardNumber != null) {
             card.setCardNumber(hiddenCardNumber(cardNumber));

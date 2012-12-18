@@ -53,6 +53,7 @@ public class RetrieveCardAccountsAction extends BaseRQRSAction<ClientCardsRQ, Cl
         Map<CardAccount, List<Card>> cardAccountListMap = new HashMap<CardAccount, List<Card>>();
 
         for (Card card : cardsList) {
+            card.getCardAccount().setCardAccountId(card.getCardAccountID());
             cardAccounts.add(card.getCardAccount());
         }
         for (CardAccount cardAccount : cardAccounts) {

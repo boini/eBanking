@@ -27,4 +27,9 @@ public class CardDAOImpl extends CommonDAOImpl implements CardDAO {
     public Card getById(long cardId) {
         return (Card) currentSession().get(Card.class, cardId);
     }
+
+    @Override
+    public void saveOrUpdate(Card card) {
+        currentSession().saveOrUpdate(card);
+    }
 }

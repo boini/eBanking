@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:complexType name="addCardRQ">
+    <xs:sequence>
+      <xs:element name="cardAccountId" type="xs:long"/>
+      <xs:element name="cardNumber" type="xs:string" minOccurs="0"/>
+      <xs:element name="cardType" type="xs:string" minOccurs="0"/>
+      <xs:element name="creditLimit" type="xs:double"/>
+      <xs:element name="cvv" type="xs:string" minOccurs="0"/>
+      <xs:element name="expirationDate" type="xs:dateTime" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+

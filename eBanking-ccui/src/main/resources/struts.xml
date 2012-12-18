@@ -64,6 +64,12 @@
             </result>
         </action>
 
+        <!-- Card -->
+
+        <action name="addCard" class="AddCardAction">
+            <result name="success" type="json"/>
+        </action>
+
     </package>
 
 </struts>
