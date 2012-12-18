@@ -32,7 +32,7 @@ input[type="submit"].btn { min-width: 100px; }
 hr {margin: 0;}
 
 .errorblock {
-    color: #ffffff;
+    color: #ff0000;
     background-color: #ffEEEE;
     border: 3px solid #ff0000;
     padding: 8px;
