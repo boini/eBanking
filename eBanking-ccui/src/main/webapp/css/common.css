@@ -66,3 +66,9 @@ hr {margin: 0;}
 #cardAccountCards input[type="text"] {margin: 0; width: 100%; }
 #cardAccountCards select {margin: 0; width: 100% !important;}
 .newCardExpDate {width: 80% !important; }
+
+label.error{
+    display: inline !important;
+    color: red !important;
+    margin-left: 10px;
+}

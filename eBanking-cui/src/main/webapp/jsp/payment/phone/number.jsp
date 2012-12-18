@@ -4,12 +4,13 @@
 <script type="text/javascript">
     $(document).ready(function(){
         $("#mobileNumberForm").validate({
+            errorLabelContainer: $("#container"),
             rules: {
                 number: {
                     required: true,
+                    digits: true,
                     minlength: 9,
-                    maxlength: 9,
-                    digits: true
+                    maxlength: 9
                 }
             }
         });
@@ -49,6 +50,10 @@
             <s:textfield key="number"
                          label="Phone number"
                          placeholder="xxххххххх"/>
+            <td colspan="2" height="22px">
+                <div id="container">
+                </div>
+            </td>
             <s:textfield key="credential"
                          label="Full name"
                          placeholder="Ivanov Ivan Ivanovich"/>

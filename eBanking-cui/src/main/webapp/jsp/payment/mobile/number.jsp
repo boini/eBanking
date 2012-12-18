@@ -4,16 +4,17 @@
 <script type="text/javascript">
     $(document).ready(function(){
         jQuery.validator.addMethod("mobileBY", function(value, element){
-            return /(44)|(33)|(29)|(25)\d{3,}/.test(value);
-        },
-        "Wrong phone number, please check")
+                return /^((44)|(33)|(29)|(25))\d{3,}$/.test(value);
+            },
+            "Wrong phone number, please check");
         $("#mobileNumberForm").validate({
+            errorLabelContainer: $("#container"),
             rules: {
                 number: {
                     required: true,
+                    digits: true,
                     minlength: 5,
                     maxlength: 9,
-                    digits: true,
                     mobileBY: true
                 }
             }
@@ -27,7 +28,6 @@
         </h5>
         Welcome to the "eBanking"
     </div>
-
     <div>
         <s:form action="/mobilePaymentAmount" method="POST" id="mobileNumberForm">
             <td colspan="2">
@@ -51,6 +51,10 @@
             <s:textfield key="number"
                          label="Phone number"
                          placeholder="yyххххххх"/>
+            <td colspan="2" height="22px">
+                <div id="container">
+                </div>
+            </td>
             <td>
                 <s:submit value="Continue"/>
             </td>

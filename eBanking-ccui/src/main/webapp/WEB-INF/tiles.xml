@@ -20,6 +20,7 @@
             <add-attribute value="/js/jquery-1.8.2.js"/>
             <add-attribute value="/js/bootstrap.js"/>
             <add-attribute value="/js/jquery.datepicker.js"/>
+            <add-attribute value="/js/jquery.validate.js"/>
         </put-list-attribute>
     </definition>
     
@@ -32,25 +33,25 @@
     <definition name="/corporations.tiles" extends="/baseLayout">
         <put-attribute name="title" value="eBanking Call Center"/>
         <put-attribute name="body" value="/jsp/corporation/corporationList.jsp"/>
-        <put-attribute name="actionName" value="main-action"/>
+        <put-attribute name="actionName" value="corporations-action"/>
     </definition>
 
     <definition name="/appLog.tiles" extends="/baseLayout">
         <put-attribute name="title" value="eBanking Call Center | App Log"/>
         <put-attribute name="body" value="/jsp/log/appLog.jsp"/>
-        <put-attribute name="actionName" value="main-action"/>
+        <put-attribute name="actionName" value="appLog-action"/>
     </definition>
 
     <definition name="/clients.tiles" extends="/baseLayout">
         <put-attribute name="title" value="eBanking Call Center | Clients"/>
         <put-attribute name="body" value="/jsp/client/clients.jsp"/>
-        <put-attribute name="actionName" value="main-action"/>
+        <put-attribute name="actionName" value="clients-action"/>
     </definition>
 
     <definition name="/viewAccount.tiles" extends="/baseLayout">
         <put-attribute name="title" value="eBanking Call Center | Account"/>
         <put-attribute name="body" value="/jsp/account/account.jsp"/>
-        <put-attribute name="actionName" value="main-action"/>
+        <put-attribute name="actionName" value="clients-action"/>
         <put-list-attribute name="styles">
             <add-attribute value="/css/normalize.css"/>
             <add-attribute value="/css/bootstrap.css"/>
@@ -64,13 +65,14 @@
             <add-attribute value="/js/datepicker.js"/>
             <add-attribute value="/js/jquery-ui-1.9.2.custom.js"/>
             <add-attribute value="/js/account.js"/>
+            <add-attribute value="/js/jquery.validate.js"/>
         </put-list-attribute>
     </definition>
 
     <definition name="/editClient.tiles" extends="/baseLayout">
         <put-attribute name="title" value="eBanking Call Center | Clients"/>
         <put-attribute name="body" value="/jsp/client/editClient.jsp"/>
-        <put-attribute name="actionName" value="main-action"/>
+        <put-attribute name="actionName" value="clients-action"/>
         <put-list-attribute name="styles">
             <add-attribute value="/css/normalize.css"/>
             <add-attribute value="/css/bootstrap.css"/>
@@ -83,6 +85,7 @@
             <add-attribute value="/js/bootstrap.js"/>
             <add-attribute value="/js/datepicker.js"/>
             <add-attribute value="/js/jquery-ui-1.9.2.custom.js"/>
+            <add-attribute value="/js/jquery.validate.js"/>
         </put-list-attribute>
     </definition>
 

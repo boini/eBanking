@@ -52,3 +52,9 @@ select {width: 300px;}
 #onlineInfoTable h6, #cardAccountInfoTable h6 { padding-top: 14px;}
 
 #changeLoginSubmit, #changePasswordSubmit {float: right;}
+
+label.error{
+    display: inline !important;
+    color: red !important;
+    margin-left: 10px;
+}

@@ -3,12 +3,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <script type="text/javascript">
     $(document).ready(function(){
+        errorLabelContainer: $("#container"),
         $("#mobileNumberForm").validate({
             rules: {
                 amount: {
                     required: true,
-                    maxlength: 10,
-                    digits: true
+                    number: true
                 }
             }
         });
@@ -34,6 +34,12 @@
                      disabled="true"/>
         <s:textfield label="Sum (%{#session.phonePaymentForm.activeCard.cardAccount.currency.currencyCode}):"
                      key="amount"/>
+        <tr>
+            <td colspan="2" height="22px">
+                <div id="container">
+                </div>
+            </td>
+        </tr>
         <td colspan="2">
             <h5>Additional details</h5>
         </td>

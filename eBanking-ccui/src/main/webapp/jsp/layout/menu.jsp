@@ -11,15 +11,15 @@
     <li id="main-action"><a href="/main.action">Main page</a></li>
 
     <li class="nav-header">Clients</li>
-    <li><a href="/clients.action">View clients</a></li>
+    <li id="clients-action"><a href="/clients.action">View clients</a></li>
 
     <li class="nav-header">Corporations</li>
-    <li><a href="/corporations.action">View corporations</a></li>
+    <li id="corporations-action"><a href="/corporations.action">View corporations</a></li>
 
     <li class="nav-header">Rates</li>
     <li><a href="#">Change rates</a></li>
 
     <li class="nav-header">Logs</li>
-    <li><a href="/appLog.action">App logs</a></li>
+    <li id="appLog-action"><a href="/appLog.action">App logs</a></li>
 
 </ul>

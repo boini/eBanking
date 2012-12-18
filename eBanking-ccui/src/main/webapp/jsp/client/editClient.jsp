@@ -23,9 +23,32 @@
                     maxDate: new Date()
                 });
             });
+            $(document).ready(function(){
+                jQuery.validator.addMethod("mobileBYIso", function(value, element){
+                            return /^\+375((44)|(33)|(29)|(25))\d{3,}$/.test(value);
+                        },
+                        "Wrong phone number, please check");
+                $("#editForm").validate({
+                    rules: {
+                        personalCode: {
+                            required: true,
+                            rangelength: [13, 13]
+                        },
+                        mobile: {
+                            mobileBYIso: true
+                        },
+                        phone: {
+                            mobileBYIso: true
+                        },
+                        email: {
+                            email: true
+                        }
+                    }
+                });
+            });
         </script>
 
-        <s:form action="/saveClient" method="post" cssClass="editForm">
+        <s:form action="/saveClient" method="post" cssClass="editForm" id="editForm">
 
             <td colspan="2"><h6>Personal info</h6></td>
             <s:textfield value="%{#session.editClientForm.client.firstname}" label="Firstname" name="firstname"/>
