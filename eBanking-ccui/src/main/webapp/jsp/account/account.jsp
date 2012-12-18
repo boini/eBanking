@@ -11,6 +11,64 @@
     </div>
 
     <div>
+
+        <table class="table table-condensed table-bordered info">
+            <caption>Client</caption>
+            <thead>
+            <tr>
+                <th>Firstname</th>
+                <th>Middlename</th>
+                <th>Lastname</th>
+                <th>Date of birth</th>
+                <th>Personal code</th>
+                <th>Secret word</th>
+                <th>Mobile number</th>
+                <th>Phone number</th>
+                <th>Email</th>
+                <th>Login</th>
+                <th>Role</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <s:property value="#session.accountForm.account.client.firstname"/>
+                    </td>
+                    <td>
+                        <s:property value="#session.accountForm.account.client.middlename"/>
+                    </td>
+                    <td>
+                        <s:property value="#session.accountForm.account.client.lastname"/>
+                    </td>
+                    <td>
+                        <s:date name="#session.accountForm.account.client.dateOfBirth" format="dd-MM-yyyy" />
+                    </td>
+                    <td>
+                        <s:property value="#session.accountForm.account.client.personalCode"/>
+                    </td>
+                    <td>
+                        <s:property value="#session.accountForm.account.client.secretWord"/>
+                    </td>
+
+                    <td>
+                        <s:property value="#session.accountForm.account.client.mobileNumber"/>
+                    </td>
+                    <td>
+                        <s:property value="#session.accountForm.account.client.phoneNumber"/>
+                    </td>
+                    <td>
+                        <s:property value="#session.accountForm.account.client.email"/>
+                    </td>
+                    <td>
+                        <s:property value="#session.accountForm.account.login"/>
+                    </td>
+                    <td>
+                        <s:property value="#session.accountForm.account.role.roleName"/>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
         <hr/>
         <s:iterator value="#session['cardAccountsForm'].cardAccounts" var="cardAccount" status="index">
             <div class="cardAccount">
@@ -21,7 +79,7 @@
                 <br/>
                 Balance  : <s:property value="#cardAccount.balance"/> (<s:property value="#cardAccount.currency.currencyCode"/>)
                 <table class="table table-condensed table-bordered" id="cardAccountCards">
-                    <caption>Your cards (balance as at
+                    <caption>Card account cards (balance as at
                         <s:date format="MM/dd/yyyy HH:mm:ss" name="#session['cardAccountsForm'].date"/>
                         ) </caption>
                     <thead>

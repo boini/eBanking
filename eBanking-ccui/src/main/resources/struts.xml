@@ -66,6 +66,12 @@
 
         <action name="account" class="RetrieveCardsAction">
             <result name="success" type="redirectAction">
+                <param name="actionName">retrieveAccount</param>
+            </result>
+        </action>
+
+        <action name="retrieveAccount" class="RetrieveAccountAction">
+            <result name="success" type="redirectAction">
                 <param name="actionName">accountForward</param>
             </result>
         </action>
@@ -84,6 +90,18 @@
 
         <action name="removeCard" class="RemoveCardAction">
             <result name="success" type="json"/>
+        </action>
+
+        <!-- App log -->
+
+        <action name="appLog" class="AppLogAction">
+            <result name="success" type="tiles">/appLog.tiles</result>
+        </action>
+
+        <!-- Corporation -->
+
+        <action name="corporations" class="CorporationListAction">
+            <result name="success" type="tiles">/corporations.tiles</result>
         </action>
 
     </package>

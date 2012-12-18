@@ -2,13 +2,6 @@ package com.ebanking.ccui.session;
 
 import java.util.Map;
 
-/**
- * Created with IntelliJ IDEA.
- * User: antonkholodok
- * Date: 11/29/12
- * Time: 8:03 AM
- * To change this template use File | Settings | File Templates.
- */
 public class UserHttpSession {
     private Map session;
 

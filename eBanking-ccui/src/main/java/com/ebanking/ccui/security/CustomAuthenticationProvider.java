@@ -56,6 +56,10 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
 
+        if (loginClientRS == null) {
+            throw new BadCredentialsException("Access denied or connection problem");
+        }
+
         Account account = loginClientRS.getAccount();
 
         if (account == null) {

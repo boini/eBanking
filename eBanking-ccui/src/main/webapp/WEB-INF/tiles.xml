@@ -29,6 +29,18 @@
         <put-attribute name="actionName" value="main-action"/>
     </definition>
 
+    <definition name="/corporations.tiles" extends="/baseLayout">
+        <put-attribute name="title" value="eBanking Call Center"/>
+        <put-attribute name="body" value="/jsp/corporation/corporationList.jsp"/>
+        <put-attribute name="actionName" value="main-action"/>
+    </definition>
+
+    <definition name="/appLog.tiles" extends="/baseLayout">
+        <put-attribute name="title" value="eBanking Call Center | App Log"/>
+        <put-attribute name="body" value="/jsp/log/appLog.jsp"/>
+        <put-attribute name="actionName" value="main-action"/>
+    </definition>
+
     <definition name="/clients.tiles" extends="/baseLayout">
         <put-attribute name="title" value="eBanking Call Center | Clients"/>
         <put-attribute name="body" value="/jsp/client/clients.jsp"/>

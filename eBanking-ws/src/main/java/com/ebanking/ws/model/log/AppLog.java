@@ -1,4 +1,4 @@
-package com.ebanking.ws.model;
+package com.ebanking.ws.model.log;
 
 import javax.persistence.*;
 import java.util.Date;

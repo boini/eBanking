@@ -50,4 +50,5 @@ public interface AccountDAO {
     Role getRoleById(Long id);
 
     Account getByLogin(String login);
+    Account getByClientId(long id);
 }

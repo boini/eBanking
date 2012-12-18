@@ -13,11 +13,13 @@
     <li class="nav-header">Clients</li>
     <li><a href="/clients.action">View clients</a></li>
 
+    <li class="nav-header">Corporations</li>
+    <li><a href="/corporations.action">View corporations</a></li>
+
     <li class="nav-header">Rates</li>
     <li><a href="#">Change rates</a></li>
 
     <li class="nav-header">Logs</li>
-    <li><a href="#">App logs</a></li>
-    <li><a href="#">Account logs</a></li>
+    <li><a href="/appLog.action">App logs</a></li>
 
 </ul>

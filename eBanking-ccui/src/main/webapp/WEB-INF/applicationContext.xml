@@ -21,6 +21,9 @@ http://www.springframework.org/schema/context/spring-context-3.1.xsd">
     <bean id="retrieveClientForm" class="com.ebanking.ccui.presentation.form.RetrieveClientForm"/>
     <bean id="editClientForm" class="com.ebanking.ccui.presentation.form.EditClientForm"/>
     <bean id="cardAccountsForm" class="com.ebanking.ccui.presentation.form.CardAccountsForm"/>
+    <bean id="accountForm" class="com.ebanking.ccui.presentation.form.AccountForm"/>
+    <bean id="logForm" class="com.ebanking.ccui.presentation.form.LogForm"/>
+    <bean id="corporationForm" class="com.ebanking.ccui.presentation.form.CorporationForm"/>
 
     <bean id="loginClientService" class="com.ebanking.ccui.service.client.impl.security.login.ClientLoginService"/>
     <bean id="nbrbCurrencyService" class="com.ebanking.ccui.service.client.impl.currency.nbrb.NBRBCurrencyService"/>
@@ -32,6 +35,9 @@ http://www.springframework.org/schema/context/spring-context-3.1.xsd">
     <bean id="addCardService" class="com.ebanking.ccui.service.client.impl.card.add.AddCardService"/>
     <bean id="removeCardService" class="com.ebanking.ccui.service.client.impl.card.remove.RemoveCardService"/>
     <bean id="retrieveCardAccountService" class="com.ebanking.ccui.service.client.impl.card.get.RetrieveCardAccountService"/>
+    <bean id="retrieveAccountService" class="com.ebanking.ccui.service.client.impl.account.RetrieveAccountService"/>
+    <bean id="appLogService" class="com.ebanking.ccui.service.client.impl.log.AppLogService"/>
+    <bean id="corporationService" class="com.ebanking.ccui.service.client.impl.corporation.CorporationService"/>
 
     <bean name="LoginForwardAction" class="com.ebanking.ccui.presentation.action.LoginForward"/>
     <bean name="LogoutForwardAction" class="com.ebanking.ccui.presentation.action.LogoutForward"/>
@@ -51,4 +57,10 @@ http://www.springframework.org/schema/context/spring-context-3.1.xsd">
     <bean name="RemoveCardAction" class="com.ebanking.ccui.presentation.action.card.RemoveCardAction"/>
     <bean name="RetrieveCardAccountAction" class="com.ebanking.ccui.presentation.action.card.RetrieveCardAccountAction"/>
     <bean name="ViewAccountForwardAction" class="com.ebanking.ccui.presentation.action.client.account.ViewAccountForwardAction"/>
+
+    <bean name="RetrieveAccountAction" class="com.ebanking.ccui.presentation.action.client.account.RetrieveAccountAction"/>
+
+    <bean name="AppLogAction" class="com.ebanking.ccui.presentation.action.log.AppLogAction"/>
+
+    <bean name="CorporationListAction" class="com.ebanking.ccui.presentation.action.corporation.CorporationListAction"/>
 </beans>

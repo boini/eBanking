@@ -7,13 +7,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-/**
- * Created with IntelliJ IDEA.
- * User: Anton
- * Date: 12/5/12
- * Time: 10:08 PM
- * To change this template use File | Settings | File Templates.
- */
 @Entity
 @Table(name = "CORPORATION")
 public class Corporation {

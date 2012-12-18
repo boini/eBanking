@@ -3,10 +3,12 @@ $(function() {
 
     var tables = $('.table');
     $.each(tables, function(table, index) {
-        var rows = $(this).find('tr');
-        if (rows.length == 2) {
-            $(this).hide();
-            $(this).parents('.cardAccount').append('<h6>No cards</h6>');
+        if ($(this).hasClass('info') == false) {
+            var rows = $(this).find('tr');
+            if (rows.length == 2) {
+                $(this).hide();
+                $(this).parents('.cardAccount').append('<h6>No cards</h6>');
+            }
         }
     })
 

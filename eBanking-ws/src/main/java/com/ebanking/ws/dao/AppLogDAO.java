@@ -1,6 +1,8 @@
 package com.ebanking.ws.dao;
 
-import com.ebanking.ws.model.AppLog;
+import com.ebanking.ws.model.log.AppLog;
+
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -11,4 +13,5 @@ import com.ebanking.ws.model.AppLog;
  */
 public interface AppLogDAO {
     void saveOrUpdate(AppLog appLog);
+    List<AppLog> list();
 }

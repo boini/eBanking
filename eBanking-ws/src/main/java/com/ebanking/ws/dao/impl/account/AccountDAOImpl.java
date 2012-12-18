@@ -87,4 +87,15 @@ public class AccountDAOImpl extends CommonDAOImpl implements AccountDAO {
         }
         return null;
     }
+
+    @Override
+    public Account getByClientId(long id) {
+        List accounts = currentSession().createQuery("from Account as account where account.client.clientId = ?")
+                .setLong(0, id)
+                .list();
+        if (accounts != null && accounts.size() > 0) {
+            return (Account) accounts.get(0);
+        }
+        return null;
+    }
 }

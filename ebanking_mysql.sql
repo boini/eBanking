@@ -130,7 +130,7 @@ CREATE TABLE `app_log` (
   `log_id` int(11) NOT NULL AUTO_INCREMENT,
   `log_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `log_action` varchar(500) NOT NULL,
-  `log_message` varchar(2000) NOT NULL,
+  `log_message` varchar(5000) NOT NULL,
   PRIMARY KEY (`log_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -324,7 +324,7 @@ CREATE TABLE `account` (
   `account_id` int(11) NOT NULL AUTO_INCREMENT,
   `login` varchar(30) NOT NULL,
   `password` varchar(50) NOT NULL,
-  `client_id` int(11) NOT NULL,
+  `client_id` int(11),
   `role_id` int(11) NOT NULL,
   PRIMARY KEY (`account_id`),
   UNIQUE KEY `login_UNIQUE` (`login`),

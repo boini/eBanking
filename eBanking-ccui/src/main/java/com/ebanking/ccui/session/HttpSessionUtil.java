@@ -14,6 +14,9 @@ public class HttpSessionUtil {
     private static final String RETRIEVE_CLIENT_FORM = "retrieveClientForm";
     private static final String EDIT_CLIENT_FORM = "editClientForm";
     private static final String CARD_ACCOUNTS_FORM = "cardAccountsForm";
+    private static final String ACCOUNT_FORM = "accountForm";
+    private static final String LOG_FORM = "logForm";
+    private static final String CORPORATION_FORM = "corporationForm";
 
     private static UserHttpSession userHttpSession;
 
@@ -98,6 +101,30 @@ public class HttpSessionUtil {
         addAttribute(CARD_ACCOUNTS_FORM, cardAccountsForm);
     }
 
+    public static void setClientForm(AccountForm clientForm) {
+        addAttribute(ACCOUNT_FORM, clientForm);
+    }
+
+    public static AccountForm getClientForm() {
+        return (AccountForm) getAttribute(ACCOUNT_FORM);
+    }
+
+    public static void setLogForm(LogForm logForm) {
+        addAttribute(LOG_FORM, logForm);
+    }
+
+    public static LogForm getLogForm() {
+        return (LogForm) getAttribute(LOG_FORM);
+    }
+
+    public static void setCorporationForm(CorporationForm corporationForm) {
+        addAttribute(CORPORATION_FORM, corporationForm);
+    }
+
+    public static CorporationForm getCorporationForm() {
+        return (CorporationForm) getAttribute(CORPORATION_FORM);
+    }
+
     public static void invalidate() {
         userHttpSession.remove(RATES_FORM);
         userHttpSession.remove(CLIENT_ACCOUNT);
@@ -107,5 +134,8 @@ public class HttpSessionUtil {
         userHttpSession.remove(RETRIEVE_CLIENT_FORM);
         userHttpSession.remove(EDIT_CLIENT_FORM);
         userHttpSession.remove(CARD_ACCOUNTS_FORM);
+        userHttpSession.remove(ACCOUNT_FORM);
+        userHttpSession.remove(LOG_FORM);
+        userHttpSession.remove(CORPORATION_FORM);
     }
 }

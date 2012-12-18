@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://corporation.impl.service.ws.ebanking.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://corporation.impl.service.ws.ebanking.com" xmlns:intf="http://corporation.impl.service.ws.ebanking.com" xmlns:tns1="http://request.service.ws.ebanking.com" xmlns:tns2="http://response.service.ws.ebanking.com" xmlns:tns3="http://account.model.ws.ebanking.com" xmlns:tns4="http://address.model.ws.ebanking.com" xmlns:tns5="http://finance.model.ws.ebanking.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://request.service.ws.ebanking.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://corporation.impl.service.ws.ebanking.com"/>
+   <import namespace="http://response.service.ws.ebanking.com"/>
+   <import namespace="http://account.model.ws.ebanking.com"/>
+   <import namespace="http://address.model.ws.ebanking.com"/>
+   <import namespace="http://finance.model.ws.ebanking.com"/>
+   <complexType name="CorporationRQ">
+    <sequence>
+     <element name="corporationId" type="xsd:long"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://corporation.impl.service.ws.ebanking.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://response.service.ws.ebanking.com"/>
+   <import namespace="http://request.service.ws.ebanking.com"/>
+   <import namespace="http://account.model.ws.ebanking.com"/>
+   <import namespace="http://address.model.ws.ebanking.com"/>
+   <import namespace="http://finance.model.ws.ebanking.com"/>
+   <element name="request" type="tns1:CorporationRQ"/>
+   <complexType name="ArrayOf_xsd_anyType">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:anyType"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOf_tns3_BankAccount">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="tns3:BankAccount"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOf_tns3_Corporation">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="tns3:Corporation"/>
+    </sequence>
+   </complexType>
+   <element name="executeReturn" type="tns2:CorporationRS"/>
+   <element name="x0" type="xsd:anyType"/>
+   <element name="executeReturn1" type="xsd:anyType"/>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://address.model.ws.ebanking.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://corporation.impl.service.ws.ebanking.com"/>
+   <import namespace="http://response.service.ws.ebanking.com"/>
+   <import namespace="http://request.service.ws.ebanking.com"/>
+   <import namespace="http://account.model.ws.ebanking.com"/>
+   <import namespace="http://finance.model.ws.ebanking.com"/>
+   <complexType name="Country">
+    <sequence>
+     <element name="countryId" type="xsd:long"/>
+     <element name="countryName" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="City">
+    <sequence>
+     <element name="cityId" type="xsd:long"/>
+     <element name="cityName" nillable="true" type="xsd:string"/>
+     <element name="country" nillable="true" type="tns4:Country"/>
+    </sequence>
+   </complexType>
+   <complexType name="Address">
+    <sequence>
+     <element name="addressId" type="xsd:long"/>
+     <element name="city" nillable="true" type="tns4:City"/>
+     <element name="flatNumber" nillable="true" type="xsd:string"/>
+     <element name="houseNumber" nillable="true" type="xsd:string"/>
+     <element name="region" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://account.model.ws.ebanking.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://corporation.impl.service.ws.ebanking.com"/>
+   <import namespace="http://response.service.ws.ebanking.com"/>
+   <import namespace="http://request.service.ws.ebanking.com"/>
+   <import namespace="http://address.model.ws.ebanking.com"/>
+   <import namespace="http://finance.model.ws.ebanking.com"/>
+   <complexType name="Client">
+    <sequence>
+     <element name="address" nillable="true" type="tns4:Address"/>
+     <element name="clientId" type="xsd:long"/>
+     <element name="dateOfBirth" nillable="true" type="xsd:dateTime"/>
+     <element name="email" nillable="true" type="xsd:string"/>
+     <element name="firstname" nillable="true" type="xsd:string"/>
+     <element name="lastname" nillable="true" type="xsd:string"/>
+     <element name="middlename" nillable="true" type="xsd:string"/>
+     <element name="mobileNumber" nillable="true" type="xsd:string"/>
+     <element name="personalCode" nillable="true" type="xsd:string"/>
+     <element name="phoneNumber" nillable="true" type="xsd:string"/>
+     <element name="secretWord" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="Corporation">
+    <sequence>
+     <element name="bankAccountList" nillable="true" type="impl:ArrayOf_xsd_anyType"/>
+     <element name="corporationId" type="xsd:long"/>
+     <element name="corporationName" nillable="true" type="xsd:string"/>
+     <element name="description" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="BankAccount">
+    <sequence>
+     <element name="amount" type="xsd:double"/>
+     <element name="bankAccountId" type="xsd:long"/>
+     <element name="client" nillable="true" type="tns3:Client"/>
+     <element name="corporation" nillable="true" type="tns3:Corporation"/>
+     <element name="currency" nillable="true" type="tns5:Currency"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://finance.model.ws.ebanking.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://corporation.impl.service.ws.ebanking.com"/>
+   <import namespace="http://response.service.ws.ebanking.com"/>
+   <import namespace="http://request.service.ws.ebanking.com"/>
+   <import namespace="http://account.model.ws.ebanking.com"/>
+   <import namespace="http://address.model.ws.ebanking.com"/>
+   <complexType name="Currency">
+    <sequence>
+     <element name="currencyCode" nillable="true" type="xsd:string"/>
+     <element name="currencyDescription" nillable="true" type="xsd:string"/>
+     <element name="currencyId" type="xsd:long"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://response.service.ws.ebanking.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://corporation.impl.service.ws.ebanking.com"/>
+   <import namespace="http://request.service.ws.ebanking.com"/>
+   <import namespace="http://account.model.ws.ebanking.com"/>
+   <import namespace="http://address.model.ws.ebanking.com"/>
+   <import namespace="http://finance.model.ws.ebanking.com"/>
+   <complexType name="CorporationRS">
+    <sequence>
+     <element name="bankAccounts" nillable="true" type="impl:ArrayOf_tns3_BankAccount"/>
+     <element name="corporations" nillable="true" type="impl:ArrayOf_tns3_Corporation"/>
+     <element name="exception" nillable="true" type="xsd:string"/>
+     <element name="success" type="xsd:boolean"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="executeResponse1">
+
+      <wsdl:part element="impl:executeReturn1" name="executeReturn">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="executeResponse">
+
+      <wsdl:part element="impl:executeReturn" name="executeReturn">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="executeRequest1">
+
+      <wsdl:part element="impl:x0" name="x0">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="executeRequest">
+
+      <wsdl:part element="impl:request" name="request">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="CorporationService">
+
+      <wsdl:operation name="execute" parameterOrder="request">
+
+         <wsdl:input message="impl:executeRequest" name="executeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:executeResponse" name="executeResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="execute" parameterOrder="x0">
+
+         <wsdl:input message="impl:executeRequest1" name="executeRequest1">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:executeResponse1" name="executeResponse1">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="CorporationServiceSoapBinding" type="impl:CorporationService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="execute">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="executeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="executeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="execute">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="executeRequest1">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="executeResponse1">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="CorporationServiceService">
+
+      <wsdl:port binding="impl:CorporationServiceSoapBinding" name="CorporationService">
+
+         <wsdlsoap:address location="http://localhost:8082/services/com/ebanking/ws/service/impl/corporation/CorporationService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

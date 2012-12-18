@@ -27,4 +27,16 @@ public class CorporationDAOImpl extends CommonDAOImpl implements CorporationDAO 
         }
         return null;
     }
+
+    @Override
+    public List<Corporation> list() {
+        return currentSession().createCriteria(Corporation.class).list();
+    }
+
+    @Override
+    public Corporation getById(long id) {
+        return (Corporation) currentSession().get(Corporation.class, id);
+    }
+
+
 }
