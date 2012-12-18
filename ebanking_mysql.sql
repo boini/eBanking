@@ -545,7 +545,13 @@ INSERT INTO `ebanking`.`bank_account` (`corporation_id`, `currency_id`, `amount`
 INSERT INTO `ebanking`.`bank_account` (`corporation_id`, `currency_id`, `amount`) VALUES ('10', '2', '100000');
 INSERT INTO `ebanking`.`bank_account` (`corporation_id`, `currency_id`, `amount`) VALUES ('10', '1', '100000');
 
-
+ALTER TABLE `ebanking`.`operation` DROP FOREIGN KEY `fk_operation_card` ;
+ALTER TABLE `ebanking`.`operation` 
+  ADD CONSTRAINT `fk_operation_card`
+  FOREIGN KEY (`card_id` )
+  REFERENCES `ebanking`.`card` (`card_id` )
+  ON DELETE CASCADE
+  ON UPDATE NO ACTION;
 
 /*!40101 SET character_set_client = @saved_cs_client */;
 
