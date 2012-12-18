@@ -121,9 +121,14 @@ $('document').ready(function() {
                     $.each(operations, function(index, operation) {
                         cardAccountInfoTable += '<tr>';
                         cardAccountInfoTable += '<td>' + operation.processingDate + '</td>';
-                        cardAccountInfoTable += '<td>' + operation.transactionDate + '</td>';
+                        cardAccountInfoTable += '<td>';
+                        if (operation.transactionDate) {
+                            cardAccountInfoTable += operation.transactionDate + '</td>';
+                        } else {
+                            cardAccountInfoTable += '-' + '</td>';
+                        }
                         cardAccountInfoTable += '<td>' + operation.card.cardNumber + '</td>';
-                        cardAccountInfoTable += '<td>' + operation.operationType.operationType + '</td>';
+                        cardAccountInfoTable += '<td>' + operation.operationType.description + '</td>';
                         cardAccountInfoTable += '<td>' + operation.card.cardAccount.currency.currencyCode + '</td>';
                         cardAccountInfoTable += '<td>' + operation.transactionAmount + '</td>';
                         cardAccountInfoTable += '<td>' + operation.cardAccountAmount + '</td>';

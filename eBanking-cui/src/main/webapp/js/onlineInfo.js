@@ -120,11 +120,16 @@ $('document').ready(function() {
                         '<tbody>';
                     $.each(operations, function(index, operation) {
                         onlineInfoTable += '<tr>';
-                        onlineInfoTable += '<td>' + operation.operationStatus.operationStatus + '</td>';
+                        onlineInfoTable += '<td>' + operation.operationStatus.description + '</td>';
                         onlineInfoTable += '<td>' + operation.processingDate + '</td>';
-                        onlineInfoTable += '<td>' + operation.transactionDate + '</td>';
+                        onlineInfoTable += '<td>';
+                        if (operation.transactionDate) {
+                            onlineInfoTable += operation.transactionDate + '</td>';
+                        } else {
+                            onlineInfoTable += '-' + '</td>';
+                        }
                         onlineInfoTable += '<td>' + operation.card.cardNumber + '</td>';
-                        onlineInfoTable += '<td>' + operation.operationType.operationType + '</td>';
+                        onlineInfoTable += '<td>' + operation.operationType.description + '</td>';
                         onlineInfoTable += '<td>' + operation.card.cardAccount.currency.currencyCode + '</td>';
                         onlineInfoTable += '<td>' + operation.transactionAmount + '</td>';
                     })
