@@ -12,6 +12,14 @@
             <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult"/>
         </result-types>
 
+        <global-results>
+            <result name="Exception">/jsp/login.jsp</result>
+        </global-results>
+        
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.Throwable" result="Exception"></exception-mapping>
+        </global-exception-mappings>
+
         <action name="login" class="LoginForwardAction">
             <result name="success">/jsp/login.jsp</result>
         </action>
