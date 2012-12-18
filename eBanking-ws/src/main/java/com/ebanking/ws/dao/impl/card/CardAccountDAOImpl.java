@@ -32,4 +32,9 @@ public class CardAccountDAOImpl extends CommonDAOImpl implements CardAccountDAO 
     public void saveOrUpdate(CardAccount cardAccount) {
         currentSession().saveOrUpdate(cardAccount);
     }
+
+    @Override
+    public void delete(CardAccount cardAccount) {
+        currentSession().delete(cardAccount);
+    }
 }

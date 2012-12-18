@@ -30,6 +30,8 @@ http://www.springframework.org/schema/context/spring-context-3.1.xsd">
     <bean id="retrieveClientService" class="com.ebanking.ccui.service.client.impl.client.retrieve.RetrieveClientService"/>
     <bean id="saveClientService" class="com.ebanking.ccui.service.client.impl.client.save.SaveClientService"/>
     <bean id="addCardService" class="com.ebanking.ccui.service.client.impl.card.add.AddCardService"/>
+    <bean id="removeCardService" class="com.ebanking.ccui.service.client.impl.card.remove.RemoveCardService"/>
+    <bean id="retrieveCardAccountService" class="com.ebanking.ccui.service.client.impl.card.get.RetrieveCardAccountService"/>
 
     <bean name="LoginForwardAction" class="com.ebanking.ccui.presentation.action.LoginForward"/>
     <bean name="LogoutForwardAction" class="com.ebanking.ccui.presentation.action.LogoutForward"/>
@@ -44,6 +46,9 @@ http://www.springframework.org/schema/context/spring-context-3.1.xsd">
     <bean name="EditClientAction" class="com.ebanking.ccui.presentation.action.client.edit.EditClientAction"/>
     <bean name="SaveClientAction" class="com.ebanking.ccui.presentation.action.client.edit.SaveClientAction"/>
 
-    <bean name="RetrieveCardAccountsAction" class="com.ebanking.ccui.presentation.action.client.account.RetrieveCardAccountsAction"/>
+    <bean name="RetrieveCardsAction" class="com.ebanking.ccui.presentation.action.client.account.RetrieveCardsAction"/>
     <bean name="AddCardAction" class="com.ebanking.ccui.presentation.action.card.AddCardAction"/>
+    <bean name="RemoveCardAction" class="com.ebanking.ccui.presentation.action.card.RemoveCardAction"/>
+    <bean name="RetrieveCardAccountAction" class="com.ebanking.ccui.presentation.action.card.RetrieveCardAccountAction"/>
+    <bean name="ViewAccountForwardAction" class="com.ebanking.ccui.presentation.action.client.account.ViewAccountForwardAction"/>
 </beans>

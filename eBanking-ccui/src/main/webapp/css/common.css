@@ -28,7 +28,6 @@ input[type="submit"].btn { min-width: 100px; }
 .editForm h6 {border-bottom: 2px solid #eee;}
 
 .cardAccount {padding: 5px; }
-.cardAccount:hover {background: #222;}
 .cardAccount h6 {margin-top: 0;}
 hr {margin: 0;}
 

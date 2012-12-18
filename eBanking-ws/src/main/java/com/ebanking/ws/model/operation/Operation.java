@@ -42,7 +42,7 @@ public class Operation {
     @Column(name = "TRANSACTION_AMOUNT")
     private double transactionAmount;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "CARD_ID")
     private Card card;
 

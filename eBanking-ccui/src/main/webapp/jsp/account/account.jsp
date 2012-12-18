@@ -16,7 +16,7 @@
             <div class="cardAccount">
                 <input type="hidden" class="cardAccountId" value="<s:property value='#cardAccount.cardAccountId'/>"/>
                 <h6>Card Account #<s:property value="#index.index + 1"/></h6>
-                <a href="#" class="btn btn-mini btn-danger" style="float: right;"><i class="icon-remove"></i> Remove</a>
+                <a href="#" class="btn btn-mini btn-danger rm-card-account-btn" style="float: right;"><i class="icon-remove"></i> Remove</a>
                 Currency : <s:property value="#cardAccount.currency.currencyCode"/>
                 <br/>
                 Balance  : <s:property value="#cardAccount.balance"/> (<s:property value="#cardAccount.currency.currencyCode"/>)
@@ -39,8 +39,8 @@
                     </thead>
                     <tbody>
                     <s:iterator value="#cardAccount.cards" var="card" status="cardStatus">
-
                         <tr>
+                            <input type="hidden" class="cardId" value="<s:property value='#card.cardId'/>"/>
                             <td>
                                 <s:property value="#cardStatus.index + 1"/>
                             </td>
@@ -66,12 +66,7 @@
                                 <s:date name="#card.expirationDate" format="MM/dd/yyyy"/>
                             </td>
                             <td>
-                                <s:url action="viewAccount" var="viewAccountUrl">
-                                    <s:param name="id">
-                                        <s:property value="#client.clientId"/>
-                                    </s:param>
-                                </s:url>
-                                <s:a cssClass="btn btn-mini btn-danger" href="%{viewAccountUrl}"><i class="icon-remove"></i> Remove</s:a>
+                                <a class="btn btn-mini btn-danger rm-btn-card" href="#"><i class="icon-remove"></i> Remove</a>
                             </td>
                         </tr>
                     </s:iterator>
@@ -123,7 +118,7 @@
 
                 </tbody>
                 </table>
-
+                <br/>
                 <a class="btn btn-mini btn-success add-card-btn" href="#"><i class="icon-plus"></i> Add card</a>
             </div>
             <hr/>

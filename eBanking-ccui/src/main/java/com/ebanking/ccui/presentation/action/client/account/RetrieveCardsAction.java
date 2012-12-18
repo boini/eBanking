@@ -17,13 +17,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 
 import java.util.*;
 
-public class RetrieveCardAccountsAction extends BaseRQRSAction<ClientCardsRQ, ClientCardsRS> {
-    private long id;
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
+public class RetrieveCardsAction extends BaseRQRSAction<ClientCardsRQ, ClientCardsRS> {
     @Autowired
     private CardAccountsForm cardAccountsForm;
 
@@ -37,7 +31,7 @@ public class RetrieveCardAccountsAction extends BaseRQRSAction<ClientCardsRQ, Cl
     @Override
     protected ClientCardsRQ prepareRequest() {
         ClientCardsRQ clientCardsRQ = new ClientCardsRQ();
-        clientCardsRQ.setClientId(id);
+        clientCardsRQ.setClientId(cardAccountsForm.getClientId());
         return clientCardsRQ;
     }
 
@@ -49,18 +43,22 @@ public class RetrieveCardAccountsAction extends BaseRQRSAction<ClientCardsRQ, Cl
         }
         List<Card> cardsList = new ArrayList<Card>(Arrays.asList(cards));
 
-        Set<CardAccount> cardAccounts = new HashSet<CardAccount>();
+        Set<CardAccount> cardAccounts = cardAccountsForm.getCardAccounts();
         Map<CardAccount, List<Card>> cardAccountListMap = new HashMap<CardAccount, List<Card>>();
 
         for (Card card : cardsList) {
             card.getCardAccount().setCardAccountId(card.getCardAccountID());
-            cardAccounts.add(card.getCardAccount());
         }
         for (CardAccount cardAccount : cardAccounts) {
             cardAccountListMap.put(cardAccount, new ArrayList<Card>());
         }
         for (Card card : cardsList) {
-            cardAccountListMap.get(card.getCardAccount()).add(card);
+            Set<CardAccount> cardAccountSet = cardAccountListMap.keySet();
+            for (CardAccount cardAccount : cardAccountSet) {
+                if (cardAccount.getCardAccountId() == card.getCardAccountID()) {
+                    cardAccountListMap.get(cardAccount).add(card);
+                }
+            }
         }
         Set<CardAccount> keys = cardAccountListMap.keySet();
         for (CardAccount cardAccount : keys) {

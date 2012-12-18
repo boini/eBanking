@@ -58,7 +58,19 @@
 
         <!-- Account -->
 
-        <action name="viewAccount" class="RetrieveCardAccountsAction">
+        <action name="viewAccount" class="RetrieveCardAccountAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">account</param>
+            </result>
+        </action>
+
+        <action name="account" class="RetrieveCardsAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">accountForward</param>
+            </result>
+        </action>
+
+        <action name="accountForward" class="ViewAccountForwardAction">
             <result name="success" type="tiles">
                 /viewAccount.tiles
             </result>
@@ -67,6 +79,10 @@
         <!-- Card -->
 
         <action name="addCard" class="AddCardAction">
+            <result name="success" type="json"/>
+        </action>
+
+        <action name="removeCard" class="RemoveCardAction">
             <result name="success" type="json"/>
         </action>
 

@@ -32,4 +32,9 @@ public class CardDAOImpl extends CommonDAOImpl implements CardDAO {
     public void saveOrUpdate(Card card) {
         currentSession().saveOrUpdate(card);
     }
+
+    @Override
+    public void delete(Card card) {
+        currentSession().delete(card);
+    }
 }

@@ -9,6 +9,15 @@ import java.util.Set;
 public class CardAccountsForm {
     private Set<CardAccount> cardAccounts;
     private Date date;
+    private long clientId;
+
+    public long getClientId() {
+        return clientId;
+    }
+
+    public void setClientId(long clientId) {
+        this.clientId = clientId;
+    }
 
     public Date getDate() {
         return date;
