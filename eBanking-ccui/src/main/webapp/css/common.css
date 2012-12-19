@@ -66,7 +66,7 @@ hr {margin: 0;}
 .newCardExpDate {width: 80% !important; }
 
 label.error{
-    display: inline !important;
+    display: inline;
     color: red !important;
     margin-left: 10px;
 }
