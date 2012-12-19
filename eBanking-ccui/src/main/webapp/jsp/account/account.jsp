@@ -194,6 +194,7 @@
                         </tbody>
                         </table>
                         <br/>
+                        <div class="errors"></div>
                         <a class="btn btn-mini btn-success add-card-btn" href="#"><i class="icon-plus"></i> Add card</a>
                     </div>
                 </s:iterator>

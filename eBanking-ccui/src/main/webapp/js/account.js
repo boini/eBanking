@@ -154,7 +154,7 @@ $(function() {
 
     $('.add-card-btn-sbmt').on('click', function() {
         var newCardRow = $(this).parents('.newCardRow');
-
+        var errorContainer = $(this).parents(".cardAccount").find(".errors").empty();
         var cardNumber =  $(newCardRow).find('.newCardNumber').val();
         var cvv =  $(newCardRow).find('.newCardCVV').val();
         var cardType =  $(newCardRow).find('.newCardType').val();
@@ -162,6 +162,24 @@ $(function() {
         var expDate =  $(newCardRow).find('.newCardExpDate').val();
 
         var cardAccountId = $(newCardRow).parents('.cardAccount').find('.cardAccountId').val();
+
+        //validation block
+        {
+            var hasErrors = false;
+            if(!/^\d{16}$/.test(cardNumber)){
+                errorContainer.append($("<div/>").addClass("error").text("wrong card number"));
+                hasErrors = true;
+            }
+            if(!/^\d{3}$/.test(cvv)){
+                errorContainer.append($("<div/>").addClass("error").text("wrong cvv"));
+                hasErrors = true;
+            }
+            if(!parseFloat(creditLimit)){
+                errorContainer.append($("<div/>").addClass("error").text("wrong credit limit format"));
+                hasErrors = true;
+            }
+            if(hasErrors) return;
+        }
 
         $.ajax({
             url: '/addCard.action',
@@ -176,10 +194,12 @@ $(function() {
             },
             success: function(data) {
                 if (data.success) {
-                    alert("Card successfully has been added!")
+                    alert("Card successfully has been added!");
+                    var scrollTop = $(window).scrollTop();
                     window.location.replace("/viewAccount.action");
+                    $(window).scrollTop(scrollTop);
                 }
             }
         })
-    })
-})
+    });
+});

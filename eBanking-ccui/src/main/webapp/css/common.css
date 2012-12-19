@@ -74,3 +74,10 @@ label.error{
 #corporations { float: left; }
 #details { border-left: 1px solid white; margin-left: 30px; padding-left: 30px; min-width: 800px; float: left; min-height: 240px; padding-right: 30px;}
 #corporationInfoSubmit { margin-bottom: 10px; }
+
+div.error{
+    color: red !important;
+    margin-left: 10px;
+    font-size: 15px;
+    font-weight: bold;
+}
