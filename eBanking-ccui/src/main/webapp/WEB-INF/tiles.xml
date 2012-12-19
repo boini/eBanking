@@ -25,13 +25,13 @@
     </definition>
     
     <definition name="/main.tiles" extends="/baseLayout">
-        <put-attribute name="title" value="eBanking Call Center"/>
+        <put-attribute name="title" value="eBanking Call Center | Main"/>
         <put-attribute name="body" value="/jsp/main.jsp"/>
         <put-attribute name="actionName" value="main-action"/>
     </definition>
 
     <definition name="/corporations.tiles" extends="/baseLayout">
-        <put-attribute name="title" value="eBanking Call Center"/>
+        <put-attribute name="title" value="eBanking Call Center | Corporations"/>
         <put-attribute name="body" value="/jsp/corporation/corporationList.jsp"/>
         <put-attribute name="actionName" value="corporations-action"/>
         <put-list-attribute name="styles">
@@ -62,6 +62,19 @@
         <put-attribute name="actionName" value="clients-action"/>
     </definition>
 
+    <definition name="/rate.tiles" extends="/baseLayout">
+        <put-attribute name="title" value="eBanking Call Center | Rates"/>
+        <put-attribute name="body" value="/jsp/rate/rate.jsp"/>
+        <put-attribute name="actionName" value="clients-action"/>
+        <put-list-attribute name="scripts">
+            <add-attribute value="/js/jquery-1.8.2.js"/>
+            <add-attribute value="/js/bootstrap.js"/>
+            <add-attribute value="/js/jquery.datepicker.js"/>
+            <add-attribute value="/js/jquery.validate.js"/>
+            <add-attribute value="/js/rate.js"/>
+        </put-list-attribute>
+    </definition>
+
     <definition name="/viewAccount.tiles" extends="/baseLayout">
         <put-attribute name="title" value="eBanking Call Center | Account"/>
         <put-attribute name="body" value="/jsp/account/account.jsp"/>
@@ -84,7 +97,7 @@
     </definition>
 
     <definition name="/editClient.tiles" extends="/baseLayout">
-        <put-attribute name="title" value="eBanking Call Center | Clients"/>
+        <put-attribute name="title" value="eBanking Call Center | Client"/>
         <put-attribute name="body" value="/jsp/client/editClient.jsp"/>
         <put-attribute name="actionName" value="clients-action"/>
         <put-list-attribute name="styles">

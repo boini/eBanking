@@ -75,6 +75,7 @@ label.error{
 #details { border-left: 1px solid white; margin-left: 30px; padding-left: 30px; min-width: 800px; float: left; min-height: 240px; padding-right: 30px;}
 #corporationInfoSubmit { margin-bottom: 10px; }
 
+.purchaseText, .saleText {margin: 0 !important;}
 div.error{
     color: red !important;
     margin-left: 10px;
