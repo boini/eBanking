@@ -25,6 +25,7 @@
             <tbody>
             <s:iterator value="#session['ratesForm'].rates" var="rate">
                 <tr>
+                    <input type="hidden" value='<s:property value="#rate.rateId"/>' class="rateId"/>
                     <td>
                         <s:property value="#rate.currency.currencyDescription"/>
                     </td>

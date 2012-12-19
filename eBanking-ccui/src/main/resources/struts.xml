@@ -144,6 +144,10 @@
             </result>
         </action>
 
+        <action name="saveRate" class="SaveRateAction">
+            <result name="success" type="json"/>
+        </action>
+
         <action name="*">
             <result type="redirectAction">
                 <param name="actionName">main</param>

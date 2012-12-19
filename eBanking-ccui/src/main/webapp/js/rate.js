@@ -30,4 +30,27 @@ $(function() {
             .find('.cancel-rate-btn').hide().end()
             .find('.edit-rate-btn').show();
     })
+
+    $('.save-rate-btn').on('click', function() {
+        var rateId = $(this).parents('tr').find('.rateId').val();
+        var sale = $(this).parents('tr').find('.saleText').val();
+        var purchase = $(this).parents('tr').find('.purchaseText').val();
+
+        $.ajax({
+            url: '/saveRate.action',
+            type: 'post',
+            data: {
+                rateId: rateId,
+                sale: sale,
+                purchase: purchase
+            },
+            success: function(data) {
+                var success = data.success;
+                if (success) {
+                    alert("Rate has been successfully updated!")
+                    window.location.replace("/rate.action");
+                }
+            }
+        })
+    })
 })
