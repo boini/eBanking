@@ -17,7 +17,7 @@ select {width: 300px;}
 
 .label { width: 150px; }
 
-.paid { background: url('../img/paid.png') 0 0 no-repeat; }
+.paid { background: url('../img/accepted.png') 0 0 no-repeat; }
 
 .ui-datepicker-trigger { margin-left: 5px; margin-top: -8px;}
 .calendar-select input[type="text"] {width: 150px;}
