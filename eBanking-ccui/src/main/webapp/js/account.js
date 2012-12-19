@@ -174,8 +174,8 @@ $(function() {
                 errorContainer.append($("<div/>").addClass("error").text("wrong cvv"));
                 hasErrors = true;
             }
-            if(!parseFloat(creditLimit)){
-                errorContainer.append($("<div/>").addClass("error").text("wrong credit limit format"));
+            if(isNaN(parseFloat(creditLimit)) || (parseFloat(creditLimit)<0)){
+                errorContainer.append($("<div/>").addClass("error").text("wrong credit limit"));
                 hasErrors = true;
             }
             if(hasErrors) return;
