@@ -58,7 +58,7 @@
                          label="Full name"
                          placeholder="Ivanov Ivan Ivanovich"/>
             <td>
-                <s:submit value="Continue"/>
+                <s:submit value="Continue" cssClass="btn btn-primary"/>
             </td>
         </s:form>
     </div>

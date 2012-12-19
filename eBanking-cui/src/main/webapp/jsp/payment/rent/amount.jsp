@@ -48,7 +48,7 @@
                      value="%{#session['rentPaymentForm'].number}"
                      disabled="true"/>
         <td>
-            <s:submit value="Continue"/>
+            <s:submit value="Continue" cssClass="btn btn-primary"/>
         </td>
     </s:form>
 </div>

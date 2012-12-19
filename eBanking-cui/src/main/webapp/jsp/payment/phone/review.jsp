@@ -66,7 +66,7 @@
                 Attention! After pressing the "Submit" You will make a payment. Refund to your account won't be possible!
             </h5>
             <td>
-                <s:submit value="Send to the bank"/>
+                <s:submit value="Send to the bank" cssClass="btn btn-success"/>
             </td>
         </s:form>
     </div>
