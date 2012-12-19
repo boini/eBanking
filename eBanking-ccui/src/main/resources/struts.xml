@@ -108,11 +108,33 @@
             <result name="success" type="json"/>
         </action>
 
+        <!-- Add client -->
+
+        <action name="addClient" class="AddClientForwardAction">
+            <result name="success" type="tiles">
+                /editClient.tiles
+            </result>
+        </action>
+
+        <!-- Create account -->
+
+        <action name="createAccount" class="CreateAccountAction">
+            <result name="success" type="json"/>
+        </action>
+
+        <!-- Create card account -->
+
+        <action name="createCardAccount" class="CreateCardAccountAction">
+            <result name="success" type="json"/>
+        </action>
+
+
         <action name="*">
             <result type="redirectAction">
                 <param name="actionName">main</param>
             </result>
         </action>
+
 
     </package>
 

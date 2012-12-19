@@ -31,6 +31,17 @@ public class CardAccount {
     @JoinColumn(name = "CLIENT_ID")
     private Client client;
 
+    @Column(name = "NUMBER")
+    private String number;
+
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
     public Set<Card> getCards() {
         return cards;
     }

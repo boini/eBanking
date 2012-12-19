@@ -29,6 +29,16 @@ public class BankAccount {
     private Currency currency;
     @Column(name = "AMOUNT")
     private double amount;
+    @Column(name = "NUMBER")
+    private String number;
+
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
 
     public long getBankAccountId() {
         return bankAccountId;

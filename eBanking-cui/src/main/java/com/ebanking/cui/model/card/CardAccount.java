@@ -10,57 +10,61 @@ package com.ebanking.cui.model.card;
 import com.ebanking.cui.model.account.Client;
 import com.ebanking.cui.model.finance.Currency;
 
-public class CardAccount  implements java.io.Serializable {
-    private java.lang.Double balance;
+public class CardAccount implements java.io.Serializable {
+    private Double balance;
 
     private long cardAccountId;
 
-    private java.lang.Object[] cards;
+    private Object[] cards;
 
     private Client client;
 
     private Currency currency;
 
+    private String number;
+
     public CardAccount() {
     }
 
     public CardAccount(
-           java.lang.Double balance,
-           long cardAccountId,
-           java.lang.Object[] cards,
-           Client client,
-           Currency currency) {
+            Double balance,
+            long cardAccountId,
+            Object[] cards,
+            Client client,
+            Currency currency,
+            String number) {
            this.balance = balance;
            this.cardAccountId = cardAccountId;
            this.cards = cards;
            this.client = client;
            this.currency = currency;
+           this.number = number;
     }
 
 
     /**
      * Gets the balance value for this CardAccount.
-     * 
+     *
      * @return balance
      */
-    public java.lang.Double getBalance() {
+    public Double getBalance() {
         return balance;
     }
 
 
     /**
      * Sets the balance value for this CardAccount.
-     * 
+     *
      * @param balance
      */
-    public void setBalance(java.lang.Double balance) {
+    public void setBalance(Double balance) {
         this.balance = balance;
     }
 
 
     /**
      * Gets the cardAccountId value for this CardAccount.
-     * 
+     *
      * @return cardAccountId
      */
     public long getCardAccountId() {
@@ -70,7 +74,7 @@ public class CardAccount  implements java.io.Serializable {
 
     /**
      * Sets the cardAccountId value for this CardAccount.
-     * 
+     *
      * @param cardAccountId
      */
     public void setCardAccountId(long cardAccountId) {
@@ -80,27 +84,27 @@ public class CardAccount  implements java.io.Serializable {
 
     /**
      * Gets the cards value for this CardAccount.
-     * 
+     *
      * @return cards
      */
-    public java.lang.Object[] getCards() {
+    public Object[] getCards() {
         return cards;
     }
 
 
     /**
      * Sets the cards value for this CardAccount.
-     * 
+     *
      * @param cards
      */
-    public void setCards(java.lang.Object[] cards) {
+    public void setCards(Object[] cards) {
         this.cards = cards;
     }
 
 
     /**
      * Gets the client value for this CardAccount.
-     * 
+     *
      * @return client
      */
     public Client getClient() {
@@ -110,7 +114,7 @@ public class CardAccount  implements java.io.Serializable {
 
     /**
      * Sets the client value for this CardAccount.
-     * 
+     *
      * @param client
      */
     public void setClient(Client client) {
@@ -120,7 +124,7 @@ public class CardAccount  implements java.io.Serializable {
 
     /**
      * Gets the currency value for this CardAccount.
-     * 
+     *
      * @return currency
      */
     public Currency getCurrency() {
@@ -130,15 +134,35 @@ public class CardAccount  implements java.io.Serializable {
 
     /**
      * Sets the currency value for this CardAccount.
-     * 
+     *
      * @param currency
      */
     public void setCurrency(Currency currency) {
         this.currency = currency;
     }
 
-    private java.lang.Object __equalsCalc = null;
-    public synchronized boolean equals(java.lang.Object obj) {
+
+    /**
+     * Gets the number value for this CardAccount.
+     *
+     * @return number
+     */
+    public String getNumber() {
+        return number;
+    }
+
+
+    /**
+     * Sets the number value for this CardAccount.
+     *
+     * @param number
+     */
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
+    private Object __equalsCalc = null;
+    public synchronized boolean equals(Object obj) {
         if (!(obj instanceof CardAccount)) return false;
         CardAccount other = (CardAccount) obj;
         if (obj == null) return false;
@@ -148,20 +172,23 @@ public class CardAccount  implements java.io.Serializable {
         }
         __equalsCalc = obj;
         boolean _equals;
-        _equals = true && 
-            ((this.balance==null && other.getBalance()==null) || 
+        _equals = true &&
+            ((this.balance==null && other.getBalance()==null) ||
              (this.balance!=null &&
               this.balance.equals(other.getBalance()))) &&
             this.cardAccountId == other.getCardAccountId() &&
-            ((this.cards==null && other.getCards()==null) || 
+            ((this.cards==null && other.getCards()==null) ||
              (this.cards!=null &&
               java.util.Arrays.equals(this.cards, other.getCards()))) &&
-            ((this.client==null && other.getClient()==null) || 
+            ((this.client==null && other.getClient()==null) ||
              (this.client!=null &&
               this.client.equals(other.getClient()))) &&
-            ((this.currency==null && other.getCurrency()==null) || 
+            ((this.currency==null && other.getCurrency()==null) ||
              (this.currency!=null &&
-              this.currency.equals(other.getCurrency())));
+              this.currency.equals(other.getCurrency()))) &&
+            ((this.number==null && other.getNumber()==null) ||
+             (this.number!=null &&
+              this.number.equals(other.getNumber())));
         __equalsCalc = null;
         return _equals;
     }
@@ -181,7 +208,7 @@ public class CardAccount  implements java.io.Serializable {
             for (int i=0;
                  i<java.lang.reflect.Array.getLength(getCards());
                  i++) {
-                java.lang.Object obj = java.lang.reflect.Array.get(getCards(), i);
+                Object obj = java.lang.reflect.Array.get(getCards(), i);
                 if (obj != null &&
                     !obj.getClass().isArray()) {
                     _hashCode += obj.hashCode();
@@ -193,6 +220,9 @@ public class CardAccount  implements java.io.Serializable {
         }
         if (getCurrency() != null) {
             _hashCode += getCurrency().hashCode();
+        }
+        if (getNumber() != null) {
+            _hashCode += getNumber().hashCode();
         }
         __hashCodeCalc = false;
         return _hashCode;
@@ -226,13 +256,19 @@ public class CardAccount  implements java.io.Serializable {
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("client");
         elemField.setXmlName(new javax.xml.namespace.QName("http://card.model.ws.ebanking.com", "client"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://cardAccount.model.ws.ebanking.com", "Client"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://account.model.ws.ebanking.com", "Client"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("currency");
         elemField.setXmlName(new javax.xml.namespace.QName("http://card.model.ws.ebanking.com", "currency"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://finance.model.ws.ebanking.com", "Currency"));
+        elemField.setNillable(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("number");
+        elemField.setXmlName(new javax.xml.namespace.QName("http://card.model.ws.ebanking.com", "number"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
     }
@@ -248,10 +284,10 @@ public class CardAccount  implements java.io.Serializable {
      * Get Custom Serializer
      */
     public static org.apache.axis.encoding.Serializer getSerializer(
-           java.lang.String mechType, 
-           java.lang.Class _javaType,  
+           String mechType,
+           Class _javaType,
            javax.xml.namespace.QName _xmlType) {
-        return 
+        return
           new  org.apache.axis.encoding.ser.BeanSerializer(
             _javaType, _xmlType, typeDesc);
     }
@@ -260,8 +296,8 @@ public class CardAccount  implements java.io.Serializable {
      * Get Custom Deserializer
      */
     public static org.apache.axis.encoding.Deserializer getDeserializer(
-           java.lang.String mechType, 
-           java.lang.Class _javaType,  
+           String mechType,
+           Class _javaType,
            javax.xml.namespace.QName _xmlType) {
         return 
           new  org.apache.axis.encoding.ser.BeanDeserializer(

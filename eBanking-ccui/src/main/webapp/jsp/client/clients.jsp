@@ -11,6 +11,10 @@
     </div>
 
     <div>
+        <s:url action="addClient" var="addClientUrl">
+        </s:url>
+        <s:a cssClass="btn btn-mini btn-success" href="%{addClientUrl}"><i class="icon-plus"></i> Add client</s:a>
+
         <table class="table table-condensed table-bordered" id="clients">
             <caption>Clients</caption>
             <thead>

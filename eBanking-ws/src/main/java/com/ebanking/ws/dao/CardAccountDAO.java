@@ -16,4 +16,5 @@ public interface CardAccountDAO {
     CardAccount getById(Long id);
     void saveOrUpdate(CardAccount cardAccount);
     void delete(CardAccount cardAccount);
+    CardAccount getCardAccountByNumber(String number);
 }

@@ -16,12 +16,13 @@ $(function() {
                 var bankAccounts = data.bankAccounts;
                 var bankAccountsTable = '<table class="table table-condensed table-bordered">' +
                                         '<caption>Bank accounts</caption>' +
-                                        '<thead><tr><th>#</th><th>Currency</th><th>Amount</th></tr></thead><tbody>';
+                                        '<thead><tr><th>#</th><th>Currency</th><th>Amount</th><th>Number</th></tr></thead><tbody>';
                 $.each(bankAccounts, function(index, bankAccount) {
                     bankAccountsTable += '<tr>' +
                                             '<td>' + (index + 1) + '</td>' +
                                             '<td>' + bankAccount.currency.currencyCode + '</td>' +
                                             '<td>' + bankAccount.amount + '</td>' +
+                                            '<td>' + bankAccount.number + '</td>' +
                                          '</tr>';
                 })
                 bankAccountsTable += '</tbody></table>';

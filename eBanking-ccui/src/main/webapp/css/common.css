@@ -27,22 +27,20 @@ input[type="submit"].btn { min-width: 100px; }
 .nav-list > li > a, .nav-list .nav-header { text-shadow: none; }
 .editForm h6 {border-bottom: 2px solid #eee;}
 
-.cardAccount {padding: 5px; }
+.cardAccount {padding: 10px; border: 1px dotted white; margin-bottom: 10px; }
 .cardAccount h6 {margin-top: 0;}
 hr {margin: 0;}
 
-.errorblock {
-    color: #ff0000;
-    background-color: #ffEEEE;
-    border: 3px solid #ff0000;
-    padding: 8px;
-    margin: 16px;
-}
+.login-error {width: 350px; margin: auto;}
+.rm-card-account-btn { float: right; margin-top: -30px;}
 
+#cardAccountCurrency {width: 206px;}
 #header ul { float: right;}
 #cards img {width: 50px; border: 1px solid #555; }
 #mobileNumberForm { width: 300px; }
 #mobileNumberForm select, #mobileNumberForm input[type="text"] { width: 300px; }
+
+#message, #cardAccountMessage { width: 400px; }
 
 #menu-header, #info-header { width: 100%; display: block; background: #025D8C; height: 40px; margin-bottom: 10px; color: white; }
 #menu-header h5, #info-header h5 { margin: 0; margin-left: 15px; padding-top: 10px; }

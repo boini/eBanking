@@ -124,6 +124,7 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      <element name="client" nillable="true" type="tns6:Client"/>
      <element name="corporation" nillable="true" type="tns6:Corporation"/>
      <element name="currency" nillable="true" type="tns7:Currency"/>
+     <element name="number" nillable="true" type="xsd:string"/>
     </sequence>
    </complexType>
   </schema>
@@ -158,6 +159,7 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      <element name="cards" nillable="true" type="impl:ArrayOf_xsd_anyType"/>
      <element name="client" nillable="true" type="tns6:Client"/>
      <element name="currency" nillable="true" type="tns7:Currency"/>
+     <element name="number" nillable="true" type="xsd:string"/>
     </sequence>
    </complexType>
    <complexType name="CardType">

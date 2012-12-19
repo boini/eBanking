@@ -22,6 +22,9 @@ public class SaveClientAction extends BaseRQRSAction<SaveClientRQ, SaveClientRS>
     private String dateOfBirth;
     private String secretWord;
     private String personalCode;
+    private String mobileNumber;
+    private String phoneNumber;
+    private String email;
 
     @Override
     @Autowired
@@ -72,6 +75,18 @@ public class SaveClientAction extends BaseRQRSAction<SaveClientRQ, SaveClientRS>
         this.personalCode = personalCode;
     }
 
+    public void setMobileNumber(String mobileNumber) {
+        this.mobileNumber = mobileNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     private void populate(Client client) throws ParseException {
         DateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
         Calendar calendar = Calendar.getInstance();
@@ -82,5 +97,8 @@ public class SaveClientAction extends BaseRQRSAction<SaveClientRQ, SaveClientRS>
         client.setLastname(lastname);
         client.setPersonalCode(personalCode);
         client.setSecretWord(secretWord);
+        client.setMobileNumber(mobileNumber);
+        client.setPhoneNumber(phoneNumber);
+        client.setEmail(email);
     }
 }

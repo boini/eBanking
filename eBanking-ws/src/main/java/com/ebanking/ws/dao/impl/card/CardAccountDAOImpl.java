@@ -37,4 +37,15 @@ public class CardAccountDAOImpl extends CommonDAOImpl implements CardAccountDAO 
     public void delete(CardAccount cardAccount) {
         currentSession().delete(cardAccount);
     }
+
+    @Override
+    public CardAccount getCardAccountByNumber(String number) {
+        List accounts = currentSession().createQuery("from CardAccount as cardAccount where cardAccount.number = ?")
+                .setString(0, number)
+                .list();
+        if (accounts != null && accounts.size() > 0) {
+            return (CardAccount) accounts.get(0);
+        }
+        return null;
+    }
 }

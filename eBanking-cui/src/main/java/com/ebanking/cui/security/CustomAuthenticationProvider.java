@@ -2,6 +2,7 @@ package com.ebanking.cui.security;
 
 import com.ebanking.cui.exception.EBankingException;
 import com.ebanking.cui.model.account.Account;
+import com.ebanking.cui.model.account.Role;
 import com.ebanking.cui.service.client.ServiceClient;
 import com.ebanking.cui.service.request.LoginClientRQ;
 import com.ebanking.cui.service.response.LoginClientRS;
@@ -64,6 +65,12 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
         if (account == null) {
             LOGGER.error("Bad credentials");
             throw new BadCredentialsException("Bad credentials");
+        }
+
+	    Role role = account.getRole();
+        if (!role.getRoleName().equals("ROLE_USER")) {
+            LOGGER.error("Access denied");
+            throw new BadCredentialsException("Access denied");
         }
 
         HttpSessionUtil.setClientAccount(account);

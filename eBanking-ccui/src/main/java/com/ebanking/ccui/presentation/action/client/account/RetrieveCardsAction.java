@@ -1,19 +1,16 @@
 package com.ebanking.ccui.presentation.action.client.account;
 
 import com.ebanking.ccui.exception.EBankingException;
-import com.ebanking.ccui.model.account.Account;
 import com.ebanking.ccui.model.card.Card;
 import com.ebanking.ccui.model.card.CardAccount;
 import com.ebanking.ccui.presentation.action.BaseRQRSAction;
 import com.ebanking.ccui.presentation.form.CardAccountsForm;
-import com.ebanking.ccui.presentation.form.ClientCardsInfoForm;
 import com.ebanking.ccui.service.client.ServiceClient;
 import com.ebanking.ccui.service.request.ClientCardsRQ;
 import com.ebanking.ccui.service.response.ClientCardsRS;
 import com.ebanking.ccui.session.HttpSessionUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.security.core.context.SecurityContextHolder;
 
 import java.util.*;
 

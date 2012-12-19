@@ -9,7 +9,7 @@ package com.ebanking.ccui.model.account;
 
 import com.ebanking.ccui.model.finance.Currency;
 
-public class BankAccount  implements java.io.Serializable {
+public class BankAccount implements java.io.Serializable {
     private double amount;
 
     private long bankAccountId;
@@ -20,26 +20,30 @@ public class BankAccount  implements java.io.Serializable {
 
     private Currency currency;
 
+    private String number;
+
     public BankAccount() {
     }
 
     public BankAccount(
-           double amount,
-           long bankAccountId,
-           Client client,
-           Corporation corporation,
-           Currency currency) {
+            double amount,
+            long bankAccountId,
+            Client client,
+            Corporation corporation,
+            Currency currency,
+            String number) {
            this.amount = amount;
            this.bankAccountId = bankAccountId;
            this.client = client;
            this.corporation = corporation;
            this.currency = currency;
+           this.number = number;
     }
 
 
     /**
      * Gets the amount value for this BankAccount.
-     * 
+     *
      * @return amount
      */
     public double getAmount() {
@@ -49,7 +53,7 @@ public class BankAccount  implements java.io.Serializable {
 
     /**
      * Sets the amount value for this BankAccount.
-     * 
+     *
      * @param amount
      */
     public void setAmount(double amount) {
@@ -59,7 +63,7 @@ public class BankAccount  implements java.io.Serializable {
 
     /**
      * Gets the bankAccountId value for this BankAccount.
-     * 
+     *
      * @return bankAccountId
      */
     public long getBankAccountId() {
@@ -69,7 +73,7 @@ public class BankAccount  implements java.io.Serializable {
 
     /**
      * Sets the bankAccountId value for this BankAccount.
-     * 
+     *
      * @param bankAccountId
      */
     public void setBankAccountId(long bankAccountId) {
@@ -79,7 +83,7 @@ public class BankAccount  implements java.io.Serializable {
 
     /**
      * Gets the client value for this BankAccount.
-     * 
+     *
      * @return client
      */
     public Client getClient() {
@@ -89,7 +93,7 @@ public class BankAccount  implements java.io.Serializable {
 
     /**
      * Sets the client value for this BankAccount.
-     * 
+     *
      * @param client
      */
     public void setClient(Client client) {
@@ -99,7 +103,7 @@ public class BankAccount  implements java.io.Serializable {
 
     /**
      * Gets the corporation value for this BankAccount.
-     * 
+     *
      * @return corporation
      */
     public Corporation getCorporation() {
@@ -109,7 +113,7 @@ public class BankAccount  implements java.io.Serializable {
 
     /**
      * Sets the corporation value for this BankAccount.
-     * 
+     *
      * @param corporation
      */
     public void setCorporation(Corporation corporation) {
@@ -119,7 +123,7 @@ public class BankAccount  implements java.io.Serializable {
 
     /**
      * Gets the currency value for this BankAccount.
-     * 
+     *
      * @return currency
      */
     public Currency getCurrency() {
@@ -129,15 +133,35 @@ public class BankAccount  implements java.io.Serializable {
 
     /**
      * Sets the currency value for this BankAccount.
-     * 
+     *
      * @param currency
      */
     public void setCurrency(Currency currency) {
         this.currency = currency;
     }
 
-    private java.lang.Object __equalsCalc = null;
-    public synchronized boolean equals(java.lang.Object obj) {
+
+    /**
+     * Gets the number value for this BankAccount.
+     *
+     * @return number
+     */
+    public String getNumber() {
+        return number;
+    }
+
+
+    /**
+     * Sets the number value for this BankAccount.
+     *
+     * @param number
+     */
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
+    private Object __equalsCalc = null;
+    public synchronized boolean equals(Object obj) {
         if (!(obj instanceof BankAccount)) return false;
         BankAccount other = (BankAccount) obj;
         if (obj == null) return false;
@@ -147,18 +171,21 @@ public class BankAccount  implements java.io.Serializable {
         }
         __equalsCalc = obj;
         boolean _equals;
-        _equals = true && 
+        _equals = true &&
             this.amount == other.getAmount() &&
             this.bankAccountId == other.getBankAccountId() &&
-            ((this.client==null && other.getClient()==null) || 
+            ((this.client==null && other.getClient()==null) ||
              (this.client!=null &&
               this.client.equals(other.getClient()))) &&
-            ((this.corporation==null && other.getCorporation()==null) || 
+            ((this.corporation==null && other.getCorporation()==null) ||
              (this.corporation!=null &&
               this.corporation.equals(other.getCorporation()))) &&
-            ((this.currency==null && other.getCurrency()==null) || 
+            ((this.currency==null && other.getCurrency()==null) ||
              (this.currency!=null &&
-              this.currency.equals(other.getCurrency())));
+              this.currency.equals(other.getCurrency()))) &&
+            ((this.number==null && other.getNumber()==null) ||
+             (this.number!=null &&
+              this.number.equals(other.getNumber())));
         __equalsCalc = null;
         return _equals;
     }
@@ -181,6 +208,9 @@ public class BankAccount  implements java.io.Serializable {
         if (getCurrency() != null) {
             _hashCode += getCurrency().hashCode();
         }
+        if (getNumber() != null) {
+            _hashCode += getNumber().hashCode();
+        }
         __hashCodeCalc = false;
         return _hashCode;
     }
@@ -190,35 +220,41 @@ public class BankAccount  implements java.io.Serializable {
         new org.apache.axis.description.TypeDesc(BankAccount.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://cardAccount.model.ws.ebanking.com", "BankAccount"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://account.model.ws.ebanking.com", "BankAccount"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("amount");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://cardAccount.model.ws.ebanking.com", "amount"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://account.model.ws.ebanking.com", "amount"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("bankAccountId");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://cardAccount.model.ws.ebanking.com", "bankAccountId"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://account.model.ws.ebanking.com", "bankAccountId"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("client");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://cardAccount.model.ws.ebanking.com", "client"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://cardAccount.model.ws.ebanking.com", "Client"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://account.model.ws.ebanking.com", "client"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://account.model.ws.ebanking.com", "Client"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("corporation");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://cardAccount.model.ws.ebanking.com", "corporation"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://cardAccount.model.ws.ebanking.com", "Corporation"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://account.model.ws.ebanking.com", "corporation"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://account.model.ws.ebanking.com", "Corporation"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("currency");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://cardAccount.model.ws.ebanking.com", "currency"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://account.model.ws.ebanking.com", "currency"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://finance.model.ws.ebanking.com", "Currency"));
+        elemField.setNillable(true);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("number");
+        elemField.setXmlName(new javax.xml.namespace.QName("http://account.model.ws.ebanking.com", "number"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
     }
@@ -234,10 +270,10 @@ public class BankAccount  implements java.io.Serializable {
      * Get Custom Serializer
      */
     public static org.apache.axis.encoding.Serializer getSerializer(
-           java.lang.String mechType, 
-           java.lang.Class _javaType,  
+           String mechType,
+           Class _javaType,
            javax.xml.namespace.QName _xmlType) {
-        return 
+        return
           new  org.apache.axis.encoding.ser.BeanSerializer(
             _javaType, _xmlType, typeDesc);
     }
@@ -246,8 +282,8 @@ public class BankAccount  implements java.io.Serializable {
      * Get Custom Deserializer
      */
     public static org.apache.axis.encoding.Deserializer getDeserializer(
-           java.lang.String mechType, 
-           java.lang.Class _javaType,  
+           String mechType,
+           Class _javaType,
            javax.xml.namespace.QName _xmlType) {
         return 
           new  org.apache.axis.encoding.ser.BeanDeserializer(

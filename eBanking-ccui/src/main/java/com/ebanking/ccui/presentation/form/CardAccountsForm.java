@@ -3,7 +3,6 @@ package com.ebanking.ccui.presentation.form;
 import com.ebanking.ccui.model.card.CardAccount;
 
 import java.util.Date;
-import java.util.List;
 import java.util.Set;
 
 public class CardAccountsForm {

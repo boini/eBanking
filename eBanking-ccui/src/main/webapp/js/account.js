@@ -1,6 +1,91 @@
 $(function() {
     $('.newCardRow').hide();
 
+    $('#createAccountForm').hide();
+    $('#addCardAccountForm').hide();
+
+    $('.create-account-btn').on('click', function() {
+        $('#createAccountForm').show();
+        $(this).hide();
+    })
+
+    $('.cancel-account-btn').on('click', function() {
+        $('#createAccountForm').hide();
+        $('.create-account-btn').show();
+    })
+
+    $('.add-card-account-btn').on('click', function() {
+        $('#addCardAccountForm').show();
+        $(this).hide();
+    })
+
+    $('.cancel-card-account-btn').on('click', function() {
+        $('#addCardAccountForm').hide();
+        $('.add-card-account-btn').show();
+    })
+
+    $('.sumbit-card-account-btn').on('click', function() {
+        var number = $('#cardAccountNumber').val();
+        var currency = $('#cardAccountCurrency').val();
+        var clientId = $('#clientId').val();
+
+        $.ajax({
+            url: '/createCardAccount.action',
+            type: 'post',
+            data: {
+                clientId: clientId,
+                currency: currency,
+                number: number
+            },
+            success: function(data) {
+                var success = data.success;
+                if (success) {
+                    alert("Card account successfully has been added!")
+                    window.location.replace("/viewAccount.action");
+                } else {
+                    $('#cardAccountMessage').append(
+                        '<div class="alert alert-error">' +
+                            '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
+                            '<h4>Exception!</h4>' +
+                            data.exception +
+                            '</div>');
+                }
+            }
+        })
+    })
+
+    $('.sumbit-account-btn').on('click', function() {
+        var login = $('#accountLogin').val();
+        var password = $('#accountPassword').val();
+        var clientId = $('#clientId').val();
+
+        $('#message').html('');
+
+        $.ajax({
+            url: '/createAccount.action',
+            type: 'post',
+            data: {
+                clientId: clientId,
+                login: login,
+                password: password
+            },
+            success: function(data) {
+                var success = data.success;
+                if (success) {
+                    alert("Account successfully has been deleted!")
+                    window.location.replace("/viewAccount.action");
+                } else {
+                    $('#message').append(
+                        '<div class="alert alert-error">' +
+                            '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
+                            '<h4>Exception!</h4>' +
+                            data.exception +
+                            '</div>');
+                }
+            }
+        })
+    })
+
     var tables = $('.table');
     $.each(tables, function(table, index) {
         if ($(this).hasClass('info') == false) {

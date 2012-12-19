@@ -62,8 +62,8 @@
             <s:textfield value="%{#session.editClientForm.client.secretWord}" label="Secret word" key="secretWord"/>
 
             <td colspan="2"><h6>Contact info</h6></td>
-            <s:textfield value="%{#session.editClientForm.client.mobileNumber}" label="Mobile number" name="mobile"/>
-            <s:textfield value="%{#session.editClientForm.client.mobileNumber}" label="Phone number" name="phone"/>
+            <s:textfield value="%{#session.editClientForm.client.mobileNumber}" label="Mobile number" name="mobileNumber"/>
+            <s:textfield value="%{#session.editClientForm.client.mobileNumber}" label="Phone number" name="phoneNumber"/>
             <s:textfield value="%{#session.editClientForm.client.email}" label="Email" name="email"/>
 
             <s:submit value="Save" cssClass="btn btn-primary"/>

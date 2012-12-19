@@ -126,6 +126,7 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      <element name="cards" nillable="true" type="impl:ArrayOf_xsd_anyType"/>
      <element name="client" nillable="true" type="tns4:Client"/>
      <element name="currency" nillable="true" type="tns6:Currency"/>
+     <element name="number" nillable="true" type="xsd:string"/>
     </sequence>
    </complexType>
    <complexType name="CardType">
