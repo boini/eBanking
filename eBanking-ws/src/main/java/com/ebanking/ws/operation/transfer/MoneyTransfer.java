@@ -9,13 +9,6 @@ import com.ebanking.ws.operation.checker.CardAccountChecker;
 import com.ebanking.ws.utils.TransferUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
-/**
- * Created with IntelliJ IDEA.
- * User: antonkholodok
- * Date: 12/6/12
- * Time: 6:10 AM
- * To change this template use File | Settings | File Templates.
- */
 public class MoneyTransfer {
 
     private CardAccountChecker cardAccountChecker;
