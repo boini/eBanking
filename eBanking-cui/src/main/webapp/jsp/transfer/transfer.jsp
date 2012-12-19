@@ -5,11 +5,17 @@
 <%@ taglib prefix="sjg" uri="/struts-jquery-grid-tags"%>
 <script type="text/javascript">
     $(document).ready(function(){
+        jQuery.validator.addMethod("greaterThan", function(value, element){
+                    return (value>0);
+                },
+                "enter amount greater than 0");
         $("#transfer").validate({
+            errorLabelContainer: $("#container"),
             rules: {
                 amount: {
                     required: true,
-                    digits: true
+                    number: true,
+                    greaterThan: true
                 }
             }
         });
@@ -70,6 +76,12 @@
 
         <s:textfield key="amount"
                      label="Sum"/>
+        <tr>
+            <td colspan="2" height="22px">
+                <div id="container">
+                </div>
+            </td>
+        </tr>
         <s:submit value="Continue" cssClass="btn btn-primary"/>
     </s:form>
 

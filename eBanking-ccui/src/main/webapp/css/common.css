@@ -76,3 +76,9 @@ label.error{
 #corporationInfoSubmit { margin-bottom: 10px; }
 
 .purchaseText, .saleText {margin: 0 !important;}
+div.error{
+    color: red !important;
+    margin-left: 10px;
+    font-size: 15px;
+    font-weight: bold;
+}

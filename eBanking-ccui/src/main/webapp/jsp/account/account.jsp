@@ -7,7 +7,7 @@
         <h5>
             Hello, <s:property value="#session['clientAccount'].login"/>
         </h5>
-        Welcome to the "eBanking | Call Center"
+        Client info
     </div>
 
     <div>
@@ -194,6 +194,7 @@
                         </tbody>
                         </table>
                         <br/>
+                        <div class="errors"></div>
                         <a class="btn btn-mini btn-success add-card-btn" href="#"><i class="icon-plus"></i> Add card</a>
                     </div>
                 </s:iterator>
