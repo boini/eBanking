@@ -1,4 +1,4 @@
-package com.ebanking.ws.service.impl.info;
+package com.ebanking.ccui.service.client.impl.history;
 
 /**
  * Created with IntelliJ IDEA.

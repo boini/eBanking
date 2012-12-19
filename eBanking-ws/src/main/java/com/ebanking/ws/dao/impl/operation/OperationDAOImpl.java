@@ -63,4 +63,16 @@ public class OperationDAOImpl extends CommonDAOImpl implements OperationDAO {
 
         return operations;
     }
+
+    @Override
+    public List getBankAccountOperations(long bankAccountId, Date fromDate, Date toDate) {
+        Criteria criteria = currentSession().createCriteria(Operation.class, "operation");
+        criteria.createAlias("operation.contractorAccount", "c");
+        criteria.add(Restrictions.eq("c.bankAccountId", bankAccountId));
+        criteria.add(Restrictions.between("operation.processingDate", fromDate, toDate));
+
+        List<Operation> operations = criteria.list();
+
+        return operations;
+    }
 }

@@ -51,6 +51,13 @@ public class OperationHistoryService extends SpringSupportService implements Ser
                 for (int index = 0; index < idList.length; ++index) {
                     operations.addAll(operationDAO.getAccountOperations(idList[index]));
                 }
+                break;
+            case BANK_ACCOUNT:
+                startDate = request.getFromDate();
+                endDate = request.getToDate();
+                for (int index = 0; index < idList.length; ++index) {
+                    operations.addAll(operationDAO.getBankAccountOperations(idList[index], startDate, endDate));
+                }
         }
 
         for (Operation operation : operations) {

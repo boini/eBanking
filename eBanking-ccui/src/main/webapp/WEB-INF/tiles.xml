@@ -34,10 +34,18 @@
         <put-attribute name="title" value="eBanking Call Center"/>
         <put-attribute name="body" value="/jsp/corporation/corporationList.jsp"/>
         <put-attribute name="actionName" value="corporations-action"/>
+        <put-list-attribute name="styles">
+            <add-attribute value="/css/normalize.css"/>
+            <add-attribute value="/css/bootstrap.css"/>
+            <add-attribute value="/css/ui-lightness/jquery-ui-1.9.2.custom.min.css"/>
+            <add-attribute value="/css/common.css"/>
+        </put-list-attribute>
         <put-list-attribute name="scripts">
             <add-attribute value="/js/jquery-1.8.2.js"/>
+            <add-attribute value="/js/jquery.dateFormat-1.0.js"/>
             <add-attribute value="/js/bootstrap.js"/>
-            <add-attribute value="/js/jquery.datepicker.js"/>
+            <add-attribute value="/js/datepicker.js"/>
+            <add-attribute value="/js/jquery-ui-1.9.2.custom.js"/>
             <add-attribute value="/js/corporation.js"/>
         </put-list-attribute>
     </definition>
