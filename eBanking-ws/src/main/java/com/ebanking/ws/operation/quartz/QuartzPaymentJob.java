@@ -5,13 +5,6 @@ import org.quartz.JobExecutionException;
 import org.springframework.scheduling.quartz.QuartzJobBean;
 import org.springframework.stereotype.Component;
 
-/**
- * Created with IntelliJ IDEA.
- * User: antonkholodok
- * Date: 12/5/12
- * Time: 8:02 AM
- * To change this template use File | Settings | File Templates.
- */
 @Component
 public class QuartzPaymentJob extends QuartzJobBean {
 

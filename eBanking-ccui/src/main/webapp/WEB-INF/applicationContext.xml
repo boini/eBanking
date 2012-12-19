@@ -41,6 +41,7 @@ http://www.springframework.org/schema/context/spring-context-3.1.xsd">
     <bean id="createAccountService" class="com.ebanking.ccui.service.client.impl.createAccount.CreateAccountService"/>
     <bean id="createCardAccountService" class="com.ebanking.ccui.service.client.impl.cardAccount.CreateCardAccountService"/>
     <bean id="operationHistoryService" class="com.ebanking.ccui.service.client.impl.history.OperationHistoryService"/>
+    <bean id="saveRateService" class="com.ebanking.ccui.service.client.impl.rate.SaveRateService"/>
 
     <bean name="LoginForwardAction" class="com.ebanking.ccui.presentation.action.LoginForward"/>
     <bean name="LogoutForwardAction" class="com.ebanking.ccui.presentation.action.LogoutForward"/>
@@ -73,4 +74,5 @@ http://www.springframework.org/schema/context/spring-context-3.1.xsd">
     <bean name="CreateCardAccountAction" class="com.ebanking.ccui.presentation.action.card.CreateCardAccountAction"/>
 
     <bean name="BankAccountOperationHistoryAction" class="com.ebanking.ccui.presentation.action.bankAccount.BankAccountOperationHistoryAction"/>
+    <bean name="SaveRateAction" class="com.ebanking.ccui.presentation.action.rate.SaveRateAction"/>
 </beans>

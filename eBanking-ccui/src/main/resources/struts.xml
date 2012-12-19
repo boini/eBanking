@@ -132,6 +132,22 @@
             <result name="success" type="json"/>
         </action>
 
+        <action name="rate" class="NBRBCurrencyAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">viewRates</param>
+            </result>
+        </action>
+
+        <action name="viewRates" class="RatesAction">
+            <result name="success" type="tiles">
+                /rate.tiles
+            </result>
+        </action>
+
+        <action name="saveRate" class="SaveRateAction">
+            <result name="success" type="json"/>
+        </action>
+
         <action name="*">
             <result type="redirectAction">
                 <param name="actionName">main</param>

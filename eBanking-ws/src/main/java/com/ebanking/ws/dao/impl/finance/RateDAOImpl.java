@@ -26,4 +26,14 @@ public class RateDAOImpl extends CommonDAOImpl implements RateDAO {
             return null;
         }
     }
+
+    @Override
+    public Rate getById(long id) {
+        return (Rate) currentSession().get(Rate.class, id);
+    }
+
+    @Override
+    public void saveOrUpdate(Rate rate) {
+        currentSession().saveOrUpdate(rate);
+    }
 }

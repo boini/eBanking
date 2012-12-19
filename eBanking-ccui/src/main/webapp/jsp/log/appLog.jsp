@@ -7,7 +7,7 @@
         <h5>
             Hello, <s:property value="#session['clientAccount'].login"/>
         </h5>
-        Welcome to the "eBanking | Call Center"
+        Info about all user activities
     </div>
 
     <div>
