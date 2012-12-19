@@ -19,6 +19,14 @@
                 }
             }
         });
+        $("#transfer_fromCardId").bind("change", function(){
+            value = $(this).val();
+            $("#transfer_toCardId option:disabled").removeAttr("disabled");
+            $("#transfer_toCardId option[value=" + value + "]").attr("disabled", "");
+            $("#transfer_toCardId option:enabled:first").attr("selected", true);
+        });
+        $("#transfer_fromCardId option:enabled:first").attr("selected", true);
+        $("#transfer_fromCardId").trigger("change");
     });
 </script>
 <div>
