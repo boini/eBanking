@@ -41,7 +41,7 @@ CREATE TABLE `operation_status` (
 
 LOCK TABLES `operation_status` WRITE;
 /*!40000 ALTER TABLE `operation_status` DISABLE KEYS */;
-INSERT INTO `operation_status` VALUES (1,'C','Completed'),(2,'N','New'),(3,'E','Error'),(4,'P','Processing');
+INSERT INTO `operation_status` VALUES (1,'C','Completed'),(2,'N','New'),(3,'E','Error. Not enough money.'),(4,'P','Processing');
 /*!40000 ALTER TABLE `operation_status` ENABLE KEYS */;
 UNLOCK TABLES;
 
