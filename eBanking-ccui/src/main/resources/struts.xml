@@ -104,6 +104,16 @@
             <result name="success" type="tiles">/corporations.tiles</result>
         </action>
 
+        <action name="corporationView" class="CorporationViewAction">
+            <result name="success" type="json"/>
+        </action>
+
+        <action name="*">
+            <result type="redirectAction">
+                <param name="actionName">main</param>
+            </result>
+        </action>
+
     </package>
 
 </struts>

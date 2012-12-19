@@ -34,9 +34,13 @@ public class CorporationService extends SpringSupportService implements Service<
             Corporation corporation = corporationDAO.getById(corporationId);
             BankAccount[] bankAccountArr = corporation.getBankAccountList().toArray(
                     new BankAccount[corporation.getBankAccountList().size()]);
+            for (BankAccount bankAccount : bankAccountArr) {
+                bankAccount.setCorporation(null);
+            }
             corporationRS.setBankAccounts(bankAccountArr);
             Corporation[] corporations = new Corporation[1];
             corporations[0] = corporation;
+            corporations[0].setBankAccountList(null);
             corporationRS.setCorporations(corporations);
             corporationRS.setSuccess(true);
         }

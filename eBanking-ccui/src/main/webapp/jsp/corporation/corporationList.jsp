@@ -10,22 +10,20 @@
         Welcome to the "eBanking | Call Center"
     </div>
 
-    <div>
+    <div id="corporations">
         <h6>Corporation:</h6>
 
         <ul>
             <s:iterator value="#session['corporationForm'].corporations" var="corporation" status="index">
                 <li>
-                    <s:url action="corporationView" var="corporationViewUrl">
-                        <s:param name="corporationId">
-                            <s:property value="#corporation.corporationId"/>
-                        </s:param>
-                    </s:url>
-                    <s:a href="%{corporationViewUrl}">
+                    <a href="#" class="corp-info">
                         <s:property value="#corporation.description"/>
-                    </s:a>
+                    </a>
+                    <input type="hidden" value='<s:property value="#corporation.corporationId"/>'/>
                 </li>
             </s:iterator>
         </ul>
+    </div>
+    <div id="details">
     </div>
 </div>
