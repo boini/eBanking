@@ -78,4 +78,6 @@ http://www.springframework.org/schema/context/spring-context-3.1.xsd">
     <bean name="SaveRateAction" class="com.ebanking.ccui.presentation.action.rate.SaveRateAction"/>
 
     <bean name="ChargeAction" class="com.ebanking.ccui.presentation.action.charge.ChargeAction"/>
+
+    <bean name="RemoveClientAction" class="com.ebanking.ccui.presentation.action.client.RemoveClientAction"/>
 </beans>

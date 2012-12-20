@@ -2,6 +2,8 @@ package com.ebanking.ws.service.impl.removeCard;
 
 import com.ebanking.ws.dao.CardAccountDAO;
 import com.ebanking.ws.dao.CardDAO;
+import com.ebanking.ws.dao.ClientDAO;
+import com.ebanking.ws.model.account.Client;
 import com.ebanking.ws.model.card.Card;
 import com.ebanking.ws.model.card.CardAccount;
 import com.ebanking.ws.service.Service;
@@ -11,10 +13,12 @@ import com.ebanking.ws.service.response.RemoveCardRS;
 
 public class RemoveCardService extends SpringSupportService implements Service<RemoveCardRQ, RemoveCardRS> {
     private CardDAO cardDAO;
+    private ClientDAO clientDAO;
     private CardAccountDAO cardAccountDAO;
 
     @Override
     public RemoveCardRS execute(RemoveCardRQ request) {
+        clientDAO = (ClientDAO) getBean("clientDAO");
         cardDAO = (CardDAO) getBean("cardDAO");
         cardAccountDAO = (CardAccountDAO) getBean("cardAccountDAO");
 
@@ -37,6 +41,10 @@ public class RemoveCardService extends SpringSupportService implements Service<R
             case CARD_ACCOUNT:
                 CardAccount cardAccount = cardAccountDAO.getById(id);
                 cardAccountDAO.delete(cardAccount);
+                break;
+            case CLIENT:
+                Client client = clientDAO.getById(id);
+                clientDAO.delete(client);
                 break;
         }
 

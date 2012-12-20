@@ -136,7 +136,7 @@ $(function() {
             success: function(data) {
                 var success = data.success;
                 if (success) {
-                    alert("Account successfully has been deleted!")
+                    alert("Account successfully has been added!")
                     window.location.replace("/viewAccount.action");
                 } else {
                     $('#message').append(

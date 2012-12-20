@@ -2,7 +2,8 @@ package com.ebanking.ws.service.impl.removeCard;
 
 public enum RemoveCardType {
     CARD("card"),
-    CARD_ACCOUNT("cardAccount");
+    CARD_ACCOUNT("cardAccount"),
+    CLIENT("client");
 
     private String type;
 
@@ -20,6 +21,9 @@ public enum RemoveCardType {
         }
         if (CARD_ACCOUNT.getType().equals(type)) {
             return CARD_ACCOUNT;
+        }
+        if (CLIENT.getType().equals(type)) {
+            return CLIENT;
         }
         return null;
     }

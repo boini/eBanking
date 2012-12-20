@@ -152,6 +152,10 @@
             <result name="success" type="json"/>
         </action>
 
+        <action name="removeClient" class="RemoveClientAction">
+            <result name="success" type="json"/>
+        </action>
+
         <action name="*">
             <result type="redirectAction">
                 <param name="actionName">main</param>

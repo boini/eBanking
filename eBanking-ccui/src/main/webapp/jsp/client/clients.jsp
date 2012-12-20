@@ -31,11 +31,13 @@
                 <th>Email</th>
                 <th width="73"></th>
                 <th width="50"></th>
+                <th width="70"></th>
             </tr>
             </thead>
             <tbody>
             <s:iterator value="#session['retrieveClientForm'].clients" var="client" status="index">
                 <tr>
+                    <input type="hidden" class="clientIdValue" value='<s:property value="#client.clientId"/>'/>
                     <td>
                         <s:property value="#index.index + 1"/>
                     </td>
@@ -82,6 +84,9 @@
                             </s:param>
                         </s:url>
                         <s:a cssClass="btn btn-mini btn-primary" href="%{editClientUrl}"><i class="icon-pencil"></i> Edit</s:a>
+                    </td>
+                    <td>
+                        <a class="btn btn-mini btn-danger rm-client-btn" href="#"><i class="icon-remove"></i> Delete</a>
                     </td>
                 </tr>
             </s:iterator>
