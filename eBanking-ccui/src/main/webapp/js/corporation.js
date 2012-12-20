@@ -148,6 +148,7 @@ $(function() {
                     onlineInfoTable += '<thead>' +
                         '<tr>' +
                         '<th>Bank account</th>' +
+                        '<th>Status</th>' +
                         '<th>Processing date</th>' +
                         '<th>Transaction date</th>' +
                         '<th>Card</th>' +
@@ -161,6 +162,7 @@ $(function() {
                     $.each(operations, function(index, operation) {
                         onlineInfoTable += '<tr>';
                         onlineInfoTable += '<td>' + operation.contractorAccount.number + '</td>';
+                        onlineInfoTable += '<td>' + operation.operationStatus.description + '</td>';
                         onlineInfoTable += '<td>' + operation.processingDate + '</td>';
                         onlineInfoTable += '<td>';
                         if (operation.transactionDate) {
