@@ -232,7 +232,7 @@ $(function() {
         {
             var hasErrors = false;
             if(!/^\d{16}$/.test(cardNumber)){
-                errorContainer.append($("<div/>").addClass("error").text("wrong card number"));
+                errorContainer.append($("<div/>").addClass("error").text("wrong card number(must contain 16 digits)"));
                 hasErrors = true;
             }
             if(!/^\d{3}$/.test(cvv)){
