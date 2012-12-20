@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://charge.impl.service.ws.ebanking.com"
+                  xmlns:impl="http://charge.impl.service.ws.ebanking.com"
+                  xmlns:tns1="http://request.service.ws.ebanking.com"
+                  xmlns:tns2="http://response.service.ws.ebanking.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://request.service.ws.ebanking.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://response.service.ws.ebanking.com"/>
+   <complexType name="ChargeRQ">
+    <sequence>
+     <element name="amount" type="xsd:double"/>
+     <element name="date" nillable="true" type="xsd:dateTime"/>
+     <element name="fromBankAccount" type="xsd:long"/>
+     <element name="toCardAccount" type="xsd:long"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://charge.impl.service.ws.ebanking.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://response.service.ws.ebanking.com"/>
+   <import namespace="http://request.service.ws.ebanking.com"/>
+   <element name="request" type="tns1:ChargeRQ"/>
+   <element name="executeReturn" type="tns2:ChargeRS"/>
+   <element name="x0" type="xsd:anyType"/>
+   <element name="executeReturn1" type="xsd:anyType"/>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://response.service.ws.ebanking.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://request.service.ws.ebanking.com"/>
+   <complexType name="ChargeRS">
+    <sequence>
+     <element name="exception" nillable="true" type="xsd:string"/>
+     <element name="success" type="xsd:boolean"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="executeResponse1">
+
+      <wsdl:part element="impl:executeReturn1" name="executeReturn">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="executeResponse">
+
+      <wsdl:part element="impl:executeReturn" name="executeReturn">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="executeRequest1">
+
+      <wsdl:part element="impl:x0" name="x0">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="executeRequest">
+
+      <wsdl:part element="impl:request" name="request">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="ChargeService">
+
+      <wsdl:operation name="execute" parameterOrder="request">
+
+         <wsdl:input message="impl:executeRequest" name="executeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:executeResponse" name="executeResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="execute" parameterOrder="x0">
+
+         <wsdl:input message="impl:executeRequest1" name="executeRequest1">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:executeResponse1" name="executeResponse1">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ChargeServiceSoapBinding" type="impl:ChargeService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="execute">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="executeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="executeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="execute">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="executeRequest1">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="executeResponse1">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ChargeServiceService">
+
+      <wsdl:port binding="impl:ChargeServiceSoapBinding" name="ChargeService">
+
+         <wsdlsoap:address location="http://localhost:8082/services/com/ebanking/ws/service/impl/charge/ChargeService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

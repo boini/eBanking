@@ -3,7 +3,11 @@ package com.ebanking.ws.dao.impl.account;
 import com.ebanking.ws.dao.BankAccountDAO;
 import com.ebanking.ws.dao.impl.CommonDAOImpl;
 import com.ebanking.ws.model.account.BankAccount;
+import com.ebanking.ws.model.account.Corporation;
+import com.ebanking.ws.model.finance.Currency;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -22,5 +26,17 @@ public class BankAccountDAOImpl extends CommonDAOImpl implements BankAccountDAO 
     @Override
     public void saveOrUpdate(BankAccount bankAccount) {
         currentSession().saveOrUpdate(bankAccount);
+    }
+
+    @Override
+    public BankAccount getByCurrencyAndName(Currency currency, Corporation corporation) {
+        List accounts = currentSession().createQuery("from BankAccount as account where (account.currency.currencyId = ? and account.corporation.corporationId = ?)")
+                .setLong(0, currency.getCurrencyId())
+                .setLong(1, corporation.getCorporationId())
+                .list();
+        if (accounts != null && accounts.size() > 0) {
+            return (BankAccount) accounts.get(0);
+        }
+        return null;
     }
 }

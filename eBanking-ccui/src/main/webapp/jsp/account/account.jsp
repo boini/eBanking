@@ -126,6 +126,7 @@
                                 <th>Card type</th>
                                 <th>Expiration date</th>
                                 <th width="70"></th>
+                                <th width="70"></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -155,6 +156,9 @@
                                     </td>
                                     <td>
                                         <s:date name="#card.expirationDate" format="MM/dd/yyyy"/>
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-mini btn-warning charge-btn-card" href="#"><i class="icon-circle-arrow-down"></i> Charge</a>
                                     </td>
                                     <td>
                                         <a class="btn btn-mini btn-danger rm-btn-card" href="#"><i class="icon-remove"></i> Remove</a>
@@ -209,11 +213,21 @@
 
                         </tbody>
                         </table>
+
+                        <div class="charge">
+                            <h6>Charge amount:</h6>
+                            <input type="hidden" value="" class="chargeCardId"/>
+                            <input type="text" id="chargeAmount"/><br/>
+                            <a class="btn btn-mini btn-warning charge-submit-btn-card" href="#"><i class="icon-circle-arrow-down"></i> Charge</a>
+                            <a class="btn btn-mini btn-danger charge-cancel-btn-card" href="#"><i class="icon-remove"></i> Cancel</a>
+                        </div>
+
                         <br/>
                         <div class="errors"></div>
                         <a class="btn btn-mini btn-success add-card-btn" href="#"><i class="icon-plus"></i> Add card</a>
                     </div>
                 </s:iterator>
+
             </s:if>
             <s:if test="#session.cardAccountsForm.cardAccounts.size == 0">
                 <h6>There is no card account for this account</h6>

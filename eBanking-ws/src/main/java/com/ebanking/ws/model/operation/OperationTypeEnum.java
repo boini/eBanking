@@ -10,7 +10,8 @@ package com.ebanking.ws.model.operation;
 public enum OperationTypeEnum {
     PAYMENT("P"),
     TRANSFER_TO("TT"),
-    TRANSFER_FROM("TF");
+    TRANSFER_FROM("TF"),
+    CHARGE("CH");
 
     private String operationType;
 

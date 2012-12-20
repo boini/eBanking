@@ -306,6 +306,16 @@
         <beanMapping qname="ns:local" xmlns:ns="saveRateRQ" languageSpecificType="java:com.ebanking.ws.service.request.SaveRateRQ"/>
 
     </service>
+    <service name="ChargeService" provider="java:RPC" style="document" use="literal">
+        <parameter name="className" value="com.ebanking.ws.service.impl.charge.ChargeService"/>
+        <parameter name="allowedMethods" value="*"/>
+        <parameter name="scope" value="Application"/>
+        <namespace>http://charge.impl.service.ws.ebanking.com</namespace>
+
+        <beanMapping qname="ns:local" xmlns:ns="chargeRS" languageSpecificType="java:com.ebanking.ws.service.response.ChargeRS"/>
+        <beanMapping qname="ns:local" xmlns:ns="chargeRQ" languageSpecificType="java:com.ebanking.ws.service.request.ChargeRQ"/>
+
+    </service>
 
 
     <handler name="soapmonitor" type="java:org.apache.axis.handlers.SOAPMonitorHandler">

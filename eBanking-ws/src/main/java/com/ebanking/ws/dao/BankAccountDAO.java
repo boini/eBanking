@@ -1,6 +1,8 @@
 package com.ebanking.ws.dao;
 
 import com.ebanking.ws.model.account.BankAccount;
+import com.ebanking.ws.model.account.Corporation;
+import com.ebanking.ws.model.finance.Currency;
 
 /**
  * Created with IntelliJ IDEA.
@@ -12,4 +14,5 @@ import com.ebanking.ws.model.account.BankAccount;
 public interface BankAccountDAO {
     BankAccount getBankAccountById(long id);
     void saveOrUpdate(BankAccount bankAccount);
+    BankAccount getByCurrencyAndName(Currency currency, Corporation corporation);
 }

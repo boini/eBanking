@@ -68,4 +68,19 @@ public class MoneyTransfer {
         }
         return false;
     }
+
+    public boolean transfer(BankAccount bankAccount, CardAccount cardContractorAccount, double amount) {
+        double contractorAmount = transferUtils.convert(bankAccount.getCurrency(), cardContractorAccount.getCurrency(), amount);
+
+        if (bankAccountChecker.checkAccountForAmount(bankAccount.getBankAccountId(), amount)) {
+            bankAccount.setAmount(bankAccount.getAmount() - amount);
+            cardContractorAccount.setBalance(cardContractorAccount.getBalance() + contractorAmount);
+
+            bankAccountDAO.saveOrUpdate(bankAccount);
+            cardAccountDAO.saveOrUpdate(cardContractorAccount);
+
+            return true;
+        }
+        return false;
+    }
 }

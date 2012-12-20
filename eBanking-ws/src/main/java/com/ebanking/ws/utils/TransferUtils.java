@@ -25,9 +25,13 @@ public class TransferUtils {
     }
 
     public double convert(Currency inCurrency, Currency outCurrency, double amount) {
+        if (inCurrency.getCurrencyCode().equals(outCurrency.getCurrencyCode())) {
+            return amount;
+        }
 
         boolean inCurrencyIsByr = CURRENCY_CODE_BYR.equals(inCurrency.getCurrencyCode());
         boolean outCurrencyIsByr = CURRENCY_CODE_BYR.equals(outCurrency.getCurrencyCode());
+
         double rateCurToBr = inCurrencyIsByr ? 1.0 : rateDAO.getByCurrency(inCurrency).getPurchase();
         double rateBrToCur = outCurrencyIsByr ? 1.0 : rateDAO.getByCurrency(outCurrency).getSale();
 

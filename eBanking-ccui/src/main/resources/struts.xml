@@ -148,6 +148,10 @@
             <result name="success" type="json"/>
         </action>
 
+        <action name="chargeCard" class="ChargeAction">
+            <result name="success" type="json"/>
+        </action>
+
         <action name="*">
             <result type="redirectAction">
                 <param name="actionName">main</param>

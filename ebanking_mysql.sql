@@ -552,8 +552,10 @@ INSERT INTO `operation` VALUES (1,3,1,'Number=291258458','2012-12-19 09:06:38',N
 /*!40000 ALTER TABLE `operation` ENABLE KEYS */;
 UNLOCK TABLES;
 
-
-
+INSERT INTO `ebanking`.`corporation` (`corporation_id`, `corporation_name`, `description`) VALUES ('11', 'EBANKING', 'Ebanking ');
+INSERT INTO `ebanking`.`operation_type` (`operation_type_id`, `operation_type`, `description`) VALUES ('4', 'CH', 'Charge');
+INSERT INTO `ebanking`.`bank_account` (`bank_account_id`, `corporation_id`, `currency_id`, `amount`, `number`) VALUES ('21', '11', '2', '1000000', 'EBANKING-BYR');
+INSERT INTO `ebanking`.`bank_account` (`bank_account_id`, `corporation_id`, `currency_id`, `amount`, `number`) VALUES ('22', '11', '1', '1000000', 'EBANKING-USD');
 
 
 

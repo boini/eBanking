@@ -71,9 +71,12 @@ public class PaymentOperationProcessor {
         if (OperationTypeEnum.PAYMENT.getOperationType().equals(operationType.getOperationType())) {
             BankAccount corporationBankAccount = operation.getContractorAccount();
             success = moneyTransfer.transfer(clientCardAccount, corporationBankAccount, operation.getTransactionAmount());
-        } else { // TT(transfer to) or TF(transfer from) operation
+        } else if (OperationTypeEnum.TRANSFER_TO.getOperationType().equals(operationType.getOperationType())) { // TT(transfer to) or TF(transfer from) operation
             contractorCard = operation.getContractorCard();
             success = moneyTransfer.transfer(clientCardAccount, contractorCard.getCardAccount(), operation.getTransactionAmount());
+        } else if (OperationTypeEnum.CHARGE.getOperationType().equals(operationType.getOperationType())) {
+            BankAccount bankAccount = operation.getContractorAccount();
+            success = moneyTransfer.transfer(bankAccount, clientCardAccount, operation.getTransactionAmount());
         }
 
         Operation additionalOperation = null;

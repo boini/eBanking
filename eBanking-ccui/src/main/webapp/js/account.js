@@ -1,5 +1,38 @@
 $(function() {
     $('.newCardRow').hide();
+    $('.charge').hide();
+
+    $('.charge-btn-card').on('click', function() {
+        $(this).parents('.cardAccount').find('.charge').show();
+        $(this).parents('.cardAccount').find('.charge').find('.chargeCardId').val(
+            $(this).parents('tr').find('.cardId').val()
+        );
+    })
+
+    $('.charge-cancel-btn-card').on('click', function() {
+        $(this).parents('.charge').hide();
+    })
+
+    $('.charge-submit-btn-card').on('click', function() {
+        var amount = $(this).parents('.charge').find('#chargeAmount').val();
+        var cardId = $(this).parents('.charge').find('.chargeCardId').val();
+
+        $.ajax({
+            url: '/chargeCard.action',
+            type: 'post',
+            data: {
+                amount: amount,
+                cardId: cardId
+            },
+            success: function(data) {
+                var success = data.success;
+                if (success) {
+                    alert("Charge request was sent to processing!")
+                    window.location.replace("/viewAccount.action");
+                }
+            }
+        })
+    })
 
     $('#createAccountForm').hide();
     $('#addCardAccountForm').hide();
