@@ -121,10 +121,10 @@ $('document').ready(function() {
                     $.each(operations, function(index, operation) {
                         onlineInfoTable += '<tr>';
                         onlineInfoTable += '<td>' + operation.operationStatus.description + '</td>';
-                        onlineInfoTable += '<td>' + operation.processingDate + '</td>';
+                        onlineInfoTable += '<td>' + $.format.date(operation.processingDate, 'MM/dd/yyyy HH:mm:ss') + '</td>';
                         onlineInfoTable += '<td>';
                         if (operation.transactionDate) {
-                            onlineInfoTable += operation.transactionDate + '</td>';
+                            onlineInfoTable += $.format.date(operation.transactionDate, 'MM/dd/yyyy HH:mm:ss') + '</td>';
                         } else {
                             onlineInfoTable += '-' + '</td>';
                         }

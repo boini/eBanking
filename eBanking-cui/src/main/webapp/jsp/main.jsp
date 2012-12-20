@@ -13,7 +13,7 @@
     <div>
         <table class="table table-condensed table-hover" id="cards">
             <caption>Your cards (balance as at
-                <s:property value="#session['clientCardsForm'].date"/>
+                <s:date name="#session['clientCardsForm'].date" format="MM/dd/yyyy HH:mm:ss"/>
                 ) </caption>
             <thead>
                 <tr>
@@ -53,7 +53,7 @@
         </table>
         <table class="table table-condensed table-hover">
             <caption>Exchange rates on card transactions (as
-                <s:property value="#session['nbrbCurrencyRatesForm'].date"/>
+                <s:date name="#session['nbrbCurrencyRatesForm'].date" format="MM/dd/yyyy HH:mm:ss"/>
                 )</caption>
             <thead>
             <tr>

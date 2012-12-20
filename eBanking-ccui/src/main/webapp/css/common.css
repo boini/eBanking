@@ -31,6 +31,8 @@ input[type="submit"].btn { min-width: 100px; }
 .cardAccount h6 {margin-top: 0;}
 hr {margin: 0;}
 
+.add-card-btn {margin: 10px 0;}
+
 .login-error {width: 350px; margin: auto;}
 .rm-card-account-btn { float: right; margin-top: -30px;}
 
@@ -82,3 +84,7 @@ div.error{
     font-size: 15px;
     font-weight: bold;
 }
+
+#cardNumberCharge, #currencyCharge { background: #555; color: #ddd; }
+#cardNumberCharge { width: 150px; }
+#currencyCharge {width: 50px; }

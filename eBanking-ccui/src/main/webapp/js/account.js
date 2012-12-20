@@ -3,7 +3,12 @@ $(function() {
     $('.charge').hide();
 
     $('.charge-btn-card').on('click', function() {
-        $(this).parents('.cardAccount').find('.charge').show();
+        var cardNumber = $(this).parents('tr').find('td').eq(1).html().trim();
+        var currency = $(this).parents('tr').find('td').eq(5).html().trim();
+
+        $(this).parents('.cardAccount').find('.charge').show()
+            .find('#cardNumberCharge').val(cardNumber).end()
+            .find('#currencyCharge').val(currency);
         $(this).parents('.cardAccount').find('.charge').find('.chargeCardId').val(
             $(this).parents('tr').find('.cardId').val()
         );

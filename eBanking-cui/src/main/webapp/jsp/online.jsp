@@ -39,7 +39,9 @@
         </div>
 
         <table class="table table-condensed table-hover" id="cards">
-            <caption>Your cards (balance as at 07.11.2012 17:25:51) </caption>
+            <caption>Your cards (balance as at
+                <s:date name="#session['clientCardsForm'].date" format="MM/dd/yyyy HH:mm:ss"/>
+                ) </caption>
             <thead>
             <tr>
                 <th></th>

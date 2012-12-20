@@ -58,6 +58,7 @@ public class ChargeService extends SpringSupportService implements Service<Charg
             operation.setContractorAccount(bankAccount);
             operation.setCard(card);
             operation.setProcessingDate(processingDate);
+            operation.setOperationKey("-");
 
             operationDAO.saveOrUpdate(operation);
 

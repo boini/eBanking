@@ -206,8 +206,10 @@
                                     <input type="text" class="newCardExpDate" />
                                 </td>
                                 <td>
-                                    <a class="btn btn-mini btn-success add-card-btn-sbmt" href="#"><i class="icon-plus"></i></a>
-                                    <a class="btn btn-mini btn-danger cancel-btn" href="#"><i class="icon-remove"></i></a>
+                                    <a class="btn btn-mini btn-success add-card-btn-sbmt" href="#"><i class="icon-plus"></i> Submit</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-mini btn-danger cancel-btn" href="#"><i class="icon-remove"></i> Cancel</a>
                                 </td>
                             </tr>
 
@@ -217,7 +219,11 @@
                         <div class="charge">
                             <h6>Charge amount:</h6>
                             <input type="hidden" value="" class="chargeCardId"/>
-                            <input type="text" id="chargeAmount"/><br/>
+                            <input type="text" id="chargeAmount"/>
+                            <input type="text" disabled="disabled" id="currencyCharge">
+                            TO
+                            <input type="text" disabled="disabled" id="cardNumberCharge">
+                            <br/>
                             <a class="btn btn-mini btn-warning charge-submit-btn-card" href="#"><i class="icon-circle-arrow-down"></i> Charge</a>
                             <a class="btn btn-mini btn-danger charge-cancel-btn-card" href="#"><i class="icon-remove"></i> Cancel</a>
                         </div>

@@ -17,7 +17,7 @@
     <li id="corporations-action"><a href="/corporations.action">View corporations</a></li>
 
     <li class="nav-header">Rates</li>
-    <li><a href="/rate.action">Change rates</a></li>
+    <li id="rate-action"><a href="/rate.action">Change rates</a></li>
 
     <li class="nav-header">Logs</li>
     <li id="appLog-action"><a href="/appLog.action">App logs</a></li>

@@ -120,10 +120,10 @@ $('document').ready(function() {
                         '<tbody>';
                     $.each(operations, function(index, operation) {
                         cardAccountInfoTable += '<tr>';
-                        cardAccountInfoTable += '<td>' + operation.processingDate + '</td>';
+                        cardAccountInfoTable += '<td>' + $.format.date(operation.processingDate, 'MM/dd/yyyy HH:mm:ss') + '</td>';
                         cardAccountInfoTable += '<td>';
                         if (operation.transactionDate) {
-                            cardAccountInfoTable += operation.transactionDate + '</td>';
+                            cardAccountInfoTable += $.format.date(operation.transactionDate, 'MM/dd/yyyy HH:mm:ss') + '</td>';
                         } else {
                             cardAccountInfoTable += '-' + '</td>';
                         }
