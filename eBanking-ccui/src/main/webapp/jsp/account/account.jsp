@@ -1,7 +1,23 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<script type="text/javascript">
+    $(document).ready(function(){
+        jQuery.validator.addMethod("cardnumber", function(value, element){
+                    return /^\d{16}$/.test(value);
+                },
+                "enter 16 digits of card number");
+        $("#accountForward").validate({
+            rules: {
+                cardAccountNumber: {
+                    required: true,
+                    digits: true,
+                    cardnumber: true
+                }
+            }
+        });
+    });
+</script>
 <div>
     <div id="greeting">
         <h5>
@@ -207,7 +223,7 @@
             <div id="addCardAccountForm">
                 <s:form >
                     <h6>Add card account</h6>
-                    <s:textfield label="Card account number" id="cardAccountNumber"/>
+                    <s:textfield label="Card account number" id="cardAccountNumber" name="cardAccountNumber"/>
                     <s:select label="Currency" list="#{'USD':'USD', 'BYR':'BYR'}" value="USD" id="cardAccountCurrency"/>
                     <td>
                         <a class="btn btn-mini btn-success sumbit-card-account-btn" href="#"><i class="icon-plus"></i> Create</a>

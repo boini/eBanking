@@ -34,10 +34,10 @@
                             required: true,
                             rangelength: [13, 13]
                         },
-                        mobile: {
+                        mobileNumber: {
                             mobileBYIso: true
                         },
-                        phone: {
+                        phoneNumber: {
                             mobileBYIso: true
                         },
                         email: {

@@ -2,13 +2,18 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <script type="text/javascript">
+    jQuery.validator.addMethod("greaterThan", function(value, element, params){
+                return (value>params[0]);
+            },
+            "enter amount greater than {0}");
     $(document).ready(function(){
         $("#rentNumberForm").validate({
             errorLabelContainer: $("#container"),
             rules: {
                 amount: {
                     required: true,
-                    number: true
+                    number: true,
+                    greaterThan: [0]
                 }
             }
         });
