@@ -31,10 +31,23 @@
         <s:if test="#session.accountForm.account == null">
             <h6>There is no account for this client</h6>
             <a class="btn btn-mini btn-success create-account-btn" href="#"><i class="icon-user"></i> Create account</a>
-
+            <script type="text/javascript">
+                $(document).ready(function(){
+                    $("#createAccountForm").validate({
+                        rules: {
+                            login: {
+                                required: true
+                            },
+                            password: {
+                                required: true
+                            }
+                        }
+                    });
+                });
+            </script>
             <s:form id="createAccountForm">
-                <s:textfield label="Login" id="accountLogin"/>
-                <s:textfield label="Password" id="accountPassword"/>
+                <s:textfield label="Login" id="accountLogin" name="login"/>
+                <s:textfield label="Password" id="accountPassword" name="password"/>
                 <td>
                     <a class="btn btn-mini btn-success sumbit-account-btn" href="#"><i class="icon-plus"></i> Create</a>
                     <a class="btn btn-mini btn-danger cancel-account-btn" href="#"><i class="icon-remove"></i> Cancel</a>
@@ -221,11 +234,15 @@
                         <div class="charge">
                             <h6>Charge amount:</h6>
                             <input type="hidden" value="" class="chargeCardId"/>
-                            <input type="text" id="chargeAmount"/>
+                            <table>
+                                <tr>
+                                    <td><input type="text" id="chargeAmount" style="float:left"/></td>
+                                    <td><div class="errors" style="float:left"></div></td>
+                                </tr>
+                            </table>
                             <input type="text" disabled="disabled" id="currencyCharge">
                             TO
                             <input type="text" disabled="disabled" id="cardNumberCharge">
-                            <br/>
                             <a class="btn btn-mini btn-warning charge-submit-btn-card" href="#"><i class="icon-circle-arrow-down"></i> Charge</a>
                             <a class="btn btn-mini btn-danger charge-cancel-btn-card" href="#"><i class="icon-remove"></i> Cancel</a>
                         </div>

@@ -32,9 +32,25 @@ $(function() {
     })
 
     $('.save-rate-btn').on('click', function() {
+        var errorContainer = $(".errors").empty();
+
         var rateId = $(this).parents('tr').find('.rateId').val();
         var sale = $(this).parents('tr').find('.saleText').val();
         var purchase = $(this).parents('tr').find('.purchaseText').val();
+        //validation block
+        {
+            var hasErrors = false;
+
+            if(isNaN(parseFloat(sale)) || (parseFloat(sale)<0)){
+                errorContainer.append($("<div/>").addClass("error").text("wrong sale rate"));
+                hasErrors = true;
+            }
+            if(isNaN(parseFloat(purchase)) || (parseFloat(purchase)<0)){
+                errorContainer.append($("<div/>").addClass("error").text("wrong purchase rate"));
+                hasErrors = true;
+            }
+            if(hasErrors) return;
+        }
 
         $.ajax({
             url: '/saveRate.action',

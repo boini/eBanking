@@ -53,7 +53,7 @@
             </s:iterator>
             </tbody>
         </table>
-
+        <div class="errors"></div>
         <table class="table table-condensed table-bordered" id="nbrb">
             <caption>Exchange rates on card transactions (as
                 <s:property value="#session['nbrbCurrencyRatesForm'].date"/>

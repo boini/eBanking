@@ -19,8 +19,21 @@ $(function() {
     })
 
     $('.charge-submit-btn-card').on('click', function() {
+        var errorContainer = $(this).parents('.charge').find(".errors").empty();
+
         var amount = $(this).parents('.charge').find('#chargeAmount').val();
         var cardId = $(this).parents('.charge').find('.chargeCardId').val();
+
+        //validation block
+        {
+            var hasErrors = false;
+
+            if(isNaN(parseFloat(amount)) || (parseFloat(amount)<=0)){
+                errorContainer.append($("<div/>").addClass("error").text("wrong amount"));
+                hasErrors = true;
+            }
+            if(hasErrors) return;
+        }
 
         $.ajax({
             url: '/chargeCard.action',
@@ -97,6 +110,19 @@ $(function() {
         var password = $('#accountPassword').val();
         var clientId = $('#clientId').val();
 
+        //validation
+        var hasErrors = false;
+        $("label.error").remove();
+        if(login.length==0){
+            $('#accountLogin').after($('<label class="error" for="accountLogin" generated="true">This field is required.</label>'));
+            hasErrors = true;
+        }
+        if(password.length==0){
+            $('#accountPassword').after($('<label class="error" for="accountLogin" generated="true">This field is required.</label>'));
+            hasErrors = true;
+        }
+        if(hasErrors)
+            return;
         $('#message').html('');
 
         $.ajax({
@@ -210,6 +236,10 @@ $(function() {
             }
             if(!/^\d{3}$/.test(cvv)){
                 errorContainer.append($("<div/>").addClass("error").text("wrong cvv"));
+                hasErrors = true;
+            }
+            if(!isDate(expDate) || Date.parse(expDate)<Date.now()){
+                errorContainer.append($("<div/>").addClass("error").text("wrong expiration date"));
                 hasErrors = true;
             }
             if(isNaN(parseFloat(creditLimit)) || (parseFloat(creditLimit)<0)){
