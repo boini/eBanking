@@ -46,7 +46,7 @@ public class RetrieveClientService extends SpringSupportService implements Servi
             retrieveClientRS.setSuccess(false);
         }
 
-        logger.logRQRS(retrieveClientRS, RetrieveClientService.class);
+        //logger.logRQRS(retrieveClientRS, RetrieveClientService.class);
 
         return retrieveClientRS;
     }
