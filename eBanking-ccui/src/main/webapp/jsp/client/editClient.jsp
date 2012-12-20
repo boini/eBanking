@@ -68,7 +68,7 @@
 
         <s:form action="/saveClient" method="post" cssClass="editForm" id="editForm">
 
-            <td colspan="2"><h6>Personal info</h6></td>
+            <td colspan="2"><h6 style="width: 389px;">Personal info</h6></td>
             <s:textfield value="%{#session.editClientForm.client.firstname}" label="Firstname" name="firstname"/>
             <s:textfield value="%{#session.editClientForm.client.middlename}" label="Middlename" key="middlename"/>
             <s:textfield value="%{#session.editClientForm.client.lastname}" label="Lastname" key="lastname"/>
@@ -79,12 +79,12 @@
             <s:textfield value="%{#session.editClientForm.client.personalCode}" label="Personal code" key="personalCode"/>
             <s:textfield value="%{#session.editClientForm.client.secretWord}" label="Secret word" key="secretWord"/>
 
-            <td colspan="2"><h6>Contact info</h6></td>
+            <td colspan="2"><h6 style="width: 389px;">Contact info</h6></td>
             <s:textfield value="%{#session.editClientForm.client.mobileNumber}" label="Mobile number" name="mobileNumber"/>
             <s:textfield value="%{#session.editClientForm.client.mobileNumber}" label="Phone number" name="phoneNumber"/>
             <s:textfield value="%{#session.editClientForm.client.email}" label="Email" name="email"/>
 
-            <s:submit value="Save" cssClass="btn btn-primary"/>
+            <s:submit value="Save" cssClass="btn btn-primary" style="float: left; margin-left:200px;"/>
         </s:form>
     </div>
 </div>
