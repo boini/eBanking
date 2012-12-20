@@ -238,13 +238,17 @@
                             <input type="hidden" value="" class="chargeCardId"/>
                             <table>
                                 <tr>
-                                    <td><input type="text" id="chargeAmount" style="float:left"/></td>
-                                    <td><div class="errors" style="float:left"></div></td>
+                                    <td>
+                                        <input type="text" id="chargeAmount" style="float:left"/>
+                                        <input type="text" disabled="disabled" id="currencyCharge">
+                                        TO
+                                        <input type="text" disabled="disabled" id="cardNumberCharge">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><div class="errors" style="float:left; height: 22px;"></div></td>
                                 </tr>
                             </table>
-                            <input type="text" disabled="disabled" id="currencyCharge">
-                            TO
-                            <input type="text" disabled="disabled" id="cardNumberCharge">
                             <a class="btn btn-mini btn-warning charge-submit-btn-card" href="#"><i class="icon-circle-arrow-down"></i> Charge</a>
                             <a class="btn btn-mini btn-danger charge-cancel-btn-card" href="#"><i class="icon-remove"></i> Cancel</a>
                         </div>

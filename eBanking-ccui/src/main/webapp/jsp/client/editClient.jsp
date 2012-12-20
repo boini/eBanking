@@ -52,6 +52,9 @@
                             minlength: 13,
                             maxlength: 13
                         },
+                        secretWord:{
+                            required: true
+                        },
                         mobileNumber: {
                             mobileBYIso: true
                         },
@@ -59,6 +62,7 @@
                             phoneBYIso: true
                         },
                         email: {
+                            required: true,
                             email: true
                         }
                     }

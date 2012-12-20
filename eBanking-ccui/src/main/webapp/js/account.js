@@ -170,6 +170,7 @@ $(function() {
     })
 
     $('.cancel-btn').on('click', function() {
+        $(this).parents(".cardAccount").find(".errors").empty();
         $(this).parents('.cardAccount')
                .find('.table')
                     .find('.newCardRow').hide().end()
