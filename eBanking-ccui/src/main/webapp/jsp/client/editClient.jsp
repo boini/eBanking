@@ -25,20 +25,38 @@
             });
             $(document).ready(function(){
                 jQuery.validator.addMethod("mobileBYIso", function(value, element){
-                            return /^\+375((44)|(33)|(29)|(25))\d{3,}$/.test(value);
+                            return /^\+375((44)|(33)|(29)|(25))\d{3,7}$/.test(value);
+                        },
+                        "Wrong phone number, please check");
+                jQuery.validator.addMethod("phoneBYIso", function(value, element){
+                            return /^\+375\d{9,10}$/.test(value);
                         },
                         "Wrong phone number, please check");
                 $("#editForm").validate({
                     rules: {
+                        firstname:{
+                            required: true
+                        },
+                        middlename:{
+                            required: true
+                        },
+                        lastname:{
+                            required: true
+                        },
+                        dateOfBirth:{
+                            required: true,
+                            date: true
+                        },
                         personalCode: {
                             required: true,
-                            rangelength: [13, 13]
+                            minlength: 13,
+                            maxlength: 13
                         },
                         mobileNumber: {
                             mobileBYIso: true
                         },
                         phoneNumber: {
-                            mobileBYIso: true
+                            phoneBYIso: true
                         },
                         email: {
                             email: true
