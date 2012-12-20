@@ -557,6 +557,29 @@ INSERT INTO `ebanking`.`operation_type` (`operation_type_id`, `operation_type`, 
 INSERT INTO `ebanking`.`bank_account` (`bank_account_id`, `corporation_id`, `currency_id`, `amount`, `number`) VALUES ('21', '11', '2', '1000000', 'EBANKING-BYR');
 INSERT INTO `ebanking`.`bank_account` (`bank_account_id`, `corporation_id`, `currency_id`, `amount`, `number`) VALUES ('22', '11', '1', '1000000', 'EBANKING-USD');
 
+ALTER TABLE `ebanking`.`account` DROP FOREIGN KEY `fk_account_client` ;
+ALTER TABLE `ebanking`.`account` 
+  ADD CONSTRAINT `fk_account_client`
+  FOREIGN KEY (`client_id` )
+  REFERENCES `ebanking`.`client` (`client_id` )
+  ON DELETE CASCADE
+  ON UPDATE NO ACTION;
+
+ALTER TABLE `ebanking`.`card_account` DROP FOREIGN KEY `fk_card_account_client` ;
+ALTER TABLE `ebanking`.`card_account` 
+  ADD CONSTRAINT `fk_card_account_client`
+  FOREIGN KEY (`client_id` )
+  REFERENCES `ebanking`.`client` (`client_id` )
+  ON DELETE CASCADE
+  ON UPDATE NO ACTION;
+
+ALTER TABLE `ebanking`.`card` DROP FOREIGN KEY `fk_card_card_account` ;
+ALTER TABLE `ebanking`.`card` 
+  ADD CONSTRAINT `fk_card_card_account`
+  FOREIGN KEY (`card_account_id` )
+  REFERENCES `ebanking`.`card_account` (`card_account_id` )
+  ON DELETE CASCADE
+  ON UPDATE NO ACTION;
 
 
 
