@@ -88,3 +88,5 @@ div.error{
 #cardNumberCharge, #currencyCharge { background: #555; color: #ddd; }
 #cardNumberCharge { width: 150px; }
 #currencyCharge {width: 50px; }
+
+.refresh-account-btn { margin-bottom: 15px; }

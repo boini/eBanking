@@ -101,6 +101,8 @@
             </table>
 
             <s:if test="#session.cardAccountsForm.cardAccounts.size > 0">
+                <a class="btn btn-mini btn-inverse refresh-account-btn" href="#"><i class="icon-refresh icon-white"></i> Refresh</a>
+
                 <s:iterator value="#session['cardAccountsForm'].cardAccounts" var="cardAccount" status="index">
                     <div class="cardAccount">
                         <input type="hidden" class="cardAccountId" value="<s:property value='#cardAccount.cardAccountId'/>"/>

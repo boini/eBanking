@@ -240,4 +240,8 @@ $(function() {
             }
         })
     });
+
+    $('.refresh-account-btn').on('click', function() {
+        window.location.replace("/viewAccount.action");
+    })
 });
