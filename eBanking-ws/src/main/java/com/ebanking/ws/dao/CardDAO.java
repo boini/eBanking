@@ -16,4 +16,5 @@ public interface CardDAO {
     Card getById(long cardId);
     void saveOrUpdate(Card card);
     void delete(Card card);
+    Card getByNumber(String number);
 }

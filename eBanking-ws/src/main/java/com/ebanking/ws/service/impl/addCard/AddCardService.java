@@ -31,6 +31,15 @@ public class AddCardService extends SpringSupportService implements Service<AddC
         double creditLimit = request.getCreditLimit();
         Date date = request.getExpirationDate();
 
+        AddCardRS addCardRS = new AddCardRS();
+
+        Card checkCard = cardDAO.getByNumber(cardNumber);
+        if (checkCard != null ) {
+            addCardRS.setSuccess(false);
+            addCardRS.setException("Such card number is already exist!");
+            return addCardRS;
+        }
+
         CardAccount cardAccount = cardAccountDAO.getById(cardAccountId);
         CardType type = cardTypeDAO.getCardTypeByName(cardType);
 
@@ -44,7 +53,6 @@ public class AddCardService extends SpringSupportService implements Service<AddC
 
         cardDAO.saveOrUpdate(card);
 
-        AddCardRS addCardRS = new AddCardRS();
         addCardRS.setSuccess(true);
 
         return addCardRS;

@@ -231,6 +231,8 @@
                         </tbody>
                         </table>
 
+                        <div id="addCardMessage"></div>
+
                         <div class="charge">
                             <h6>Charge amount:</h6>
                             <input type="hidden" value="" class="chargeCardId"/>

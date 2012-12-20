@@ -266,6 +266,13 @@ $(function() {
                     var scrollTop = $(window).scrollTop();
                     window.location.replace("/viewAccount.action");
                     $(window).scrollTop(scrollTop);
+                } else {
+                    $(newCardRow).parents('.cardAccount').find('#addCardMessage').append(
+                        '<div class="alert alert-error">' +
+                            '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
+                            '<h4>Exception!</h4>' +
+                            data.exception +
+                            '</div>');
                 }
             }
         })

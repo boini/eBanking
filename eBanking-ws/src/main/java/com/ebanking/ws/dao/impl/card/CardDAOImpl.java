@@ -37,4 +37,15 @@ public class CardDAOImpl extends CommonDAOImpl implements CardDAO {
     public void delete(Card card) {
         currentSession().delete(card);
     }
+
+    @Override
+    public Card getByNumber(String number) {
+        List cards = currentSession().createQuery("from Card as card where card.cardNumber = ?")
+                .setString(0, number)
+                .list();
+        if (cards != null && cards.size() > 0) {
+            return (Card) cards.get(0);
+        }
+        return null;
+    }
 }
