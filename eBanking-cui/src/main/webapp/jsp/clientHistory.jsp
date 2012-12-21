@@ -23,6 +23,7 @@
                 <th>Sum</th>
                 <th>State</th>
                 <th>Key</th>
+                <th>Autopayment</th>
             </tr>
             </thead>
             <tbody>
@@ -42,6 +43,19 @@
                     </td>
                     <td>
                         <s:property value="#operation.operationKey"/>
+                    </td>
+                    <td>
+                        <s:if test='%{#operation.operationType.operationType=="P" && #operation.operationStatus.operationStatus=="C"}'>
+                            <s:url action="autoPaymentConfig" var="autoPaymentConfigUrl">
+                                <s:param name="operationId">
+                                    <s:property value="#operation.operationId"/>
+                                </s:param>
+                            </s:url>
+                            <s:a href="%{autoPaymentConfigUrl}" cssClass="btn btn-mini btn-primary"><i class="icon-cog"></i> Autopayment</s:a>
+                        </s:if>
+                        <s:else>
+                            Autopayment forbidden
+                        </s:else>
                     </td>
                 </tr>
             </s:iterator>

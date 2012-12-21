@@ -23,6 +23,7 @@ http://www.springframework.org/schema/context/spring-context-3.1.xsd">
     <bean id="electricityPaymentForm" class="com.ebanking.cui.presentation.form.payments.ElectricityPaymentForm"/>
     <bean id="ratesForm" class="com.ebanking.cui.presentation.form.RatesForm"/>
     <bean id="transferForm" class="com.ebanking.cui.presentation.form.transfer.TransferForm"/>
+    <bean id="autoPaymentForm" class="com.ebanking.cui.presentation.form.AutoPaymentForm"/>
 
     <bean id="loginClientService" class="com.ebanking.cui.service.client.impl.security.login.ClientLoginService"/>
     <bean id="nbrbCurrencyService" class="com.ebanking.cui.service.client.impl.currency.nbrb.NBRBCurrencyService"/>
@@ -33,6 +34,8 @@ http://www.springframework.org/schema/context/spring-context-3.1.xsd">
     <bean id="transferService" class="com.ebanking.cui.service.client.impl.transfer.TransferService"/>
     <bean id="changeLoginService" class="com.ebanking.cui.service.client.impl.login.ChangeLoginService"/>
     <bean id="changePasswordService" class="com.ebanking.cui.service.client.impl.password.ChangePasswordService"/>
+    <bean id="getAutoPaymentService" class="com.ebanking.cui.service.client.impl.client.autopayment.GetAutoPaymentService"/>
+    <bean id="saveAutoPaymentService" class="com.ebanking.cui.service.client.impl.saveAutopayment.SaveAutoPaymentService"/>
 
     <bean id="operationHistoryService" class="com.ebanking.cui.service.client.impl.info.card.OperationHistoryService"/>
     
@@ -90,4 +93,10 @@ http://www.springframework.org/schema/context/spring-context-3.1.xsd">
     <bean name="TransferSubmitForwardAction" class="com.ebanking.cui.presentation.action.transfer.TransferSubmitForwardAction"/>
 
     <bean name="RatesAction" class="com.ebanking.cui.presentation.action.finance.RatesAction"/>
+
+    <bean name="GetAutoPaymentAction" class="com.ebanking.cui.presentation.action.autopayment.GetAutoPaymentAction"/>
+    <bean name="GetAutoPaymentListAction" class="com.ebanking.cui.presentation.action.autopayment.GetAutoPaymentListAction"/>
+    <bean name="AutoPaymentForwardAction" class="com.ebanking.cui.presentation.action.autopayment.AutoPaymentForwardAction"/>
+    <bean name="SaveAutoPaymentAction" class="com.ebanking.cui.presentation.action.autopayment.SaveAutoPaymentAction"/>
+    <bean name="DeleteAutoPaymentAction" class="com.ebanking.cui.presentation.action.autopayment.DeleteAutoPaymentAction"/>
 </beans>

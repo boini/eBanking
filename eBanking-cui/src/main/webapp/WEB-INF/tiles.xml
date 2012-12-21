@@ -389,4 +389,40 @@
         </put-list-attribute>
     </definition>
 
+    <definition name="/autoPayment.tiles" extends="/baseLayout">
+        <put-attribute name="title" value="Auto Payment | eBanking"/>
+        <put-attribute name="body" value="/jsp/autopayment/autoPayment.jsp"/>
+        <put-attribute name="actionName" value="autopayment-action"/>
+        <put-list-attribute name="styles">
+            <add-attribute value="/css/normalize.css"/>
+            <add-attribute value="/css/bootstrap.css"/>
+            <add-attribute value="/css/common.css"/>
+        </put-list-attribute>
+        <put-list-attribute name="scripts">
+            <add-attribute value="/js/jquery-1.8.2.js"/>
+            <add-attribute value="/js/bootstrap.js"/>
+            <add-attribute value="/js/jquery.datepicker.js"/>
+            <add-attribute value="/js/jquery.validate.js"/>
+            <add-attribute value="/js/autopayment.js"/>
+        </put-list-attribute>
+    </definition>
+
+    <definition name="/autoPaymentList.tiles" extends="/baseLayout">
+        <put-attribute name="title" value="Auto Payment | eBanking"/>
+        <put-attribute name="body" value="/jsp/autopayment/autoPaymentList.jsp"/>
+        <put-attribute name="actionName" value="autopayment-action"/>
+        <put-list-attribute name="styles">
+            <add-attribute value="/css/normalize.css"/>
+            <add-attribute value="/css/bootstrap.css"/>
+            <add-attribute value="/css/common.css"/>
+        </put-list-attribute>
+        <put-list-attribute name="scripts">
+            <add-attribute value="/js/jquery-1.8.2.js"/>
+            <add-attribute value="/js/bootstrap.js"/>
+            <add-attribute value="/js/jquery.datepicker.js"/>
+            <add-attribute value="/js/jquery.validate.js"/>
+            <add-attribute value="/js/autopayment.js"/>
+        </put-list-attribute>
+    </definition>
+
 </tiles-definitions>

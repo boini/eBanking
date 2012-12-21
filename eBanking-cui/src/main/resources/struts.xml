@@ -297,6 +297,38 @@
             </result>
         </action>
 
+        <action name="autoPaymentConfig" class="GetAutoPaymentAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">autoPaymentForward</param>
+            </result>
+        </action>
+
+        <action name="autoPaymentForward" class="AutoPaymentForwardAction">
+            <result name="success" type="tiles">
+                /autoPayment.tiles
+            </result>
+        </action>
+
+        <action name="saveAutoPayment" class="SaveAutoPaymentAction">
+            <result name="success" type="json"/>
+        </action>
+
+        <action name="autoPaymentList" class="ClientOperationHistoryAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">autoPayments</param>
+            </result>
+        </action>
+
+        <action name="autoPayments" class="GetAutoPaymentListAction">
+            <result name="success" type="tiles">
+                /autoPaymentList.tiles
+            </result>
+        </action>
+
+        <action name="deleteAutoPayment" class="DeleteAutoPaymentAction">
+            <result name="success" type="json"/>
+        </action>
+
         <action name="*">
             <result type="redirectAction">
                 <param name="actionName">main</param>

@@ -19,4 +19,13 @@ public class ClientOpertaionHistoryForm {
     public void setOperations(Operation[] operations) {
         this.operations = operations;
     }
+
+    public Operation getById(long id) {
+        for (Operation operation : operations) {
+            if (operation.getOperationId() == id) {
+                return operation;
+            }
+        }
+        return null;
+    }
 }

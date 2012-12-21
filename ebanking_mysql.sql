@@ -581,6 +581,27 @@ ALTER TABLE `ebanking`.`card`
   ON DELETE CASCADE
   ON UPDATE NO ACTION;
 
+CREATE  TABLE `ebanking`.`autopayment_type` (
+  `autopayment_type_id` INT NOT NULL AUTO_INCREMENT ,
+  `type` VARCHAR(3) NOT NULL ,
+  `description` VARCHAR(200) NOT NULL ,
+  `period` INT NOT NULL ,
+  PRIMARY KEY (`autopayment_type_id`) );
+INSERT INTO `ebanking`.`autopayment_type` (`autopayment_type_id`, `type`, `description`, `period`) VALUES ('1', 'M', 'Month payment', '30');
+INSERT INTO `ebanking`.`autopayment_type` (`autopayment_type_id`, `type`, `description`, `period`) VALUES ('2', 'W', 'Week payment', '7');
+INSERT INTO `ebanking`.`autopayment_type` (`autopayment_type_id`, `type`, `description`, `period`) VALUES ('3', 'D', 'Decade payment', '10');
+
+CREATE  TABLE `ebanking`.`autopayment` (
+  `autopayment_id` INT NOT NULL AUTO_INCREMENT ,
+  `operation_id` INT NOT NULL ,
+  `autopayment_type_id` INT NOT NULL ,
+  `next_date` TIMESTAMP NOT NULL ,
+  PRIMARY KEY (`autopayment_id`) );
+
+
+
+
+
 
 
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

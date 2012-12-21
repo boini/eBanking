@@ -17,6 +17,7 @@
     <li class="nav-header">Payments</li>
     <li id="payment-action"><a href="/payment.action">Pay for services</a></li>
     <li id="history-action"><a href="/clientOperationHistory.action">Archive of operations</a></li>
+    <li id="autopayment-action"><a href="/autoPaymentList.action">Autopayment</a></li>
 
     <li class="nav-header">Cards</li>
     <li id="transfer-action"><a href="/transfer.action">Transfers between cards</a></li>

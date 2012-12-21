@@ -21,6 +21,7 @@ public class HttpSessionUtil {
     private static final String ELECTRICITY_PAYMENT_FORM = "electricityPaymentForm";
     private static final String RATES_FORM = "ratesForm";
     private static final String TRANSFER_FORM = "transferForm";
+    private static final String AUTO_PAYMENT_FORM = "autoPaymentForm";
 
     private static UserHttpSession userHttpSession;
 
@@ -128,6 +129,14 @@ public class HttpSessionUtil {
         return (TransferForm) getAttribute(TRANSFER_FORM);
     }
 
+    public static void setAutoPaymentForm(AutoPaymentForm autoPaymentForm) {
+        addAttribute(AUTO_PAYMENT_FORM, autoPaymentForm);
+    }
+
+    public static AutoPaymentForm getAutoPaymentForm() {
+        return (AutoPaymentForm) getAttribute(AUTO_PAYMENT_FORM);
+    }
+
     public static void invalidate() {
         userHttpSession.remove(RATES_FORM);
         userHttpSession.remove(TRANSFER_FORM);
@@ -140,5 +149,6 @@ public class HttpSessionUtil {
         userHttpSession.remove(NBRB_RATES_FORM);
         userHttpSession.remove(PHONE_PAYMENT_FORM);
         userHttpSession.remove(RENT_PAYMENT_FORM);
+        userHttpSession.remove(AUTO_PAYMENT_FORM);
     }
 }

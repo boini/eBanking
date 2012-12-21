@@ -20,4 +20,5 @@ public interface OperationDAO {
     List getAccountOperations(long clientId);
     List getCardAccountOperations(long cardAccountId, Date fromDate, Date toDate);
     List getBankAccountOperations(long bankAccountId, Date fromDate, Date toDate);
+    Operation getById(long id);
 }

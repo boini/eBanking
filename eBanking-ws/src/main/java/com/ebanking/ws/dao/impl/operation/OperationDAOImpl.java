@@ -75,4 +75,9 @@ public class OperationDAOImpl extends CommonDAOImpl implements OperationDAO {
 
         return operations;
     }
+
+    @Override
+    public Operation getById(long id) {
+        return (Operation) currentSession().get(Operation.class, id);
+    }
 }

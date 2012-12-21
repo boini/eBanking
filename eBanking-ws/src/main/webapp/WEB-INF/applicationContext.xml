@@ -32,6 +32,8 @@ http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
     <bean id="cardTypeDAO" class="com.ebanking.ws.dao.impl.card.CardTypeDAOImpl"/>
     <bean id="roleDAO" class="com.ebanking.ws.dao.impl.account.RoleDAOImpl"/>
     <bean id="currencyDAO" class="com.ebanking.ws.dao.impl.finance.CurrencyDAOImpl"/>
+    <bean id="autoPaymentDAO" class="com.ebanking.ws.dao.impl.operation.AutoPaymentDAOImpl"/>
+    <bean id="autoPaymentTypeDAO" class="com.ebanking.ws.dao.impl.operation.AutoPaymentTypeDAOImpl"/>
 
     <bean id="cardAccountChecker" class="com.ebanking.ws.operation.checker.CardAccountChecker"/>
     <bean id="bankAccountChecker" class="com.ebanking.ws.operation.checker.BankAccountChecker"/>
