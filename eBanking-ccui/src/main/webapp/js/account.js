@@ -79,6 +79,11 @@ $(function() {
         var number = $('#cardAccountNumber').val();
         var currency = $('#cardAccountCurrency').val();
         var clientId = $('#clientId').val();
+        $("label.error").remove();
+        if(isNaN(parseInt(number)) || number.length != 16){
+            $('#cardAccountNumber').after('<label for="cardAccountNumber" generated="true" class="error" style="">Enter 16 digits of the card account number</label>');
+            return;
+        }
 
         $.ajax({
             url: '/createCardAccount.action',

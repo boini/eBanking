@@ -1097,7 +1097,7 @@ $.extend($.validator, {
 
 		// http://docs.jquery.com/Plugins/Validation/Methods/date
 		date: function(value, element) {
-			return this.optional(element) || !/Invalid|NaN/.test(new Date(value));
+            return this.optional(element) || (!/Invalid|NaN/.test(new Date(value)) && /\d{2}\/\d{2}\/\d{4}/.test(value));
 		},
 
 		// http://docs.jquery.com/Plugins/Validation/Methods/dateISO

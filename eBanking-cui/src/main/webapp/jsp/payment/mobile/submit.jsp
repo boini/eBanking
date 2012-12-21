@@ -11,6 +11,7 @@
     </div>
 
     <div>
+            <img style="position: absolute;" src="../../img/accepted.png"/>
             <table class="table table-bordered paid">
                 <tr>
                     <td>Date</td>
@@ -54,5 +55,6 @@
                     </td>
                 </tr>
             </table>
+        <input id="printbutton" type="button" onclick="print();" value="print check"/>
     </div>
 </div>

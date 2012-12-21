@@ -17,7 +17,7 @@ select {width: 300px;}
 
 .label { width: 150px; }
 
-.paid { background: url('../img/accepted.png') 0 0 no-repeat; }
+.paid { /*background: url('../img/accepted.png') 0 0 no-repeat;*/ }
 
 .ui-datepicker-trigger { margin-left: 5px; margin-top: -8px;}
 .calendar-select input[type="text"] {width: 150px;}
@@ -57,4 +57,22 @@ label.error{
     display: inline;
     color: red !important;
     margin-left: 10px;
+}
+
+@media print {
+    #header{
+        display: none;
+    }
+    .span2{
+        display: none !important;
+    }
+    #info-header{
+        display: none;
+    }
+    #quick-payment{
+        display: none;
+    }
+    #printbutton{
+        display: none;
+    }
 }

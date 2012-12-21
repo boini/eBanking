@@ -54,5 +54,6 @@
                     </td>
                 </tr>
             </table>
+        <input id="printbutton" type="button" onclick="print();" value="print check"/>
     </div>
 </div>
