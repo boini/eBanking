@@ -14,12 +14,20 @@
         <s:url action="addClient" var="addClientUrl">
         </s:url>
         <s:a cssClass="btn btn-mini btn-success" href="%{addClientUrl}"><i class="icon-plus"></i> Add client</s:a>
-        <button type="button" class="btn btn-mini btn-inverse btn-search"><i class="icon-search icon-white"></i> Search</button>
+
+        <button type="button" class="btn btn-mini btn-warning btn-search"><i class="icon-search icon-white"></i> Search</button>
+
+        <s:url action="clients" var="clientsUrl">
+        </s:url>
+        <s:a cssClass="btn btn-mini btn-inverse" href="%{clientsUrl}" cssStyle="float: right;"><i class="icon-refresh icon-white"></i> Refresh</s:a>
 
         <div id="search">
             <h6>Search client:</h6>
             <s:textfield label="Firstname" id="fn-search"/><br/>
             <s:textfield label="Lastname" id="ln-search"/><br/>
+            <div class="errorSearch error">
+                At least one field must be field.
+            </div>
             <button type="button" class="btn btn-mini btn-success btn-search-submit"><i class="icon-search"></i> Search</button>
             <button type="button" class="btn btn-mini btn-danger btn-search-cancel"><i class="icon-remove"></i> Cancel</button>
         </div>

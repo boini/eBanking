@@ -36,6 +36,8 @@ hr {margin: 0;}
 .login-error {width: 350px; margin: auto;}
 .rm-card-account-btn { float: right; margin-top: -30px;}
 
+.searchError {margin-top: 10px; width: 315px;}
+
 #cardAccountCurrency {width: 206px;}
 #header ul { float: right;}
 #cards img {width: 50px; border: 1px solid #555; }

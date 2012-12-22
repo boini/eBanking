@@ -17,11 +17,13 @@ $(function() {
         })
     })
 
+    $('.errorSearch').hide();
     $('#search').hide();
 
     $('.btn-search').on('click', function() {
         $(this).hide();
         $('#search').show();
+        $('.errorSearch').hide();
     })
 
     $('.btn-search-cancel').on('click', function() {
@@ -30,12 +32,19 @@ $(function() {
         $('.btn-search').show();
         $('#search').hide();
         $('.searchError').remove();
+        $('.errorSearch').hide();
     })
 
     $('.btn-search-submit').on('click', function() {
+        $('.errorSearch').hide();
         $('.searchError').remove();
         var fn = $('#fn-search').val();
         var ln = $('#ln-search').val();
+
+        if (fn.length == 0 && ln.length == 0) {
+            $('.errorSearch').show();
+            return false;
+        }
 
         $.ajax({
             url: '/search.action',
