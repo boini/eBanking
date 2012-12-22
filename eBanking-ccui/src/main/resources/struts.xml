@@ -33,6 +33,12 @@
         <!-- Clients -->
 
         <action name="clients" class="RetrieveClientAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">clientsForward</param>
+            </result>
+        </action>
+
+        <action name="clientsForward" class="RetrieveClientForwardAction">
             <result name="success" type="tiles">
                 /clients.tiles
             </result>
@@ -105,6 +111,10 @@
         </action>
 
         <action name="corporationView" class="CorporationViewAction">
+            <result name="success" type="json"/>
+        </action>
+
+        <action name="search" class="ClientSearchAction">
             <result name="success" type="json"/>
         </action>
 

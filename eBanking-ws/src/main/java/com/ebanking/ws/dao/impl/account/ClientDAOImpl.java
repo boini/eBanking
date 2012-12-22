@@ -31,4 +31,21 @@ public class ClientDAOImpl extends CommonDAOImpl implements ClientDAO {
     public void delete(Client client) {
         currentSession().delete(client);
     }
+
+    @Override
+    public List search(String firstname, String lastname) {
+        if (firstname != null) {
+            if (lastname != null) {
+                return currentSession().createQuery("from Client client where (client.firstname like ? and client.lastname like ?)")
+                        .setString(0, "%" + firstname + "%").setString(1, "%" + lastname + "%").list();
+            } else {
+                return currentSession().createQuery("from Client client where client.firstname like ?")
+                        .setString(0, "%" + firstname + "%").list();
+            }
+        } else {
+            return currentSession().createQuery("from Client client where client.lastname like ?")
+                    .setString(0, "%" + lastname + "%").list();
+        }
+
+    }
 }

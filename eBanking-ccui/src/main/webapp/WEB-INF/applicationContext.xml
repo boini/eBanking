@@ -50,6 +50,8 @@ http://www.springframework.org/schema/context/spring-context-3.1.xsd">
     <bean name="NBRBCurrencyAction" class="com.ebanking.ccui.presentation.action.currency.NBRBCurrencyAction"/>
     <bean name="MainPageForwardAction" class="com.ebanking.ccui.presentation.action.MainPageForwardAction"/>
     <bean name="RetrieveClientAction" class="com.ebanking.ccui.presentation.action.client.RetrieveClientAction"/>
+    <bean name="RetrieveClientForwardAction" class="com.ebanking.ccui.presentation.action.client.RetrieveClientForwardAction"/>
+    <bean name="ClientSearchAction" class="com.ebanking.ccui.presentation.action.search.ClientSearchAction"/>
 
     <bean name="RatesAction" class="com.ebanking.ccui.presentation.action.finance.RatesAction"/>
 

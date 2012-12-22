@@ -14,6 +14,15 @@
         <s:url action="addClient" var="addClientUrl">
         </s:url>
         <s:a cssClass="btn btn-mini btn-success" href="%{addClientUrl}"><i class="icon-plus"></i> Add client</s:a>
+        <button type="button" class="btn btn-mini btn-inverse btn-search"><i class="icon-search icon-white"></i> Search</button>
+
+        <div id="search">
+            <h6>Search client:</h6>
+            <s:textfield label="Firstname" id="fn-search"/><br/>
+            <s:textfield label="Lastname" id="ln-search"/><br/>
+            <button type="button" class="btn btn-mini btn-success btn-search-submit"><i class="icon-search"></i> Search</button>
+            <button type="button" class="btn btn-mini btn-danger btn-search-cancel"><i class="icon-remove"></i> Cancel</button>
+        </div>
 
         <table class="table table-condensed table-bordered" id="clients">
             <caption>Clients</caption>

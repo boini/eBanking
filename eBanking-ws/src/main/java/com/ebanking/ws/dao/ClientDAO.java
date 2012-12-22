@@ -10,4 +10,5 @@ public interface ClientDAO {
     Client getById(Long id);
     List list();
     void delete(Client client);
+    List search(String firstname, String lastname);
 }
