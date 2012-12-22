@@ -88,7 +88,7 @@
             <s:textfield value="%{#session.editClientForm.client.mobileNumber}" label="Phone number" name="phoneNumber"/>
             <s:textfield value="%{#session.editClientForm.client.email}" label="Email" name="email"/>
 
-            <s:submit value="Save" cssClass="btn btn-primary" style="float: left; margin-left:200px;"/>
+            <s:submit value="Save" cssClass="btn btn-primary" style="float: left; margin-left:200px;" onclick="this.disabled=true;this.form.submit();"/>
         </s:form>
     </div>
 </div>
